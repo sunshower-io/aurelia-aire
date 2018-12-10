@@ -6,6 +6,7 @@
  */
 const { task, src } = require('fuse-box/sparky');
 const { transpileTo } = require('./transpile');
+const Pug = require('fusebox-pug-plugin').PugPlugin;
 
 // @ts-ignore
 const FOLDER_NAME = require('../package.json').folder_name;
@@ -37,6 +38,9 @@ if (!typeAndLintErrors) {
     .exec();
 
 
+  src('**/*.pug', {base: `../src/`})
+      .plugin(Pug())
+      .dest('../dist/commonjs/');
 
   // ------------------------------------------
   // Css

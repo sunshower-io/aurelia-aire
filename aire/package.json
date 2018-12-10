@@ -1,8 +1,8 @@
 {
-    "folder_name": "aurelia-plugin-skeleton-typescript",
-    "name": "aurelia-plugin-skeleton-typescript",
-    "version": "1.0.0-beta.1",
-    "description": "aurelia-plugin-skeleton-typescript",
+    "folder_name": "aurelia-aire",
+    "name": "aurelia-aire",
+    "version": "1.0.0-SNAPSHOT",
+    "description": "Beautiful Widget Toolkit for Aurelia",
     "keywords": [
         "aurelia",
         "plugin",
@@ -33,9 +33,9 @@
         "test:e2e": "./node_modules/.bin/jest --config=jest.e2e.config.json"
     },
     "devDependencies": {
-        "@types/node": "^10.3.2",
         "@types/jest": "^23.0.0",
         "@types/lodash": "^4.14.109",
+        "@types/node": "^10.3.2",
         "@types/puppeteer": "^1.3.2",
         "aurelia-animator-css": "^1.0.4",
         "aurelia-binding": "^2.0.0",
@@ -56,11 +56,13 @@
         "fuse-box": "^3.3.0-next.9",
         "fuse-box-aurelia-loader": "^2.0.2",
         "fuse-box-typechecker": "^2.9.0",
+        "fusebox-pug-plugin": "^2.0.0",
         "jest": "^23.1.0",
         "jest-puppeteer": "^3.0.1",
         "jsdom": "^11.11.0",
         "less": "^3.0.4",
         "lodash": "^4.17.10",
+        "node-sass": "^4.11.0",
         "puppeteer": "^1.4.0",
         "readline-sync": "^1.4.9",
         "source-map": "^0.7.3",
@@ -83,10 +85,10 @@
         "usedBy": [],
         "build": {
             "resources": [
-                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-plugin-skeleton-typescript",
-                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-plugin-skeleton-typescript/index",
-                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-plugin-skeleton-typescript/hello-world.css",
-                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-plugin-skeleton-typescript/hello-world.html"
+                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-aire",
+                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-aire/index",
+                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-aire/hello-world.css",
+                "@aut/@aurelia-toolbelt/@aurelia-toolbelt/aurelia-aire/hello-world.html"
             ]
         }
     }
