@@ -23,7 +23,19 @@ SystemJS.config({
     },
     "aurelia-aire": {
       "defaultExtension": "js"
+    },
+    "local:aire@1.0.0": {
+      "map": {
+        "aurelia-aire": "npm:aurelia-aire@1.0.0",
+        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+        "text": "github:systemjs/plugin-text@0.0.11",
+        "aire": "local:aire@1.0.0"
+      }
     }
+  },
+  map: {
+    "aire": "local:aire@1.0.0",
+    "aurelia-aire": "npm:aurelia-aire@1.0.0"
   }
 });
 
@@ -35,8 +47,6 @@ SystemJS.config({
     "local:*.json"
   ],
   map: {
-    "aire": "local:aire@1.0.0",
-    "aurelia-aire": "npm:aurelia-aire@1.0.0",
     "aurelia-binding": "npm:aurelia-binding@2.1.7",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
@@ -60,7 +70,12 @@ SystemJS.config({
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.5.2",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.7.1",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.3.3",
-    "text": "github:systemjs/plugin-text@0.0.11"
+    "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
+    "fs": "npm:jspm-nodelibs-fs@0.2.1",
+    "path": "npm:jspm-nodelibs-path@0.2.3",
+    "process": "npm:jspm-nodelibs-process@0.2.1",
+    "text": "github:systemjs/plugin-text@0.0.11",
+    "uikit": "npm:uikit@3.0.0-rc.25"
   },
   packages: {
     "npm:aurelia-binding@2.1.7": {
@@ -69,14 +84,6 @@ SystemJS.config({
         "aurelia-logging": "npm:aurelia-logging@1.5.0",
         "aurelia-pal": "npm:aurelia-pal@1.8.0",
         "aurelia-metadata": "npm:aurelia-metadata@1.0.4"
-      }
-    },
-    "local:aire@1.0.0": {
-      "map": {
-        "aurelia-aire": "npm:aurelia-aire@1.0.0",
-        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-        "text": "github:systemjs/plugin-text@0.0.11",
-        "aire": "local:aire@1.0.0"
       }
     }
   }

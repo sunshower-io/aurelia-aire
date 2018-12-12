@@ -37,7 +37,7 @@ SystemJS.config({
     "local:*.json"
   ],
   map: {
-    "aire": "local:aire@1.0.0",
+    // "aire": "local:aire@1.0.0",
     "aurelia-binding": "npm:aurelia-binding@2.1.7",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
@@ -72,12 +72,12 @@ SystemJS.config({
         "aurelia-metadata": "npm:aurelia-metadata@1.0.4"
       }
     },
-    "local:aire@1.0.0": {
-      "map": {
-        "aire": "local:aire@1.0.0",
-        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-        "text": "github:systemjs/plugin-text@0.0.11"
-      }
-    }
+    // "local:aire@1.0.0": {
+    //   "map": {
+    //     "aire": "local:aire@1.0.0",
+    //     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+    //     "text": "github:systemjs/plugin-text@0.0.11"
+    //   }
+    // }
   }
 });

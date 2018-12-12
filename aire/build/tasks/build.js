@@ -1,24 +1,49 @@
 const gulp = require('gulp'),
+    utils = require('./utils.js'),
+    scss = require('gulp-sass'),
     paths = require('@build/paths.js'),
+    concat = require('gulp-concat'),
     pug = require('gulp-pug'),
-    tsconfig = require('@root/tsconfig.json'),
     typescript = require('gulp-typescript'),
     project = typescript.createProject('tsconfig.json');
 
 
+//================================================================================
+// build scsss
+//================================================================================
 
+const buildScss = () => {
+    return gulp.src(paths.styles)
+        .pipe(scss({
+            includePaths:`${utils.source('uikit')}/scss`
+        }).on('error', scss.logError))
+        .pipe(concat('aire.css'))
+        .pipe(gulp.dest(paths.output));
+
+};
+
+// gulp.task('build-scss', function() {
+//     return gulp
+//         .src(paths.scss)
+//         .pipe(
+//             scss({
+//                 includePaths: ['node_modules/aurelia-ui-framework/sass']
+//             }).on('error', scss.logError)
+//         )
+//         .pipe(concat('stratosphere.css'))
+//         .pipe(gulp.dest(paths.output));
+// });
 
 //================================================================================
 // build typescript
 //================================================================================
 
 
-
 const build = () => {
     return gulp
         .src(paths.typescript)
         .pipe(project(typescript.reporter.fullReporter()))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest(paths.output));
 };
 
 
@@ -27,13 +52,19 @@ const build = () => {
 //================================================================================
 
 
-
 const buildPug = () => {
 
     return gulp.src(paths.pug)
-        .pipe(pug({
+        .pipe(pug({})).pipe(gulp.dest(paths.output));
+};
 
-        })).pipe(gulp.dest('dist'));
+//================================================================================
+// copy metadata
+//================================================================================
+
+const copyMetadata = () => {
+    return gulp.src(paths.metadata)
+        .pipe(gulp.dest(paths.output));
 };
 
 
@@ -42,14 +73,12 @@ const buildPug = () => {
 //================================================================================
 
 
-
-gulp.task('build-pug', buildPug);
-gulp.task('build', gulp.parallel('build-pug', build));
+gulp.task('build:pug', buildPug);
+gulp.task('build:sass', buildScss);
+gulp.task('build', gulp.parallel('build:pug', 'build:sass', build, copyMetadata));
 
 
 module.exports = build;
-
-
 
 
 // module.exports = build() {
