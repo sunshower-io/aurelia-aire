@@ -1,4 +1,12 @@
 {
-  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ]
+  },
+  "files": ["typings/uikit.d.ts"],
+  "include": ["src/**/*.ts", "typings/**/*.ts"],
   "exclude": ["node_modules", "jspm_packages" ]
 }

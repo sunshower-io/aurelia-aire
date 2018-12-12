@@ -1,4 +1,4 @@
-import {customElement} from "aurelia-templating";
+import {customElement} from "aurelia-framework";
 import * as UIkit from "uikit";
 
 

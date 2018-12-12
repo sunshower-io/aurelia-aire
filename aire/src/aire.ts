@@ -5,6 +5,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/navbar/navbar',
     'aire/application/application',
     'aire/application/header',
-    'aire/navigation/offcanvas'
+    'aire/offcanvas/offcanvas',
+    'aire/card/card'
   ]);
 }
