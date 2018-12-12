@@ -1,2 +1,10 @@
-// gulp configuration is in files in ./build directory
-require('require-dir')('build/tasks');
+/**'
+ * Register aliases (configured in package.json/_moduleAliases
+ */
+require('module-alias/register');
+
+const gulp = require('gulp'),
+    requireDirectory = require('require-dir'),
+    tasks = requireDirectory('build/tasks');
+
+exports.default = tasks.build;
