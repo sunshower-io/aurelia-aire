@@ -22,18 +22,6 @@ const buildScss = () => {
 
 };
 
-// gulp.task('build-scss', function() {
-//     return gulp
-//         .src(paths.scss)
-//         .pipe(
-//             scss({
-//                 includePaths: ['node_modules/aurelia-ui-framework/sass']
-//             }).on('error', scss.logError)
-//         )
-//         .pipe(concat('stratosphere.css'))
-//         .pipe(gulp.dest(paths.output));
-// });
-
 //================================================================================
 // build typescript
 //================================================================================
