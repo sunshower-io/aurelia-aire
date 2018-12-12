@@ -1,17 +1,18 @@
 const gulp = require('gulp'),
     paths = require('@build/paths.js'),
-    plumber = require('gulp-plumber'),
-    debug = require('gulp-debug'),
-    notify = require('gulp-notify'),
+    pug = require('gulp-pug'),
     tsconfig = require('@root/tsconfig.json'),
     typescript = require('gulp-typescript'),
     project = typescript.createProject('tsconfig.json');
 
 
 
-// --
-// Build-Typescript
-// --
+
+//================================================================================
+// build typescript
+//================================================================================
+
+
 
 const build = () => {
     return gulp
@@ -21,8 +22,29 @@ const build = () => {
 };
 
 
+//================================================================================
+// build pug files
+//================================================================================
 
-gulp.task('build', build);
+
+
+const buildPug = () => {
+
+    return gulp.src(paths.pug)
+        .pipe(pug({
+
+        })).pipe(gulp.dest('dist'));
+};
+
+
+//================================================================================
+// task definitions
+//================================================================================
+
+
+
+gulp.task('build-pug', buildPug);
+gulp.task('build', gulp.parallel('build-pug', build));
 
 
 module.exports = build;

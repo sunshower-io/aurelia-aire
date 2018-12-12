@@ -1,6 +1,7 @@
 
 const paths = {
-    typescript: 'src/**/*.ts'
-}
+    typescript: 'src/**/*.ts',
+    pug: ['src/**/*.pug']
+};
 
 module.exports = paths;

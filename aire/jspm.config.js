@@ -2,18 +2,24 @@ SystemJS.config({
   browserConfig: {
     "paths": {
       "npm:": "/jspm_packages/npm/",
-      "aire": "dist/"
+      "aire": "dist/",
+      "github:": "/jspm_packages/github/"
     }
   },
   nodeConfig: {
     "paths": {
       "npm:": "jspm_packages/npm/",
+      "github:": "jspm_packages/github/",
       "aire/": "dist/"
     }
   },
   packages: {
+    "aire": {
+      "main": "index.js",
+      "defaultExtension": "js"
+    },
     "aurelia-aire": {
-      "main": "aire.js"
+      "defaultExtension": "js"
     }
   }
 });
@@ -21,7 +27,8 @@ SystemJS.config({
 SystemJS.config({
   packageConfigPaths: [
     "npm:@*/*.json",
-    "npm:*.json"
+    "npm:*.json",
+    "github:*/*.json"
   ],
   map: {
     "aurelia-binding": "npm:aurelia-binding@2.1.7",
@@ -46,7 +53,8 @@ SystemJS.config({
     "aurelia-templating": "npm:aurelia-templating@1.10.1",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.5.2",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.7.1",
-    "aurelia-templating-router": "npm:aurelia-templating-router@1.3.3"
+    "aurelia-templating-router": "npm:aurelia-templating-router@1.3.3",
+    "text": "github:systemjs/plugin-text@0.0.11"
   },
   packages: {
     "npm:aurelia-binding@2.1.7": {

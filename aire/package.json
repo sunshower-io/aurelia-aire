@@ -1,5 +1,5 @@
 {
-  "name": "aurelia-aire",
+  "name": "aire",
   "version": "1.0.0",
   "description": "Beautiful UiKit-based Aurelia plugin",
   "main": "aire.js",
@@ -27,7 +27,8 @@
   "homepage": "https://github.com/sunshower-io/aurelia-aire#readme",
   "jspm": {
     "dependencies": {
-      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.3.1"
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.3.1",
+      "text": "github:systemjs/plugin-text@^0.0.11"
     },
     "devDependencies": {},
     "peerDependencies": {
@@ -63,6 +64,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
     "gulp-typescript": "^5.0.0",
     "i": "^0.3.6",
     "jspm": "^0.17.0-beta.49",

@@ -1,5 +1,3 @@
-
-
 const
     build = require('./build.js'),
     gulp = require('gulp'),
@@ -7,14 +5,19 @@ const
     serve = require('./serve.js');
 
 
-
 const watch = (done) => {
-    console.log(paths.typescript);
-    gulp.watch(paths.typescript, build);
+    gulp.watch(paths.pug, gulp.series('build-pug', 'reload'))
+
+    gulp.watch(paths.typescript, gulp.series('build', 'reload'));
 };
 
+//**================================================================================
+// Task watch
+//================================================================================
 
-gulp.task('watch',  gulp.parallel(watch, 'serve'));
+gulp.task('watch', gulp.parallel(watch, 'serve'));
+
+
 
 
 
