@@ -1,27 +1,29 @@
 SystemJS.config({
+  paths: {
+    "aire-demo/": "dist/"
+  },
   browserConfig: {
     "paths": {
       "npm:": "/jspm_packages/npm/",
-      "aire": "dist/",
+      "aire-demo": "dist/",
       "github:": "/jspm_packages/github/",
-      "local:": "/jspm_packages/local/",
-      "aire/": "src/"
+      "local:": "/jspm_packages/local/"
     }
   },
   nodeConfig: {
     "paths": {
       "npm:": "jspm_packages/npm/",
       "github:": "jspm_packages/github/",
-      "local:": "jspm_packages/local/",
-      "aire/": "dist/"
+      "aire-demo": "dist/",
+      "local:": "jspm_packages/local/"
     }
   },
   packages: {
-    "aire": {
+    "aire-demo": {
       "main": "index.js",
       "defaultExtension": "js"
     },
-    "aurelia-aire": {
+    "aire": {
       "defaultExtension": "js"
     }
   }
@@ -36,7 +38,6 @@ SystemJS.config({
   ],
   map: {
     "aire": "local:aire@1.0.0",
-    "aurelia-aire": "npm:aurelia-aire@1.0.0",
     "aurelia-binding": "npm:aurelia-binding@2.1.7",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
@@ -73,10 +74,9 @@ SystemJS.config({
     },
     "local:aire@1.0.0": {
       "map": {
-        "aurelia-aire": "npm:aurelia-aire@1.0.0",
+        "aire": "local:aire@1.0.0",
         "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-        "text": "github:systemjs/plugin-text@0.0.11",
-        "aire": "local:aire@1.0.0"
+        "text": "github:systemjs/plugin-text@0.0.11"
       }
     }
   }
