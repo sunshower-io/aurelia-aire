@@ -3,8 +3,8 @@ import {customElement} from "aurelia-templating";
 import * as UIkit from "uikit";
 
 
-@customElement('aire-sidebar')
-export class Sidebar {
+@customElement('aire-offcanvas')
+export class Offcanvas {
   element: HTMLElement;
   constructor() {
 

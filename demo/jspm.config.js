@@ -85,7 +85,8 @@ SystemJS.config({
       "map": {
         "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
         "uikit": "npm:uikit@3.0.0-rc.25",
-        "text": "github:systemjs/plugin-text@0.0.11"
+        "text": "github:systemjs/plugin-text@0.0.11",
+        "aire": "local:aire@1.0.0"
       }
     },
     "npm:jspm-nodelibs-buffer@0.2.3": {
