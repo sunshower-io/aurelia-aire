@@ -7,4 +7,7 @@ const gulp = require('gulp'),
     requireDirectory = require('require-dir'),
     tasks = requireDirectory('build/tasks');
 
-exports.default = tasks.build;
+
+exports.default = () => {
+    console.log(tasks);
+}
