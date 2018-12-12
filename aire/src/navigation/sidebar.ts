@@ -1,4 +1,3 @@
-import {autoinject}    from "aurelia-dependency-injection";
 import {customElement} from "aurelia-templating";
 import * as UIkit from "uikit";
 
