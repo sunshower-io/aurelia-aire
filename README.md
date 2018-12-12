@@ -10,3 +10,13 @@ Built with UIKit (https://github.com/uikit/uikit) and Aurelia (https://github.co
 ## Working on the Site
 `cd docs`
 With ruby and ruby-dev installed, `bundle install` and `bundle exec middleman server`
+
+## Running the demo
+`cd aire`
+`npm install && jspm install -y`
+`gulp build watch`
+In another terminal
+`cd demo`
+`npm install && jspm install -y`
+`jspm link ../aire/dist`
+`gulp build watch`
