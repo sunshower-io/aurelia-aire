@@ -1,0 +1,4 @@
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "jspm_packages" ]
+}

@@ -1,8 +1,0 @@
-node_modules
-.idea
-.vscode
-.DS_STORE
-dev/
-coverage/
-dist/
-distTS/
