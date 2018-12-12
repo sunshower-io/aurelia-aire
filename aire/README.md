@@ -1,53 +1,27 @@
+### Developing on Aire
 
-![Imgur](https://i.imgur.com/xVO5NYd.png)
+1.  Install npm for your platform
+2.  Install jspm globally `sudo npm install -g jspm`
+3.  Install project `npm install && jspm install -y && typings install`
+4.  JSPM-link the project over to the consuming project:
+- Clone aire to aire (cloned directory named aire)
+- Clone/create your project that consumes aire (e.g. sunshower-myplugin)
+- From `aire` run `gulp build` and then `jspm link github:sunshower-io/aire`
+- in your consuming project, run `jspm install --link github:sunshower-io/aire@1.0.0`
+- Make a change in aire, then run `gulp build && jspm link github:sunshower-io/aire -y` to update your consuming project
 
-# Aurelia plugin skeleton with Typescript
 
-You need to make an Aurelia Typescript plugin?
-If "YES!!!", you have just found the perfect place to start :smile:
+## Building all the things
+### Creating a new component
 
-Here is the key components of the plugin skeleton:
+1. We use material-components-web, so to add a new binding for a MCW component, install it via npm `npm install --save @material/component`
+-- For instance, to install `drawer` run `npm install --save @material/drawer`
 
-1. [Typescript](https://www.typescriptlang.org/) as a typed super set of JavaScript that compiles to plain JavaScript.
-2. [FuseBox](https://github.com/fuse-box/fuse-box) as a bundler/module loader for the _**sample**_ (incl [fuse-box-aurelia-loader](https://github.com/fuse-box/fuse-box-aurelia-loader))
-3. [Jest](https://facebook.github.io/jest/) a delightful JavaScript test framework.
-4. [Puppeteer](Puppeteer) as headless Chrome for E2E testing.
-5. [FuseBox Type Checker](https://github.com/fuse-box/fuse-box-typechecker) as a simple helper to do type-checking & linting while developing and producing the final build.
 
-### How to build and run sample
-  * ```npm run watch```
-    * Launches sample and watches src folder
-    * it does the type-checking and ts-lints on every save
-    * Now open `http://localhost:4444` to see your plugin in action.
-
-  * ```npm run build```
-    * Produces amd/commonjs/system/es2015 builds
-    * This will *NOT* emit/update files if you have any typescript or tslint errors
-
-### How to rename to your own plugin
-  * run:  ```npm run setup```
-    * Answer the question about name and version.
-
-### How to run unit tests
-
-  * To run the unit test with _*Jest*_ run : _```npm run test:unit```_
-    * Watch mode: _```npm run test:unit -- --watch```_
-    * See the coverage: _```npm run test:unit -- --coverage```_
-
-### How to run E2E tests
-
-  * Simply run: _```npm run test:e2e```_
-    * Make sure you've run the sample prior to the e2e test by running the _`npm watch`_ command.
-
-### Before you start coding(or publishing an npm package) you also need to check the followings:
-
-  *  delete .git folder and run `git init`
-  * update package.json with
-    * description
-    * keywords
-    * homepage
-    * bugs
-    * license
-    * author
-    * repository
-    * etc etc
+1.  `mvn clean install -f bom && gradle clean build pTML` on sunshower-devops (this does not currently seem to work)
+2.  `mvn clean install -f bom && gradle clean build pTML` on sunshower-base (do not -x test)
+3.  `mvn clean install -f bom && gradle clean build pTML` on sunshower-core (do not -x test)
+4.  `mvn clean install -f bom && gradle clean build pTML -x test` on sunshower-kernel
+5.  `mvn clean install -f bom && gradle clean build pTML` on sunshower-sdk (do not -x test)
+6.  `mvn clean install -f bom && gradle clean build pTML -x test` on sunshower
+7.  `gradle clean build && gradle cRunL -i` on root of atmosphere (or whichever plugin)
