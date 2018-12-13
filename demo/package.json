@@ -31,6 +31,7 @@
       "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.3.1",
       "aurelia-router-loader": "npm:aurelia-router-loader@^1.0.6",
       "css": "github:systemjs/plugin-css@^0.1.37",
+      "font-awesome": "npm:font-awesome@^4.7.0",
       "text": "github:systemjs/plugin-text@^0.0.11"
     },
     "devDependencies": {},
@@ -65,6 +66,16 @@
       "process": "npm:jspm-nodelibs-process@^0.2.0",
       "util": "npm:jspm-nodelibs-util@^0.2.0",
       "vm": "npm:jspm-nodelibs-vm@^0.2.0"
+    },
+    "overrides": {
+      "npm:font-awesome@4.7.0": {
+        "main": "css/font-awesome.css!",
+        "jspmNodeConversion": false,
+        "registry": "jspm",
+        "dependencies": {
+          "css": "0.1"
+        }
+      }
     }
   },
   "devDependencies": {

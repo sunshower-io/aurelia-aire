@@ -5,9 +5,11 @@ export class AireFormElement {
 
     input       : HTMLElement;
     container   : HTMLElement;
-
     @bindable
     label       : string;
+
+    @bindable
+    value       : any;
 
     @bindable
     minimal     : string;
@@ -21,21 +23,16 @@ export class AireFormElement {
     @bindable
     disabled    : string;
 
-    @bindable
-    options     : {label: string, value: string}[];
-
     constructor(private element: Element) {
     }
 
     attached() {
-        //todo handle .bind situations
         dom.decorate(this.container, "horizontal", "uk-form-horizontal");
-        dom.decorate(this.container, "success", "uk-form-success");
-        dom.decorate(this.container, "error", "uk-form-error");
+        dom.decorateTo(this.element, this.input, "success", "uk-form-success");
+        dom.decorateTo(this.element, this.input, "error", "uk-form-error");
         dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
         this.label = this.element.getAttribute("label");
+        this.value = this.element.getAttribute("value");
         this.disabled = this.element.getAttribute("disabled");
-        let data = JSON.parse(this.element.getAttribute("data"));
-        this.options = Array.isArray(data) ? data : [data]; //catches single instance non-iterable
     }
 }

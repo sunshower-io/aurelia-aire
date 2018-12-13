@@ -12,5 +12,11 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/card/card',
     'aire/form/input',
     'aire/form/select',
+    'aire/form/textarea',
+    'aire/form/radio',
+    'aire/form/checkbox',
+    'aire/form/range',
+    'aire/button/button',
+    'aire/fab/fab'
   ]);
 }
