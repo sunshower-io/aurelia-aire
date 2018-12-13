@@ -1,0 +1,5 @@
+template(ref="container")
+    .uk-form-label(if.bind="label") ${label}
+    .uk-form-controls
+        select.uk-select(ref="input" disabled="${disabled}")
+            option(if.bind="options" repeat.for="option of options" value.bind="option.value") ${option.label}
