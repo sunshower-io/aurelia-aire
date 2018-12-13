@@ -89,21 +89,25 @@ const generateComponent = async component => {
         data = component.data;
 
     resolveHelp(component);
+    copyComponent(component);
+};
+
+
+const copyComponent = component => {
+    gulp.src(['dist/lib/*.*']).pipe(gulp.dest(`dist/${component.rawdir}`))
+
 };
 
 
 const toRouteElement = component => {
     return component.data.map(t => {
         return {
+            nav: true,
             route: component.rawdir,
-            name: t.component.name
+            name: t.component.name,
+            moduleId: `aire-demo/${component.rawdir}/doc-page.html`
         }
     });
-
-    // return {
-    //     route: component.rawdir,
-    //     name: component.data.name
-    // };
 };
 
 const generateNav = (components) => {
@@ -113,7 +117,8 @@ const generateNav = (components) => {
         console.log("route file: components.json not found.  Generating a new one...");
     }
     fs.writeFileSync("src/route/components.json", JSON.stringify(
-        components.map(t => toRouteElement(t)).reduce((acc, val) => acc.concat(val))
+        components.map(t => toRouteElement(t)).reduce((acc, val) => acc.concat(val)),
+        null, 2
     ));
 };
 

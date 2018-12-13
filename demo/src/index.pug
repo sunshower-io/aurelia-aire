@@ -7,10 +7,16 @@ template
 
             navbar-section(right)
             navbar-section(center)
-    form
-        aire-input(type="password" horizontal disabled label="Password")
-        aire-input(type="number" success label="Great Success")
-        aire-select(label="Gender" data='{"label":"Schnorp", "value": "Porp"}')
-    aire-card(default padding hover title="Henlo Baloo")
-        p I loff you a lot
+        aire-body
+            aire-offcanvas
+
+                navbar-item(repeat.for="nav of router.navigation")
+            router-view
+
+                //form
+                //    aire-input(type="password" horizontal disabled label="Password")
+                //    aire-input(type="number" success label="Great Success")
+                //    aire-select(label="Gender" data='{"label":"Schnorp", "value": "Porp"}')
+                //aire-card(default padding hover title="Henlo Baloo")
+                //    p I loff you a lot
 
