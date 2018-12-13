@@ -57,6 +57,7 @@ SystemJS.config({
     "aurelia-polyfills": "npm:aurelia-polyfills@1.3.0",
     "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.3.1",
     "aurelia-router": "npm:aurelia-router@1.6.3",
+    "aurelia-router-loader": "npm:aurelia-router-loader@1.0.6",
     "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
     "aurelia-templating": "npm:aurelia-templating@1.10.1",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.5.2",

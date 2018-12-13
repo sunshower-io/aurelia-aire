@@ -78,9 +78,11 @@ const resolveHelp = component => {
         console.log("Generating help file:" + f.helpfile);
         gulp.src(f.helpfile).pipe(markdown()).pipe(gulp.dest(`dist/${f.dir}`));
     }
-
-
 };
+
+
+
+
 
 const generateComponent = async component => {
     let path = component.path,
@@ -89,8 +91,35 @@ const generateComponent = async component => {
     resolveHelp(component);
 };
 
+
+const toRouteElement = component => {
+    return component.data.map(t => {
+        return {
+            route: component.rawdir,
+            name: t.component.name
+        }
+    });
+
+    // return {
+    //     route: component.rawdir,
+    //     name: component.data.name
+    // };
+};
+
+const generateNav = (components) => {
+    try {
+        fs.unlinkSync("src/route/components.json");
+    } catch(e) {
+        console.log("route file: components.json not found.  Generating a new one...");
+    }
+    fs.writeFileSync("src/route/components.json", JSON.stringify(
+        components.map(t => toRouteElement(t)).reduce((acc, val) => acc.concat(val))
+    ));
+};
+
 const generateData = async done => {
     let components = listComponents();
+    generateNav(components);
     for(let component of components) {
         await generateComponent(component);
     }
