@@ -1,12 +1,17 @@
-import {containerless, customElement} from "aurelia-framework";
+import {inject, containerless, customElement} from "aurelia-framework";
+import {dom}                                      from "aire/core";
 
-@containerless
+@inject(Element)
 @customElement('navbar-section')
 export class AireNavbarSection {
 
 
-  attached() {
-    console.log("Coolbeans");
+
+  constructor(el:Element) {
+    dom.decorate(el, "left", "uk-navbar-left");
+    dom.decorate(el, "right", "uk-navbar-right");
+    dom.decorate(el, "center", "uk-navbar-center");
   }
+
 
 }
