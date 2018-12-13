@@ -14,6 +14,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/form/textarea',
     'aire/form/radio',
     'aire/form/checkbox',
-    'aire/form/range'
+    'aire/form/range',
+    'aire/button/button'
   ]);
 }
