@@ -1,0 +1,32 @@
+[
+  {
+    "component": {
+      "name": "checkbox"
+    }
+  },
+  {
+    "component": {
+      "name": "input"
+    }
+  },
+  {
+    "component": {
+      "name": "radio"
+    }
+  },
+  {
+    "component": {
+      "name": "range"
+    }
+  },
+  {
+    "component": {
+      "name": "select"
+    }
+  },
+  {
+    "component": {
+      "name": "textarea"
+    }
+  }
+]
