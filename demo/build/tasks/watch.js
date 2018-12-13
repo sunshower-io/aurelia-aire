@@ -6,9 +6,9 @@ const
 
 
 const watch = (done) => {
-    gulp.watch(paths.pug, gulp.series('build-pug', 'reload'))
-
+    gulp.watch(paths.pug, gulp.series('build:pug', 'reload'))
     gulp.watch(paths.typescript, gulp.series('build', 'reload'));
+    gulp.watch(paths.assets, gulp.series('copy:assets', 'reload'));
 };
 
 //**================================================================================

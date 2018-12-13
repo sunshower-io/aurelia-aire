@@ -1,9 +1,11 @@
-import {inject, containerless, customElement} from "aurelia-framework";
-import {dom}                                      from "aire/core";
+import {children, inject, containerless, customElement} from "aurelia-framework";
+import {dom}                                  from "aire/core";
+import {AireNavbarItem}                       from "aire/navbar/item";
 
 @inject(Element)
 @customElement('navbar-section')
 export class AireNavbarSection {
+
 
 
 
