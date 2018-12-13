@@ -6,6 +6,15 @@ const gulp = require('gulp'),
     project = typescript.createProject('tsconfig.json');
 
 
+//================================================================================
+// copy assets
+//================================================================================
+
+
+const copyAssets = (done) => {
+    return gulp.src(paths.assets)
+        .pipe(gulp.dest(paths.dest));
+};
 
 
 //================================================================================
@@ -43,8 +52,9 @@ const buildPug = () => {
 
 
 
-gulp.task('build-pug', buildPug);
-gulp.task('build', gulp.parallel('build-pug', build));
+gulp.task('build:pug', buildPug);
+gulp.task('copy:assets', copyAssets);
+gulp.task('build', gulp.parallel('build:pug', 'copy:assets', build));
 
 
 module.exports = build;
