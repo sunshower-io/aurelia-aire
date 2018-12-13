@@ -21,9 +21,6 @@ export class AireFormElement {
     @bindable
     disabled    : string;
 
-    @bindable
-    options     : {label: string, value: string}[];
-
     constructor(private element: Element) {
     }
 
@@ -35,7 +32,5 @@ export class AireFormElement {
         dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
         this.label = this.element.getAttribute("label");
         this.disabled = this.element.getAttribute("disabled");
-        let data = JSON.parse(this.element.getAttribute("data"));
-        this.options = Array.isArray(data) ? data : [data]; //catches single instance non-iterable
     }
 }
