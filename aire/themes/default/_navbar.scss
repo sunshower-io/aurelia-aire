@@ -1,0 +1,20 @@
+@import "variables";
+@import "utilities";
+
+$navbar-background: $primary;
+$navbar-item-color: white;
+$navbar-nav-item-active-color: $primary-inverse;
+$logo-color: $white;
+
+.uk-navbar-item {
+  &.large {
+    width: 5em;
+  }
+  &.medium {
+    width:2.5em;
+  }
+  &.small {
+    width:1em;
+  }
+}
+

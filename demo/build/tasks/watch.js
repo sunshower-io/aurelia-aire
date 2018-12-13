@@ -1,0 +1,23 @@
+const
+    build = require('./build.js'),
+    gulp = require('gulp'),
+    paths = require('@build/paths.js'),
+    serve = require('./serve.js');
+
+
+const watch = (done) => {
+    gulp.watch(paths.pug, gulp.series('build:pug', 'reload'))
+    gulp.watch(paths.typescript, gulp.series('build', 'reload'));
+    gulp.watch(paths.assets, gulp.series('copy:assets', 'reload'));
+};
+
+//**================================================================================
+// Task watch
+//================================================================================
+
+gulp.task('watch', gulp.parallel(watch, 'serve'));
+
+
+
+
+
