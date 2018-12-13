@@ -1,42 +1,30 @@
-import {bindable, containerless, customElement, inject}      from "aurelia-framework";
+import {bindable, customElement, inject}      from "aurelia-framework";
+import {dom}    from "aire/core";
 
 @inject(Element)
-@containerless
 @customElement('aire-card')
 export class AireCard {
 
   @bindable
-  cardstyle  : string = "";
-
-  @bindable
-  cardhover     : string = "";
-
-  @bindable
-  cardpadding   : string = "";
+  card        : HTMLElement;
 
   @bindable
   title     : string = "";
 
-  constructor(public element: Element) {
-      //todo handle .bind situations
-    if (element.hasAttribute("modifier")) {
-      let tempStyle = element.getAttribute("modifier");
-      if (tempStyle == 'default' || tempStyle == 'primary' || tempStyle == 'secondary') {
-          this.cardstyle = "uk-card-" + tempStyle;
-      }
-    }
-    this.cardhover = element.hasAttribute("hover") ? "uk-card-hover" : "";
+  constructor(private element: Element) {
 
-    if (element.hasAttribute("padding")) {
-        this.cardpadding = 'uk-card-body';
-        //TODO handle uk-card-small and uk-card-large
-    }
-
-    this.title = element.hasAttribute("title") ? element.getAttribute("title") : "";
-
-    //TODO come back to handle header & footer
   }
-  attached() {
 
+  attached() {
+      dom.decorateTo(this.element, this.card, "default", "uk-card-default");
+      dom.decorateTo(this.element, this.card, "primary", "uk-card-primary");
+      dom.decorateTo(this.element, this.card, "secondary", "uk-card-secondary");
+      dom.decorateTo(this.element, this.card, "hover", "uk-card-hover");
+      dom.decorateTo(this.element, this.card, "padding", "uk-card-body");
+      //TODO handle uk-card-small and uk-card-large
+
+      this.title = this.element.getAttribute("title");
+
+      //TODO come back to handle header & footer
   }
 }
