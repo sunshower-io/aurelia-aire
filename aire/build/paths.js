@@ -5,7 +5,8 @@ const paths = {
     metadata: ['package.json'],
     styles: ['themes/aire.scss'],
     allStyles: 'themes/**/*.scss',
-    output: 'dist'
+    output: 'dist',
+    components: ['src/**/components.json', 'src/**/*.md']
 };
 
 

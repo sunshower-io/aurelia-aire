@@ -1,6 +1,6 @@
 
 const paths = {
-    assets: 'assets/**/*',
+    assets: ['assets/**/*', 'src/**/*.json'],
     typescript: 'src/**/*.ts',
     pug: ['src/**/*.pug'],
     dest: 'dist'

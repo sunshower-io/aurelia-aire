@@ -1,10 +1,16 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
+    "rootDir": "src",
+    "baseUrl": "./",
     "typeRoots": [
       "node_modules/@types",
       "typings"
-    ]
+    ],
+    "paths": {
+      "aire/*":["src/*"]
+
+    }
   },
   "files": ["typings/uikit.d.ts"],
   "include": ["src/**/*.ts", "typings/**/*.ts"],

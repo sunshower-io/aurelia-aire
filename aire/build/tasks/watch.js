@@ -6,6 +6,7 @@ const
 
 
 const watch = (done) => {
+    gulp.watch(paths.components, gulp.series('copy:components'));
     gulp.watch(paths.pug, gulp.series('build:pug', 'reload'));
     gulp.watch(paths.allStyles, gulp.series('build:sass', 'reload'));
     gulp.watch(paths.typescript, gulp.series('build', 'reload'));
