@@ -66,6 +66,7 @@ SystemJS.config({
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
     "css": "github:systemjs/plugin-css@0.1.37",
+    "dist": "local:dist@master",
     "font-awesome": "npm:font-awesome@4.7.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.1",
     "path": "npm:jspm-nodelibs-path@0.2.3",
