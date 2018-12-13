@@ -5,9 +5,11 @@ export class AireFormElement {
 
     input       : HTMLElement;
     container   : HTMLElement;
-
     @bindable
     label       : string;
+
+    @bindable
+    value       : any;
 
     @bindable
     minimal     : string;
@@ -31,6 +33,7 @@ export class AireFormElement {
         dom.decorate(this.container, "error", "uk-form-error");
         dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
         this.label = this.element.getAttribute("label");
+        this.value = this.element.getAttribute("value");
         this.disabled = this.element.getAttribute("disabled");
     }
 }

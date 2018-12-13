@@ -10,6 +10,9 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/offcanvas/offcanvas',
     'aire/card/card',
     'aire/form/input',
-    'aire/form/select'
+    'aire/form/select',
+    'aire/form/textarea',
+    'aire/form/radio',
+    'aire/form/checkbox'
   ]);
 }

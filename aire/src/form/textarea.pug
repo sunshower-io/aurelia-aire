@@ -1,5 +1,4 @@
 template(ref="container")
-    .uk-form-label(if.bind="label") ${label}
-    .uk-form-controls(class="${icon ? 'uk-inline' : ''}")
-        //TODO support default uikit icons
+    label.uk-form-label(if.bind="label") ${label}
+    .uk-form-controls
         textarea.uk-textarea(ref="input" disabled="${disabled}")
