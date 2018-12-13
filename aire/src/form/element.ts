@@ -35,6 +35,7 @@ export class AireFormElement {
         dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
         this.label = this.element.getAttribute("label");
         this.disabled = this.element.getAttribute("disabled");
-        // this.options = JSON.parse(this.element.getAttribute("options"));
+        let data = JSON.parse(this.element.getAttribute("data"));
+        this.options = Array.isArray(data) ? data : [data]; //catches single instance non-iterable
     }
 }
