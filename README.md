@@ -12,11 +12,12 @@ Built with UIKit (https://github.com/uikit/uikit) and Aurelia (https://github.co
 With ruby and ruby-dev installed, `bundle install` and `bundle exec middleman server`
 
 ## Running the demo
-`cd aire`
-`npm install && jspm install -y`
-`gulp build watch`
-In another terminal
-`cd demo`
-`npm install && jspm install -y`
-`jspm link ../aire/dist`
-`gulp build watch`
+- In one terminal window:
+- `cd aire`
+- `npm install && jspm install -y`
+- `gulp build watch`
+- In another terminal window:
+- `cd demo`
+- `npm install && jspm install -y`
+- `jspm link ../aire/dist`
+- `gulp build watch`
