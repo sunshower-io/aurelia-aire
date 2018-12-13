@@ -65,6 +65,7 @@ SystemJS.config({
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
     "css": "github:systemjs/plugin-css@0.1.37",
+    "font-awesome": "npm:font-awesome@4.7.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.1",
     "path": "npm:jspm-nodelibs-path@0.2.3",
     "process": "npm:jspm-nodelibs-process@0.2.1",
@@ -98,6 +99,11 @@ SystemJS.config({
       "map": {
         "ieee754": "npm:ieee754@1.1.12",
         "base64-js": "npm:base64-js@1.3.0"
+      }
+    },
+    "npm:font-awesome@4.7.0": {
+      "map": {
+        "css": "github:systemjs/plugin-css@0.1.37"
       }
     }
   }

@@ -18,6 +18,8 @@ export class AireFab {
     this.style = ["top", "right", "bottom", "left"].map(function(edge) {
         return `${edge}: ${element.getAttribute(edge) || "auto"}`;
     }).join('; ');
+
+    this.icon = element.getAttribute("icon");
   }
 
   attached() {

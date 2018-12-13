@@ -6,7 +6,7 @@ import {dom}    from "aire/core";
 export class AireButton {
 
   @bindable
-  text     : string = "";
+  label     : string = "";
 
   @bindable
   button    : HTMLElement;
@@ -27,5 +27,6 @@ export class AireButton {
       dom.decorateTo(this.element, this.button, "link", "uk-button-link");
       dom.decorateTo(this.element, this.button, "full", "uk-width-1-1");
       this.disabled = this.element.getAttribute("disabled");
+      this.label = this.element.getAttribute("label");
   }
 }
