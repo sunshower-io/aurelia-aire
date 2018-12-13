@@ -1,0 +1,12 @@
+$fab-height: 50px;
+
+.aire-fab {
+  border-radius: 50%;
+  width: $fab-height;
+  height: $fab-height;
+  line-height: $fab-height;
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  //todo pull into variable
+}
