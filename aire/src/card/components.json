@@ -1,10 +1,7 @@
 [
   {
     "component": {
-      "name": "aire-card"
-    },
-    "help": {
-      "file": "card-help.md"
+      "name": "card"
     }
   }
 ]

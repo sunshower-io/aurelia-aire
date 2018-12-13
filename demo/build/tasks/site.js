@@ -11,6 +11,8 @@ const pkg = require('@root/package.json'),
 //================================================================================
 
 
+const file = source => fs.lstatSync(source).isFile();
+
 const dir = source => fs.lstatSync(source).isDirectory();
 
 //================================================================================
@@ -44,6 +46,14 @@ const locatePackage = name => {
 //================================================================================
 
 
+const parentDir = component => {
+    let segments = component.path.split(path.sep);
+    segments.pop();
+    return segments.join(path.sep);
+};
+
+const fileName = dir => path.dirname(dir).split(path.sep).pop();
+
 const listComponents = done => {
     let p = locatePackage('aire'),
         dirs = ls(p, dir),
@@ -51,7 +61,7 @@ const listComponents = done => {
         componentFiles = componentDirs.map(t => `${t}/components.json`),
         components = componentFiles.map(t => {
             return {
-                rawdir: path.dirname(t).split(path.sep).pop(),
+                rawdir: fileName(t),
                 path: t,
                 data: JSON.parse(fs.readFileSync(t))
             }
@@ -63,45 +73,66 @@ const verifyHelpFile = (f) => {
 
 };
 
-const resolveHelp = component => {
-    let p = component.path,
-        data = component.data,
-        files = data.map(c => {
-            return {
-                dir: component.rawdir,
-                helpfile: `${path.dirname(p)}/${c.help.file}`
-            }
-        });
 
-    for(let f of files) {
-        verifyHelpFile(f);
-        console.log("Generating help file:" + f.helpfile);
-        gulp.src(f.helpfile).pipe(markdown()).pipe(gulp.dest(`dist/${f.dir}`));
+const constructHelp = (component, locales) => {
+    let components = component.data;
+
+    for(let locale of locales) {
+        for(let c of components) {
+            let files = ls(path.resolve(locale, c.component.name), file);
+            c.component.files = files;
+        }
     }
+    return component;
+};
+
+const resolveLocales = component => {
+    try {
+        let p = parentDir(component),
+            helpDir = path.resolve(p, 'help'),
+            dirs = ls(helpDir, dir);
+        return constructHelp(component, dirs);
+    } catch(e) {
+        console.log("No help directory found for component: " + component.rawdir);
+    }
+};
+
+const resolveHelp = component => {
+    resolveLocales(component);
+    let data = component.data,
+        descriptor = [];
+    for(let f of data) {
+        let name = f.component.name,
+            files = f.component.files;
+        if(files) {
+            gulp.src(files).pipe(markdown()).pipe(gulp.dest(`dist/${name}/help/en`));
+            descriptor.push({
+                name: name,
+                locale: 'en',
+                files: files.map(t => t.split(path.sep).pop())
+            });
+        }
+    }
+    fs.writeFileSync(`dist/${component.rawdir}/help.json`, JSON.stringify(descriptor, null, 2));
 };
 
 
 
-
-
 const generateComponent = async component => {
-    let path = component.path,
-        data = component.data;
-
-    resolveHelp(component);
     copyComponent(component);
+    resolveHelp(component);
 };
 
 
 const copyComponent = component => {
     gulp.src(['dist/lib/*.*']).pipe(gulp.dest(`dist/${component.rawdir}`))
-
 };
 
 
 const toRouteElement = component => {
     return component.data.map(t => {
         return {
+            title: t.component.name,
             nav: true,
             route: component.rawdir,
             name: t.component.name,

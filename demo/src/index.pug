@@ -9,8 +9,36 @@ template
             navbar-section(center)
         aire-body
             aire-offcanvas
+                aire-nav(router.bind="router")
+                //ul.uk-nav.uk-nav-default
+                //    li.uk-active
+                //        a(href="#") Active
+                //    li.uk-parent
+                //        a(href="#") Parent
+                //        ul.uk-nav-sub
+                //            li
+                //                a(href="#") Sub item
+                //            li
+                //                a(href="#") Sub item
+                //    li.uk-nav-header Header
+                //    li
+                //        a(href="#")
+                //            span.uk-margin-small-right(uk-icon="icon: table")
+                //            |  Item
+                //    li
+                //        a(href="#")
+                //            span.uk-margin-small-right(uk-icon="icon: thumbnails")
+                //            |  Item
+                //    li.uk-nav-divider
+                //    li
+                //        a(href="#")
+                //            span.uk-margin-small-right(uk-icon="icon: trash")
+                //            |  Item
 
-                navbar-item(repeat.for="nav of router.navigation")
+
+
+
+                    navbar-item(repeat.for="nav of router.navigation") ${nav.name}
             router-view
 
                 //form
