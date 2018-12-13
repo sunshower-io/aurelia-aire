@@ -13,6 +13,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/form/select',
     'aire/form/textarea',
     'aire/form/radio',
-    'aire/form/checkbox'
+    'aire/form/checkbox',
+    'aire/form/range'
   ]);
 }

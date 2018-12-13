@@ -27,10 +27,9 @@ export class AireFormElement {
     }
 
     attached() {
-        //todo handle .bind situations
         dom.decorate(this.container, "horizontal", "uk-form-horizontal");
-        dom.decorate(this.container, "success", "uk-form-success");
-        dom.decorate(this.container, "error", "uk-form-error");
+        dom.decorateTo(this.element, this.input, "success", "uk-form-success");
+        dom.decorateTo(this.element, this.input, "error", "uk-form-error");
         dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
         this.label = this.element.getAttribute("label");
         this.value = this.element.getAttribute("value");
