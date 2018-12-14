@@ -9,6 +9,6 @@ export class Offcanvas {
 
   }
   attached() {
-    UIkit.offcanvas(this.element).show();
+    // UIkit.offcanvas(this.element).show();
   }
 }

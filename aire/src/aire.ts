@@ -19,6 +19,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/form/checkbox',
     'aire/form/range',
     'aire/button/button',
-    'aire/fab/fab'
+    'aire/fab/fab',
+    'aire/html/panel'
   ]);
 }
