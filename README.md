@@ -16,11 +16,13 @@ This assumes that you're already in the `aurelia-aire` directory and have `npm`,
 
 In one terminal window:
 - `cd aire`
-- `npm install && jspm install -y`
+- `npm install`
+- `jspm install -y`
 - `gulp build watch`
 
 In another terminal window:
 - `cd demo`
-- `npm install && jspm install -y`
+- `npm install`
 - `jspm link ../aire/dist`
+- `jspm install -y`
 - `gulp build watch`
