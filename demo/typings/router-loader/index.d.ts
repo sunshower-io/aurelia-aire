@@ -9,3 +9,9 @@ declare module "aurelia-router-loader" {
     defineRoutes(routes:string[]);
   }
 }
+
+
+declare module "*.json!text" {
+
+
+}
