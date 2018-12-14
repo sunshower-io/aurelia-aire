@@ -20,22 +20,7 @@ SystemJS.config({
     "aire": {
       "main": "index.js",
       "defaultExtension": "js"
-    },
-    "aurelia-aire": {
-      "defaultExtension": "js"
-    },
-    "local:aire@1.0.0": {
-      "map": {
-        "aurelia-aire": "npm:aurelia-aire@1.0.0",
-        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-        "text": "github:systemjs/plugin-text@0.0.11",
-        "aire": "local:aire@1.0.0"
-      }
     }
-  },
-  map: {
-    "aire": "local:aire@1.0.0",
-    "aurelia-aire": "npm:aurelia-aire@1.0.0"
   }
 });
 
@@ -43,14 +28,14 @@ SystemJS.config({
   packageConfigPaths: [
     "npm:@*/*.json",
     "npm:*.json",
-    "github:*/*.json",
-    "local:*.json"
+    "github:*/*.json"
   ],
   map: {
     "aurelia-binding": "npm:aurelia-binding@2.1.7",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
     "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
+    "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
     "aurelia-framework": "npm:aurelia-framework@1.3.0",
     "aurelia-history": "npm:aurelia-history@1.1.0",
     "aurelia-history-browser": "npm:aurelia-history-browser@1.2.0",
@@ -84,6 +69,11 @@ SystemJS.config({
         "aurelia-logging": "npm:aurelia-logging@1.5.0",
         "aurelia-pal": "npm:aurelia-pal@1.8.0",
         "aurelia-metadata": "npm:aurelia-metadata@1.0.4"
+      }
+    },
+    "npm:aurelia-fetch-client@1.7.0": {
+      "map": {
+        "aurelia-pal": "npm:aurelia-pal@1.8.0"
       }
     }
   }

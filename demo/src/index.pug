@@ -11,25 +11,27 @@ template
             aire-offcanvas
                 aire-nav(router.bind="router")
             router-view
-    form
-        aire-input(type="password" horizontal disabled label="Password")
-        aire-input(type="number" success label="Great Success")
-        aire-select(label="Gender" data='{"label":"Schnorp", "value": "Porp"}')
-        aire-textarea(label="Love Letter To Wab")
-
-        .uk-margin
-            aire-radio(label="One Option" value="florb" horizontal)
-        .uk-margin
-            aire-checkbox(label="Many Options" value="florb" disabled)
-            aire-checkbox(label="Too Many Options" value="glorb" checked)
-        aire-range(label="A Range")
-
-        aire-button(label="Success" primary full)
-        aire-button(label="Cancel" danger)
-        aire-button(label="Disabled" default disabled)
-
-    aire-basic-card(default padding hover title="Henlo Baloo")
-        p I loff you a lot
-
-
+            aire-widget-panel
+            aire-card(title="coolbeans")
+    //form
+    //    aire-input(type="password" horizontal disabled label="Password")
+    //    aire-input(type="number" success label="Great Success")
+    //    aire-select(label="Gender" data='{"label":"Schnorp", "value": "Porp"}')
+    //    aire-textarea(label="Love Letter To Wab")
+    //
+    //    .uk-margin
+    //        aire-radio(label="One Option" value="florb" horizontal)
+    //    .uk-margin
+    //        aire-checkbox(label="Many Options" value="florb" disabled)
+    //        aire-checkbox(label="Too Many Options" value="glorb" checked)
+    //    aire-range(label="A Range")
+    //
+    //    aire-button(label="Success" primary full)
+    //    aire-button(label="Cancel" danger)
+    //    aire-button(label="Disabled" default disabled)
+    //
+    //aire-card(default padding hover title="Henlo Baloo")
+    //    p I loff you a lot
+    ////
+    //
     aire-fab(icon="fa fa-pencil" right="20px" bottom="20px" primary)

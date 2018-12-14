@@ -29,16 +29,17 @@ const ls = (d, f) => fs.readdirSync(d).map(name => join(d, name)).filter(f);
 
 
 const locatePackage = name => {
-
+    console.info(`Resolving package: ${name}`);
     let jspm = pkg.jspm,
         dev = false,
         dep = jspm.dependencies,
         devdep = jspm.devDependencies,
         deps = dev ? devdep : dep,
         actualDependency = deps[name],
-        directory = actualDependency.split(':').join(path.sep);
-
-    return `jspm_packages/${directory}`;
+        directory = actualDependency.split(':').join(path.sep),
+        result = `jspm_packages/${directory}`;
+    console.info(`Successfully resolved package: ${name} at ${result}`);
+    return result;
 };
 
 //================================================================================
@@ -56,15 +57,20 @@ const parentDir = component => {
 const fileName = dir => path.dirname(dir).split(path.sep).pop();
 
 const listComponents = done => {
+    console.info("Beginning Aire Site Generation");
+    console.info("Resolving components...");
     let p = locatePackage('aire'),
         dirs = ls(p, dir),
         componentDirs = dirs.filter(t => fs.existsSync(`${t}/components.json`)),
         componentFiles = componentDirs.map(t => `${t}/components.json`),
         components = componentFiles.map(t => {
+            let componentStream = fs.readFileSync(t),
+                component = JSON.parse(componentStream);
             return {
                 rawdir: fileName(t),
                 path: t,
-                data: JSON.parse(fs.readFileSync(t))
+                data: component.components,
+                descriptor: component
             }
         });
     return components;
@@ -111,11 +117,11 @@ const doResolveHelp = (directory, name, descriptor, f, directories) => {
         exs = directory.example,
         mdfiles = files && files.map(t => path.resolve(directory.root, t)),
         examples = exs && exs.map(t => path.resolve(directory.root, t));
-    if(mdfiles) {
+    if(mdfiles && mdfiles.length) {
         gulp.src(mdfiles).pipe(markdown()).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}`));
     }
 
-    if(examples) {
+    if(examples && examples.length) {
         gulp.src(examples).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}/ex`));
     }
 
@@ -123,12 +129,12 @@ const doResolveHelp = (directory, name, descriptor, f, directories) => {
     descriptor.push({
         name: name,
         locale: 'en',
-        description: f.component.description,
         keywords: f.component.keywords,
         "widget-name": f.component["widget-name"],
-        directories: directories.map(t => {delete t.root; return t;}),
+        directories: directories.map(t => {delete root; return t;}),
     });
 };
+
 
 const resolveHelp = component => {
     resolveLocales(component);
@@ -139,9 +145,8 @@ const resolveHelp = component => {
             directories = f.component.directories;
         if(directories) {
             for(let directory of directories) {
-                if(directory.root) {
-                    doResolveHelp(directory, name, descriptor, f, directories);
-                }
+                doResolveHelp(directory, name, descriptor, f, directories);
+                delete directory.root;
             }
         }
     }
@@ -149,7 +154,12 @@ const resolveHelp = component => {
     if(!fs.existsSync(targetdir)) {
         fs.mkdirSync(targetdir);
     }
-    fs.writeFileSync(`dist/${component.rawdir}/help.json`, JSON.stringify(descriptor, null, 2));
+    let complete = {
+        title: component.descriptor.title,
+        description: component.descriptor.description,
+        components: descriptor
+    };
+    fs.writeFileSync(`dist/${component.rawdir}/help.json`, JSON.stringify(complete, null, 2));
 };
 
 
