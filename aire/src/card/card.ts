@@ -3,11 +3,10 @@ import {dom}    from "aire/core";
 
 export class AireCard {
 
-  @bindable
   card        : HTMLElement;
 
   @bindable
-  title     : string = "";
+  title     : string;
 
   constructor(public element: Element) {
 
@@ -20,7 +19,5 @@ export class AireCard {
       dom.decorateTo(this.element, this.card, "hover", "uk-card-hover");
       dom.decorateTo(this.element, this.card, "padding", "uk-card-body");
       //TODO handle uk-card-small and uk-card-large
-
-      this.title = this.element.getAttribute("title");
   }
 }

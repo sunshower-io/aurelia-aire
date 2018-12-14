@@ -1,10 +1,9 @@
-import {bindable, customElement, inject}      from "aurelia-framework";
+import {customElement, inject}      from "aurelia-framework";
 
 @inject(Element)
 @customElement('aire-tooltip')
 export class AireTooltip {
 
-    @bindable
     style       : string;
 
   constructor(private element: Element) {

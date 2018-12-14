@@ -5,28 +5,22 @@ import {dom} from "aire/core";
 @customElement('aire-table')
 export class AireTable {
 
-    @bindable
     table       : HTMLElement;
 
-    @bindable
     header      : boolean;
 
-    @bindable
     footer      : boolean;
 
     @bindable
     caption     : string;
 
-    @bindable
     columns     : {name: string, key: string}[];
 
-    @bindable
     rows        : {}[];
 
     constructor(private element: Element) {
         this.header = element.hasAttribute("header");
         this.footer = element.hasAttribute("footer");
-        this.caption = element.getAttribute("caption");
         let data = JSON.parse(element.getAttribute("data"));
         this.columns = data.columns;
         this.rows = data.rows;
