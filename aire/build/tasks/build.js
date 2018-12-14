@@ -77,7 +77,7 @@ const copyComponents = () => {
 
 
 
-gulp.task('copy:metadata', copyComponents);
+gulp.task('copy:metadata', copyMetadata);
 gulp.task('copy:components', copyComponents);
 
 

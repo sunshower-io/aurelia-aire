@@ -18,8 +18,6 @@ export class DocPage {
     let s = `/dist/${component.name}/help/en/${directory.directory}/${this.filename(hfile)}.html`
     console.log(s);
     return s;
-
-    //           let a = await client.fetch(`/dist/${this.name}/help/en/${dir.directory}/${this.filename(h)}.html`)
   }
 
   async attached() {
@@ -30,22 +28,6 @@ export class DocPage {
       this.description = descriptor.description;
       this.components = descriptor.components;
     }
-
-    // if(descriptors && descriptors.length) {
-    //   this.name = descriptors[0].name;
-    //   for(let d of descriptors) {
-    //     let dirs = d.directories;
-    //     if(dirs) {
-    //       for(let dir of dirs) {
-    //         let help = dir.help;
-    //         for(let h of help) {
-    //           let a = await client.fetch(`/dist/${this.name}/help/en/${dir.directory}/${this.filename(h)}.html`)
-    //           console.log(a);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
   }
 
   filename(s:string) : string {

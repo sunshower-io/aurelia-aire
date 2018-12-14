@@ -15,11 +15,12 @@ export class AireWidgetPanel {
 
   attached() {
     let div = document.createElement('div');
-    div.innerHTML = '<aire-fab></aire-fab>';
+    div.innerHTML = '<aire-card default padding hover title="hello world"></aire-card>';
     this.engine.enhance({
       element: div,
       bindingContext:{}
     });
+    this.element.appendChild(div);
 
   }
 }

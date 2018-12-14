@@ -29,15 +29,17 @@ const ls = (d, f) => fs.readdirSync(d).map(name => join(d, name)).filter(f);
 
 
 const locatePackage = name => {
+    console.info(`Resolving package: ${name}`);
     let jspm = pkg.jspm,
         dev = false,
         dep = jspm.dependencies,
         devdep = jspm.devDependencies,
         deps = dev ? devdep : dep,
         actualDependency = deps[name],
-        directory = actualDependency.split(':').join(path.sep);
-
-    return `jspm_packages/${directory}`;
+        directory = actualDependency.split(':').join(path.sep),
+        result = `jspm_packages/${directory}`;
+    console.info(`Successfully resolved package: ${name} at ${result}`);
+    return result;
 };
 
 //================================================================================
@@ -55,6 +57,8 @@ const parentDir = component => {
 const fileName = dir => path.dirname(dir).split(path.sep).pop();
 
 const listComponents = done => {
+    console.info("Beginning Aire Site Generation");
+    console.info("Resolving components...");
     let p = locatePackage('aire'),
         dirs = ls(p, dir),
         componentDirs = dirs.filter(t => fs.existsSync(`${t}/components.json`)),
@@ -130,6 +134,7 @@ const doResolveHelp = (directory, name, descriptor, f, directories) => {
         directories: directories.map(t => {delete root; return t;}),
     });
 };
+
 
 const resolveHelp = component => {
     resolveLocales(component);

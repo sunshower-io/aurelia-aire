@@ -67,7 +67,6 @@ SystemJS.config({
     "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
     "css": "github:systemjs/plugin-css@0.1.37",
-    "dist": "local:dist@master",
     "font-awesome": "npm:font-awesome@4.7.0",
     "fs": "npm:jspm-nodelibs-fs@0.2.1",
     "path": "npm:jspm-nodelibs-path@0.2.3",
@@ -77,14 +76,6 @@ SystemJS.config({
     "vm": "npm:jspm-nodelibs-vm@0.2.1"
   },
   packages: {
-    "local:aire@1.0.0": {
-      "map": {
-        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-        "uikit": "npm:uikit@3.0.0-rc.25",
-        "text": "github:systemjs/plugin-text@0.0.11",
-        "aire": "local:aire@1.0.0"
-      }
-    },
     "npm:aurelia-binding@2.1.7": {
       "map": {
         "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
@@ -112,6 +103,14 @@ SystemJS.config({
     "npm:aurelia-fetch-client@1.7.0": {
       "map": {
         "aurelia-pal": "npm:aurelia-pal@1.8.0"
+      }
+    },
+    "local:aire@1.0.0": {
+      "map": {
+        "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
+        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+        "uikit": "npm:uikit@3.0.0-rc.25",
+        "text": "github:systemjs/plugin-text@0.0.11"
       }
     }
   }
