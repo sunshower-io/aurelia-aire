@@ -8,6 +8,9 @@ export class AireButton {
   @bindable
   label     : string;
 
+  @bindable
+  icon      : string;
+
   button    : HTMLElement;
 
   @bindable

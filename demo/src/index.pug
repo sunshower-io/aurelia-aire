@@ -2,11 +2,13 @@ template
     aire-application
         aire-header(primary)
             navbar-section(left)
-                navbar-item(icon="dist/icons/logo.svg" large logo)
-                navbar-item(logo).pull-left Aurelia-UIKit
-
-            navbar-section(right)
+                navbar-item
+                    aire-button(icon="fa fa-bars")
             navbar-section(center)
+                navbar-item(icon="dist/icons/logo.svg" large logo)
+                navbar-item(logo) Aurelia-UIKit
+
+            //navbar-section(right)
         aire-body
             aire-offcanvas
                 aire-nav(router.bind="router")
