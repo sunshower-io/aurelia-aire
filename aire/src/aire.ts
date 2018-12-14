@@ -14,6 +14,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/form/input',
     'aire/form/select',
     'aire/nav/nav',
+    'aire/page/page',
     'aire/form/textarea',
     'aire/form/radio',
     'aire/form/checkbox',

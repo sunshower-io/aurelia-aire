@@ -52,6 +52,7 @@ const parentDir = component => {
     return segments.join(path.sep);
 };
 
+
 const fileName = dir => path.dirname(dir).split(path.sep).pop();
 
 const listComponents = done => {
@@ -69,18 +70,24 @@ const listComponents = done => {
     return components;
 };
 
-const verifyHelpFile = (f) => {
 
-};
-
+const nameOf = f => f.split(path.sep).pop();
 
 const constructHelp = (component, locales) => {
     let components = component.data;
 
     for(let locale of locales) {
         for(let c of components) {
-            let files = ls(path.resolve(locale, c.component.name), file);
-            c.component.files = files;
+            let directories = ls(path.resolve(locale, c.component.name), dir),
+                files = directories.map(t => {
+                    return {
+                        root: t,
+                        directory: nameOf(t),
+                        help: ls(t, file).map(t => nameOf(t)),
+                        example: ls(t, (u) => file(u) && u.endsWith('.html') || u.endsWith(".js")).map(t => nameOf(t))
+                    }
+                });
+            c.component.directories = files;
         }
     }
     return component;
@@ -97,21 +104,50 @@ const resolveLocales = component => {
     }
 };
 
+
+
+const doResolveHelp = (directory, name, descriptor, f, directories) => {
+    let files = directory.help,
+        exs = directory.example,
+        mdfiles = files && files.map(t => path.resolve(directory.root, t)),
+        examples = exs && exs.map(t => path.resolve(directory.root, t));
+    if(mdfiles) {
+        gulp.src(mdfiles).pipe(markdown()).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}`));
+    }
+
+    if(examples) {
+        gulp.src(examples).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}/ex`));
+    }
+
+
+    descriptor.push({
+        name: name,
+        locale: 'en',
+        description: f.component.description,
+        keywords: f.component.keywords,
+        "widget-name": f.component["widget-name"],
+        directories: directories.map(t => {delete t.root; return t;}),
+    });
+};
+
 const resolveHelp = component => {
     resolveLocales(component);
     let data = component.data,
         descriptor = [];
     for(let f of data) {
         let name = f.component.name,
-            files = f.component.files;
-        if(files) {
-            gulp.src(files).pipe(markdown()).pipe(gulp.dest(`dist/${name}/help/en`));
-            descriptor.push({
-                name: name,
-                locale: 'en',
-                files: files.map(t => t.split(path.sep).pop())
-            });
+            directories = f.component.directories;
+        if(directories) {
+            for(let directory of directories) {
+                if(directory.root) {
+                    doResolveHelp(directory, name, descriptor, f, directories);
+                }
+            }
         }
+    }
+    let targetdir = `dist/${component.rawdir}`;
+    if(!fs.existsSync(targetdir)) {
+        fs.mkdirSync(targetdir);
     }
     fs.writeFileSync(`dist/${component.rawdir}/help.json`, JSON.stringify(descriptor, null, 2));
 };
@@ -134,9 +170,12 @@ const toRouteElement = component => {
         return {
             title: t.component.name,
             nav: true,
-            route: component.rawdir,
+            settings: {
+                category: t.component.category
+            },
+            route:  component.rawdir,
             name: t.component.name,
-            moduleId: `aire-demo/${component.rawdir}/doc-page.html`
+            moduleId: `aire-demo/${component.rawdir}/doc-page`
         }
     });
 };

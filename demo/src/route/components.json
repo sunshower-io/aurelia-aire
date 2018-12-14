@@ -1,0 +1,28 @@
+[
+  {
+    "title": "aire-application",
+    "nav": true,
+    "settings": {},
+    "route": "application",
+    "name": "aire-application",
+    "moduleId": "aire-demo/application/doc-page"
+  },
+  {
+    "title": "card",
+    "nav": true,
+    "settings": {
+      "category": "whatever"
+    },
+    "route": "card",
+    "name": "card",
+    "moduleId": "aire-demo/card/doc-page"
+  },
+  {
+    "title": "aire-fab",
+    "nav": true,
+    "settings": {},
+    "route": "fab",
+    "name": "aire-fab",
+    "moduleId": "aire-demo/fab/doc-page"
+  }
+]
