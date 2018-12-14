@@ -12,7 +12,8 @@ Built with UIKit (https://github.com/uikit/uikit) and Aurelia (https://github.co
 With ruby and ruby-dev installed, `bundle install` and `bundle exec middleman server`
 
 ## Running the demo
-This assumes that you're already in the `aurelia-aire` directory.
+This assumes that you're already in the `aurelia-aire` directory and have `npm`, `jspm` and `gulp-cli` installed.
+
 In one terminal window:
 - `cd aire`
 - `npm install && jspm install -y`

@@ -1,10 +1,14 @@
-[
-  {
-    "component": {
-      "name": "card",
-      "description": "Simple Card Widget",
-      "widget-name": "aire-card",
-      "category": "whatever"
+{
+  "title": "Aire Card",
+  "description": "Aire Card Component",
+  "components": [
+    {
+      "component": {
+        "name": "card",
+        "description": "Simple Card Widget",
+        "widget-name": "aire-card",
+        "category": "whatever"
+      }
     }
-  }
-]
+  ]
+}
