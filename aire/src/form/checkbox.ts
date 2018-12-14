@@ -5,7 +5,6 @@ import {AireFormElement} from "./element";
 @customElement('aire-checkbox')
 export class AireCheckbox extends AireFormElement {
 
-    @bindable
     selected    : boolean;
 
     constructor(element: Element) {

@@ -9,7 +9,8 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/application/header',
     'aire/application/body',
     'aire/offcanvas/offcanvas',
-    'aire/card/card',
+    'aire/card/basiccard',
+    'aire/card/dividedcard',
     'aire/form/input',
     'aire/form/select',
     'aire/nav/nav',
@@ -21,6 +22,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/button/button',
     'aire/fab/fab',
     'aire/html/panel',
-    'aire/widget/widget-panel'
+    'aire/widget/widget-panel',
+    'aire/table/table'
   ]);
 }

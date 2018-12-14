@@ -1,4 +1,4 @@
-import {bindable, customElement, inject} from "aurelia-framework";
+import {customElement, inject} from "aurelia-framework";
 import {AireFormElement} from "./element";
 
 @inject(Element)

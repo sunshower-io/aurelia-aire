@@ -11,13 +11,10 @@ export class AireFormElement {
     @bindable
     value       : any;
 
-    @bindable
     minimal     : string;
 
-    @bindable
     error       : string;
 
-    @bindable
     success     : string;
 
     @bindable
@@ -31,8 +28,5 @@ export class AireFormElement {
         dom.decorateTo(this.element, this.input, "success", "uk-form-success");
         dom.decorateTo(this.element, this.input, "error", "uk-form-error");
         dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
-        this.label = this.element.getAttribute("label");
-        this.value = this.element.getAttribute("value");
-        this.disabled = this.element.getAttribute("disabled");
     }
 }

@@ -1,0 +1,12 @@
+template
+    table.uk-table(ref="table")
+        caption(if.bind="caption") ${caption}
+        thead(if.bind="header")
+            tr
+                th(repeat.for="column of columns") ${column.name}
+        tbody
+            tr(repeat.for="row of rows")
+                td(repeat.for="column of columns") ${row[column.key]}
+        tfoot(if.bind="footer")
+            tr
+                th(repeat.for="column of columns") ${column.name}

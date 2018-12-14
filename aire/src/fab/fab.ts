@@ -8,18 +8,14 @@ export class AireFab {
   @bindable
   icon     : string = "";
 
-  @bindable
   button    : HTMLElement;
 
-  @bindable
   style     : string = "";
 
   constructor(private element: Element) {
     this.style = ["top", "right", "bottom", "left"].map(function(edge) {
         return `${edge}: ${element.getAttribute(edge) || "auto"}`;
     }).join('; ');
-
-    this.icon = element.getAttribute("icon");
   }
 
   attached() {

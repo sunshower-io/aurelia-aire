@@ -10,6 +10,5 @@ export class AireInput extends AireFormElement {
 
     constructor(element: Element) {
         super(element);
-        this.type = element.getAttribute("type");
     }
 }
