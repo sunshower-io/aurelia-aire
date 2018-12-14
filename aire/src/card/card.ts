@@ -1,8 +1,6 @@
-import {bindable, customElement, inject}      from "aurelia-framework";
+import {bindable}      from "aurelia-framework";
 import {dom}    from "aire/core";
 
-@inject(Element)
-@customElement('aire-card')
 export class AireCard {
 
   @bindable
@@ -11,7 +9,7 @@ export class AireCard {
   @bindable
   title     : string = "";
 
-  constructor(private element: Element) {
+  constructor(public element: Element) {
 
   }
 
@@ -24,7 +22,5 @@ export class AireCard {
       //TODO handle uk-card-small and uk-card-large
 
       this.title = this.element.getAttribute("title");
-
-      //TODO come back to handle header & footer
   }
 }
