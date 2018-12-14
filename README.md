@@ -21,6 +21,6 @@ In one terminal window:
 
 In another terminal window:
 - `cd demo`
-- `npm install && jspm install -y`
 - `jspm link ../aire/dist`
+- `npm install && jspm install -y`
 - `gulp build watch`
