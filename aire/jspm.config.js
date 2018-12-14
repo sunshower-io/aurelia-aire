@@ -20,22 +20,7 @@ SystemJS.config({
     "aire": {
       "main": "index.js",
       "defaultExtension": "js"
-    },
-    "aurelia-aire": {
-      "defaultExtension": "js"
-    },
-    "local:aire@1.0.0": {
-      "map": {
-        "aurelia-aire": "npm:aurelia-aire@1.0.0",
-        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-        "text": "github:systemjs/plugin-text@0.0.11",
-        "aire": "local:aire@1.0.0"
-      }
     }
-  },
-  map: {
-    "aire": "local:aire@1.0.0",
-    "aurelia-aire": "npm:aurelia-aire@1.0.0"
   }
 });
 
@@ -44,7 +29,6 @@ SystemJS.config({
     "npm:@*/*.json",
     "npm:*.json",
     "github:*/*.json",
-    "local:*.json"
   ],
   map: {
     "aurelia-binding": "npm:aurelia-binding@2.1.7",

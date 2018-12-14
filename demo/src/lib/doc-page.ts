@@ -13,23 +13,27 @@ export class DocPage {
   }
 
   async attached() {
-    let descriptors = JSON.parse(help as string),
+    let descriptor = JSON.parse(help as string),
       client = this.client;
-    if(descriptors && descriptors.length) {
-      this.name = descriptors[0].name;
-      for(let d of descriptors) {
-        let dirs = d.directories;
-        if(dirs) {
-          for(let dir of dirs) {
-            let help = dir.help;
-            for(let h of help) {
-              let a = await client.fetch(`./aire-demo/${this.name}/en/${dir.directory}/${this.filename(h)}.html!text`)
-              console.log(a);
-            }
-          }
-        }
-      }
+    if(descriptor) {
+      this.name = descriptor.name;
     }
+    console.log("ATTACHED");
+    // if(descriptors && descriptors.length) {
+    //   this.name = descriptors[0].name;
+    //   for(let d of descriptors) {
+    //     let dirs = d.directories;
+    //     if(dirs) {
+    //       for(let dir of dirs) {
+    //         let help = dir.help;
+    //         for(let h of help) {
+    //           let a = await client.fetch(`/dist/${this.name}/help/en/${dir.directory}/${this.filename(h)}.html`)
+    //           console.log(a);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 
   filename(s:string) : string {
