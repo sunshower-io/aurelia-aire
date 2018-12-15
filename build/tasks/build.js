@@ -131,12 +131,12 @@ gulp.task('build:sass', buildScss);
 
 
 gulp.task('build',
-    gulp.series('clean', gulp.parallel(
+    gulp.parallel(
         'build:pug',
         'build:sass',
         build,
         'copy:metadata',
         'copy:components'
-    )));
+    ));
 
 

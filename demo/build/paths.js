@@ -4,7 +4,7 @@ const paths = {
     pug: ['src/**/*.pug'],
     styles: ['themes/main.scss'],
     dest: 'dist',
-    metadata: '',
+    metadata: ['assets/**/*', 'src/**/*.json'],
     createScssInclusions: utils => {
 
         let pkg = utils.locatePackage('aire'),
