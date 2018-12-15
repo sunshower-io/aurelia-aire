@@ -9,9 +9,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build aire:generate",
+    "build": "jspm link ../aire/dist && gulp aire:generate build",
     "deps": "npm install && jspm install -y",
-    "clean": "gulp clean"
+    "clean": "jspm remove aire || gulp clean"
   },
   "repository": {
     "type": "git",

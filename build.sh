@@ -35,6 +35,13 @@ doKill() {
 }
 
 
+clean_all() {
+    run_all "--clean";
+    find . -name node_modules | xargs rm -rf
+    find . -name jspm_packages | xargs rm -rf;
+}
+
+
 restart() {
     echo "Restarting tasks";
     doKill;
@@ -74,7 +81,7 @@ do
            doKill
             ;;
         --clean)
-            run_all "--clean"
+            clean_all
             ;;
     esac
     shift
