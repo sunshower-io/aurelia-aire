@@ -8,7 +8,8 @@
     "@build": "../build"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -97,6 +98,7 @@
     "aurelia-loader-default": "^1.1.0",
     "aurelia-router": "^1.6.3",
     "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^4.0.0",
@@ -110,7 +112,8 @@
     "jspm": "^0.17.0-beta.49",
     "module-alias": "^2.1.0",
     "require-dir": "^1.2.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "vinyl-paths": "^2.1.0"
   },
   "dependencies": {}
 }

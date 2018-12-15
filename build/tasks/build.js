@@ -1,5 +1,3 @@
-
-
 module.paths.push(`${process.cwd()}/node_modules`);
 
 const
@@ -7,6 +5,7 @@ const
     utils = require('./utils.js'),
     scss = require('gulp-sass'),
     paths = require('../paths.js'),
+    clean = require('./clean'),
     log = require('gulp-util'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
@@ -21,16 +20,16 @@ const
 const buildScss = () => {
     let include = paths.createScssInclusions(utils),
         cfg = include && include.length ? {
-            includePaths:include
+            includePaths: include
         } : {};
 
-        // cfg = include ? {
-        //     includePaths:`${utils.source(include.module, include.location)}/scss`
-        // } :
+    // cfg = include ? {
+    //     includePaths:`${utils.source(include.module, include.location)}/scss`
+    // } :
     // includePaths:`${utils.source(paths.includePaths)}/scss`
-    if(include) {
+    if (include) {
         log.log("SCSS Include Directories:");
-        for(let dir of include) {
+        for (let dir of include) {
             log.log(`\t${dir}`);
         }
     }
@@ -70,7 +69,7 @@ const buildPug = () => {
 //================================================================================
 
 const copyMetadata = (done) => {
-    if(paths.metadata) {
+    if (paths.metadata) {
         return gulp.src(paths.metadata)
             .pipe(gulp.dest(paths.output));
     }
@@ -83,10 +82,9 @@ const copyMetadata = (done) => {
 //================================================================================
 
 
-
 const copyComponents = done => {
 
-    if(paths.components) {
+    if (paths.components) {
         return gulp.src(paths.components).pipe(gulp.dest(paths.output));
     }
     return done();
@@ -96,7 +94,6 @@ const copyComponents = done => {
 //================================================================================
 // copy scss: copy all scss to dist
 //================================================================================
-
 
 
 const copyScss = () => {
@@ -114,7 +111,6 @@ const copyScss = () => {
 //================================================================================
 
 
-
 gulp.task('copy:metadata', copyMetadata);
 gulp.task('copy:components', copyComponents);
 gulp.task('copy:sass', copyScss);
@@ -123,7 +119,6 @@ gulp.task('copy:sass', copyScss);
 //================================================================================
 // build
 //================================================================================
-
 
 
 gulp.task('build:pug', buildPug);
@@ -135,13 +130,13 @@ gulp.task('build:sass', buildScss);
 //================================================================================
 
 
-
-gulp.task('build', gulp.parallel(
-    'build:pug',
-    'build:sass',
-    build,
-    'copy:metadata',
-    'copy:components'
-));
+gulp.task('build',
+    gulp.series('clean', gulp.parallel(
+        'build:pug',
+        'build:sass',
+        build,
+        'copy:metadata',
+        'copy:components'
+    )));
 
 
