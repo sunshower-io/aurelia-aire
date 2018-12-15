@@ -1,4 +1,3 @@
-
 const paths = {
     assets: ['assets/**/*', 'src/**/*.json'],
     typescript: 'src/**/*.ts',
@@ -6,10 +5,16 @@ const paths = {
     styles: ['themes/main.scss'],
     dest: 'dist',
     metadata: '',
-    createScssInclusions : utils => {
-        return [
-            `${utils.source('aire', 'local')}`
-        ]
+    createScssInclusions: utils => {
+
+        let pkg = utils.locatePackage('aire'),
+            pkgDescriptor = utils.readJson(`${pkg}/package.json`),
+            uikit = utils.locatePackageIn(pkgDescriptor, 'uikit'),
+            aireDir = utils.fs.realpathSync(pkg),
+            aireRoot = utils.parentDirectory(aireDir),
+            resolved = `${aireRoot}/${uikit}/src/scss`,
+            aireScss = `${aireDir}/scss`;
+        return [resolved, aireScss]
     }
 };
 

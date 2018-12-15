@@ -7,6 +7,7 @@ const
     utils = require('./utils.js'),
     scss = require('gulp-sass'),
     paths = require('../paths.js'),
+    log = require('gulp-util'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
     typescript = require('gulp-typescript'),
@@ -27,6 +28,12 @@ const buildScss = () => {
         //     includePaths:`${utils.source(include.module, include.location)}/scss`
         // } :
     // includePaths:`${utils.source(paths.includePaths)}/scss`
+    if(include) {
+        log.log("SCSS Include Directories:");
+        for(let dir of include) {
+            log.log(`\t${dir}`);
+        }
+    }
     return gulp.src(paths.styles)
         .pipe(scss(cfg).on('error', scss.logError))
         .pipe(concat('aire.css'))

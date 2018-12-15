@@ -3,7 +3,19 @@
 //================================================================================
 
 let root = process.cwd();
-const pkg = require(root + '/package.json');
+const pkg = require(root + '/package.json'),
+    fs = require('fs'),
+    {join} = require('path'),
+    path = require('path');
+
+
+const readJson = (path) => {
+    if(fs.lstatSync(path).isFile()) {
+        let iostream = fs.readFileSync(path);
+        return JSON.parse(iostream);
+    }
+    throw new Error(`Path: ${path} does not exist or is not a file`);
+};
 
 //================================================================================
 // dependencyVersion: compute the dependencyversion sans semver of a variable
@@ -39,12 +51,68 @@ const pathTo = (dep, location) => {
     return s;
 };
 
+
+//================================================================================
+// dir: determine if path refers to directory
+//================================================================================
+
+
+const file = source => fs.lstatSync(source).isFile();
+
+const dir = source => fs.lstatSync(source).isDirectory();
+
+//================================================================================
+// ls: list all the files matching the predicate
+//================================================================================
+
+
+
+const ls = (d, f) => fs.readdirSync(d).map(name => join(d, name)).filter(f);
+
+//================================================================================
+// locate package: find a package from package.json
+//================================================================================
+
+
+const locatePackageIn = (packageFile, name) => {
+    console.info(`Resolving package: ${name}`);
+    let jspm = packageFile.jspm,
+        dev = false,
+        dep = jspm.dependencies,
+        devdep = jspm.devDependencies,
+        deps = dev ? devdep : dep,
+        actualDependency = deps[name],
+        directory = actualDependency.split(':').join(path.sep),
+        result = `jspm_packages/${directory}`;
+    console.info(`Successfully resolved package: ${name} at ${result}`);
+    return result;
+};
+
+const parentDirectory = p => {
+    let segments = p.split(path.sep);
+    segments.pop();
+    return segments.join(path.sep);
+};
+
+const locatePackage = name => {
+    return locatePackageIn(pkg, name);
+};
+
+const fileName = dir => path.dirname(dir).split(path.sep).pop();
+
 //================================================================================
 // Module exports
 //================================================================================
 
-
-
+exports.ls = ls;
+exports.dir = dir;
+exports.file = file;
+exports.fileName = fileName;
+exports.locatePackageIn = locatePackageIn;
+exports.locatePackage = locatePackage;
+exports.parentDirectory = parentDirectory;
+exports.fs = fs;
+exports.readJson = readJson;
 exports.source = source;
 exports.pathTo = pathTo;
 exports.version = dependencyVersion;
