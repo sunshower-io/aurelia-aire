@@ -6,8 +6,6 @@ import {dom} from "src/core";
 export class AireList {
     ul: HTMLElement;
 
-    @ bindable
-
     lis     : string[];
 
 
@@ -15,9 +13,9 @@ export class AireList {
 
     }
     attached() {
-        dom.decorateTo(this.element, this.ul, "divider", "uk-list-bullet");
-        dom.decorateTo(this.element, this.ul, "striped", "uk-list-divider");
-        dom.decorateTo(this.element, this.ul, "hover", "uk-list-striped");
-        dom.decorateTo(this.element, this.ul, "justify", "uk-list-large");
+        dom.decorateTo(this.element, this.ul, "divider", "uk-list-divider");
+        dom.decorateTo(this.element, this.ul, "bullet", "uk-list-bullet");
+        dom.decorateTo(this.element, this.ul, "stripes", "uk-list-striped");
+        dom.decorateTo(this.element, this.ul, "large divider", "uk-list-large");
     }
 }
