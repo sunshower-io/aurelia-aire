@@ -8,8 +8,15 @@ export class App {
 
   private router: Router;
 
+  offcanvas : HTMLElement;
+  navtoggle : HTMLElement;
+
 
   constructor(loader: Loader) {
+
+  }
+
+  attached() {
 
   }
 

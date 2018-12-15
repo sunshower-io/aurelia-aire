@@ -28,5 +28,8 @@ export class AireButton {
       dom.decorateTo(this.element, this.button, "text", "uk-button-text");
       dom.decorateTo(this.element, this.button, "link", "uk-button-link");
       dom.decorateTo(this.element, this.button, "full", "uk-width-1-1");
+      dom.decorateTo(this.element, this.button, "small", "uk-button-small");
+      dom.decorateTo(this.element, this.button, "large", "uk-button-large");
+      dom.decorateTo(this.element, this.button, "square", "aire-button-square");
   }
 }

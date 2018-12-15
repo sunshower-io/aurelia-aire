@@ -3,14 +3,14 @@ template
         aire-header(primary)
             navbar-section(left)
                 navbar-item
-                    aire-button(icon="fa fa-bars")
+                    aire-button(ref="navtoggle" icon="fa fa-bars" square)
             navbar-section(center)
                 navbar-item(icon="dist/icons/logo.svg" large logo)
-                navbar-item(logo) Aurelia-UIKit
+                navbar-item(logo) Aurelia + UIkit
 
             //navbar-section(right)
         aire-body
-            aire-offcanvas
+            aire-offcanvas(ref="offcanvas")
                 aire-nav(router.bind="router")
             router-view
             aire-widget-panel
