@@ -1,7 +1,11 @@
-import {inject} from 'aurelia-framework';
+import {
+  viewResources,
+  inject
+} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 import * as help from './help.json!text';
 
+@viewResources('./html-panel')
 @inject(HttpClient)
 export class DocPage {
 
@@ -14,15 +18,9 @@ export class DocPage {
 
   }
 
-  urlFor(hfile: string, directory: any, component:any) {
-    let s = `/dist/${component.name}/help/en/${directory.directory}/${this.filename(hfile)}.html`
-    console.log(s);
-    return s;
-  }
 
   async attached() {
-    let descriptor = JSON.parse(help as string),
-      client = this.client;
+    let descriptor = JSON.parse(help as string);
     if(descriptor) {
       this.title = descriptor.title;
       this.description = descriptor.description;
@@ -32,5 +30,10 @@ export class DocPage {
 
   filename(s:string) : string {
     return s.substring(0, s.lastIndexOf('.'));
+  }
+
+
+  urlFor(hfile: string, directory: any, component:any) {
+    return `/dist/${component.name}/help/en/${directory.directory}/${this.filename(hfile)}.html`
   }
 }

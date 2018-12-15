@@ -4,8 +4,8 @@
   "description": "Beautiful UiKit-based Aurelia plugin",
   "main": "aire.js",
   "_moduleAliases": {
-    "@build": "build",
-    "@root": "."
+    "@root": ".",
+    "@build": "../build"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -76,6 +76,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-typescript": "^5.0.0",
+    "gulp-util": "^3.0.8",
     "i": "^0.3.6",
     "jspm": "^0.17.0-beta.49",
     "module-alias": "^2.1.0",

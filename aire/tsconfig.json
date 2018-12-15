@@ -10,8 +10,8 @@
     ],
     "paths": {
       "aire/*":["src/*"]
-
-    }
+    },
+    "target": "es5"
   },
   "files": ["typings/uikit.d.ts"],
   "include": ["src/**/*.ts", "typings/**/*.ts"],

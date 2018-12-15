@@ -1,6 +1,9 @@
 import { UUID } from './uuid';
 
+
 export namespace dom {
+
+
   export function $(s: string): Element {
     return document.querySelector(s);
   }

@@ -1,0 +1,14 @@
+
+
+@import "page/variables";
+
+
+.aire-page {
+  width: 100%;
+  display:block;
+  max-width:100%;
+  box-sizing:border-box;
+  &.padded {
+    padding: $aire-page-padding;
+  }
+}

@@ -1,6 +1,6 @@
-template
+template.aire-tab-panel
     ul.uk-tab(ref="element")
-        li.uk-active
-            a Hello
-        li
-            a World!
+        li(repeat.for="child of children")
+            a ${child.title}
+    div.uk-switcher(ref="container" id.bind="cid")
+        slot

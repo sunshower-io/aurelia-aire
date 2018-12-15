@@ -4,23 +4,30 @@
 
 declare module "uikit" {
 
-  export interface OffCanvas {
+  export namespace util {
+    export function on(component: Component, event: string, el: string |number | HTMLElement, handler: any);
+  }
+
+  export interface Component {
+  }
+
+  export interface OffCanvas extends Component {
     show() : void;
     hide(): void;
     toggle(): void;
   }
 
-  export interface NavBar {
+  export interface NavBar extends Component {
 
   }
 
 
-  export interface TabPanel {
+  export interface TabPanel extends Component {
 
   }
 
 
-  export function tab(el:Element, options?: any);
+  export function tab(el:Element, options?: any) : TabPanel;
 
   export function navbar(el: Element, options?:any) : NavBar;
 
