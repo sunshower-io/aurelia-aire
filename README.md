@@ -25,4 +25,4 @@ In another terminal window:
 - `npm install`
 - `jspm link ../aire/dist`
 - `jspm install -y`
-- `gulp build watch`
+- `gulp aire:generate build watch`
