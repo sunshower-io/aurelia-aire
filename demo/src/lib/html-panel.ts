@@ -8,7 +8,7 @@ import {
   HttpClient
 }    from "aurelia-fetch-client";
 
-import {showdown} from 'showdown';
+import * as showdown from 'showdown';
 
 
 @autoinject
@@ -25,7 +25,7 @@ export class HtmlPanel {
   }
 
 
-  async attached() {
+  async activate() {
     let converter = new showdown.Converter();
 
     this.loading = true;
