@@ -131,6 +131,9 @@ const resolveHelp = component => {
             });
         }
     }
+    if(!fs.existsSync('dist')) {
+        fs.mkdirSync('dist');
+    }
     let targetdir = `dist/${component.rawdir}`;
     if(!fs.existsSync(targetdir)) {
         fs.mkdirSync(targetdir);

@@ -8,12 +8,6 @@ const fs = require('fs'),
         styles: ['themes/main.scss'],
         dest: 'dist',
         output: 'dist',
-        allStyles: ['themes/**/*.scss']
-        // scssInclude:  {
-        //     module: 'aire',
-        //     location: 'local'
-        // }
-
     };
 
 const mergePaths = () => {

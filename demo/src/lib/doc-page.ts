@@ -34,6 +34,6 @@ export class DocPage {
 
 
   urlFor(hfile: string, directory: any, component:any) {
-    return `/dist/${component.name}/help/en/${directory.directory}/${this.filename(hfile)}.html`
+    return `/dist/${component.name}/help/en/${directory.directory}/${this.filename(hfile)}.md`
   }
 }
