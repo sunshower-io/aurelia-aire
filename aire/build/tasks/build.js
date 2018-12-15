@@ -9,7 +9,7 @@ const gulp = require('gulp'),
 
 
 //================================================================================
-// build scsss
+// build scss
 //================================================================================
 
 const buildScss = () => {
@@ -66,6 +66,18 @@ const copyComponents = () => {
     return gulp.src(paths.components).pipe(gulp.dest(paths.output));
 };
 
+
+//================================================================================
+// copy scss: copy all scss to dist
+//================================================================================
+
+
+
+const copyScss = () => {
+    return gulp.src(paths.styles)
+        .pipe(gulp.dest(paths.output));
+};
+
 //================================================================================
 // task definitions
 //================================================================================
@@ -79,6 +91,7 @@ const copyComponents = () => {
 
 gulp.task('copy:metadata', copyMetadata);
 gulp.task('copy:components', copyComponents);
+gulp.task('copy:sass', copyScss);
 
 
 //================================================================================

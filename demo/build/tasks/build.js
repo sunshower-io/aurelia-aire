@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
     paths = require('@build/paths.js'),
     pug = require('gulp-pug'),
-    tsconfig = require('@root/tsconfig.json'),
+    utils = require('./utils.js'),
     typescript = require('gulp-typescript'),
     scss = require('gulp-sass'),
     concat = require('gulp-concat'),
@@ -9,16 +9,16 @@ const gulp = require('gulp'),
 
 
 //================================================================================
-// build scsss
+// build scss
 //================================================================================
 
 const buildScss = () => {
     return gulp.src(paths.styles)
         .pipe(scss({
-            includePaths:`${utils.source('uikit')}/scss`
+            includePaths:`./${utils.source('aire', 'local')}`
         }).on('error', scss.logError))
-        .pipe(concat('aire.css'))
-        .pipe(gulp.dest(paths.output));
+        .pipe(concat('demo.css'))
+        .pipe(gulp.dest(paths.dest));
 
 };
 
