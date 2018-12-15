@@ -23,7 +23,6 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/form/range',
     'aire/button/button',
     'aire/fab/fab',
-    'aire/html/panel',
     'aire/widget/widget-panel',
     'aire/tabs/tab-panel',
     'aire/tabs/tab',
