@@ -1,66 +1,31 @@
 
-const pkg = require('@root/package.json'),
+module.paths.push(`${process.cwd()}/node_modules`);
+const
+    root = process.cwd(),
+    pkg = require(root + '/package.json'),
     gulp= require('gulp'),
     path = require('path'),
+    utils = require('./utils.js'),
+    {file} = require('./utils.js'),
     fs = require('fs'),
-    markdown = require('gulp-markdown-github-style'),
     { join } = require('path');
 
-//================================================================================
-// dir: determine if path refers to directory
-//================================================================================
-
-
-const file = source => fs.lstatSync(source).isFile();
-
-const dir = source => fs.lstatSync(source).isDirectory();
-
-//================================================================================
-// ls: list all the files matching the predicate
-//================================================================================
-
-
-
-const ls = (d, f) => fs.readdirSync(d).map(name => join(d, name)).filter(f);
-
-//================================================================================
-// locate package: find a package from package.json
-//================================================================================
-
-
-const locatePackage = name => {
-    console.info(`Resolving package: ${name}`);
-    let jspm = pkg.jspm,
-        dev = false,
-        dep = jspm.dependencies,
-        devdep = jspm.devDependencies,
-        deps = dev ? devdep : dep,
-        actualDependency = deps[name],
-        directory = actualDependency.split(':').join(path.sep),
-        result = `jspm_packages/${directory}`;
-    console.info(`Successfully resolved package: ${name} at ${result}`);
-    return result;
-};
 
 //================================================================================
 // list all the components in Aire
 //================================================================================
 
 
-const parentDir = component => {
-    let segments = component.path.split(path.sep);
-    segments.pop();
-    return segments.join(path.sep);
-};
+
+const parentDir = component => utils.parentDirectory(component.path);
 
 
-const fileName = dir => path.dirname(dir).split(path.sep).pop();
 
 const listComponents = done => {
     console.info("Beginning Aire Site Generation");
     console.info("Resolving components...");
-    let p = locatePackage('aire'),
-        dirs = ls(p, dir),
+    let p = utils.locatePackage('aire'),
+        dirs = utils.ls(p, utils.dir),
         componentDirs = dirs.filter(t => fs.existsSync(`${t}/components.json`)),
         componentFiles = componentDirs.map(t => `${t}/components.json`),
         components = componentFiles.map(t => {
@@ -68,7 +33,7 @@ const listComponents = done => {
             let componentStream = fs.readFileSync(t),
                 component = JSON.parse(componentStream);
             return {
-                rawdir: fileName(t),
+                rawdir: utils.fileName(t),
                 path: t,
                 data: component.components,
                 descriptor: component
@@ -86,13 +51,16 @@ const constructHelp = (component, locales) => {
 
     for(let locale of locales) {
         for(let c of components) {
-            let directories = ls(path.resolve(locale, c.component.name), dir),
+            let directories = utils.ls(path.resolve(locale, c.component.name), utils.dir),
                 files = directories.map(t => {
                     return {
                         root: t,
                         directory: nameOf(t),
-                        help: ls(t, file).map(t => nameOf(t)),
-                        example: ls(t, (u) => file(u) && u.endsWith('.html') || u.endsWith(".js")).map(t => nameOf(t))
+                        help: utils.ls(t, file).map(t => nameOf(t)),
+                        example: utils.ls(t,
+                            (u) => utils.file(u) &&
+                                u.endsWith('.html') ||
+                                u.endsWith(".js")).map(t => nameOf(t))
                     }
                 });
             c.component.directories = files;
@@ -105,13 +73,19 @@ const resolveLocales = component => {
     try {
         let p = parentDir(component),
             helpDir = path.resolve(p, 'help'),
-            dirs = ls(helpDir, dir);
+            dirs = utils.ls(helpDir, utils.dir);
         return constructHelp(component, dirs);
     } catch(e) {
+
         console.log("No help directory found for component: " + component.rawdir);
+        throw e;
     }
 };
 
+
+//================================================================================
+// Resolve actual help for individual component
+//================================================================================
 
 
 const doResolveHelp = (directory, name, descriptor, f, directories) => {
@@ -120,7 +94,7 @@ const doResolveHelp = (directory, name, descriptor, f, directories) => {
         mdfiles = files && files.map(t => path.resolve(directory.root, t)),
         examples = exs && exs.map(t => path.resolve(directory.root, t));
     if(mdfiles && mdfiles.length) {
-        gulp.src(mdfiles).pipe(markdown()).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}`));
+        gulp.src(mdfiles).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}`));
     }
 
     if(examples && examples.length) {
@@ -129,6 +103,11 @@ const doResolveHelp = (directory, name, descriptor, f, directories) => {
 
 
 };
+
+//================================================================================
+// resolveHelp
+//================================================================================
+
 
 
 const resolveHelp = component => {
@@ -197,6 +176,12 @@ const toRouteElement = component => {
 
 };
 
+//================================================================================
+// Generate route from component list
+//================================================================================
+
+
+
 const generateNav = (components) => {
     try {
         fs.unlinkSync("src/route/components.json");
@@ -209,6 +194,16 @@ const generateNav = (components) => {
     ));
 };
 
+
+
+
+
+//================================================================================
+// Actual aire:generate task
+//================================================================================
+
+
+
 const generateData = async done => {
     let components = listComponents();
     generateNav(components);
@@ -217,6 +212,7 @@ const generateData = async done => {
     }
     done();
 };
+
 
 gulp.task('aire:generate', generateData);
 

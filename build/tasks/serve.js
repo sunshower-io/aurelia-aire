@@ -1,3 +1,5 @@
+
+module.paths.push(`${process.cwd()}/node_modules`);
 const gulp = require('gulp'),
     sync = require('browser-sync');
 

@@ -1,7 +1,13 @@
-const gulp = require('gulp'),
+
+
+module.paths.push(`${process.cwd()}/node_modules`);
+
+const
+    gulp = require('gulp'),
     utils = require('./utils.js'),
     scss = require('gulp-sass'),
-    paths = require('@build/paths.js'),
+    paths = require('../paths.js'),
+    log = require('gulp-util'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
     typescript = require('gulp-typescript'),
@@ -9,14 +15,27 @@ const gulp = require('gulp'),
 
 
 //================================================================================
-// build scsss
+// build scss
 //================================================================================
 
 const buildScss = () => {
+    let include = paths.createScssInclusions(utils),
+        cfg = include && include.length ? {
+            includePaths:include
+        } : {};
+
+        // cfg = include ? {
+        //     includePaths:`${utils.source(include.module, include.location)}/scss`
+        // } :
+    // includePaths:`${utils.source(paths.includePaths)}/scss`
+    if(include) {
+        log.log("SCSS Include Directories:");
+        for(let dir of include) {
+            log.log(`\t${dir}`);
+        }
+    }
     return gulp.src(paths.styles)
-        .pipe(scss({
-            includePaths:`${utils.source('uikit')}/scss`
-        }).on('error', scss.logError))
+        .pipe(scss(cfg).on('error', scss.logError))
         .pipe(concat('aire.css'))
         .pipe(gulp.dest(paths.output));
 
@@ -50,9 +69,12 @@ const buildPug = () => {
 // copy metadata
 //================================================================================
 
-const copyMetadata = () => {
-    return gulp.src(paths.metadata)
-        .pipe(gulp.dest(paths.output));
+const copyMetadata = (done) => {
+    if(paths.metadata) {
+        return gulp.src(paths.metadata)
+            .pipe(gulp.dest(paths.output));
+    }
+    return done();
 };
 
 
@@ -62,8 +84,24 @@ const copyMetadata = () => {
 
 
 
-const copyComponents = () => {
-    return gulp.src(paths.components).pipe(gulp.dest(paths.output));
+const copyComponents = done => {
+
+    if(paths.components) {
+        return gulp.src(paths.components).pipe(gulp.dest(paths.output));
+    }
+    return done();
+};
+
+
+//================================================================================
+// copy scss: copy all scss to dist
+//================================================================================
+
+
+
+const copyScss = () => {
+    return gulp.src(paths.styles)
+        .pipe(gulp.dest(paths.output));
 };
 
 //================================================================================
@@ -79,6 +117,7 @@ const copyComponents = () => {
 
 gulp.task('copy:metadata', copyMetadata);
 gulp.task('copy:components', copyComponents);
+gulp.task('copy:sass', copyScss);
 
 
 //================================================================================
@@ -105,12 +144,4 @@ gulp.task('build', gulp.parallel(
     'copy:components'
 ));
 
-
-
-module.exports = build;
-
-
-// module.exports = build() {
-//     return Promise.resolve();
-// }
 
