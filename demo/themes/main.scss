@@ -1,11 +1,13 @@
+@import "variables-theme";
+@import "mixins-theme";
+
+
 $purple: #660066;
 $green: #77CCA4;
 $orange: #FF9900;
 $red: #A40802;
 $blue: #2385AF;
 $light-blue   : lighten($blue, 50%);
-
-
 
 $global-primary-background: $purple;
 $global-success-background: $green;
@@ -15,20 +17,7 @@ $global-link-color: $blue;
 $global-link-hover-color: $light-blue;
 $base-selection-background: $blue;
 
-//@import "uikit";
-////@import "aire";
-
-@import "variables-theme";
-@import "mixins-theme";
-
-
-
-//// 3. Your custom mixin overwrites.
-//@import "default/accordion-mixins";
-//@import "default/alert-mixins";
-//@import "default/align-mixins";
-
-
-
 @import "uikit";
 @import "uikit-theme";
+//@import "aire";
+//@import "font-awesome";
