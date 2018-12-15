@@ -24,13 +24,10 @@ export class AireTabPanel {
 
   private activeTab: AireTab;
 
-
-
   private cid = Aire.id;
 
   attached() : void {
     this.panel = UIkit.tab(this.element);
-    console.log(this.cid);
     Aire.listen(this.container, 'beforeshow', this.beforeShow.bind(this));
   }
 
