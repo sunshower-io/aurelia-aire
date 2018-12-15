@@ -1,6 +1,6 @@
 template
     ul.uk-tab(ref="element")
-        li.uk-active
-            a Hello
-        li
-            a World!
+        li(repeat.for="tab of tabs")
+            a ${tab.title}
+    div.uk-switcher
+        slot

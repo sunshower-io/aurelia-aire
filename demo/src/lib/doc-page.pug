@@ -1,10 +1,6 @@
 template
     h1 Coolbeans! You got ${title}
-        aire-tab-panel
-
-    //div(repeat.for="component of components")
-    //    div(repeat.for="directory of component.directories")
-    //        aire-tab-panel
-    //        h2 ${directory.directory}
-    //        div(repeat.for="hfile of directory.help")
-    //            aire-html-panel(url.bind="urlFor(hfile, directory, component)")
+    div(repeat.for="component of components")
+        aire-tab-panel(repeat.for="directory of component.directories")
+            aire-tab(repeat.for="hfile of directory.help" title.bind="hfile")
+                aire-html-panel(url.bind="urlFor(hfile, directory, component)")
