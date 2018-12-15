@@ -2,7 +2,6 @@
 
 Built with UIKit (https://github.com/uikit/uikit) and Aurelia (https://github.com/aurelia/framework), Aire is a lightweight solution to your web-app needs.
 
-
 # Developing on Aurelia-Aire
 We've included some NPM tasks to simplify development
 
