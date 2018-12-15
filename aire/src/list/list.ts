@@ -15,7 +15,7 @@ export class AireList {
     attached() {
         dom.decorateTo(this.element, this.ul, "divider", "uk-list-divider");
         dom.decorateTo(this.element, this.ul, "bullet", "uk-list-bullet");
-        dom.decorateTo(this.element, this.ul, "stripes", "uk-list-striped");
-        dom.decorateTo(this.element, this.ul, "large divider", "uk-list-large");
+        dom.decorateTo(this.element, this.ul, "striped", "uk-list-striped");
+        dom.decorateTo(this.element, this.ul, "large", "uk-list-large");
     }
 }
