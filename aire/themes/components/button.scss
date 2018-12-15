@@ -1,0 +1,12 @@
+.aire-button-square {
+  padding: 0;
+  width: $button-line-height;
+
+  &.uk-button-small {
+    width: $button-small-line-height;
+  }
+
+  &.uk-button-large {
+    width: $button-large-line-height
+  }
+}

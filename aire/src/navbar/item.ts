@@ -1,8 +1,9 @@
-import {bindable, inject, customElement} from "aurelia-framework";
+import {bindable, containerless, inject, customElement} from "aurelia-framework";
 import {dom}                                  from "aire/core";
 
 
 @inject(Element)
+@containerless
 @customElement('navbar-item')
 export class AireNavbarItem {
 

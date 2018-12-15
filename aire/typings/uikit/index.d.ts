@@ -14,6 +14,7 @@ declare module "uikit" {
   export interface OffCanvas extends Component {
     show() : void;
     hide(): void;
+    toggle(): void;
   }
 
   export interface NavBar extends Component {

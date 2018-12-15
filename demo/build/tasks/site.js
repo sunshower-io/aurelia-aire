@@ -179,18 +179,22 @@ const copyComponent = component => {
 
 
 const toRouteElement = component => {
-    return component.data.map(t => {
-        return {
-            title: t.component.name,
-            nav: true,
-            settings: {
-                category: t.component.category
-            },
-            route:  component.rawdir,
-            name: t.component.name,
-            moduleId: `aire-demo/${component.rawdir}/doc-page`
-        }
-    });
+    if(component && component.data) {
+        return component.data.map(t => {
+            return {
+                title: t.component.name,
+                nav: true,
+                settings: {
+                    category: t.component.category
+                },
+                route:  component.rawdir,
+                name: t.component.name,
+                moduleId: `aire-demo/${component.rawdir}/doc-page`
+            }
+        });
+    }
+    return [];
+
 };
 
 const generateNav = (components) => {
