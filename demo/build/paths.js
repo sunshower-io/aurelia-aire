@@ -4,7 +4,13 @@ const paths = {
     typescript: 'src/**/*.ts',
     pug: ['src/**/*.pug'],
     styles: ['themes/main.scss'],
-    dest: 'dist'
+    dest: 'dist',
+    metadata: '',
+    createScssInclusions : utils => {
+        return [
+            `${utils.source('aire', 'local')}`
+        ]
+    }
 };
 
 module.exports = paths;

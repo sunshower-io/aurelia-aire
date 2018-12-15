@@ -7,7 +7,12 @@ const fs = require('fs'),
         pug: ['src/**/*.pug'],
         styles: ['themes/main.scss'],
         dest: 'dist',
-        output: 'dist'
+        output: 'dist',
+        // scssInclude:  {
+        //     module: 'aire',
+        //     location: 'local'
+        // }
+
     };
 
 const mergePaths = () => {

@@ -18,10 +18,17 @@ const
 //================================================================================
 
 const buildScss = () => {
+    let include = paths.createScssInclusions(utils),
+        cfg = include && include.length ? {
+            includePaths:include
+        } : {};
+
+        // cfg = include ? {
+        //     includePaths:`${utils.source(include.module, include.location)}/scss`
+        // } :
+    // includePaths:`${utils.source(paths.includePaths)}/scss`
     return gulp.src(paths.styles)
-        .pipe(scss({
-            includePaths:`${utils.source('uikit')}/scss`
-        }).on('error', scss.logError))
+        .pipe(scss(cfg).on('error', scss.logError))
         .pipe(concat('aire.css'))
         .pipe(gulp.dest(paths.output));
 
@@ -55,9 +62,12 @@ const buildPug = () => {
 // copy metadata
 //================================================================================
 
-const copyMetadata = () => {
-    return gulp.src(paths.metadata)
-        .pipe(gulp.dest(paths.output));
+const copyMetadata = (done) => {
+    if(paths.metadata) {
+        return gulp.src(paths.metadata)
+            .pipe(gulp.dest(paths.output));
+    }
+    return done();
 };
 
 
@@ -67,8 +77,12 @@ const copyMetadata = () => {
 
 
 
-const copyComponents = () => {
-    return gulp.src(paths.components).pipe(gulp.dest(paths.output));
+const copyComponents = done => {
+
+    if(paths.components) {
+        return gulp.src(paths.components).pipe(gulp.dest(paths.output));
+    }
+    return done();
 };
 
 

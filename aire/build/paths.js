@@ -6,7 +6,12 @@ const paths = {
     styles: ['themes/aire.scss'],
     allStyles: 'themes/**/*.scss',
     output: 'dist',
-    components: ['src/**/components.json', 'src/**/*.md']
+    components: ['src/**/components.json', 'src/**/*.md'],
+    createScssInclusions : utils => {
+        return [
+            `${utils.source('uikit')}/scss`
+        ]
+    }
 };
 
 
