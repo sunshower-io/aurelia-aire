@@ -22,11 +22,12 @@ export class AireHtmlPanel {
   }
 
 
-  async attached() {
+  async activate() {
     this.loading = true;
     let page = await this.client.fetch(this.url),
       data = await page.text();
     this.element.srcdoc = data;
   }
+
 
 }

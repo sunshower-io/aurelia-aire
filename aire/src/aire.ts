@@ -1,5 +1,7 @@
 import {FrameworkConfiguration} from 'aurelia-framework';
 
+import {Aire as Application} from 'aire/core/application';
+
 export function configure(cfg: FrameworkConfiguration) {
   cfg.globalResources([
     'aire/navbar/navbar',
@@ -25,4 +27,5 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/tabs/tab-panel',
     'aire/tabs/tab'
   ]);
+  cfg.container.registerInstance(Application, Application.getInstance());
 }

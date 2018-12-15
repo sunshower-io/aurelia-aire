@@ -64,6 +64,7 @@ const listComponents = done => {
         componentDirs = dirs.filter(t => fs.existsSync(`${t}/components.json`)),
         componentFiles = componentDirs.map(t => `${t}/components.json`),
         components = componentFiles.map(t => {
+            console.info(`Resolved component file: ${t}`);
             let componentStream = fs.readFileSync(t),
                 component = JSON.parse(componentStream);
             return {
@@ -73,6 +74,7 @@ const listComponents = done => {
                 descriptor: component
             }
         });
+    console.info(`Resolved ${components.length} components`);
     return components;
 };
 
@@ -126,13 +128,6 @@ const doResolveHelp = (directory, name, descriptor, f, directories) => {
     }
 
 
-    descriptor.push({
-        name: name,
-        locale: 'en',
-        keywords: f.component.keywords,
-        "widget-name": f.component["widget-name"],
-        directories: directories.map(t => {delete root; return t;}),
-    });
 };
 
 
@@ -148,6 +143,13 @@ const resolveHelp = component => {
                 doResolveHelp(directory, name, descriptor, f, directories);
                 delete directory.root;
             }
+            descriptor.push({
+                name: name,
+                locale: 'en',
+                keywords: f.component.keywords,
+                "widget-name": f.component["widget-name"],
+                directories: directories.map(t => {delete root; return t;}),
+            });
         }
     }
     let targetdir = `dist/${component.rawdir}`;
@@ -159,6 +161,7 @@ const resolveHelp = component => {
         description: component.descriptor.description,
         components: descriptor
     };
+    console.log(`Successfully resolved and wrote ${descriptor.length} component descriptors`);
     fs.writeFileSync(`dist/${component.rawdir}/help.json`, JSON.stringify(complete, null, 2));
 };
 

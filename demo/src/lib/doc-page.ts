@@ -16,7 +16,6 @@ export class DocPage {
 
   urlFor(hfile: string, directory: any, component:any) {
     let s = `/dist/${component.name}/help/en/${directory.directory}/${this.filename(hfile)}.html`
-    console.log(s);
     return s;
   }
 
