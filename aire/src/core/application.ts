@@ -39,7 +39,7 @@ export module Aire {
 
 
   export function invokeLifecycleOnChildren(el: Element, lifecycleFunction: string) {
-    if(el == null) {
+    if(!el) {
       throw new Error(`Element must not be null`);
     }
     let children = el.childNodes,
@@ -58,7 +58,7 @@ export module Aire {
   }
 
   export function invokeLifecycle(str: string, vm: any) {
-    if(vm == null) {
+    if(!vm) {
       throw new Error('ViewModel must not be null!');
     }
     let f = vm[str];
