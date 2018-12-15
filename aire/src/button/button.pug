@@ -1,2 +1,4 @@
 template
-    button.uk-button(ref="button" checked.bind="selected") ${label}
+    button.uk-button(ref="button")
+        span(if.bind="icon" class.bind="icon")
+        | ${label}

@@ -8,9 +8,20 @@ export class App {
 
   private router: Router;
 
+  offcanvas : any;
+
 
   constructor(loader: Loader) {
 
+  }
+
+  attached() {
+
+  }
+
+  toggleOffCanvas() {
+
+    this.offcanvas.show();
   }
 
   configureRouter(cfg: RouterConfiguration, router: Router) {

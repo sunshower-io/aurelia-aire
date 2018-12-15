@@ -22,6 +22,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/button/button',
     'aire/fab/fab',
     'aire/html/panel',
+    'aire/tabs/tab-panel',
     'aire/widget/widget-panel',
     'aire/table/table'
   ]);

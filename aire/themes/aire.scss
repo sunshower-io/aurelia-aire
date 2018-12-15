@@ -1,5 +1,4 @@
 
-
 // 1. Your custom variables and variable overwrites.
 @import "default/colors";
 @import "default/navbar";
@@ -7,21 +6,27 @@
 @import "default/offcanvas";
 @import "default/alert";
 @import "default/align";
-// ... import all
 
-// 2. Import default variables and available mixins.
-@import "variables.scss";
-@import "mixins.scss";
+
+@import "variables-theme";
+@import "mixins-theme";
+
+
 
 // 3. Your custom mixin overwrites.
 @import "default/accordion-mixins";
 @import "default/alert-mixins";
 @import "default/align-mixins";
-// ... import all
 
-// 4. Import UIkit
 
-@import "uikit.scss";
+
+@import "uikit";
+@import "uikit-theme";
+
+
 
 @import "components/fab";
 @import "components/html-panel";
+@import "components/button";
+
+
