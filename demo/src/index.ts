@@ -8,8 +8,7 @@ export class App {
 
   private router: Router;
 
-  offcanvas : HTMLElement;
-  navtoggle : HTMLElement;
+  offcanvas : any;
 
 
   constructor(loader: Loader) {
@@ -18,6 +17,11 @@ export class App {
 
   attached() {
 
+  }
+
+  toggleOffCanvas() {
+
+    this.offcanvas.show();
   }
 
   configureRouter(cfg: RouterConfiguration, router: Router) {

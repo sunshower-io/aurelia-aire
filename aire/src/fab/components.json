@@ -1,0 +1,14 @@
+{
+  "title": "Aire FAB",
+  "description": "Aire FAB Component",
+  "components": [
+    {
+      "component": {
+        "name": "fab",
+        "description": "Simple FAB Widget",
+        "widget-name": "aire-fab",
+        "category": "link"
+      }
+    }
+  ]
+}

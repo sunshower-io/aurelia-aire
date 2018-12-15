@@ -3,14 +3,14 @@ template
         aire-header(primary)
             navbar-section(left)
                 navbar-item
-                    aire-button(ref="navtoggle" icon="fa fa-bars" square)
+                    aire-button(icon="fa fa-bars" square click.delegate="toggleOffCanvas()")
             navbar-section(center)
                 navbar-item(icon="dist/icons/logo.svg" large logo)
                 navbar-item(logo) Aurelia + UIkit
 
             //navbar-section(right)
         aire-body
-            aire-offcanvas(ref="offcanvas")
+            aire-offcanvas(view-model.ref="offcanvas")
                 aire-nav(router.bind="router")
             router-view
             aire-widget-panel
