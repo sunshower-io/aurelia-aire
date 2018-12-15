@@ -1,11 +1,10 @@
-import {bindable, customElement, inject}      from "aurelia-framework";
+import {customElement, inject}      from "aurelia-framework";
 import {AireFormElement} from "./element";
 
 @inject(Element)
 @customElement('aire-select')
 export class AireSelect extends AireFormElement {
 
-    @bindable
     options     : {label: string, value: string}[];
 
     constructor(element: Element) {

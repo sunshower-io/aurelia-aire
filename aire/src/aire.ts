@@ -11,7 +11,8 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/application/header',
     'aire/application/body',
     'aire/offcanvas/offcanvas',
-    'aire/card/card',
+    'aire/card/basiccard',
+    'aire/card/dividedcard',
     'aire/form/input',
     'aire/form/select',
     'aire/nav/nav',
@@ -25,7 +26,8 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/html/panel',
     'aire/widget/widget-panel',
     'aire/tabs/tab-panel',
-    'aire/tabs/tab'
+    'aire/tabs/tab',
+    'aire/table/table'
   ]);
   cfg.container.registerInstance(Application, Application.getInstance());
 }
