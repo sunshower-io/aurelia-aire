@@ -3,8 +3,24 @@ const gulp = require('gulp'),
     pug = require('gulp-pug'),
     tsconfig = require('@root/tsconfig.json'),
     typescript = require('gulp-typescript'),
+    scss = require('gulp-sass'),
+    concat = require('gulp-concat'),
     project = typescript.createProject('tsconfig.json');
 
+
+//================================================================================
+// build scsss
+//================================================================================
+
+const buildScss = () => {
+    return gulp.src(paths.styles)
+        .pipe(scss({
+            includePaths:`${utils.source('uikit')}/scss`
+        }).on('error', scss.logError))
+        .pipe(concat('aire.css'))
+        .pipe(gulp.dest(paths.output));
+
+};
 
 //================================================================================
 // copy assets
@@ -53,8 +69,14 @@ const buildPug = () => {
 
 
 gulp.task('build:pug', buildPug);
+gulp.task('build:sass', buildScss);
 gulp.task('copy:assets', copyAssets);
-gulp.task('build', gulp.parallel('build:pug', 'copy:assets', build));
+gulp.task('build', gulp.parallel(
+    'build:pug',
+    'build:sass',
+    'copy:assets',
+    build
+));
 
 
 module.exports = build;
