@@ -2,7 +2,8 @@
 // Extract dependency versions
 //================================================================================
 
-const pkg = require('@root/package.json');
+let root = process.cwd();
+const pkg = require(root + '/package.json');
 
 //================================================================================
 // dependencyVersion: compute the dependencyversion sans semver of a variable
@@ -22,8 +23,8 @@ const dependencyVersion = (version, dev) => {
 };
 
 
-const source = (dep) => {
-    return `${pathTo(dep)}/src`
+const source = (dep, location) => {
+    return `${pathTo(dep, location)}/src`
 };
 
 
@@ -32,8 +33,10 @@ const source = (dep) => {
 //================================================================================
 
 
-const pathTo = (dep) => {
-    return `jspm_packages/npm/${dep}@${dependencyVersion(dep)}`
+const pathTo = (dep, location) => {
+    let s=  `jspm_packages/${location ? location : 'npm'}/${dep}@${dependencyVersion(dep)}`
+    console.info(`Resolved path: ${s}`);
+    return s;
 };
 
 //================================================================================

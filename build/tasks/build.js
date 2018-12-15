@@ -1,7 +1,12 @@
-const gulp = require('gulp'),
+
+
+module.paths.push(`${process.cwd()}/node_modules`);
+
+const
+    gulp = require('gulp'),
     utils = require('./utils.js'),
     scss = require('gulp-sass'),
-    paths = require('@build/paths.js'),
+    paths = require('../paths.js'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
     typescript = require('gulp-typescript'),
@@ -118,12 +123,4 @@ gulp.task('build', gulp.parallel(
     'copy:components'
 ));
 
-
-
-module.exports = build;
-
-
-// module.exports = build() {
-//     return Promise.resolve();
-// }
 

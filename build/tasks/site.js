@@ -1,9 +1,11 @@
 
-const pkg = require('@root/package.json'),
+module.paths.push(`${process.cwd()}/node_modules`);
+const
+    root = process.cwd(),
+    pkg = require(root + '/package.json'),
     gulp= require('gulp'),
     path = require('path'),
     fs = require('fs'),
-    markdown = require('gulp-markdown-github-style'),
     { join } = require('path');
 
 //================================================================================
@@ -118,7 +120,7 @@ const doResolveHelp = (directory, name, descriptor, f, directories) => {
         mdfiles = files && files.map(t => path.resolve(directory.root, t)),
         examples = exs && exs.map(t => path.resolve(directory.root, t));
     if(mdfiles && mdfiles.length) {
-        gulp.src(mdfiles).pipe(markdown()).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}`));
+        gulp.src(mdfiles).pipe(gulp.dest(`dist/${name}/help/en/${directory.directory}`));
     }
 
     if(examples && examples.length) {

@@ -4,8 +4,8 @@
   "description": "Beautiful UiKit-based Aurelia plugin",
   "main": "aire.js",
   "_moduleAliases": {
-    "@build": "build",
-    "@root": "."
+    "@root": ".",
+    "@build": "../build"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

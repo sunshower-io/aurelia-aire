@@ -1,7 +1,9 @@
+module.paths.push(`${process.cwd()}/node_modules`);
 const
+    root = process.cwd(),
     build = require('./build.js'),
     gulp = require('gulp'),
-    paths = require('@build/paths.js'),
+    paths = require('../paths.js'),
     serve = require('./serve.js');
 
 
