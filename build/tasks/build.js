@@ -22,11 +22,6 @@ const buildScss = () => {
         cfg = include && include.length ? {
             includePaths: include
         } : {};
-
-    // cfg = include ? {
-    //     includePaths:`${utils.source(include.module, include.location)}/scss`
-    // } :
-    // includePaths:`${utils.source(paths.includePaths)}/scss`
     if (include) {
         log.log("SCSS Include Directories:");
         for (let dir of include) {
@@ -122,7 +117,7 @@ gulp.task('copy:sass', copyScss);
 
 
 gulp.task('build:pug', buildPug);
-gulp.task('build:sass', buildScss);
+gulp.task('build:sass', gulp.series(buildScss, 'copy:metadata'));
 
 
 //================================================================================

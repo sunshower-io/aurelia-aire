@@ -81,7 +81,7 @@ const locatePackageIn = (packageFile, name) => {
         dep = jspm.dependencies,
         devdep = jspm.devDependencies,
         deps = dev ? devdep : dep,
-        actualDependency = deps[name],
+        actualDependency = deps[name].replace('^', ''),
         directory = actualDependency.split(':').join(path.sep),
         result = `jspm_packages/${directory}`;
     console.info(`Successfully resolved package: ${name} at ${result}`);
