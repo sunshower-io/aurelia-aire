@@ -35,4 +35,9 @@ export class AireOffCanvas {
     this.offcanvas.show();
     this.open = true;
   }
+
+  hide() : void {
+      this.offcanvas.hide();
+      this.open = false;
+  }
 }
