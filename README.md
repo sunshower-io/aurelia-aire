@@ -26,5 +26,3 @@ Profit!
     * runs `npm run build && npm run watch` on both projects, building everything and starting 2 gulp servers
 1. npm run stop
     * stops aire and demo dev servers
-        
-
