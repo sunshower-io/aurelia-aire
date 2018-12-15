@@ -7,8 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "npm test",
-    "build": "sh ./build.sh"
+    "test": "sh ./build.bash build",
+    "build": "sh ./build.bash build",
+    "install": "sh ./build.bash build"
   },
   "repository": {
     "type": "git",
