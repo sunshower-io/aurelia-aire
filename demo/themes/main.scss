@@ -12,13 +12,13 @@ $global-danger-background: $red;
 $global-link-color: $blue;
 $global-link-hover-color: $light-blue;
 $base-selection-background: $blue;
+$navbar-background: $purple;
+
 @import "variables-theme";
 @import "mixins-theme";
 
 
-
-@import "uikit";
-@import "uikit-theme";
+@import "uikit-theme"; //includes uikit
 //@import "aire";
 $fa-font-path:        "fonts";
 @import "font-awesome";
