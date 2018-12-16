@@ -7,8 +7,8 @@ template
             navbar-section(center)
                 navbar-item(icon="dist/icons/logo.svg" large logo)
                 navbar-item(logo) Aurelia + UIkit
-        aire-body(id="heck")
-            aire-offcanvas(view-model.ref="offcanvas" container="#heck")
+        aire-body(view.ref="body")
+            aire-offcanvas(view-model.ref="offcanvas" host.bind="body")
                 aire-search(navbar icon offcanvas-header)
                 aire-nav(router.bind="router")
             router-view

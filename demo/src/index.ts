@@ -1,7 +1,6 @@
 import {RouterLoader}                from "aurelia-router-loader";
 import {Loader}                      from 'aurelia-loader';
 import {RouterConfiguration, Router} from 'aurelia-router';
-import {autoinject}                  from 'aurelia-framework';
 import {DefaultLoader}               from "aurelia-loader-default";
 
 export class App {
@@ -10,14 +9,13 @@ export class App {
 
   offcanvas : any;
 
-  body : HTMLElement;
-
   constructor(loader: Loader) {
 
   }
 
   attached() {
 
+    console.log("BOD" + (this as any).body);
   }
 
   toggleOffCanvas() {

@@ -27,8 +27,15 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/tabs/tab-panel',
     'aire/tabs/tab',
     'aire/table/table',
+    'aire/application/router-view',
     'aire/search/search',
     'aire/icon/icon'
   ]);
   cfg.container.registerInstance(Application, Application.getInstance());
+
+  // cfg.plugin('aurelia-animator-velocity', cfg => {
+  //   console.log("GOT" + cfg);
+  //   cfg.registerEffect('frap',  { properties: ':enter', options: { easing: 'ease-in', duration: 200 }});
+  // });
+  // cfg.plugin()
 }

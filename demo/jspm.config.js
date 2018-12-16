@@ -42,6 +42,7 @@ SystemJS.config({
     map: {
         "aire": "local:aire@1.0.0",
         "assert": "npm:jspm-nodelibs-assert@0.2.1",
+        "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
         "aurelia-binding": "npm:aurelia-binding@2.1.7",
         "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
         "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
@@ -79,6 +80,7 @@ SystemJS.config({
         "stream": "npm:jspm-nodelibs-stream@0.2.1",
         "text": "github:systemjs/plugin-text@0.0.11",
         "util": "npm:jspm-nodelibs-util@0.2.2",
+        "velocity-animate": "npm:velocity-animate@1.5.2",
         "vm": "npm:jspm-nodelibs-vm@0.2.1"
     },
     packages: {

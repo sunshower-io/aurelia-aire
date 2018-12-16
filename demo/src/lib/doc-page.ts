@@ -28,9 +28,7 @@ export class DocPage {
     }
   }
 
-
-
   urlFor(hfile: string, directory: any, component:any) {
-    return `/dist/${component.name}/help/en/${directory.directory}/${hfile}.md`
+    return `/dist/${component.name}/help/en/${directory.directory}/${hfile}`
   }
 }
