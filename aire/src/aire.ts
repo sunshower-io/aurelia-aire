@@ -27,7 +27,8 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/tabs/tab-panel',
     'aire/tabs/tab',
     'aire/table/table',
-    'aire/search/search'
+    'aire/search/search',
+    'aire/icon/icon'
   ]);
   cfg.container.registerInstance(Application, Application.getInstance());
 }
