@@ -26,7 +26,8 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/widget/widget-panel',
     'aire/tabs/tab-panel',
     'aire/tabs/tab',
-    'aire/table/table'
+    'aire/table/table',
+    'aire/search/search'
   ]);
   cfg.container.registerInstance(Application, Application.getInstance());
 }

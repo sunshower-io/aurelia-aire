@@ -16,14 +16,13 @@ $base-selection-background: $blue;
 
 $navbar-background: $purple;
 $navbar-nav-item-padding-horizontal:8px;
-$navbar-color-mode: dark;
 $logo-color: $white;
 $logo-hover-color: $logo-color;
 
+$search-color: $white;
+$search-placeholder-color: $white;
+
 $global-font-family: "Open Sans", "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-
-
-
 
 @import "aire";
 $fa-font-path:        "fonts";
