@@ -26,6 +26,7 @@ export class AireOffCanvas {
         'bg-close': this.el.hasAttribute("bg-close") || true,
         container: this.el.getAttribute("container") || true
     };
+    console.log(options);
     this.offcanvas = UIkit.offcanvas(this.element, options);
   }
 

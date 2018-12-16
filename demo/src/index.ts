@@ -10,6 +10,7 @@ export class App {
 
   offcanvas : any;
 
+  body : HTMLElement;
 
   constructor(loader: Loader) {
 
@@ -20,7 +21,6 @@ export class App {
   }
 
   toggleOffCanvas() {
-
     this.offcanvas.show();
   }
 
