@@ -17,7 +17,7 @@ export class AireNav {
     let nav = this.router.navigation,
       current = new Map<string, NavModel>();
     for(let n of nav) {
-      current.set(n.config.moduleId, n);
+      current.set(n.config.name, n);
     }
     return Array.from(current.values());
   }
