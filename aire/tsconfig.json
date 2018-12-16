@@ -9,7 +9,7 @@
       "typings"
     ],
     "paths": {
-      "aire/*":["src/*"]
+      "aire/*":["src/main/*"]
     },
     "target": "es5"
   },

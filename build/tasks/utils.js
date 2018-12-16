@@ -94,6 +94,14 @@ const parentDirectory = p => {
     return segments.join(path.sep);
 };
 
+const reparent = p => {
+    let d = p.dirname,
+    segs = d.split(path.sep);
+    segs.shift();
+    p.dirname = segs.join(path.sep);
+    return p;
+};
+
 const locatePackage = name => {
     return locatePackageIn(pkg, name);
 };
@@ -108,6 +116,7 @@ exports.ls = ls;
 exports.dir = dir;
 exports.file = file;
 exports.fileName = fileName;
+exports.reparent = reparent;
 exports.locatePackageIn = locatePackageIn;
 exports.locatePackage = locatePackage;
 exports.parentDirectory = parentDirectory;
