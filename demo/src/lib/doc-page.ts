@@ -28,12 +28,9 @@ export class DocPage {
     }
   }
 
-  filename(s:string) : string {
-    return s.substring(0, s.lastIndexOf('.'));
-  }
 
 
   urlFor(hfile: string, directory: any, component:any) {
-    return `/dist/${component.name}/help/en/${directory.directory}/${this.filename(hfile)}.md`
+    return `/dist/${component.name}/help/en/${directory.directory}/${hfile}.md`
   }
 }

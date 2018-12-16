@@ -14,11 +14,6 @@ $global-link-hover-color: $light-blue;
 $base-selection-background: $blue;
 $navbar-background: $purple;
 
-@import "variables-theme";
-@import "mixins-theme";
-
-
-@import "uikit-theme"; //includes uikit
-//@import "aire";
+@import "aire";
 $fa-font-path:        "fonts";
 @import "font-awesome";

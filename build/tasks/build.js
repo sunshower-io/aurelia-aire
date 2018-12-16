@@ -78,9 +78,11 @@ const copyMetadata = (done) => {
 
 
 const copyComponents = done => {
-
     if (paths.components) {
-        return gulp.src(paths.components).pipe(gulp.dest(paths.output));
+        gulp.src(paths.components).pipe(gulp.dest(paths.output));
+    }
+    if(paths.allStyles) {
+        gulp.src(paths.allStyles).pipe(gulp.dest(`${paths.output}/scss`))
     }
     return done();
 };
@@ -117,7 +119,12 @@ gulp.task('copy:sass', copyScss);
 
 
 gulp.task('build:pug', buildPug);
-gulp.task('build:sass', gulp.series(buildScss, 'copy:metadata'));
+gulp.task('build:sass',
+    gulp.series(
+        buildScss,
+        'copy:metadata',
+        'copy:components'
+    ));
 
 
 //================================================================================
