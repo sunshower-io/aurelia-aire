@@ -31,6 +31,9 @@ export function configure(cfg: FrameworkConfiguration) {
   ]);
   cfg.container.registerInstance(Application, Application.getInstance());
 
-  cfg.plugin('aurelia-animator-velocity');
+  cfg.plugin('aurelia-animator-velocity', cfg => {
+    console.log("GOT" + cfg);
+    cfg.registerEffect('frap',  { properties: ':enter', options: { easing: 'ease-in', duration: 200 }});
+  });
   // cfg.plugin()
 }
