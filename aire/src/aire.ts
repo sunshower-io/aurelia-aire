@@ -26,7 +26,11 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/widget/widget-panel',
     'aire/tabs/tab-panel',
     'aire/tabs/tab',
-    'aire/table/table'
+    'aire/table/table',
+    'aire/application/router-view',
   ]);
   cfg.container.registerInstance(Application, Application.getInstance());
+
+  cfg.plugin('aurelia-animator-velocity');
+  // cfg.plugin()
 }
