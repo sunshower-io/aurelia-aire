@@ -1,6 +1,5 @@
-import {bindable, customElement, inject} from "aurelia-framework";
+import {bindable, customElement} from "aurelia-framework";
 
-@inject(Element)
 @customElement('aire-icon')
 export class AireIcon {
 
@@ -10,12 +9,15 @@ export class AireIcon {
     @bindable
     icon    : string;
 
-    constructor(private element: Element) {
-        let icon = element.getAttribute("icon");
-        if (icon.indexOf('svg+xml') > -1 || icon.indexOf('.') > -1) {
-            this.src = icon;
+    constructor() {
+
+    }
+
+    bind() {
+        if (this.icon.indexOf('svg+xml') > -1 || this.icon.indexOf('.') > -1) {
+            this.src = this.icon;
         } else {
-            this.class = icon;
+            this.class = this.icon;
         }
     }
 
