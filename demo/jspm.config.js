@@ -108,14 +108,6 @@ SystemJS.config({
         "aurelia-pal": "npm:aurelia-pal@1.8.0"
       }
     },
-    "local:aire@1.0.0": {
-      "map": {
-        "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
-        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-        "uikit": "npm:uikit@3.0.0-rc.25",
-        "text": "github:systemjs/plugin-text@0.0.11"
-      }
-    },
     "npm:showdown@1.9.0": {
       "map": {
         "yargs": "npm:yargs@10.1.2"
@@ -285,6 +277,14 @@ SystemJS.config({
     "npm:string_decoder@1.1.1": {
       "map": {
         "safe-buffer": "npm:safe-buffer@5.1.2"
+      }
+    },
+    "local:aire@1.0.0": {
+      "map": {
+        "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
+        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+        "uikit": "npm:uikit@3.0.0-rc.25",
+        "text": "github:systemjs/plugin-text@0.0.11"
       }
     }
   }
