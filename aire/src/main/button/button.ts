@@ -1,7 +1,8 @@
 import {bindable, customElement, inject}      from "aurelia-framework";
 import {dom}    from "aire/core";
+import {DOM} from 'aurelia-pal';
 
-@inject(Element)
+@inject(DOM.Element)
 @customElement('aire-button')
 export class AireButton {
 
@@ -16,8 +17,9 @@ export class AireButton {
   @bindable
   disabled    : string;
 
-  constructor(private element: Element) {
-
+  constructor(
+    private element: Element
+  ) {
   }
 
   attached() {
