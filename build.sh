@@ -1,7 +1,7 @@
 #!/bin/bash
 
 run_all() {
-    local c=$(echo $1 | cut -c 3-);
+    local c=$(echo $1);
     echo "Running $c on Aire";
     cd aire;
     echo "$(pwd)"
@@ -36,7 +36,7 @@ doKill() {
 
 
 clean_all() {
-    run_all "--clean";
+    run_all "clean";
     find . -name node_modules | xargs rm -rf
     find . -name jspm_packages | xargs rm -rf;
 }
@@ -64,23 +64,23 @@ while test $# -gt 0
 do
     echo "Running $1";
     case "$1" in
-        --test)
+        test)
             run_all $1
             ;;
-        --build)
-            run_all "--deps"
+        build)
+            run_all "dev"
             run_all $1
             ;;
-        --dev)
+        dev)
             configure_dev
             ;;
-        --watch)
+        watch)
             watch
             ;;
-        --stop)
+        stop)
            doKill
             ;;
-        --clean)
+        clean)
             clean_all
             ;;
     esac

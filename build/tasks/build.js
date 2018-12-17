@@ -9,8 +9,10 @@ const
     log = require('gulp-util'),
     concat = require('gulp-concat'),
     pug = require('gulp-pug'),
+    rename = require('gulp-rename'),
     typescript = require('gulp-typescript'),
     project = typescript.createProject('tsconfig.json');
+
 
 
 //================================================================================
@@ -22,11 +24,6 @@ const buildScss = () => {
         cfg = include && include.length ? {
             includePaths: include
         } : {};
-
-    // cfg = include ? {
-    //     includePaths:`${utils.source(include.module, include.location)}/scss`
-    // } :
-    // includePaths:`${utils.source(paths.includePaths)}/scss`
     if (include) {
         log.log("SCSS Include Directories:");
         for (let dir of include) {
@@ -49,6 +46,7 @@ const build = () => {
     return gulp
         .src(paths.typescript)
         .pipe(project(typescript.reporter.fullReporter()))
+        .pipe(rename(utils.reparent))
         .pipe(gulp.dest(paths.output));
 };
 
@@ -61,7 +59,9 @@ const build = () => {
 const buildPug = () => {
 
     return gulp.src(paths.pug)
-        .pipe(pug({})).pipe(gulp.dest(paths.output));
+        .pipe(pug({}))
+        .pipe(rename(utils.reparent))
+        .pipe(gulp.dest(paths.output));
 };
 
 //================================================================================
@@ -71,6 +71,7 @@ const buildPug = () => {
 const copyMetadata = (done) => {
     if (paths.metadata) {
         return gulp.src(paths.metadata)
+            .pipe(rename(utils.reparent))
             .pipe(gulp.dest(paths.output));
     }
     return done();
@@ -83,9 +84,13 @@ const copyMetadata = (done) => {
 
 
 const copyComponents = done => {
-
     if (paths.components) {
-        return gulp.src(paths.components).pipe(gulp.dest(paths.output));
+        gulp.src(paths.components)
+            .pipe(rename(utils.reparent))
+            .pipe(gulp.dest(paths.output));
+    }
+    if(paths.allStyles) {
+        gulp.src(paths.allStyles).pipe(gulp.dest(`${paths.output}/scss`))
     }
     return done();
 };
@@ -122,7 +127,12 @@ gulp.task('copy:sass', copyScss);
 
 
 gulp.task('build:pug', buildPug);
-gulp.task('build:sass', buildScss);
+gulp.task('build:sass',
+    gulp.series(
+        buildScss,
+        'copy:metadata',
+        'copy:components'
+    ));
 
 
 //================================================================================
@@ -138,5 +148,4 @@ gulp.task('build',
         'copy:metadata',
         'copy:components'
     ));
-
 

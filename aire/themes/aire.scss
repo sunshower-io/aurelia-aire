@@ -13,6 +13,8 @@
 
 
 
+
+
 // 3. Your custom mixin overwrites.
 @import "default/accordion-mixins";
 @import "default/alert-mixins";
@@ -20,7 +22,6 @@
 
 
 
-@import "uikit";
 @import "uikit-theme";
 
 
@@ -28,6 +29,7 @@
 @import "components/fab";
 @import "components/html-panel";
 @import "components/button";
+@import "components/search";
 
 
 

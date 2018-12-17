@@ -1,3 +1,5 @@
+
+
 const paths = {
     assets: ['assets/**/*', 'src/**/*.json'],
     typescript: 'src/**/*.ts',
@@ -10,12 +12,21 @@ const paths = {
         let pkg = utils.locatePackage('aire'),
             pkgDescriptor = utils.readJson(`${pkg}/package.json`),
             uikit = utils.locatePackageIn(pkgDescriptor, 'uikit'),
+            fontawesome = utils.locatePackage('font-awesome'),
+            fontawesomedir = `${utils.fs.realpathSync(fontawesome)}/scss`,
             aireDir = utils.fs.realpathSync(pkg),
             aireRoot = utils.parentDirectory(aireDir),
             resolved = `${aireRoot}/${uikit}/src/scss`,
             aireScss = `${aireDir}/scss`;
-        return [resolved, aireScss]
+        resolveFonts(utils);
+        return [resolved, aireScss, fontawesomedir]
     }
 };
 
+
+const resolveFonts = (utils) => {
+    let fontawesome = utils.locatePackage('font-awesome'),
+        fontawesomedir = `${utils.fs.realpathSync(fontawesome)}/**/fonts/**/*`;
+    paths.metadata.push(fontawesomedir);
+};
 module.exports = paths;

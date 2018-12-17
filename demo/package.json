@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "jspm link ../aire/dist && gulp aire:generate build",
-    "deps": "npm install && jspm install -y",
+    "dev": "npm install && jspm install -y",
     "clean": "jspm remove aire || gulp clean"
   },
   "repository": {
@@ -31,6 +31,7 @@
   "jspm": {
     "dependencies": {
       "aire": "local:aire@1.0.0",
+      "aurelia-animator-velocity": "npm:aurelia-animator-velocity@^1.2.0",
       "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.3.1",
       "aurelia-fetch-client": "npm:aurelia-fetch-client@^1.7.0",
       "aurelia-router-loader": "npm:aurelia-router-loader@^1.0.6",
@@ -72,6 +73,7 @@
       "process": "npm:jspm-nodelibs-process@^0.2.0",
       "stream": "npm:jspm-nodelibs-stream@^0.2.0",
       "util": "npm:jspm-nodelibs-util@^0.2.0",
+      "velocity-animate": "npm:velocity-animate@^1.2.3",
       "vm": "npm:jspm-nodelibs-vm@^0.2.0"
     },
     "overrides": {
@@ -108,6 +110,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-typescript": "^5.0.0",
     "i": "^0.3.6",

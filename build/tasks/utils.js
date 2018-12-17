@@ -81,7 +81,7 @@ const locatePackageIn = (packageFile, name) => {
         dep = jspm.dependencies,
         devdep = jspm.devDependencies,
         deps = dev ? devdep : dep,
-        actualDependency = deps[name],
+        actualDependency = deps[name].replace('^', ''),
         directory = actualDependency.split(':').join(path.sep),
         result = `jspm_packages/${directory}`;
     console.info(`Successfully resolved package: ${name} at ${result}`);
@@ -92,6 +92,14 @@ const parentDirectory = p => {
     let segments = p.split(path.sep);
     segments.pop();
     return segments.join(path.sep);
+};
+
+const reparent = p => {
+    let d = p.dirname,
+    segs = d.split(path.sep);
+    segs.shift();
+    p.dirname = segs.join(path.sep);
+    return p;
 };
 
 const locatePackage = name => {
@@ -108,6 +116,7 @@ exports.ls = ls;
 exports.dir = dir;
 exports.file = file;
 exports.fileName = fileName;
+exports.reparent = reparent;
 exports.locatePackageIn = locatePackageIn;
 exports.locatePackage = locatePackage;
 exports.parentDirectory = parentDirectory;
