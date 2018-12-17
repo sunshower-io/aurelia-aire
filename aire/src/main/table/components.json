@@ -1,0 +1,14 @@
+{
+  "title": "Aire Table",
+  "description": "Aire Table Component",
+  "components": [
+    {
+      "component": {
+        "name": "table",
+        "description": "Simple Table Widget",
+        "widget-name": "aire-table",
+        "category": "table"
+      }
+    }
+  ]
+}
