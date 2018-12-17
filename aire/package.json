@@ -8,7 +8,7 @@
     "@build": "../build"
   },
   "scripts": {
-    "deps": "npm install && jspm install -y",
+    "dev": "npm install && jspm install -y",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "gulp clean"
