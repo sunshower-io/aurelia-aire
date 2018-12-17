@@ -286,9 +286,9 @@ SystemJS.config({
         },
         "local:aire@1.0.0": {
             "map": {
+                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
                 "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
                 "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
-                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
                 "uikit": "npm:uikit@3.0.0-rc.25",
                 "text": "github:systemjs/plugin-text@0.0.11"
             }

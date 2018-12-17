@@ -187,11 +187,11 @@ const toRouteElement = component => {
 
 const generateNav = (components) => {
     try {
-        fs.unlinkSync("src/route/components.json");
+        fs.unlinkSync("src/main/route/components.json");
     } catch(e) {
         console.log("route file: components.json not found.  Generating a new one...");
     }
-    fs.writeFileSync("src/route/components.json", JSON.stringify(
+    fs.writeFileSync("src/main/route/components.json", JSON.stringify(
         components.map(t => toRouteElement(t)).reduce((acc, val) => acc.concat(val)),
         null, 2
     ));
