@@ -11,11 +11,12 @@ let component : any;
 
 
 function initialize(bindingContext : any) {
+  let template = `
+  aire-button(label.bind="textLabel", icon.bind="icon")
+  `;
   component = StageComponent.withResources(
     PLATFORM.moduleName('button/button'))
-                            .inView(render(`
-                              aire-button(label.bind="textLabel", icon.bind="icon")
-                              `)
+                            .inView(render(template)
                             ).boundTo(bindingContext);
 }
 
