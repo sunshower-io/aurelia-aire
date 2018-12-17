@@ -32,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/sunshower-io/aurelia-aire/issues"
   },
-  "homepage": "https://github.com/sunshower-io/aurelia-aire#readme"
+  "homepage": "https://github.com/sunshower-io/aurelia-aire#readme",
+  "devDependencies": {}
 }

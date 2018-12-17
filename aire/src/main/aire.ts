@@ -1,6 +1,7 @@
 import {FrameworkConfiguration} from 'aurelia-framework';
 
 import {Aire as Application} from 'aire/core/application';
+import * as UIkit            from "uikit";
 
 export function configure(cfg: FrameworkConfiguration) {
   cfg.globalResources([
@@ -31,6 +32,7 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/search/search',
     'aire/icon/icon'
   ]);
+  Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());
 
   // cfg.plugin('aurelia-animator-velocity', cfg => {

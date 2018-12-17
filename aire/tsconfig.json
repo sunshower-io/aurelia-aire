@@ -9,11 +9,12 @@
       "typings"
     ],
     "paths": {
-      "aire/*":["src/main/*"]
+      "aire/*":["src/main/*"],
+      "test/*": ["src/test/*"]
     },
     "target": "es5"
   },
-  "files": ["typings/uikit.d.ts"],
+  "files": ["typings/uikit/index.d.ts"],
   "include": ["src/**/*.ts", "typings/**/*.ts"],
   "exclude": ["node_modules", "jspm_packages" ]
 }
