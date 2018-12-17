@@ -20,6 +20,5 @@ export class AireSearch {
         dom.decorateTo(this.element, this.form, "large", "uk-search-large");
         dom.decorateTo(this.element, this.form, "navbar", "uk-search-navbar");
         dom.decorateTo(this.element, this.icon, "flip", "uk-search-icon-flip");
-        dom.decorateTo(this.element, this.form, "offcanvas-header", "aire-search-offcanvas-header");
     }
 }
