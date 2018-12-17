@@ -15,6 +15,7 @@ export class AireNavbarItem {
 
   @bindable
   content: string;
+
   private readonly element: Element;
   constructor(private readonly el: Element) {
   }

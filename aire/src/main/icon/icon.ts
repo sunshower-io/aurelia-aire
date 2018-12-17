@@ -1,5 +1,6 @@
-import {bindable, customElement} from "aurelia-framework";
+import {bindable, containerless, customElement} from "aurelia-framework";
 
+@containerless
 @customElement('aire-icon')
 export class AireIcon {
 

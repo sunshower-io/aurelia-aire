@@ -19,7 +19,7 @@ export class App {
   }
 
   toggleOffCanvas() {
-    this.offcanvas.show();
+    this.offcanvas.toggle();
   }
 
   configureRouter(cfg: RouterConfiguration, router: Router) {
