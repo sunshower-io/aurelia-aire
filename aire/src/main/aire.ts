@@ -29,7 +29,8 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/table/table',
     'aire/application/router-view',
     'aire/search/search',
-    'aire/icon/icon'
+    'aire/icon/icon',
+    'aire/tooltip/tooltip'
   ]);
   cfg.container.registerInstance(Application, Application.getInstance());
 
