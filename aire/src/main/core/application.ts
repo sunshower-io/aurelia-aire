@@ -1,25 +1,42 @@
-import * as UIkit from 'uikit';
+
+export interface UIFramework {
+
+  on(component: any, event: string, el: string |number | HTMLElement, handler: any);
+}
+
 
 export class Aire {
 
 
-  private static __id_generator = 0;
+  constructor() {
 
-
-  public get id() : string {
-    return "aire-" + Aire.__id_generator++
   }
 
-  private static readonly instance : Aire = new Aire();
+  public static initialize(framework: UIFramework) {
+    this._framework = framework;
+  }
+
+  public static get framework() : UIFramework {
+    return this._framework;
+  }
+
+  private static idGen = 0;
+  private static instance: Aire;
+  private static _framework: UIFramework;
+
+
+  public static get id() : string {
+    return "aire-" + Aire.idGen;
+  }
+
 
   public static getInstance() : Aire {
+    if(!this.instance) {
+      this.instance = new Aire()
+    }
     return this.instance;
   }
 
-
-  static get id() : string {
-    return this.getInstance().id;
-  }
 
 
 
@@ -33,7 +50,7 @@ export module Aire {
     if(!id) {
       throw new Error(`Element ${element} must have an id! (you can use Aire.id to generate one)`);
     }
-    UIkit.util.on(document, event, `#${id}`, listener);
+    Aire.framework.on(document, event, `#${id}`, listener);
   }
 
 

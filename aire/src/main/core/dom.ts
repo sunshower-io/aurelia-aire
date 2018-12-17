@@ -1,5 +1,6 @@
-import { UUID } from './uuid';
+import {Aire}   from "aire/core/application";
 
+export const $ = document;
 
 export namespace dom {
 
@@ -51,7 +52,7 @@ export namespace dom {
 
 
 export function generated(instance: any, key: string) {
-  let value = instance[key] || UUID.random(),
+  let value = instance[key] || Aire.id,
     getter = function(): string {
       return value;
     },

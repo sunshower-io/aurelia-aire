@@ -14,8 +14,6 @@ export class App {
   }
 
   attached() {
-
-    console.log("BOD" + (this as any).body);
   }
 
   toggleOffCanvas() {

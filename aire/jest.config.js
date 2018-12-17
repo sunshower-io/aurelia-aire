@@ -7,7 +7,6 @@ module.exports = {
     transform: {
         "^.+\\.tsx?$": "ts-jest"
     },
-    testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     moduleFileExtensions: [
         "ts",
         "tsx",
@@ -16,4 +15,16 @@ module.exports = {
         "json",
         "node"
     ],
+    moduleNameMapper: {
+        "^gen/(.*)": "<rootDir>/dist/$1",
+        "^aire/(.*)": "<rootDir>/src/main/$1",
+        "^test/(.*)": "<rootDir>/src/test/$1",
+    },
+    modulePaths: [
+        "<rootDir>/src",
+        "<rootDir>/node_modules"
+    ],
+    setupFiles: [
+        "<rootDir>/src/test/setup.ts"
+    ]
 };
