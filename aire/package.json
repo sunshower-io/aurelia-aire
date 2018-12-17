@@ -10,9 +10,8 @@
   "scripts": {
     "dev": "npm install && jspm install -y",
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "gulp clean",
-    "test": "npx jest"
+    "test": "npx jest",
+    "clean": "gulp clean"
   },
   "repository": {
     "type": "git",
