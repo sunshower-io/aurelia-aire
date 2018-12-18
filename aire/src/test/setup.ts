@@ -3,9 +3,10 @@
  * bit of a hack, but it mostly works.  Import and definition order are IMPORTANT
  */
 
+import 'reflect-metadata';
+import 'aurelia-polyfills';
 import { Options }   from 'aurelia-loader-nodejs';
 import { globalize } from 'aurelia-pal-nodejs';
-import 'aurelia-polyfills';
 import 'isomorphic-fetch';
 import * as path     from 'path';
 

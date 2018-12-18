@@ -1,3 +1,4 @@
+import {Logger} from 'aurelia-logging';
 
 export interface UIFramework {
 
@@ -6,6 +7,8 @@ export interface UIFramework {
 
 
 export class Aire {
+
+  public static logger: Logger;
 
 
   constructor() {
