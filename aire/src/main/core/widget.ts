@@ -21,6 +21,9 @@ export class AireElement {
 
 
   attached() : void {
+    let log = this.log;
+
+
     let hostOrSelector = this.hostOrSelector;
     if(hostOrSelector) {
       if(typeof hostOrSelector === 'string') {

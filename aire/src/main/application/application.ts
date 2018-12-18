@@ -26,8 +26,5 @@ export class AireApplication extends AireElement {
   }
 
 
-  attached() : void {
-    super.attached();
-  }
 
 }

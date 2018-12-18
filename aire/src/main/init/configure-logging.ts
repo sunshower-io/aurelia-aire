@@ -10,8 +10,10 @@ export function configureLogging(cfg : FrameworkConfiguration) {
   if(qidx >= 0) {
     const [_, level] =  readLevel(hash.substr(qidx));
     if(level) {
+      let l = levelFor(level);
       LogManager.addAppender(new ConsoleAppender());
-      LogManager.setLevel(levelFor(level));
+      LogManager.setLevel(l);
+      console.log(`[aire]: Using level '${l}'(${level})`);
       Aire.logger = LogManager.getLogger('Aire:application');
     }
   }
