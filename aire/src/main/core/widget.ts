@@ -28,7 +28,7 @@ export class AireElement {
       } else {
         this._host = hostOrSelector as Element;
       }
-    } else if(!this.el) {
+    } else if(this.el) {
       this._host = this.el;
     }
     if(!this._host) {
@@ -36,7 +36,6 @@ export class AireElement {
       throw new TypeError(`AireElement requires a 
       physical element to provide much of its functionality.  Specify one`) ;
     }
-
   }
 
   detached() : void {
@@ -65,9 +64,32 @@ export class AireElement {
     return host.clientWidth;
   }
 
-
-
-
-
+  public hostPath() : string {
+      if (typeof this.hostOrSelector === 'string') {
+          return this.hostOrSelector;
+      } else {
+          let path = [],
+              el = this._host as any;
+          while (el.nodeType === Node.ELEMENT_NODE) {
+              let selector = el.nodeName.toLowerCase();
+              if (el.id) {
+                  selector += '#' + el.id;
+                  path.unshift(selector);
+                  break;
+              } else {
+                  let sib = el, nth = 1;
+                  while (sib = sib.previousElementSibling) {
+                      if (sib.nodeName.toLowerCase() == selector)
+                          nth++;
+                  }
+                  if (nth != 1)
+                      selector += ":nth-of-type("+nth+")";
+              }
+              path.unshift(selector);
+              el = el.parentNode;
+          }
+          return path.join(" > ");
+      }
+  }
 
 }

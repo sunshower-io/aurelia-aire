@@ -1,0 +1,22 @@
+{
+  "title": "Aire Tabs",
+  "description": "Aire Tabs Components",
+  "components": [
+    {
+      "component": {
+        "name": "tab",
+        "description": "Simple Tab Widget",
+        "widget-name": "aire-tab",
+        "category": "tab"
+      }
+    },
+    {
+      "component": {
+        "name": "tab panel",
+        "description": "Simple Tab Panel Widget",
+        "widget-name": "aire-tab-panel",
+        "category": "tab"
+      }
+    }
+  ]
+}

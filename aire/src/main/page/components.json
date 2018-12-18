@@ -1,0 +1,14 @@
+{
+  "title": "Aire Page",
+  "description": "Aire Page Component",
+  "components": [
+    {
+      "component": {
+        "name": "page",
+        "description": "Simple Page Widget",
+        "widget-name": "aire-page",
+        "category": "page"
+      }
+    }
+  ]
+}

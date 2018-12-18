@@ -2,29 +2,37 @@ import {
   child,
   autoinject,
   customElement,
-}                    from "aurelia-framework";
+}                 from "aurelia-framework";
 import {
   AireHeader
-}  from "aire/application/header";
+}                 from "aire/application/header";
 import {
   AireElement
-} from "aire/core/widget";
+}                 from "aire/core/widget";
+import {AireBody} from "aire/application/body";
 
 @autoinject
 @customElement('aire-application')
 export class AireApplication extends AireElement {
 
   @child('.aire-header')
-  private header: AireHeader;
+  private header : AireHeader;
 
-  constructor(el: Element) {
+  @child('aire-body')
+  private body : AireBody;
+
+  constructor(el : Element) {
     super('AireApplication', el, el);
   }
 
 
   attached() : void {
     super.attached();
-    this.log.warn("GOT", this.header);
+    console.log(this.header);
+    console.log(this.body);
+    // let header = this.header,
+    //   body = this.body;
+    // (body.host as HTMLElement).style.height = `calc(100% - ${header.height})`;
   }
 
 }

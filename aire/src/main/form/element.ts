@@ -1,5 +1,5 @@
 import {bindable}      from "aurelia-framework";
-import {dom}    from "aire/core";
+import {dom, Id} from "aire/core";
 
 export class AireFormElement {
 
@@ -11,14 +11,15 @@ export class AireFormElement {
     @bindable
     value       : any;
 
-    minimal     : string;
-
     error       : string;
 
     success     : string;
 
     @bindable
     disabled    : string;
+
+    @Id
+    id          : string;
 
     constructor(private element: Element) {
     }

@@ -1,0 +1,30 @@
+{
+  "title": "Aire Navbar",
+  "description": "Aire Navbar Components",
+  "components": [
+    {
+      "component": {
+        "name": "navbar",
+        "description": "Simple Navbar Widget",
+        "widget-name": "aire-navbar",
+        "category": ["nav", "navbar"]
+      }
+    },
+    {
+      "component": {
+        "name": "navbar section",
+        "description": "Simple Navbar Section Widget",
+        "widget-name": "navbar-section",
+        "category": ["nav", "navbar"]
+      }
+    },
+    {
+      "component": {
+        "name": "navbar item",
+        "description": "Simple Navbar Item Widget",
+        "widget-name": "navbar-item",
+        "category": ["nav", "navbar"]
+      }
+    }
+  ]
+}

@@ -19,8 +19,6 @@ export function configureLogging(cfg : FrameworkConfiguration) {
 }
 
 
-
-
 export function readLevel(search) : [string, string] {
   return parameter(search, "log.level") as [string, string];
 }

@@ -1,0 +1,14 @@
+{
+  "title": "Aire Search",
+  "description": "Aire Search Component",
+  "components": [
+    {
+      "component": {
+        "name": "search",
+        "description": "Simple Search Widget",
+        "widget-name": "aire-search",
+        "category": "search"
+      }
+    }
+  ]
+}
