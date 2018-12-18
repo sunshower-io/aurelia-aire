@@ -20,7 +20,7 @@ export class AireBody extends AireElement {
   public element: HTMLDivElement;
 
   constructor() {
-    super("Aire:application:body", null, '.aire-body-container');
+    super("Aire:application:body", null, '.aire-body');
   }
 
 

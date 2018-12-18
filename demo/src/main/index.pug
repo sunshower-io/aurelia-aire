@@ -8,12 +8,6 @@ template
                 navbar-item(icon="dist/icons/logo.svg" large logo)
                 navbar-item(logo) Aurelia + UIkit
         aire-body(view.ref="body")
-            aire-offcanvas(view-model.ref="offcanvas" host.bind="body" push)
-                aire-search(navbar icon)
-                aire-nav(router.bind="router")
-            router-view
-            span#florb fucklesbee
-            aire-dropdown(toggle="#florb")
-                p Testing
-
-            aire-fab(icon="fa fa-pencil" bottom="20px" right="20px")
+        aire-offcanvas(view-model.ref="offcanvas" host.bind="body" push)
+            aire-search(navbar icon)
+            aire-nav(router.bind="router")
