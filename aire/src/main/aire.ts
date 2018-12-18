@@ -2,8 +2,12 @@ import {FrameworkConfiguration} from 'aurelia-framework';
 
 import {Aire as Application} from 'aire/core/application';
 import * as UIkit            from "uikit";
+import {
+  registerAnimations,
+  configureLogging
+}  from "aire/init";
 
-export function configure(cfg: FrameworkConfiguration) {
+export function configure(cfg : FrameworkConfiguration) {
   cfg.globalResources([
     'aire/navbar/navbar',
     'aire/navbar/item',
@@ -35,9 +39,8 @@ export function configure(cfg: FrameworkConfiguration) {
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());
 
-  // cfg.plugin('aurelia-animator-velocity', cfg => {
-  //   console.log("GOT" + cfg);
-  //   cfg.registerEffect('frap',  { properties: ':enter', options: { easing: 'ease-in', duration: 200 }});
-  // });
-  // cfg.plugin()
+  cfg.plugin('aurelia-animator-velocity', registerAnimations);
+
+  configureLogging(cfg);
+
 }

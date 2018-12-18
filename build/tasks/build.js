@@ -70,6 +70,7 @@ const buildPug = () => {
 
 const copyMetadata = (done) => {
     if (paths.metadata) {
+        console.log(paths.metadata);
         return gulp.src(paths.metadata)
             .pipe(rename(utils.reparent))
             .pipe(gulp.dest(paths.output));
