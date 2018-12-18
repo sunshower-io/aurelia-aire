@@ -40,6 +40,7 @@ SystemJS.config({
         "local:*.json"
     ],
     map: {
+        "aire": "local:aire@1.0.0",
         "assert": "npm:jspm-nodelibs-assert@0.2.1",
         "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
         "aurelia-binding": "npm:aurelia-binding@2.1.7",
@@ -281,6 +282,15 @@ SystemJS.config({
         "npm:string_decoder@1.1.1": {
             "map": {
                 "safe-buffer": "npm:safe-buffer@5.1.2"
+            }
+        },
+        "local:aire@1.0.0": {
+            "map": {
+                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+                "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
+                "uikit": "npm:uikit@3.0.0-rc.25",
+                "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
+                "text": "github:systemjs/plugin-text@0.0.11"
             }
         }
     }
