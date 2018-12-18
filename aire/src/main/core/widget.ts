@@ -65,7 +65,7 @@ export class AireElement {
   }
 
   public hostPath() : string {
-      if (this.hostOrSelector === 'string') {
+      if (typeof this.hostOrSelector === 'string') {
           return this.hostOrSelector;
       } else {
           let path = [],
