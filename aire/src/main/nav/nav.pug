@@ -1,4 +1,4 @@
 template
     ul.uk-nav.uk-nav-default
         li(repeat.for="nav of navigation()" class="${nav.isActive ? 'uk-active' : ''")
-            a(href.bind="nav.href") ${nav.title}
+            a(href.bind="nav.href" click.delegate="fire()") ${nav.title}

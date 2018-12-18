@@ -8,7 +8,6 @@ import {AireTab}  from "aire/tabs/tab";
 import {TabPanel} from "uikit";
 
 import {Aire}     from 'aire/core/application';
-import {getClass} from "aire/core/lang";
 
 @customElement('aire-tab-panel')
 export class AireTabPanel {
@@ -43,15 +42,19 @@ export class AireTabPanel {
       sourceTab : AireTab,
       targetTab : AireTab;
 
-    for(let c of children) {
-      if(c.el === source) {
-        sourceTab = c;
+    if(children) {
+
+      for(let c of children) {
+        if(c.el === source) {
+          sourceTab = c;
+        }
+        if(c.el === target) {
+          targetTab = c;
+        }
       }
-      if(c.el === target) {
-        targetTab = c;
-      }
+      this.activeTab = targetTab;
     }
-    this.activeTab = targetTab;
+
 
 
     if(sourceTab) {
