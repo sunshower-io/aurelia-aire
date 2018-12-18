@@ -4,7 +4,7 @@
   "components": [
     {
       "component": {
-        "name": "basic card",
+        "name": "card",
         "description": "Simple Basic Card Widget",
         "widget-name": "aire-basic-card",
         "category": "card"
@@ -12,7 +12,7 @@
     },
     {
       "component": {
-        "name": "divided card",
+        "name": "dividedcard",
         "description": "Simple Divided Card Widget",
         "widget-name": "aire-divided-card",
         "category": "card"
