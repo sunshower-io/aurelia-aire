@@ -103,7 +103,6 @@ const reparent = p => {
         segs.shift();
     }
     p.dirname = segs.join(path.sep);
-    log.log(`Reparenting ${d} -> ${p.dirname}`);
     return p;
 };
 
