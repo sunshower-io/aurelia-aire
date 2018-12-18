@@ -3,8 +3,10 @@
 //================================================================================
 
 let root = process.cwd();
+module.paths.push(`${root}/node_modules`);
 const pkg = require(root + '/package.json'),
     fs = require('fs'),
+    log = require('gulp-util'),
     {join} = require('path'),
     path = require('path');
 
@@ -97,8 +99,11 @@ const parentDirectory = p => {
 const reparent = p => {
     let d = p.dirname,
     segs = d.split(path.sep);
-    segs.shift();
+    if(segs.length > 1) {
+        segs.shift();
+    }
     p.dirname = segs.join(path.sep);
+    log.log(`Reparenting ${d} -> ${p.dirname}`);
     return p;
 };
 
