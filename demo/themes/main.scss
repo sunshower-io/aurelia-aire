@@ -24,6 +24,14 @@ $search-placeholder-color: $white;
 
 $global-font-family: "Open Sans", "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 
+$offcanvas-bar-width: 200px;
+$offcanvas-bar-background: $white;
+$offcanvas-bar-color-mode: dark;
+
+//@mixin hook-offcanvas-bar(){
+//  border-right: 5px solid #2385AF;
+//}
+
 @import "aire";
 $fa-font-path:        "fonts";
 @import "font-awesome";

@@ -38,13 +38,6 @@ test("a button must not have an icon when icon is not present in binding context
   expect(button.firstElementChild).toBeFalsy();
 });
 
-test("a button must not have an icon when icon is not present in binding context", async () => {
-  initialize({textLabel : "Hello"});
-  await component.create(bootstrap);
-  let button = document.querySelector('.uk-button');
-  expect(button.firstElementChild).toBeFalsy();
-});
-
 test("a button have an icon when icon is not present in binding context", async () => {
   initialize({textLabel : "Hello", icon : "Helloworld"});
   await component.create(bootstrap);

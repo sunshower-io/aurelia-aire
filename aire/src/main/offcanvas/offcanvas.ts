@@ -1,16 +1,15 @@
 import {customElement, bindable, inject} from "aurelia-framework";
 import * as UIkit                        from "uikit";
 import {OffCanvas}                       from "uikit";
+import {DOM} from 'aurelia-pal';
+import {AireElement} from "aire/core/widget";
 
-@inject(Element)
+@inject(DOM.Element)
 @customElement('aire-offcanvas')
-export class AireOffCanvas {
+export class AireOffCanvas extends AireElement {
 
     @bindable
     open : boolean;
-
-    @bindable
-    host: HTMLElement; //TODO make this handle more inputs
 
     element : HTMLElement;
 
@@ -18,29 +17,32 @@ export class AireOffCanvas {
 
     style : string;
 
-    constructor(private el : Element) {
-
+    constructor(el : Element) {
+        super('AireOffcanvas', el, el.getAttribute("host"))
     }
 
     attached() {
-        let container = this.host.firstChild as HTMLElement;
-
-        if (container) {
-            container.classList.add('uk-offcanvas-container');
-
-            if (this.el.hasAttribute("push")) {
-                this.style = `top: ${container.offsetTop}px`;
-            }
-        }
-
         let options = {
             mode        : this.el.getAttribute("mode") || "slide",
             flip        : this.el.hasAttribute("flip"),
             overlay     : this.el.hasAttribute("overlay"),
             'esc-close' : this.el.hasAttribute("esc-close") || true,
-            'bg-close'  : this.el.hasAttribute("bg-close") || true,
-            container   : `#${container.id}`
+            'bg-close'  : this.el.hasAttribute("bg-close") || true
         };
+
+        if (this.host != this.el) {
+            let container = this.host;
+
+            if (container) {
+                container.classList.add('uk-offcanvas-container');
+
+                if (this.el.hasAttribute("push")) {
+                    this.style = `top: ${(container as HTMLElement).offsetTop}px`;
+                }
+
+                options['container'] = this.hostPath();
+            }
+        }
 
         this.offcanvas = UIkit.offcanvas(this.element, options);
     }
