@@ -1,5 +1,3 @@
-import 'reflect-metadata';
-import 'aurelia-polyfills';
 
 import {bootstrap}      from 'aurelia-bootstrapper';
 import {newComponent}         from "test/render";

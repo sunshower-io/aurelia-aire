@@ -2,6 +2,10 @@ import {FrameworkConfiguration} from 'aurelia-framework';
 
 import {Aire as Application} from 'aire/core/application';
 import * as UIkit            from "uikit";
+import {
+  registerAnimations,
+  configureLogging
+}  from "aire/init";
 
 export function configure(cfg : FrameworkConfiguration) {
   cfg.globalResources([
@@ -35,34 +39,8 @@ export function configure(cfg : FrameworkConfiguration) {
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());
 
-  cfg.plugin('aurelia-animator-velocity', cfg => {
-    cfg.registerEffect("wipeIn", {
-      defaultDuration : 2000,
-      calls           : [
-        [
-          {
-            backgroundColor : '#000000',
-            translateX      : [0, '50%']
-          }, .5
-        ], [
-          {
-            backgroundColor : '#ffffff',
-          }, .5
-        ]
-      ]
-    });
+  cfg.plugin('aurelia-animator-velocity', registerAnimations);
 
-    cfg.registerEffect("wipeOut", {
-      defaultDuration : 2000,
-      calls           : [
-        [
-          {
-            backgroundColor : '#000000',
-            translateX      : ['50%', 0]
-          }, .5
-        ]
-      ]
-    });
-  });
-  // cfg.plugin()
+  configureLogging(cfg);
+
 }
