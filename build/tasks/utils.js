@@ -99,7 +99,7 @@ const parentDirectory = p => {
 const reparent = p => {
     let d = p.dirname,
     segs = d.split(path.sep);
-    if(segs.length > 1) {
+    if(segs.length > 1 || (segs.length === 1 && segs[0] === 'main')) {
         segs.shift();
     }
     p.dirname = segs.join(path.sep);
