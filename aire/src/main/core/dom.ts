@@ -51,7 +51,7 @@ export namespace dom {
 }
 
 
-export function generated(instance: any, key: string) {
+export function Id(instance: any, key: string) {
   let value = instance[key] || Aire.id,
     getter = function(): string {
       return value;

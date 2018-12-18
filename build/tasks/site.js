@@ -76,9 +76,7 @@ const resolveLocales = component => {
             dirs = utils.ls(helpDir, utils.dir);
         return constructHelp(component, dirs);
     } catch(e) {
-
         console.log("No help directory found for component: " + component.rawdir);
-        throw e;
     }
 };
 

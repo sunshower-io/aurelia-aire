@@ -1,4 +1,4 @@
-import {$, dom, generated} from 'aire/core/dom';
+import {$, dom, Id} from 'aire/core/dom';
 
 let el: HTMLDivElement;
 beforeEach(() => {
@@ -34,7 +34,7 @@ test('ensure decorate adds attribute', () => {
 test('ensure generated decorates object correctly', () => {
 
   class A {
-    @generated
+    @Id
     s:string;
   }
 
