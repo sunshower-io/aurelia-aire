@@ -14,7 +14,7 @@ export class AireOffCanvas {
 
     element : HTMLElement;
 
-    offcanvas : OffCanvas;
+    private offcanvas : OffCanvas;
 
     style : string;
 

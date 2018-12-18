@@ -2,20 +2,41 @@ import {RouterLoader}                from "aurelia-router-loader";
 import {Loader}                      from 'aurelia-loader';
 import {RouterConfiguration, Router} from 'aurelia-router';
 import {DefaultLoader}               from "aurelia-loader-default";
+import {autoinject} from 'aurelia-framework';
+import {
+  EventAggregator,
+  Subscription
+}                                    from 'aurelia-event-aggregator';
+import {Events}                      from "aire/events";
+import {AireOffCanvas}               from "aire/offcanvas/offcanvas";
 
+@autoinject
 export class App {
 
   private router: Router;
 
-  offcanvas : any;
 
-  constructor(loader: Loader) {
+  offcanvas : AireOffCanvas;
+  private subscription: Subscription;
 
+  constructor(loader: Loader, readonly bus: EventAggregator) {
+
+
+  }
+
+  bind() {
+    this.subscription = this.bus.subscribe(
+      Events.NavigationEvent.ITEM_CLICKED,
+      this.offcanvas.hide.bind(this.offcanvas)
+    );
+  }
+
+  unbind() {
+    this.subscription.dispose();
   }
 
   attached() {
 
-    console.log("BOD" + (this as any).body);
   }
 
   toggleOffCanvas() {

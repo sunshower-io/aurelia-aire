@@ -7,13 +7,14 @@
     "typeRoots": [
       "node_modules/@types",
       "typings"
+//      "jspm_packages/local/aire@1.0.0"
     ],
     "paths": {
-      "aire/*":["src/*"]
+      "aire/*":["jspm_packages/local/aire@1.0.0/*"]
 
     }
   },
-  "files": ["typings/uikit.d.ts"],
+  "files": ["typings/index.d.ts"],
   "include": ["src/**/*.ts", "typings/**/*.ts"],
   "exclude": ["node_modules", "jspm_packages" ]
 }
