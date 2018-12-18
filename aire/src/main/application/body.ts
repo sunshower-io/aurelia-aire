@@ -2,18 +2,27 @@ import {
   containerless,
   customElement,
   bindable,
+  autoinject,
   bindingMode
-}             from "aurelia-framework";
-import {Aire} from "aire/core/application";
+}                        from "aurelia-framework";
+import {AireElement}     from "aire/core/widget";
+import {Id}              from "aire/core/dom";
 
+@autoinject
 @containerless
 @customElement('aire-body')
-export class AireBody {
+export class AireBody extends AireElement {
 
-  private bodyId: string = Aire.id;
+  @Id
+  private bodyId: string;
 
   @bindable({defaultBindingMode: bindingMode.toView})
   public element: HTMLDivElement;
+
+  constructor() {
+    super("Aire:application:body", null, '.aire-body-container');
+  }
+
 
 
 }

@@ -35,7 +35,7 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/application/router-view',
     'aire/search/search',
     'aire/icon/icon',
-    'aire/tooltip/tooltip'
+    'aire/dropdown/dropdown'
   ]);
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());

@@ -36,7 +36,6 @@ export class AireElement {
       throw new TypeError(`AireElement requires a 
       physical element to provide much of its functionality.  Specify one`) ;
     }
-
   }
 
   detached() : void {
