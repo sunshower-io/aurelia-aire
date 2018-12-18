@@ -7,4 +7,9 @@
 .aire-body {
   overflow-y:hidden;
   display:block;
+  height:calc(100% - #{$navbar-nav-item-height});
+
+  & > * {
+    height: 100%;
+  }
 }
