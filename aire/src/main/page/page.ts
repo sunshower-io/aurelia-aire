@@ -12,7 +12,13 @@ export class AirePage {
     dom.decorate(el, 'padded');
   }
 
+  private loading: boolean = true;
 
+  attached() : void {
+    setTimeout(()=> {
+      this.loading = false;
+    }, 1000);
+  }
 
 
 }

@@ -26,11 +26,13 @@ export class HtmlPanel {
 
 
   async activate() {
-    let converter = new showdown.Converter();
-
     this.loading = true;
-    let page = await this.client.fetch(this.url),
-      data = await page.text();
-    this.html = converter.makeHtml(data);
+    setTimeout(async() => {
+      let converter = new showdown.Converter();
+      let page = await this.client.fetch(this.url),
+        data = await page.text();
+      this.html = converter.makeHtml(data);
+      this.loading = false;
+    }, 1000);
   }
 }
