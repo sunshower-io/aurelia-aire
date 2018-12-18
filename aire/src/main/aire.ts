@@ -29,8 +29,8 @@ export function configure(cfg: FrameworkConfiguration) {
     'aire/tabs/tab',
     'aire/table/table',
     'aire/application/router-view',
-    'aire/table/table',
-    'aire/search/search'
+    'aire/search/search',
+    'aire/icon/icon'
   ]);
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());

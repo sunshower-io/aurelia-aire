@@ -1,4 +1,4 @@
-import {bindable, customElement, inject}      from "aurelia-framework";
+import {bindable, customElement, inject} from "aurelia-framework";
 import {dom}    from "aire/core";
 import {DOM} from 'aurelia-pal';
 

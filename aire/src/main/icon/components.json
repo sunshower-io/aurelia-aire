@@ -1,0 +1,14 @@
+{
+  "title": "Aire Icon",
+  "description": "Aire Icon Components",
+  "components": [
+    {
+      "component": {
+        "name": "icon",
+        "description": "Simple Icon Widget",
+        "widget-name": "aire-icon",
+        "category": "icon"
+      }
+    }
+  ]
+}

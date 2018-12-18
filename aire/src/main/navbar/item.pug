@@ -1,5 +1,4 @@
 template
     a.uk-navbar-item(ref="element" class.bind="active ? 'uk-active' : ''")
-        //todo account for actual icon, not just image
-        img(if.bind="icon" src.bind="icon")
+        aire-icon(if.bind="icon" icon.bind="icon")
         slot

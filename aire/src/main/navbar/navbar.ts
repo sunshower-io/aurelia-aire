@@ -13,11 +13,11 @@ export class AireNavbar {
   }
 
   attached() : void {
-    UIkit.navbar(this.element);
     dom.decorateTo(this.el, this.element, "sticky", "uk-navbar-sticky");
     dom.decorateTo(this.el, this.element, "transparent", "uk-navbar-transparent");
     dom.decorateTo(this.el, this.element, "dark", "uk-dark");
     dom.decorateTo(this.el, this.element, "light", "uk-light");
+    UIkit.navbar(this.element);
   }
 
 }
