@@ -7,6 +7,7 @@ const paths = {
     styles: ['themes/main.scss'],
     dest: 'dist',
     metadata: ['assets/**/*', 'src/**/*.json'],
+    allStyles: ['themes/**/*.scss', '../aire/dist/**/*.css'],
     createScssInclusions: utils => {
 
         let pkg = utils.locatePackage('aire'),

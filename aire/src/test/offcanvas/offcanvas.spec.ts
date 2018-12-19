@@ -1,6 +1,5 @@
 import {bootstrap}      from 'aurelia-bootstrapper';
 import {newComponent}         from "test/render";
-import {waitForDocumentElement} from "aurelia-testing";
 
 let component : any;
 
@@ -47,11 +46,12 @@ aire-offcanvas(host.bind="body")
 
     await component.create(bootstrap);
 
-    await waitForDocumentElement('.uk-offcanvas-bar');
+    // await component.waitForElement('.uk-offcanvas-bar');
+
     // await component.waitForElement('.uk-offcanvas-bar');
 
     let body = document.querySelector('main.aire-body'),
-        offcanvas = body.querySelector('.uk-offcanvas-bar');
+        offcanvas = document.querySelector('.uk-offcanvas-bar');
     expect(offcanvas).toBeTruthy();
 });
 
@@ -63,9 +63,7 @@ aire-offcanvas(host="main.aire-body")
 
     await component.create(bootstrap);
 
-    await component.waitForElement('.uk-offcanvas-bar');
-
     let body = document.querySelector('main.aire-body'),
-        offcanvas = body.querySelector('.uk-offcanvas-bar');
+        offcanvas = document.querySelector('.uk-offcanvas-bar');
     expect(offcanvas).toBeTruthy();
 });

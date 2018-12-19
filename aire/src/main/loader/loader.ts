@@ -3,7 +3,6 @@ import {
   customElement
 } from 'aurelia-framework';
 
-@containerless
 @customElement('aire-loader')
 export class AireLoader {
 
