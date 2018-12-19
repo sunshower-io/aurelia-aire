@@ -46,12 +46,9 @@ aire-offcanvas(host.bind="body")
 
     await component.create(bootstrap);
 
-    // await component.waitForElement('.uk-offcanvas-bar');
-
-    // await component.waitForElement('.uk-offcanvas-bar');
-
-    let body = document.querySelector('main.aire-body'),
-        offcanvas = document.querySelector('.uk-offcanvas-bar');
+    let body = document.querySelector('main.aire-body').outerHTML,
+        offcanvas = body.includes('uk-offcanvas-bar'); //should be appended instead of inside aire-offcanvas
+    console.log(document.body.outerHTML);
     expect(offcanvas).toBeTruthy();
 });
 
@@ -63,7 +60,8 @@ aire-offcanvas(host="main.aire-body")
 
     await component.create(bootstrap);
 
-    let body = document.querySelector('main.aire-body'),
-        offcanvas = document.querySelector('.uk-offcanvas-bar');
+    let body = document.querySelector('main.aire-body').outerHTML,
+        offcanvas = body.includes('uk-offcanvas-bar'); //should be appended instead of inside aire-offcanvas
+    console.log(body);
     expect(offcanvas).toBeTruthy();
 });
