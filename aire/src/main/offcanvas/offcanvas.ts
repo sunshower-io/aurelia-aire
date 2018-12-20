@@ -57,16 +57,11 @@ export class AireOffCanvas {
       },
       parent = this.resolveParentFor();
 
-    if (parent !== this.el) {
-      let container = parent;
-      if (container) {
-        container.classList.add('uk-offcanvas-container');
+    if (parent) {
+        parent.classList.add('uk-offcanvas-container');
         if (this.el.hasAttribute("push")) {
-          this.style = `top: ${(container as HTMLElement).offsetTop}px`;
+            this.style = `top: ${(parent as HTMLElement).offsetTop}px`;
         }
-      }
-    }
-    if(parent) {
       options['container'] = dom.pathTo(parent);
     }
 

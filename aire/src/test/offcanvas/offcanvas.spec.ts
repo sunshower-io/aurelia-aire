@@ -41,22 +41,23 @@ test('offcanvas must have a slot', async (done) => {
     done();
 });
 
-test('offcanvas can take a host element', async (done) => {
+test('offcanvas can take a parent element', async (done) => {
     component = newComponent(`
 main.aire-body(ref="body")
-aire-offcanvas(host.bind="body")
+aire-offcanvas(parent.bind="body")
   `, {}, 'offcanvas/offcanvas');
 
     await component.create(bootstrap);
-
+    let oc: AireOffCanvas = component.viewModel;
+    oc.show();
     let body = document.querySelector('main.aire-body').outerHTML,
-        offcanvas = body.includes('uk-offcanvas-bar'); //should be appended instead of inside aire-offcanvas
+        offcanvas = body.includes('uk-offcanvas-bar');
     console.log(document.body.outerHTML);
     expect(offcanvas).toBeTruthy();
   done();
 });
 
-test('offcanvas can take a host string selector', async (done) => {
+test('offcanvas can take a parent string selector', async (done) => {
     component = newComponent(`
 main.aire-body
 aire-offcanvas(parent="main.aire-body")
@@ -66,7 +67,7 @@ aire-offcanvas(parent="main.aire-body")
     let oc: AireOffCanvas = component.viewModel;
     oc.show();
     let body = document.querySelector('main.aire-body').outerHTML,
-        offcanvas = body.includes('uk-offcanvas-bar'); //should be appended instead of inside aire-offcanvas
+        offcanvas = body.includes('uk-offcanvas-bar');
     console.log(body);
     expect(offcanvas).toBeTruthy();
     done();
