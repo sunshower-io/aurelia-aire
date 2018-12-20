@@ -1,28 +1,57 @@
-import {Aire}   from "aire/core/application";
+import {Aire} from "aire/core/application";
 
 export const $ = document;
 
 export namespace dom {
+  export function pathTo(hostOrSelector : string | Node) : string {
+    if (typeof hostOrSelector === 'string') {
+      return hostOrSelector;
+    } else {
+      let path = [],
+        el = hostOrSelector as any;
+      while (el.nodeType === Node.ELEMENT_NODE) {
+        let selector = el.nodeName.toLowerCase();
+        if (el.id) {
+          selector += '#' + el.id;
+          path.unshift(selector);
+          break;
+        } else {
+          let sib = el, nth = 1;
+          while (sib = sib.previousElementSibling) {
+            if (sib.nodeName.toLowerCase() == selector) {
+              nth++;
+            }
+          }
+          if (nth != 1) {
+            selector += ":nth-of-type(" + nth + ")";
+          }
+        }
+        path.unshift(selector);
+        el = el.parentNode;
+      }
+      return path.join(" > ");
+    }
+  }
 
-
-  export function $(s: string): Element {
+  export function $(s : string) : Element {
     return document.querySelector(s);
   }
 
-  export function isAncestor(test: Element, target: Element) {
+  export function isAncestor(test : Element, target : Element) {
     if (test === target) {
       return true;
     }
     let c = test;
-    while ((c = c.parentElement) && c !== target) {}
+    while ((c = c.parentElement) && c !== target) {
+    }
     return !!c;
   }
 
   export function decorateTo(
-    sourceEl: Element,
-    el: Element,
-    decoration: string,
-    className?: string
+    sourceEl : Element,
+    el : Element,
+    decoration : string,
+    className? : string
   ) {
     if (sourceEl.hasAttribute(decoration)) {
       if (className) {
@@ -34,10 +63,10 @@ export namespace dom {
   }
 
   export function decorate(
-    el: Element,
-    decoration: string,
-    className?: string
-  ): boolean {
+    el : Element,
+    decoration : string,
+    className? : string
+  ) : boolean {
     if (el.hasAttribute(decoration)) {
       if (className) {
         el.classList.add(className);
@@ -51,49 +80,50 @@ export namespace dom {
 }
 
 
-export function Id(instance: any, key: string) {
+export function Id(instance : any, key : string) {
   let value = instance[key] || Aire.id,
-    getter = function(): string {
+    getter = function () : string {
       return value;
     },
-    setter = function(v: string): void {
+    setter = function (v : string) : void {
       value = v;
     };
   if (delete instance[key]) {
     Object.defineProperty(instance, key, {
-      get: getter,
-      set: setter,
-      enumerable: true,
-      configurable: true
+      get          : getter,
+      set          : setter,
+      enumerable   : true,
+      configurable : true
     });
   }
 }
 
-export function findParentByClass(el: Element, selectorClass: string): Element {
+export function findParentByClass(el : Element, selectorClass : string) : Element {
   if (Element.prototype.closest) {
     return el.closest(selectorClass);
   }
   while (
     (el = el.parentElement) &&
     !(el.matches || (el as any).matchesSelector).call(el, selectorClass)
-  ) {}
+    ) {
+  }
   return el;
 }
 
-export function createEvent(name: string, value: any): Event {
+export function createEvent(name : string, value : any) : Event {
   let w = window as any;
   if (w.CustomEvent) {
     return new CustomEvent(name, {
-      detail: {
-        value: value
+      detail  : {
+        value : value
       },
-      bubbles: true
+      bubbles : true
     });
   } else {
     let e = document.createEvent('CustomEvent');
     e.initCustomEvent(name, true, true, {
-      detail: {
-        value: value
+      detail : {
+        value : value
       }
     });
   }

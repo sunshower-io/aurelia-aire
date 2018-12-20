@@ -24,23 +24,26 @@ afterEach(() => {
   component.dispose();
 });
 
-test("a button's text must be bindable ", async () => {
+test("a button's text must be bindable ", async (done) => {
   initialize({textLabel : "Hello"});
   await component.create(bootstrap);
   let button = document.querySelector('.uk-button');
   expect(button.textContent).toBe("Hello");
+  done();
 });
 
-test("a button must not have an icon when icon is not present in binding context", async () => {
+test("a button must not have an icon when icon is not present in binding context", async (done) => {
   initialize({textLabel : "Hello"});
   await component.create(bootstrap);
   let button = document.querySelector('.uk-button');
   expect(button.firstElementChild).toBeFalsy();
+  done();
 });
 
-test("a button have an icon when icon is not present in binding context", async () => {
+test("a button have an icon when icon is not present in binding context", async (done) => {
   initialize({textLabel : "Hello", icon : "Helloworld"});
   await component.create(bootstrap);
   let button = document.querySelector('.uk-button');
   expect(button.firstElementChild).toBeTruthy();
+  done();
 });

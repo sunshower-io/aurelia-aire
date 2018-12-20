@@ -33,5 +33,7 @@
     "url": "https://github.com/sunshower-io/aurelia-aire/issues"
   },
   "homepage": "https://github.com/sunshower-io/aurelia-aire#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp-sourcemaps": "^2.6.4"
+  }
 }

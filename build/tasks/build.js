@@ -11,6 +11,7 @@ const
     pug = require('gulp-pug'),
     rename = require('gulp-rename'),
     typescript = require('gulp-typescript'),
+    sourcemaps = require('gulp-sourcemaps'),
     project = typescript.createProject('tsconfig.json');
 
 
@@ -45,7 +46,9 @@ const buildScss = () => {
 const build = () => {
     return gulp
         .src(paths.typescript)
+        .pipe(sourcemaps.init({loadMaps:true}))
         .pipe(project(typescript.reporter.fullReporter()))
+        .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '.'}))
         .pipe(rename(utils.reparent))
         .pipe(gulp.dest(paths.output));
 };

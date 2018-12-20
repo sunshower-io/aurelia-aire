@@ -12,7 +12,7 @@ afterEach(() => {
 
 
 
-test('tabs must be initializable', async () => {
+test('tabs must be initializable', async (done) => {
   component = newComponent(
     `
     aire-tab-panel
@@ -24,10 +24,11 @@ test('tabs must be initializable', async () => {
 
   let tabEl = document.querySelector('.aire-tab-panel');
   expect(tabEl).toBeTruthy();
+  done();
 
 });
 
-test('a tab-panel must have tabs definable as children', async () => {
+test('a tab-panel must have tabs definable as children', async (done) => {
   component = newComponent(`
   aire-tab-panel
     aire-tab(title.bind="frapper")
@@ -38,4 +39,5 @@ test('a tab-panel must have tabs definable as children', async () => {
 
   let h1 = document.querySelector('h1');
   expect(h1.textContent).toBe("wabbo");
+  done();
 });

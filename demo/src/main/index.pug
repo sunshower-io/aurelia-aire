@@ -8,6 +8,6 @@ template
                 navbar-item(icon="dist/icons/logo.svg" large logo)
                 navbar-item(logo) Aurelia + UIkit
         aire-body(view.ref="body")
-        aire-offcanvas(view-model.ref="offcanvas" host.bind="body" push)
+        aire-offcanvas(view-model.ref="offcanvas" parent.bind="body" push)
             aire-search(navbar icon)
             aire-nav(router.bind="router")
