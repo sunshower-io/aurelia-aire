@@ -72,3 +72,33 @@ aire-offcanvas(parent="main.aire-body")
     expect(offcanvas).toBeTruthy();
     done();
 });
+
+test('offcanvas parent gets container class', async (done) => {
+    component = newComponent(`
+main.aire-body
+aire-offcanvas(parent="main.aire-body")
+  `, {}, 'offcanvas/offcanvas');
+
+    await component.create(bootstrap);
+    let oc: AireOffCanvas = component.viewModel;
+    oc.show();
+    let body = document.querySelector('main.aire-body.uk-offcanvas-container');
+    expect(body).toBeTruthy();
+    done();
+});
+
+test('offcanvas can be pushed down by parent', async (done) => {
+    component = newComponent(`
+main.aire-body
+aire-offcanvas(parent="main.aire-body" push)
+  `, {}, 'offcanvas/offcanvas');
+    await component.create(bootstrap);
+    let oc: AireOffCanvas = component.viewModel;
+    oc.show();
+    let offcanvas = document.querySelector('.uk-offcanvas'),
+        style = offcanvas.getAttribute("style");
+    console.log(style);
+    expect(style.indexOf("top")).toBeGreaterThan(-1);
+    done();
+
+});
