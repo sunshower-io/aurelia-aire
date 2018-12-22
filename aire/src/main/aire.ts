@@ -27,7 +27,7 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/form/checkbox',
     'aire/form/range',
     'aire/button/button',
-    'aire/fab/fab',
+    'aire/button/fab',
     'aire/widget/widget-panel',
     'aire/tabs/tab-panel',
     'aire/tabs/tab',

@@ -1,10 +1,8 @@
 import 'reflect-metadata';
 import 'aurelia-polyfills';
 
-import {StageComponent} from "aurelia-testing";
 import {bootstrap}      from 'aurelia-bootstrapper';
-import {PLATFORM}       from 'aurelia-pal';
-import {render}         from "test/render";
+import {newComponent}         from "test/render";
 
 
 let component : any;
@@ -14,17 +12,14 @@ function initialize(bindingContext : any, templateString ?: string) {
   let template = templateString ? templateString : `
   aire-button(label.bind="textLabel", icon.bind="icon")
   `;
-  component = StageComponent.withResources(
-    PLATFORM.moduleName('button/button'))
-                            .inView(render(template)
-                            ).boundTo(bindingContext);
+  component = newComponent(template, bindingContext, 'button/button');
 }
 
 afterEach(() => {
   component.dispose();
 });
 
-test("a button's text must be bindable ", async (done) => {
+test("a button's text must be bindable", async (done) => {
   initialize({textLabel : "Hello"});
   await component.create(bootstrap);
   let button = document.querySelector('.uk-button');
