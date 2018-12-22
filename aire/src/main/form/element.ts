@@ -16,7 +16,7 @@ export class AireFormElement {
     success     : string;
 
     @bindable
-    disabled    : string;
+    disabled    : boolean;
 
     @Id
     id          : string;
