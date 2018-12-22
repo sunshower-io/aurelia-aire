@@ -1,4 +1,4 @@
-import {customElement, inject}      from "aurelia-framework";
+import {bindable, customElement, inject}      from "aurelia-framework";
 import {AireCard} from "aire/card/card";
 
 @inject(Element)
@@ -7,17 +7,17 @@ export class AireDividedCard extends AireCard {
 
   card        : HTMLElement;
 
+  @bindable
   header    : boolean;
 
+  @bindable
   footer    : boolean;
 
   constructor(element: Element) {
     super(element);
-    this.header = element.hasAttribute("header");
-    this.footer = element.hasAttribute("footer");
   }
 
   attached() {
-
+    super.attached();
   }
 }
