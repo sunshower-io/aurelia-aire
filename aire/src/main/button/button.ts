@@ -15,7 +15,7 @@ export class AireButton {
   button    : HTMLElement;
 
   @bindable
-  disabled    : string;
+  disabled    : boolean;
 
   constructor(
     private element: Element

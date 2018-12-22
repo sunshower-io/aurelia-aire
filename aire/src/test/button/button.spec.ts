@@ -48,6 +48,36 @@ test("a button have an icon when icon is not present in binding context", async 
   done();
 });
 
+test("a button should go disabled when true in binding context", async (done) => {
+    initialize({textLabel : "Hello", disabled : "true"}, `
+aire-button(label.bind="textLabel" disabled.bind="disabled")
+  `);
+    await component.create(bootstrap);
+    let button = document.querySelector('.uk-button') as any;
+    expect(button.disabled).toBeTruthy();
+    done();
+});
+
+test("a button should not go disabled when false in binding context", async (done) => {
+    initialize({textLabel : "Hello", disabled : "false"}, `
+aire-button(label.bind="textLabel" disabled.bind="disabled")
+  `);
+    await component.create(bootstrap);
+    let button = document.querySelector('.uk-button') as any;
+    expect(button.disabled).toBeTruthy();
+    done();
+});
+
+test("a button should not go disabled when not in binding context", async (done) => {
+    initialize({textLabel : "Hello"}, `
+aire-button(label.bind="textLabel")
+  `);
+    await component.create(bootstrap);
+    let button = document.querySelector('.uk-button') as any;
+    expect(button.disabled).toBeFalsy();
+    done();
+});
+
 test("a button must take a default argument", async(done) => {
   initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" default)
