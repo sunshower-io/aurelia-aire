@@ -15,7 +15,7 @@ export class AireIcon {
     }
 
     bind() {
-        if (this.icon.indexOf('svg+xml') > -1 || this.icon.indexOf('.') > -1) {
+        if (this.icon && (this.icon.indexOf('svg+xml') > -1 || this.icon.indexOf('.') > -1)) {
             this.src = this.icon;
         } else {
             this.class = this.icon;
