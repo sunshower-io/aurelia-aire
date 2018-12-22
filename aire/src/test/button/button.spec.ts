@@ -78,7 +78,7 @@ aire-button(label.bind="textLabel")
     done();
 });
 
-test("a button must take a default argument", async(done) => {
+test("a button can take a default argument", async(done) => {
   initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" default)
   `);
@@ -88,7 +88,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" default)
     done();
 });
 
-test("a button must take a primary argument", async(done) => {
+test("a button can take a primary argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" primary)
   `);
@@ -98,7 +98,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" primary)
     done();
 });
 
-test("a button must take a secondary argument", async(done) => {
+test("a button can take a secondary argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" secondary)
   `);
@@ -108,7 +108,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" secondary)
     done();
 });
 
-test("a button must take a danger argument", async(done) => {
+test("a button can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" danger)
   `);
@@ -118,7 +118,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" danger)
     done();
 });
 
-test("a button must take a text argument", async(done) => {
+test("a button can take a text argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" text)
   `);
@@ -128,7 +128,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" text)
     done();
 });
 
-test("a button must take a link argument", async(done) => {
+test("a button can take a link argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" link)
   `);
@@ -138,7 +138,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" link)
     done();
 });
 
-test("a button must take a full argument", async(done) => {
+test("a button can take a full argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" full)
   `);
@@ -148,7 +148,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" full)
     done();
 });
 
-test("a button must take a small argument", async(done) => {
+test("a button can take a small argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" small)
   `);
@@ -158,7 +158,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" small)
     done();
 });
 
-test("a button must take a large argument", async(done) => {
+test("a button can take a large argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" large)
   `);
@@ -168,7 +168,7 @@ aire-button(label.bind="textLabel", icon.bind="icon" large)
     done();
 });
 
-test("a button must take a square argument", async(done) => {
+test("a button can take a square argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" square)
   `);

@@ -18,6 +18,10 @@ export class AireCard {
       dom.decorateTo(this.element, this.card, "secondary", "uk-card-secondary");
       dom.decorateTo(this.element, this.card, "hover", "uk-card-hover");
       dom.decorateTo(this.element, this.card, "padding", "uk-card-body");
-      //TODO handle uk-card-small and uk-card-large
+      dom.decorateTo(this.element, this.card, "padding-small", "uk-card-body");
+      dom.decorateTo(this.element, this.card, "padding-small", "uk-card-small");
+      dom.decorateTo(this.element, this.card, "padding-large", "uk-card-body");
+      dom.decorateTo(this.element, this.card, "padding-large", "uk-card-large");
+
   }
 }
