@@ -1,14 +1,12 @@
-import { customElement, inject} from "aurelia-framework";
-import {AireFormElement} from "./element";
+import {customElement, inject} from "aurelia-framework";
+import {DOM} from 'aurelia-pal';
+import {AireFormMultiElement} from "aire/form/multielement";
 
-@inject(Element)
+@inject(DOM.Element)
 @customElement('aire-radio')
-export class AireRadio extends AireFormElement {
-
-    selected    : boolean;
+export class AireRadio extends AireFormMultiElement {
 
     constructor(element: Element) {
         super(element);
-        this.selected = element.hasAttribute("checked");
     }
 }
