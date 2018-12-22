@@ -11,17 +11,11 @@ import 'isomorphic-fetch';
 import * as path     from 'path';
 
 require('jsdom-global')();
-require('mutationobserver-shim');
+import  'mutationobserver-shim';
 
 Object.defineProperty(global, 'MutationObserver', {
-  value: function() {
-    this.observe = function() {
-
-    }
-
-  },
+  value: (window as any).MutationObserver,
   writable:true
-
 });
 
 
@@ -31,12 +25,19 @@ import {Aire}        from "aire/core/application";
 
 Options.relativeToDir = path.join(__dirname, '../../dist');
 globalize();
+let animationFrameId: number;
 Object.defineProperty(global, 'requestAnimationFrame', {
   value: function() {
-
+    return (animationFrameId = setTimeout(() =>{}));
   },
   writable:true
 
 });
 
+Object.defineProperty(global, 'cancelAnimationFrame', {
+  value: function(id: number) {
+    return clearTimeout(id);
+  },
+  writable:true
+});
 Aire.initialize(UIkit.util);

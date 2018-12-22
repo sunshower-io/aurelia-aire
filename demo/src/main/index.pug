@@ -1,6 +1,6 @@
 template
     aire-application
-        aire-header(sticky dark)
+        aire-header(sticky light)
             navbar-section(left)
                 navbar-item
                     aire-button(icon="fa fa-bars" square click.delegate="toggleOffCanvas()" primary)
@@ -8,7 +8,6 @@ template
                 navbar-item(icon="dist/icons/logo.svg" large logo)
                 navbar-item(logo) Aurelia + UIkit
         aire-body(view.ref="body")
-            aire-offcanvas(view-model.ref="offcanvas" host.bind="body" push)
-                aire-search(navbar icon)
-                aire-nav(router.bind="router")
-            router-view
+        aire-offcanvas(view-model.ref="offcanvas" parent.bind="body" push)
+            aire-search(navbar icon)
+            aire-nav(router.bind="router")

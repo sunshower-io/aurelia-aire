@@ -121,5 +121,7 @@
     "typescript": "^3.2.2",
     "vinyl-paths": "^2.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-sourcemaps": "^2.6.4"
+  }
 }

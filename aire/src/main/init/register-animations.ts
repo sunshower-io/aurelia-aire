@@ -5,8 +5,8 @@ export function registerAnimations(cfg) {
     calls           : [
       [
         {
-          backgroundColor : '#000000',
-          translateX      : [0, '50%']
+          backgroundColor : '#a2a2a2',
+          translateX      : [0, '100%']
         }, .5
       ], [
         {
@@ -21,8 +21,8 @@ export function registerAnimations(cfg) {
     calls           : [
       [
         {
-          backgroundColor : '#000000',
-          translateX      : ['50%', 0]
+          backgroundColor : '#660066',
+          translateX      : ['100%', 0]
         }, .5
       ]
     ]

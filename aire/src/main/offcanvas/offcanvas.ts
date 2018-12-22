@@ -1,67 +1,90 @@
-import {customElement, bindable, inject} from "aurelia-framework";
+import {
+  customElement,
+  bindable,
+  inject,
+  View
+} from "aurelia-framework";
 import * as UIkit                        from "uikit";
 import {OffCanvas}                       from "uikit";
+import {DOM}                             from 'aurelia-pal';
+import {dom}                             from "aire/core/dom";
 
-@inject(Element)
+@inject(DOM.Element)
 @customElement('aire-offcanvas')
 export class AireOffCanvas {
 
-    @bindable
-    open : boolean;
+  @bindable
+  open : boolean;
 
-    @bindable
-    host: HTMLElement; //TODO make this handle more inputs
+  element : HTMLElement;
 
-    element : HTMLElement;
+  @bindable
+  private parent : any;
 
-    private offcanvas : OffCanvas;
+  private offcanvas : OffCanvas;
 
-    style : string;
+  style : string;
 
-    constructor(private el : Element) {
+  constructor(private el : Element) {
+  }
 
+  activate() : void {
+  }
+
+  private resolveParentFor() : Element {
+    let parent = this.parent;
+    if (!parent) {
+      return null;
     }
+    if (typeof parent === 'string') {
+      return dom.$(parent);
+    }
+    if(parent instanceof View) {
+      return dom.$('#' + (parent as any).firstChild.id);
+    }
+    return parent;
+  }
 
-    attached() {
-        let container = this.host.firstChild as HTMLElement;
 
-        if (container) {
-            container.classList.add('uk-offcanvas-container');
+  attached() {
 
-            if (this.el.hasAttribute("push")) {
-                this.style = `top: ${container.offsetTop}px`;
-            }
+    let options = {
+        mode        : this.el.getAttribute("mode") || "slide",
+        flip        : this.el.hasAttribute("flip"),
+        overlay     : this.el.hasAttribute("overlay"),
+        'esc-close' : this.el.hasAttribute("esc-close") || true,
+        'bg-close'  : this.el.hasAttribute("bg-close") || true
+      },
+      parent = this.resolveParentFor();
+
+    if (parent) {
+        parent.classList.add('uk-offcanvas-container');
+        if (this.el.hasAttribute("push")) {
+            this.style = `top: ${(parent as HTMLElement).offsetTop}px`;
         }
-
-        let options = {
-            mode        : this.el.getAttribute("mode") || "slide",
-            flip        : this.el.hasAttribute("flip"),
-            overlay     : this.el.hasAttribute("overlay"),
-            'esc-close' : this.el.hasAttribute("esc-close") || true,
-            'bg-close'  : this.el.hasAttribute("bg-close") || true,
-            container   : `#${container.id}`
-        };
-
-        this.offcanvas = UIkit.offcanvas(this.element, options);
+      options['container'] = dom.pathTo(parent);
     }
 
-    toggle() : void {
-        if (this.open) {
-            this.offcanvas.hide();
-        }
-        else {
-            this.offcanvas.show();
-        }
-        this.open = !this.open;
-    }
+    this.offcanvas = UIkit.offcanvas(this.element, options);
+  }
 
-    show() : void {
-        this.offcanvas.show();
-        this.open = true;
+  toggle() : void {
+    if (this.open) {
+      this.offcanvas.hide();
     }
+    else {
+      this.offcanvas.show();
+    }
+    this.open = !this.open;
+  }
 
-    hide() : void {
-        this.offcanvas.hide();
-        this.open = false;
-    }
+  show() : void {
+    this.offcanvas.show();
+    this.open = true;
+  }
+
+  hide() : void {
+    this.offcanvas.hide();
+    this.open = false;
+  }
 }

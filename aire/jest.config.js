@@ -9,11 +9,8 @@ module.exports = {
     },
     moduleFileExtensions: [
         "ts",
-        "tsx",
         "js",
-        "jsx",
         "json",
-        "node"
     ],
     moduleNameMapper: {
         "^gen/(.*)": "<rootDir>/dist/$1",

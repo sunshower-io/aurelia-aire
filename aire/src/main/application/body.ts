@@ -8,10 +8,19 @@ import {
 import {AireElement}     from "aire/core/widget";
 import {Id}              from "aire/core/dom";
 
+import {EventAggregator} from 'aurelia-event-aggregator';
+
 @autoinject
 @containerless
 @customElement('aire-body')
 export class AireBody extends AireElement {
+
+
+  @bindable loading: boolean;
+  @bindable debounce: boolean;
+
+  @bindable wait: number;
+
 
   @Id
   private bodyId: string;
@@ -19,10 +28,19 @@ export class AireBody extends AireElement {
   @bindable({defaultBindingMode: bindingMode.toView})
   public element: HTMLDivElement;
 
-  constructor() {
-    super("Aire:application:body", null, '.aire-body-container');
+  constructor(readonly bus: EventAggregator) {
+    super("Aire:application:body", null, '.aire-body');
   }
 
+
+  bind() : void {
+
+  }
+
+
+  unbind() : void {
+
+  }
 
 
 }

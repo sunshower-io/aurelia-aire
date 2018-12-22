@@ -5,7 +5,7 @@ import {AireElement} from "aire/core/widget";
 
 @inject(Element)
 @customElement('aire-dropdown')
-export class AireDropdown extends AireElement {
+export class AireDropdown {
 
   @bindable
   mode : string = 'click, hover';
@@ -18,17 +18,17 @@ export class AireDropdown extends AireElement {
   element : HTMLElement;
 
   constructor(el : Element) {
-      super('AireDropdown', el, el.getAttribute("toggle") || el.previousElementSibling);
+      // super('AireDropdown', el, el.getAttribute("toggle") || el.previousElementSibling);
   }
 
   attached() {
-    super.attached();
-    let options = {
-      toggle : this.hostPath(),
-      pos    : this.position,
-      mode   : this.mode
-    };
-    console.log("options", options);
-    this.dropdown = UIkit.dropdown(this.element, options);
+    // super.attached();
+    // let options = {
+    //   toggle : this.hostPath(),
+    //   pos    : this.position,
+    //   mode   : this.mode
+    // };
+    // console.log("options", options);
+    // this.dropdown = UIkit.dropdown(this.element, options);
   }
 }
