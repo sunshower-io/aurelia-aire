@@ -17,15 +17,15 @@ export class AireNavbarItem {
   content: string;
 
   private readonly element: Element;
+
   constructor(private readonly el: Element) {
   }
 
   attached() : void {
-    let el = this.el;
-    dom.decorateTo(el, this.element, 'large');
-    dom.decorateTo(el, this.element, 'small');
-    dom.decorateTo(el, this.element, 'medium');
-    dom.decorateTo(el, this.element, 'logo', 'uk-logo');
+    dom.decorateTo(this.el, this.element, 'large');
+    dom.decorateTo(this.el, this.element, 'small');
+    dom.decorateTo(this.el, this.element, 'medium');
+    dom.decorateTo(this.el, this.element, 'logo', 'uk-logo');
   }
 
 }
