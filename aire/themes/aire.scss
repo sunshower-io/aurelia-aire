@@ -1,40 +1,9 @@
+//your variables go here
 
-// 1. Your custom variables and variable overwrites.
-@import "default/colors";
-@import "default/navbar";
-@import "default/accordion";
-@import "default/offcanvas";
-@import "default/alert";
-@import "default/align";
+@import "aire-theme";
 
+//your mixins go here
 
-@import "variables-theme";
-@import "mixins-theme";
-
-
-
-
-
-// 3. Your custom mixin overwrites.
-@import "default/accordion-mixins";
-@import "default/alert-mixins";
-@import "default/align-mixins";
-
-
-
-@import "uikit-theme";
-
-
-
-@import "components/fab";
-@import "components/html-panel";
-@import "components/button";
-@import "components/search";
-@import "components/loader";
-
-
-
-@import "aire-base/variables";
-@import "aire-base/components";
+@import "aire-components";
 
 
