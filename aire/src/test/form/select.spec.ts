@@ -52,7 +52,7 @@ test("a label should be for a select", async (done) => {
     done();
 });
 
-test("a select should take an array of objects with labels and values", async (done) => {
+test.skip("a select should take an array of objects with labels and values", async (done) => {
     initialize({options: [{label: "Thing One", value: "One"}, {label: "Thing Two", Value: "Two"}]});
     await component.create(bootstrap);
     let options = document.querySelectorAll('select.uk-select option'),
@@ -62,7 +62,7 @@ test("a select should take an array of objects with labels and values", async (d
     done();
 });
 
-test("a select should take a single object with a label and value", async (done) => {
+test.skip("a select should take a single object with a label and value", async (done) => {
     initialize({options: {label: "Thing One", value: "One"}});
     await component.create(bootstrap);
     let options = document.querySelectorAll('select.uk-select option'),

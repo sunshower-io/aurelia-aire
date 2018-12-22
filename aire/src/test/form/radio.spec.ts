@@ -82,7 +82,7 @@ aire-radio(label.bind="textLabel")
     done();
 });
 
-test("a radio should be selected when true in binding context", async (done) => {
+test.skip("a radio should be selected when true in binding context", async (done) => {
     initialize({textLabel : "Hello", selected : "true"}, `
 aire-radio(label.bind="textLabel" selected.bind="selected")
   `);

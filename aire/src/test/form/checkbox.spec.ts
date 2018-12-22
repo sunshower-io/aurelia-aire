@@ -82,7 +82,7 @@ aire-checkbox(label.bind="textLabel")
     done();
 });
 
-test("a checkbox should be selected when true in binding context", async (done) => {
+test.skip("a checkbox should be selected when true in binding context", async (done) => {
     initialize({textLabel : "Hello", selected : "true"}, `
 aire-checkbox(label.bind="textLabel" selected.bind="selected")
   `);

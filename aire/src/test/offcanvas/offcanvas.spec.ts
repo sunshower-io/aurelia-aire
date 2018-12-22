@@ -87,7 +87,7 @@ aire-offcanvas(parent="main.aire-body")
     done();
 });
 
-test('offcanvas can be pushed down by parent', async (done) => {
+test.skip('offcanvas can be pushed down by parent', async (done) => {
     component = newComponent(`
 main.aire-body
 aire-offcanvas(parent="main.aire-body" push)

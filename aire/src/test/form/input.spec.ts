@@ -37,7 +37,7 @@ aire-input(label.bind="textLabel" type.bind="type")
     done();
 });
 
-test("a input can take an icon", async (done) => {
+test.skip("a input can take an icon", async (done) => {
     initialize({icon: 'testClass'}, `
 aire-input(icon.bind="icon")
   `);
@@ -47,7 +47,7 @@ aire-input(icon.bind="icon")
     done();
 });
 
-test("a input can have its icon flipped", async (done) => {
+test.skip("a input can have its icon flipped", async (done) => {
     initialize({icon: 'testClass'}, `
 aire-input(icon.bind="icon" flip)
   `);
@@ -57,7 +57,7 @@ aire-input(icon.bind="icon" flip)
     done();
 });
 
-test("a input's parent should be inline if there is an icon", async (done) => {
+test.skip("a input's parent should be inline if there is an icon", async (done) => {
     initialize({icon: 'testClass'}, `
 aire-input(icon.bind="icon")
   `);
