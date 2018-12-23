@@ -25,20 +25,16 @@ export class DocPage {
       this.title = descriptor.title;
       this.description = descriptor.description;
       this.components = descriptor.components;
-      for (let i = 0; i < this.components.length; i++) {
-        let component = this.components[i],
-            overview = component.directories.find((dir) => {
+      for (let component of this.components) {
+        let overview = component.directories.find((dir) => {
               return dir.directory == "overview";
             }),
             index = component.directories.indexOf(overview);
 
-        if (index === 0) {
-          return;
-        }
         if (index > 0) {
           component.directories.splice(index, 1);
+          component.directories.unshift(overview);
         }
-        component.directories.unshift(overview);
       }
       console.log('this.components', this.components);
     }
@@ -47,4 +43,10 @@ export class DocPage {
   urlFor(hfile: string, directory: any, component:any) {
     return `/dist/${component.name}/help/en/${directory.directory}/${hfile}`
   }
+
+  normalizeTitle(text : string) {
+      return text.split('-').map((word) => {
+          return (word.charAt(0).toUpperCase() + word.slice(1));
+      }).join(' ')
+  };
 }

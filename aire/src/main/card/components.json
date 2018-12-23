@@ -5,15 +5,16 @@
     {
       "component": {
         "name": "basic-card",
-        "description": "Basic card widget",
+        "description": "A card is a box used to organize some sort of (typically repeatable) content. The basic card can be passed a title but has no header or footer -- use the divided card for that. It has no styling out of the box, but styles can be applied with different arguments.",
         "widget-name": "aire-basic-card",
-        "category": "card"
+        "category": "card",
+        "order": ["usage", "title", "styles", "padding"]
       }
     },
     {
       "component": {
         "name": "divided-card",
-        "description": "Card widget with optional header and footer",
+        "description": "A card is a box used to organize some sort of (typically repeatable) content. The divided card has an optional header and footer. It has no styling out of the box, but styles can be applied with different arguments.",
         "widget-name": "aire-divided-card",
         "category": "card"
       }
