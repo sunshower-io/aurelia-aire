@@ -8,7 +8,7 @@ export class AireFab extends AireBaseButton {
 
   style     : string = "";
 
-  static edges = ["top", "right", "bottom", "left"];
+  static readonly edges = ["top", "right", "bottom", "left"];
 
   constructor(element: Element) {
     super(element);
