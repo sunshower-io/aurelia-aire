@@ -1,19 +1,19 @@
 {
   "title": "Aire Card",
-  "description": "Aire Card Component",
+  "description": "Aire Card Components",
   "components": [
     {
       "component": {
-        "name": "card",
-        "description": "Simple Basic Card Widget",
+        "name": "basic-card",
+        "description": "Basic card widget",
         "widget-name": "aire-basic-card",
         "category": "card"
       }
     },
     {
       "component": {
-        "name": "dividedcard",
-        "description": "Simple Divided Card Widget",
+        "name": "divided-card",
+        "description": "Card widget with optional header and footer",
         "widget-name": "aire-divided-card",
         "category": "card"
       }

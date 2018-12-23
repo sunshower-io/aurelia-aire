@@ -25,6 +25,7 @@ export class DocPage {
       this.title = descriptor.title;
       this.description = descriptor.description;
       this.components = descriptor.components;
+      console.log('this.components', this.components);
     }
   }
 

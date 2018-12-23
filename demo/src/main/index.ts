@@ -53,6 +53,7 @@ export class App {
       moduleId: 'aire-demo/main/main',
     }]);
     this.router = router;
+    console.log(this.router);
   }
 
 
