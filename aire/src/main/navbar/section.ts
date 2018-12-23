@@ -1,18 +1,19 @@
-import {children, inject, containerless, customElement} from "aurelia-framework";
+import {inject, customElement} from "aurelia-framework";
 import {dom}                                  from "aire/core";
-import {AireNavbarItem}                       from "aire/navbar/item";
+import {DOM} from "aurelia-pal";
 
-@inject(Element)
+@inject(DOM.Element)
 @customElement('navbar-section')
 export class AireNavbarSection {
 
+  constructor(private el:Element) {
 
+  }
 
-
-  constructor(el:Element) {
-    dom.decorate(el, "left", "uk-navbar-left");
-    dom.decorate(el, "right", "uk-navbar-right");
-    dom.decorate(el, "center", "uk-navbar-center");
+  attached() {
+    dom.decorate(this.el, "left", "uk-navbar-left");
+    dom.decorate(this.el, "right", "uk-navbar-right");
+    dom.decorate(this.el, "center", "uk-navbar-center");
   }
 
 

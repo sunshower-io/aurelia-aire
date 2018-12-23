@@ -1,21 +1,19 @@
-import {bindable, customElement, inject}      from "aurelia-framework";
+import {bindable} from "aurelia-framework";
 import {dom}    from "aire/core";
 
-@inject(Element)
-@customElement('aire-fab')
-export class AireFab {
+export class AireBaseButton {
 
   @bindable
-  icon     : string = "";
+  icon      : string;
 
   button    : HTMLElement;
 
-  style     : string = "";
+  @bindable
+  disabled    : boolean;
 
-  constructor(private element: Element) {
-    this.style = ["top", "right", "bottom", "left"].map(function(edge) {
-        return `${edge}: ${element.getAttribute(edge) || "auto"}`;
-    }).join('; ');
+  constructor(
+    public element: Element
+  ) {
   }
 
   attached() {

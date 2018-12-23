@@ -12,6 +12,6 @@ export class AireBasicCard extends AireCard{
   }
 
   attached() {
-
+      super.attached();
   }
 }

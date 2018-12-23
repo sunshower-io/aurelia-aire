@@ -1,5 +1,7 @@
 template(ref="container")
     label.uk-form-label(if.bind="label" for.bind="id") ${label}
     .uk-form-controls(class="${icon ? 'uk-inline' : ''}")
-        aire-icon(icon="uk-form-icon ${icon}")
-        input.uk-input(ref="input" type.bind="type" disabled="${disabled}" id.bind="id")
+        aire-icon(ref="inputicon" if.bind="icon" icon="uk-form-icon ${icon} ${flip ? 'uk-form-icon-flip' : ''}")
+        input.uk-input(ref="input" type.bind="type"
+        disabled.bind="disabled" id.bind="id"
+        value.bind="value")
