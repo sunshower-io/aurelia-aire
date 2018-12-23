@@ -1,14 +1,17 @@
 import {bindable, customElement, inject}      from "aurelia-framework";
 import {dom} from "aire/core";
+import {DOM} from "aurelia-pal";
 
-@inject(Element)
+@inject(DOM.Element)
 @customElement('aire-table')
 export class AireTable {
 
     table       : HTMLElement;
 
+    @bindable
     header      : boolean;
 
+    @bindable
     footer      : boolean;
 
     @bindable
@@ -19,11 +22,11 @@ export class AireTable {
     rows        : {}[];
 
     constructor(private element: Element) {
-        this.header = element.hasAttribute("header");
-        this.footer = element.hasAttribute("footer");
         let data = JSON.parse(element.getAttribute("data"));
-        this.columns = data.columns;
-        this.rows = data.rows;
+        if (data) {
+            this.columns = data.columns;
+            this.rows = data.rows;
+        }
     }
 
     attached() {
