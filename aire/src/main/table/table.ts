@@ -19,7 +19,7 @@ export class AireTable {
 
     columns     : {name: string, key: string}[];
 
-    rows        : {}[];
+    rows        : any[];
 
     constructor(private element: Element) {
         let data = JSON.parse(element.getAttribute("data"));

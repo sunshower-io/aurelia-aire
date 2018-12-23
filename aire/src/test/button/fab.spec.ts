@@ -20,6 +20,14 @@ afterEach(() => {
   component.dispose();
 });
 
+test("a button must initialize", async (done) => {
+    initialize({icon : "Hello"});
+    await component.create(bootstrap);
+    let button = document.querySelector('.aire-fab');
+    expect(button).toBeTruthy();
+    done();
+});
+
 test("a button's icon must be bindable with a class", async (done) => {
   initialize({icon : "Hello"});
   await component.create(bootstrap);

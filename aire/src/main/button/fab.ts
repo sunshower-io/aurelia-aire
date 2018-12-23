@@ -8,9 +8,11 @@ export class AireFab extends AireBaseButton {
 
   style     : string = "";
 
+  static edges = ["top", "right", "bottom", "left"];
+
   constructor(element: Element) {
     super(element);
-    this.style = ["top", "right", "bottom", "left"].map(function(edge) {
+    this.style = AireFab.edges.map((edge) => {
         return `${edge}: ${element.getAttribute(edge) || "auto"}`;
     }).join('; ');
   }
