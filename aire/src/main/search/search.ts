@@ -1,7 +1,8 @@
 import {bindable, customElement, inject} from "aurelia-framework";
 import {dom} from "aire/core";
+import {DOM} from "aurelia-pal";
 
-@inject(Element)
+@inject(DOM.Element)
 @customElement('aire-search')
 export class AireSearch {
 
@@ -10,7 +11,7 @@ export class AireSearch {
     icon        : HTMLElement;
 
     @bindable
-    placeholder : string;
+    placeholder : string = '';
 
     constructor(private element: Element) {
     }
