@@ -17,6 +17,9 @@ export class AireNav {
   @bindable
   private router: Router;
 
+  @bindable
+  normalizeTitle    : (n : NavModel) => string;
+
   ul: HTMLElement;
 
   constructor(readonly bus: EventAggregator, private element: Element) {

@@ -10,7 +10,7 @@ import * as help from './help.json!text';
 export class DocPage {
 
   title: string;
-  components: any;
+  components: any[];
   description: string;
 
 
@@ -25,6 +25,21 @@ export class DocPage {
       this.title = descriptor.title;
       this.description = descriptor.description;
       this.components = descriptor.components;
+      for (let i = 0; i < this.components.length; i++) {
+        let component = this.components[i],
+            overview = component.directories.find((dir) => {
+              return dir.directory == "overview";
+            }),
+            index = component.directories.indexOf(overview);
+
+        if (index === 0) {
+          return;
+        }
+        if (index > 0) {
+          component.directories.splice(index, 1);
+        }
+        component.directories.unshift(overview);
+      }
       console.log('this.components', this.components);
     }
   }
