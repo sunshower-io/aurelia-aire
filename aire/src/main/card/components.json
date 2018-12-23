@@ -8,7 +8,7 @@
         "description": "A card is a box used to organize some sort of (typically repeatable) content. The basic card can be passed a title but has no header or footer -- use the divided card for that. It has no styling out of the box, but styles can be applied with different arguments.",
         "widget-name": "aire-basic-card",
         "category": "card",
-        "order": ["usage", "title", "styles", "padding"]
+        "order": ["usage", "styles"]
       }
     },
     {
