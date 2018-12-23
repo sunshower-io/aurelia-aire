@@ -16,7 +16,8 @@
         "name": "divided-card",
         "description": "A card is a box used to organize some sort of (typically repeatable) content. The divided card has an optional header and footer. It has no styling out of the box, but styles can be applied with different arguments.",
         "widget-name": "aire-divided-card",
-        "category": "card"
+        "category": "card",
+        "order": ["usage", "styles"]
       }
     }
   ]
