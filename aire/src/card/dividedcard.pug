@@ -1,9 +1,0 @@
-template
-    .uk-card.aire-divided-card(ref="card")
-        .uk-card-header(if.bind="header || title")
-            slot(name="header")
-                h3.uk-card-title ${title}
-        .uk-card-body
-            slot(name="body")
-        .uk-card-footer(if.bind="footer")
-            slot(name="footer")

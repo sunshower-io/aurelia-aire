@@ -1,0 +1,14 @@
+{
+  "title": "Aire Nav",
+  "description": "Aire Nav Component",
+  "components": [
+    {
+      "component": {
+        "name": "nav",
+        "description": "Simple Nav Widget",
+        "widget-name": "aire-nav",
+        "category": "nav"
+      }
+    }
+  ]
+}

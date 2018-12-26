@@ -1,27 +1,9 @@
+//your variables go here
+
+@import "aire-theme";
+
+//your mixins go here
+
+@import "aire-components";
 
 
-// 1. Your custom variables and variable overwrites.
-@import "default/colors";
-@import "default/navbar";
-@import "default/accordion";
-@import "default/offcanvas";
-@import "default/alert";
-@import "default/align";
-// ... import all
-
-// 2. Import default variables and available mixins.
-@import "variables.scss";
-@import "mixins.scss";
-
-// 3. Your custom mixin overwrites.
-@import "default/accordion-mixins";
-@import "default/alert-mixins";
-@import "default/align-mixins";
-// ... import all
-
-// 4. Import UIkit
-
-@import "uikit.scss";
-
-@import "components/fab";
-@import "components/html-panel";

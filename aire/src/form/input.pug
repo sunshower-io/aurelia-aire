@@ -1,6 +1,0 @@
-template(ref="container")
-    label.uk-form-label(if.bind="label") ${label}
-    .uk-form-controls(class="${icon ? 'uk-inline' : ''}")
-        //TODO support default uikit icons
-        span.uk-form-icon(if.bind="icon" class.bind="icon")
-        input.uk-input(ref="input" type.bind="type" disabled="${disabled}")

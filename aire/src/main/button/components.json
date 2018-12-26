@@ -1,0 +1,22 @@
+{
+  "title": "Aire Button",
+  "description": "Aire Button Component",
+  "components": [
+    {
+      "component": {
+        "name": "button",
+        "description": "Simple Button Widget",
+        "widget-name": "aire-button",
+        "category": ["link", "button"]
+      }
+    },
+    {
+      "component": {
+        "name": "fab",
+        "description": "Simple FAB Widget",
+        "widget-name": "aire-fab",
+        "category": ["link", "button"]
+      }
+    }
+  ]
+}

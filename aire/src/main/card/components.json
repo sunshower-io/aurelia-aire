@@ -1,0 +1,22 @@
+{
+  "title": "Aire Card",
+  "description": "Aire Card Component",
+  "components": [
+    {
+      "component": {
+        "name": "card",
+        "description": "Simple Basic Card Widget",
+        "widget-name": "aire-basic-card",
+        "category": "card"
+      }
+    },
+    {
+      "component": {
+        "name": "dividedcard",
+        "description": "Simple Divided Card Widget",
+        "widget-name": "aire-divided-card",
+        "category": "card"
+      }
+    }
+  ]
+}

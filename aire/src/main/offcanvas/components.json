@@ -1,0 +1,14 @@
+{
+  "title": "Aire Offcanvas",
+  "description": "Aire Offcanvas Component",
+  "components": [
+    {
+      "component": {
+        "name": "offcanvas",
+        "description": "Simple Offcanvas Widget",
+        "widget-name": "aire-offcanvas",
+        "category": "offcanvas"
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+$purple: #660066;
+$green: #77CCA4;
+$orange: #FF9900;
+$red: #A40802;
+$blue: #2385AF;
+$light-blue   : lighten($blue, 50%);
+$white: white;
+$gray  : #AAAAAA;
+
+$global-primary-background: $purple;
+$global-success-background: $green;
+$global-warning-background: $orange;
+$global-danger-background: $red;
+$global-link-color: $blue;
+$global-link-hover-color: $light-blue;
+$base-selection-background: $blue;
+
+$navbar-background: $purple;
+$navbar-nav-item-padding-horizontal:8px;
+$logo-color: $white;
+$logo-hover-color: $logo-color;
+
+$search-color: $white;
+$search-placeholder-color: $white;
+
+$global-font-family: "Open Sans", "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+$offcanvas-bar-width: 250px;
+$offcanvas-bar-width-m: $offcanvas-bar-width;
+$offcanvas-bar-background: $white;
+$offcanvas-bar-color-mode: dark;
+
+@import "aire-theme";
+@mixin hook-offcanvas-bar(){
+  border-right: 5px solid $gray;
+}
+@import "aire-components";
+
+
+$fa-font-path:        "fonts";
+@import "font-awesome";

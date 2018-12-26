@@ -1,8 +1,0 @@
-template
-    h1 Coolbeans! You got ${title}
-
-    div(repeat.for="component of components")
-        div(repeat.for="directory of component.directories")
-            h2 ${directory.directory}
-            div(repeat.for="hfile of directory.help")
-                aire-html-panel(url.bind="urlFor(hfile, directory, component)")

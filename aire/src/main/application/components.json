@@ -1,0 +1,38 @@
+{
+  "title": "Aire Application",
+  "description": "Aire Application Components",
+  "components": [
+    {
+      "component": {
+        "name": "application",
+        "description": "Simple Application Widget",
+        "widget-name": "aire-application",
+        "category": "application"
+      }
+    },
+    {
+      "component": {
+        "name": "body",
+        "description": "Simple Application Body Widget",
+        "widget-name": "aire-body",
+        "category": "application"
+      }
+    },
+    {
+      "component": {
+        "name": "header",
+        "description": "Simple Application Header Widget",
+        "widget-name": "aire-header",
+        "category": "application"
+      }
+    },
+    {
+      "component": {
+        "name": "router-view",
+        "description": "Simple Application Router-View Widget",
+        "widget-name": "aire-router-view",
+        "category": "application"
+      }
+    }
+  ]
+}

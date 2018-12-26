@@ -1,0 +1,54 @@
+{
+  "title": "Aire Form",
+  "description": "Aire Form Components",
+  "components": [
+    {
+      "component": {
+        "name": "checkbox",
+        "description": "Simple Checkbox Widget",
+        "widget-name": "aire-checkbox",
+        "category": "form"
+      }
+    },
+    {
+      "component": {
+        "name": "input",
+        "description": "Simple Input Widget",
+        "widget-name": "aire-input",
+        "category": "form"
+      }
+    },
+    {
+      "component": {
+        "name": "radio",
+        "description": "Simple Radio Widget",
+        "widget-name": "aire-radio",
+        "category": "form"
+      }
+    },
+    {
+      "component": {
+        "name": "range",
+        "description": "Simple Range Widget",
+        "widget-name": "aire-range",
+        "category": "form"
+      }
+    },
+    {
+      "component": {
+        "name": "select",
+        "description": "Simple Select Widget",
+        "widget-name": "aire-select",
+        "category": "form"
+      }
+    },
+    {
+      "component": {
+        "name": "textarea",
+        "description": "Simple Textarea Widget",
+        "widget-name": "aire-textarea",
+        "category": "form"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "aurelia-aire",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Base Project for Aurelia-Aire",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "sh ./build.sh test",
+    "build": "sh ./build.sh build",
+    "dev": "sh ./build.sh build dev",
+    "watch": "sh ./build.sh watch",
+    "stop": "sh ./build.sh stop",
+    "clean": "sh ./build.sh clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunshower-io/aurelia-aire.git"
+  },
+  "keywords": [
+    "Aurelia",
+    "Sunshower.io",
+    "cloud",
+    "management",
+    "ui",
+    "toolkit",
+    "UIKit"
+  ],
+  "author": "Josiah Gumerman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunshower-io/aurelia-aire/issues"
+  },
+  "homepage": "https://github.com/sunshower-io/aurelia-aire#readme",
+  "devDependencies": {
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
