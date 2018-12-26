@@ -114,6 +114,7 @@ const resolveHelp = component => {
         descriptor = [];
     for(let f of data) {
         let name = f.component.name,
+            slug = f.component["widget-name"],
             directories = f.component.directories;
         if(directories) {
             for(let directory of directories) {
@@ -124,7 +125,8 @@ const resolveHelp = component => {
                 name: name,
                 locale: 'en',
                 keywords: f.component.keywords,
-                "widget-name": f.component["widget-name"],
+                description: f.component.description,
+                "widget-name": slug,
                 directories: directories.map(t => {delete root; return t;}),
             });
         }
@@ -168,7 +170,7 @@ const toRouteElement = component => {
                     category: t.component.category
                 },
                 route:  component.rawdir,
-                name: t.component.name,
+                name: t.component["widget-name"],
                 moduleId: `aire-demo/${component.rawdir}/doc-page`
             }
         });

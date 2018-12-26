@@ -1,6 +1,6 @@
 import {RouterLoader}                from "aurelia-router-loader";
 import {Loader}                      from 'aurelia-loader';
-import {RouterConfiguration, Router} from 'aurelia-router';
+import {RouterConfiguration, Router, NavModel} from 'aurelia-router';
 import {DefaultLoader}               from "aurelia-loader-default";
 import {autoinject} from 'aurelia-framework';
 import {
@@ -53,7 +53,14 @@ export class App {
       moduleId: 'aire-demo/main/main',
     }]);
     this.router = router;
+    console.log(this.router);
   }
 
+
+  normalizeTitle = (nav: NavModel) => {
+    return nav.title.split('-').map((word) => {
+      return (word.charAt(0).toUpperCase() + word.slice(1));
+    }).join(' ')
+  };
 
 }

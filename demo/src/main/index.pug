@@ -10,4 +10,4 @@ template
         aire-body(view.ref="body")
         aire-offcanvas(view-model.ref="offcanvas" parent.bind="body" push)
             aire-search(navbar icon)
-            aire-nav(router.bind="router")
+            aire-nav(router.bind="router" default normalize-title.bind="normalizeTitle")

@@ -39,3 +39,7 @@ $offcanvas-bar-color-mode: dark;
 
 $fa-font-path:        "fonts";
 @import "font-awesome";
+
+.aire-body {
+  overflow-y: auto;
+}
