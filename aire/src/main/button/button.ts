@@ -10,6 +10,9 @@ export class AireButton extends AireBaseButton {
   @bindable
   label     : string;
 
+  @bindable
+  type      : string;
+
   constructor(element: Element) {
       super(element);
   }

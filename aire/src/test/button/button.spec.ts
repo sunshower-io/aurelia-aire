@@ -73,6 +73,26 @@ aire-button(label.bind="textLabel")
     done();
 });
 
+test("a button can have a type", async (done) => {
+    initialize({textLabel : "Hello", type: "reset"}, `
+aire-button(label.bind="textLabel" type.bind="type")
+  `);
+    await component.create(bootstrap);
+    let button = document.querySelector('.uk-button') as HTMLButtonElement;
+    expect(button.type).toBe("reset");
+    done();
+});
+
+test("a button can not have a type", async (done) => {
+    initialize({textLabel : "Hello"}, `
+aire-button(label.bind="textLabel" type.bind="type")
+  `);
+    await component.create(bootstrap);
+    let button = document.querySelector('.uk-button') as HTMLButtonElement;
+    expect(button.type).toBe("submit");
+    done();
+});
+
 test("a button can take a default argument", async(done) => {
   initialize({textLabel: "Henlo"}, `
 aire-button(label.bind="textLabel", icon.bind="icon" default)
