@@ -36,7 +36,9 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/search/search',
     'aire/icon/icon',
     'aire/dropdown/dropdown',
-    'aire/loader/loader'
+    'aire/loader/loader',
+    'aire/accordion/accordion',
+    'aire/accordion/accordion-item'
   ]);
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());
