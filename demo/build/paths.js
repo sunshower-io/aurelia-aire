@@ -1,11 +1,14 @@
 
 
 const paths = {
+    generate: true,
     assets: ['assets/**/*', 'src/**/*.json'],
     typescript: 'src/**/*.ts',
     pug: ['src/**/*.pug'],
     styles: ['themes/main.scss'],
     dest: 'dist',
+    extraComponents:  '../aire/dist/**/*.json',
+    components: '**/*.json',
     metadata: ['assets/**/*', 'src/**/*.json'],
     allStyles: ['themes/**/*.scss', '../aire/dist/**/*.css'],
     createScssInclusions: utils => {

@@ -3,6 +3,9 @@ import * as UIkit                                       from "uikit";
 import {Dropdown}                                       from "uikit";
 import {AireElement} from "aire/core/widget";
 
+/**
+ * @component dropdown
+ */
 @inject(Element)
 @customElement('aire-dropdown')
 export class AireDropdown {

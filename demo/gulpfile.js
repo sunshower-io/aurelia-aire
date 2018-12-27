@@ -1,12 +1,7 @@
-/**'
- * Register aliases (configured in package.json/_moduleAliases
- */
-// require('module-alias/register');
 
-//
-// const gulp = require('gulp'),
-//     requireDirectory = require('require-dir'),
-//     tasks = requireDirectory('../build/tasks');
+module.paths.push(`${process.cwd()}/node_modules`);
+const
+    gulp = require('gulp'),
+    requireDirectory = require('require-dir'),
+    aireBuild = require('../../aire-build/src/main/tasks/build.js')(gulp);
 
-
-const aireBuild = require('@sunshower/aire-build');

@@ -1,3 +1,10 @@
+declare module 'prismjs' {
+
+}
+
+declare module 'pretty' {
+
+}
 declare module 'showdown' {
 
 
