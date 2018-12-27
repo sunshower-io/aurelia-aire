@@ -5,6 +5,7 @@ export class AireFormElement {
 
     input       : HTMLElement;
     container   : HTMLElement;
+
     @bindable
     label       : string;
 
