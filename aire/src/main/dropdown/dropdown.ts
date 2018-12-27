@@ -6,7 +6,6 @@ import {dom} from "aire/core";
 /**
  * The aire-dropdown is a card that can be revealed when clicking or hovering another element.
  *
- * @component dropdown
  *
  * @param {bindable} mode (string)
  * @param {bindable} position (string)

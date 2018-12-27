@@ -6,7 +6,6 @@ import {Accordion}  from "uikit";
 /**
  * The aire-accordion is an unordered list that allows child elements to be open or closed.
  *
- * @component accordion
  *
  * @param {bindable} animated (boolean)
  * @param {bindable} collapsible (boolean)

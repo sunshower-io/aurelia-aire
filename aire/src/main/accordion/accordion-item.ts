@@ -4,7 +4,6 @@ import {dom} from "aire/core/dom";
 /**
  * The accordion-item a list item designed to be the child of an aire-accordion.
  *
- * @component accordion-item
  *
  * @param {bindable} title (string)
  * @param {pseudo} open
