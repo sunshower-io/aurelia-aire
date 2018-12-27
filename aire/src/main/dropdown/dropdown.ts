@@ -1,9 +1,8 @@
-import {bindable, customElement, inject} from "aurelia-framework";
-import * as UIkit                                       from "uikit";
-import {Dropdown}                                       from "uikit";
-import {AireElement} from "aire/core/widget";
+import {bindable, customElement} from "aurelia-framework";
+import * as UIkit from "uikit";
+import {Dropdown}  from "uikit";
+import {dom} from "aire/core";
 
-@inject(Element)
 @customElement('aire-dropdown')
 export class AireDropdown {
 
@@ -13,22 +12,23 @@ export class AireDropdown {
   @bindable
   position : string = 'bottom-left';
 
+  @bindable
+  toggle    : Element | string = "- *";
+
   dropdown : Dropdown;
 
   element : HTMLElement;
 
-  constructor(el : Element) {
-      // super('AireDropdown', el, el.getAttribute("toggle") || el.previousElementSibling);
+  constructor() {
+
   }
 
   attached() {
-    // super.attached();
-    // let options = {
-    //   toggle : this.hostPath(),
-    //   pos    : this.position,
-    //   mode   : this.mode
-    // };
-    // console.log("options", options);
-    // this.dropdown = UIkit.dropdown(this.element, options);
+    let options = {
+      toggle  : dom.pathTo(this.toggle),
+      pos     : this.position,
+      mode    : this.mode
+    };
+    this.dropdown = UIkit.dropdown(this.element, options);
   }
 }
