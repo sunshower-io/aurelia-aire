@@ -5,7 +5,7 @@ import {dom} from "aire/core/dom";
 @customElement('accordion-item')
 export class AccordionItem {
 
-    li      : HTMLElement;
+    li      : HTMLLIElement;
 
     @bindable
     title   : string;

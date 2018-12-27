@@ -48,7 +48,7 @@ test("an accordion should have a default animation", async(done) => {
 });
 
 test("an accordion should have a bindable animation", async(done) => {
-    initialize({animation: false}, `aire-accordion(animation.bind="animation")`);
+    initialize({animation: false}, `aire-accordion(animated.bind="animation")`);
     await component.create(bootstrap);
     let accordion : AireAccordion = component.viewModel;
     expect(accordion.accordion["$props"].animation[0]).toBeFalsy(); //uikit is wrapping this oddly despite correct options

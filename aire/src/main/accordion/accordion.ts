@@ -7,7 +7,7 @@ import {Accordion}  from "uikit";
 export class AireAccordion {
 
     @bindable
-    animation   : boolean = true;
+    animated   : boolean = true;
 
     @bindable
     collapsible : boolean = true;
@@ -31,7 +31,7 @@ export class AireAccordion {
 
     attached() {
         let options = {
-            animation: this.animation,
+            animation: this.animated,
             collapsible: this.collapsible,
             duration: this.duration,
             multiple: this.multiple,
