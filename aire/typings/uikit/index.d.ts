@@ -15,6 +15,10 @@ declare module "uikit" {
 
   }
 
+  export interface Accordion extends Component {
+
+  }
+
   export interface OffCanvas extends Component {
     show() : void;
     hide(): void;
@@ -39,4 +43,5 @@ declare module "uikit" {
 
   export function dropdown(el:Element, options?:any) : Dropdown;
 
+  export function accordion(el:Element, options?:any) : Accordion;
 }
