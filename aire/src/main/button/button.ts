@@ -33,7 +33,7 @@ import {AireBaseButton} from "aire/button/basebutton";
  * @usage.examples.Icon
  *  aire-button(icon="fa fa-pencil")
  *
- * @usage.examples.LabelAndIcon
+ * @usage.examples.Label_And_Icon
  * aire-button(label="Edit" icon="fa fa-pencil")
  *
  * @section.style
