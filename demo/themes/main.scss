@@ -6,6 +6,11 @@ $blue: #2385AF;
 $light-blue   : lighten($blue, 50%);
 $white: white;
 $gray  : #AAAAAA;
+$dark-gray: #2c2c2c;
+
+$global-emphasis-color: $purple;
+$inverse-global-color:$blue;
+
 
 $global-primary-background: $purple;
 $global-success-background: $green;
@@ -75,3 +80,40 @@ $fa-font-path:        "fonts";
     }
   }
 }
+
+h1 {
+  font-size:38px;
+}
+
+h1, h2 {
+  font-weight:100;
+  color: lighten($dark-gray, 25%);
+}
+
+h2 {
+  :before {
+    content: '#';
+  }
+}
+
+//.html-panel {
+//  .component-section {
+//    margin-top:1em;
+//  }
+//  section {
+//    h1 {
+//      color: lighten($dark-gray, 25%);
+//      font-weight:200;
+//      font-size:1.5em;
+//      padding-bottom:0.5em;
+//      border-bottom: 1px solid lighten($dark-gray, 25%);
+//    }
+//
+//    h2 {
+//      font-weight:100;
+//      font-size:1em;
+//      color: lighten($dark-gray, 25%);
+//
+//    }
+//  }
+//}

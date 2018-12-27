@@ -1,4 +1,4 @@
-template
+template.component-section
     h1 ${section.name}
     p(innerhtml.bind="section.description.html")
     div(repeat.for="example of section.examples")
@@ -11,3 +11,4 @@ template
                     div(if.bind="format === 'demo'" element.ref="el" loc.bind="createDemo(example, el)")
 
 
+        hr.uk-divider-icon
