@@ -25,6 +25,4 @@ export class AireApplication extends AireElement {
     super('AireApplication', el, el);
   }
 
-
-
 }

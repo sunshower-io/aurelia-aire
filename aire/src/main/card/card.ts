@@ -1,8 +1,54 @@
 import {bindable}      from "aurelia-framework";
 import {dom}    from "aire/core";
 
+/**
+ * A card is a layout box that can have different styles
+ *
+ * This is cool
+ * @component card
+ */
 export class AireCard {
 
+  /**
+   // * @component card
+   // * @name aire-card
+   // *
+   // * @categories test, whatever, bean
+   // * @description
+   // *  aire-card is a wrapper around uikit-card
+   // * @reference card
+   // *
+   // * @param {pseudo} default
+   // * @param {pseudo} primary
+   // * @param {pseudo} hover
+   // *
+   // * @param {bindable} title
+   // *
+   // * @example
+   // *  aire-card(default primary title.bind="Hello")
+   // */
+
+  /**
+   * @component card
+   * @name aire-card
+   *
+   * @description
+   *  aire-card is a wrapper around uikit-card
+   * @reference card
+   *
+   * @param {pseudo} default
+   * @param {pseudo} primary
+   * @param {pseudo} hover
+   *
+   * @param {bindable} title
+   *
+   * @example [lang=pug,type=view]
+   *  aire-card(default primary title.bind="Hello")
+   * @example[lang=typescript,type=vm]
+   *  export class Test {
+ *  }
+   *
+   */
   card        : HTMLElement;
 
   @bindable

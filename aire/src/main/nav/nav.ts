@@ -10,6 +10,31 @@ import {Events}           from "aire/events";
 import {dom} from "aire/core";
 
 
+/**
+ *
+ * this is a cool nav component
+ *
+ * what do you think?
+ *
+ * @component nav
+ *
+ * @section.usage
+ *
+ * @usage.title Usage
+ * @usage.description
+ *  This is a cool bean
+ *  #whatever _whatever_
+ *
+ * @usage.examples.Router
+ *  aire-nav(router.bind="router")
+ *
+ * @usage.examples.OtherRouter
+ *  aire-nav(router.bind="router")
+ * @param {bindable} router (aurelia-router)
+ * @param {bindable} normalizeTitle (f: NavModel => string)
+ *
+ * @param {pseudo} whatever
+ */
 @inject(EventAggregator, Element)
 @customElement('aire-nav')
 export class AireNav {
@@ -31,7 +56,7 @@ export class AireNav {
         let nav = this.router.navigation,
             current = new Map<string, NavModel>();
         for(let n of nav) {
-            current.set(n.config.name, n);
+            current.set(n.config.title, n);
         }
         return Array.from(current.values());
     } else {
