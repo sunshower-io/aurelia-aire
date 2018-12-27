@@ -60,7 +60,40 @@ test( "a muted tile will show a muted background", async(done) => {
 test("a default tile will have a default background", async(done) => {
     initialize({}, `aire-tile(default)`);
     await component.create(bootstrap);
-    let tile = document.querySelector( 'uk-tile-default');
+    let tile = document.querySelector( '.uk-tile-default');
     expect(tile).toBeTruthy();
     done();
 });
+
+test( "a tile will have no padding", async(done) => {
+    initialize({}, `aire-tile(padding-remove)`);
+    await component.create(bootstrap);
+    let tile = document.querySelector( '.uk-padding-remove');
+    expect(tile).toBeTruthy();
+    done();
+});
+
+test( "a tile will have small padding", async(done) => {
+    initialize({}, `aire-tile(padding-small)`);
+    await component.create(bootstrap);
+    let tile = document.querySelector( '.uk-padding-small');
+    expect(tile).toBeTruthy();
+    done();
+});
+
+test("a tile will have large padding", async(done) => {
+    initialize({}, `aire-tile(padding-large)`);
+    await component.create(bootstrap);
+    let tile = document.querySelector( '.uk-padding-large');
+    expect(tile).toBeTruthy();
+    done();
+});
+
+
+test( "a tile can have large padding and a secondary background", async(done) => {
+    initialize({}, `aire-tile(padding large secondary)`);
+    await component.create(bootstrap);
+    let tile = document.querySelector( '.uk-tile-secondary.uk-padding-large');
+    expect(tile).toBeTruthy();
+    done();
+)};
