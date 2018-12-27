@@ -28,6 +28,8 @@ import {dom} from "aire/core";
  * @usage.examples.Router
  *  aire-nav(router.bind="router")
  *
+ * @usage.examples.OtherRouter
+ *  aire-nav(router.bind="router")
  * @param {bindable} router (aurelia-router)
  * @param {bindable} normalizeTitle (f: NavModel => string)
  *
