@@ -10,11 +10,6 @@ import {
   HttpClient
 } from "aurelia-fetch-client";
 
-import * as showdown from 'showdown';
-
-
-
-
 @autoinject
 @viewResources('./component-section')
 @customElement('component-panel')
@@ -29,8 +24,6 @@ export class ComponentPanel {
   }
 
   attached() : void {
-    // console.log(prism);
-    console.log(this.component);
   }
 
   props(tags:any[], type: string) {
