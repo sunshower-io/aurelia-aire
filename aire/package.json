@@ -68,7 +68,7 @@
     }
   },
   "devDependencies": {
-    "@sunshower/aire-build": "^1.0.9-SNAPSHOT",
+    "@sunshower/aire-build": "0.0.1",
     "@types/es6-shim": "^0.31.39",
     "@types/jest": "^23.3.10",
     "@types/lodash": "^4.14.119",

@@ -8,7 +8,7 @@ import {newComponent}         from "test/render";
 let component : any;
 
 
-function initialize(bindingContext : any, templateString ?: string) {
+function initialize(bindingContext : any, templateString : string = '', ...modNames: string[]) {
   let template = templateString ? templateString : `
   aire-button(label.bind="textLabel", icon.bind="icon")
   `;
