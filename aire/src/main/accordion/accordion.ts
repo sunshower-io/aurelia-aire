@@ -15,7 +15,8 @@ import {Accordion}  from "uikit";
  * @param {bindable} transition (string)
  *
  * @section.usage
- * @usage.title Usage
+ * @usage.title
+ * Usage
  * @usage.description
  * An accordion has a slot for its list items.
  *
@@ -27,7 +28,8 @@ import {Accordion}  from "uikit";
  *      p Goodbye
  *
  * @section.animation
- * @animation.title Animation Behavior
+ * @animation.title
+ * Animation Behavior
  * @animation.description
  * An accordion can reveal its items directly or with a transition. The behavior is set with `animated` and the transition with `transition`. The defaults are true and 'ease' respectively.
  *
@@ -54,7 +56,8 @@ import {Accordion}  from "uikit";
  *
  *
  * @section.opening
- * @opening.title Opening Behavior
+ * @opening.title
+ * Opening Behavior
  * @opening.description
  * By default, an accordion allows all items to be closed and does not allow multiple items, but this can be changed with `collapsible` and `multiple`
  *

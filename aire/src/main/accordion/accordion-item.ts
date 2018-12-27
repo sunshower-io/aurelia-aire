@@ -10,7 +10,8 @@ import {dom} from "aire/core/dom";
  * @param {pseudo} open
  *
  * @section.usage
- * @usage.title Usage
+ * @usage.title
+ * Usage
  * @usage.description
  * An accordion-item has a slot for its content, but its title is bindable
  *
@@ -20,7 +21,8 @@ import {dom} from "aire/core/dom";
  *      p Accordion Content
  *
  * @section.option
- * @open.title Open
+ * @open.title
+ * Open
  * @open.description
  * An accordion item can default to open if the decorator `open` is passed in.
  *
