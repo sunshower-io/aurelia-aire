@@ -16,7 +16,7 @@ import {AireFormMultiElement} from "aire/form/multielement";
  *
  * @param {pseudo} horizontal
  * @param {pseudo} success
- * @param {pseudo} error
+ * @param {pseudo} danger
  * @param {pseudo} blank
  *
  * @section.usage
@@ -53,18 +53,18 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @styles.title
  * Styles
  * @styles.description
- * A checkbox's label can be moved horizontal with `horizontal`. The checkbox can also have an `error` or `success` state. For a more minimal look, make it `blank`.
+ * A checkbox's label can be moved horizontal with `horizontal`. The checkbox can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
  *
  * @styles.examples.Horizontal
  * aire-checkbox(horizontal label="Horizontal Checkbox")
  *
- * @styles.example.Error
- * aire-checkbox(error label="Errored Checkbox")
+ * @styles.examples.Danger
+ * aire-checkbox(danger label="Dangered Checkbox")
  *
- * @styles.example.Success
+ * @styles.examples.Success
  * aire-checkbox(success label="Successful Checkbox")
  *
- * @styles.example.Blank
+ * @styles.examples.Blank
  * aire-checkbox(blank label="Minimal Checkbox")
  *
  *

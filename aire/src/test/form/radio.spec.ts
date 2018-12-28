@@ -142,12 +142,12 @@ aire-radio(label.bind="textLabel" success)
     done();
 });
 
-test("a radio can take a error argument", async(done) => {
+test("a radio can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
-aire-radio(label.bind="textLabel" error)
+aire-radio(label.bind="textLabel" danger)
   `);
     await component.create(bootstrap);
-    let radio = document.querySelector('input.uk-form-error');
+    let radio = document.querySelector('input.uk-form-danger');
     expect(radio).toBeTruthy();
     done();
 });

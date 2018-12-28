@@ -16,7 +16,7 @@ import {AireFormMultiElement} from "aire/form/multielement";
  *
  * @param {pseudo} horizontal
  * @param {pseudo} success
- * @param {pseudo} error
+ * @param {pseudo} danger
  * @param {pseudo} blank
  *
  * @section.usage
@@ -53,13 +53,13 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @styles.title
  * Styles
  * @styles.description
- * A radio's label can be moved horizontal with `horizontal`. The radio can also have an `error` or `success` state. For a more minimal look, make it `blank`.
+ * A radio's label can be moved horizontal with `horizontal`. The radio can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
  *
  * @styles.examples.Horizontal
  * aire-radio(horizontal label="Horizontal Radio")
  *
- * @styles.example.Error
- * aire-radio(error label="Errored Radio")
+ * @styles.example.Danger
+ * aire-radio(danger label="Dangered Radio")
  *
  * @styles.example.Success
  * aire-radio(success label="Successful Radio")

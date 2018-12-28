@@ -15,7 +15,7 @@ import {DOM} from 'aurelia-pal';
  *
  * @param {pseudo} horizontal
  * @param {pseudo} success
- * @param {pseudo} error
+ * @param {pseudo} danger
  * @param {pseudo} blank
  *
  *

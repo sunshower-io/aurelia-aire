@@ -102,12 +102,12 @@ aire-range(label.bind="textLabel" success)
     done();
 });
 
-test("a range can take a error argument", async(done) => {
+test("a range can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
-aire-range(label.bind="textLabel" error)
+aire-range(label.bind="textLabel" danger)
   `);
     await component.create(bootstrap);
-    let range = document.querySelector('input.uk-form-error');
+    let range = document.querySelector('input.uk-form-danger');
     expect(range).toBeTruthy();
     done();
 });
