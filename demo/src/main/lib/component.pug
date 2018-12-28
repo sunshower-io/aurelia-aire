@@ -4,13 +4,15 @@ template.au-animate
             h1.uk-h1 ${component.component}
             span(innerhtml.bind="component.description.summary")
 
-            h2.uk-h2.uk-heading-bullet Bindable Properties
-            div(repeat.for="tag of props(component.tags, 'bindable')" if.bind="tag.type === 'param'")
-                span ${tag.name}
+            template(if.bind="props(component.tags, 'bindable').length > 0")
+                h2.uk-h2.uk-heading-bullet Bindable Properties
+                p(repeat.for="tag of props(component.tags, 'bindable')") ${tag.name}
+                | ${tag.description}
 
-            h2.uk-h2.uk-heading-bullet Attributes
-            div(repeat.for="tag of props(component.tags, 'pseudo')" if.bind="tag.type === 'param'")
-                span ${tag.name}
+            template(if.bind="props(component.tags, 'pseudo').length > 0")
+                h2.uk-h2.uk-heading-bullet Attributes
+                p(repeat.for="tag of props(component.tags, 'pseudo')") ${tag.name}
+                | ${tag.description}
 
             hr.uk-divider-icon
 
