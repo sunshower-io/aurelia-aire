@@ -59,7 +59,7 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * aire-radio(horizontal label="Horizontal Radio")
  *
  * @styles.examples.Danger
- * aire-radio(danger label="Dangered Radio")
+ * aire-radio(danger label="Dangerous Radio")
  *
  * @styles.examples.Success
  * aire-radio(success label="Successful Radio")

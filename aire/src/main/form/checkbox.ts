@@ -59,7 +59,7 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * aire-checkbox(horizontal label="Horizontal Checkbox")
  *
  * @styles.examples.Danger
- * aire-checkbox(danger label="Dangered Checkbox")
+ * aire-checkbox(danger label="Dangerous Checkbox")
  *
  * @styles.examples.Success
  * aire-checkbox(success label="Successful Checkbox")

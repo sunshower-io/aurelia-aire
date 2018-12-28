@@ -43,7 +43,7 @@ import {DOM} from 'aurelia-pal';
  * aire-range(horizontal label="Horizontal Range")
  *
  * @styles.examples.Danger
- * aire-range(danger label="Dangered Range")
+ * aire-range(danger label="Dangerous Range")
  *
  * @styles.examples.Success
  * aire-range(success label="Successful Range")
