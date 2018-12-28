@@ -1,4 +1,5 @@
-import {Aire} from "aire/core/application";
+import {Aire}               from "aire/core/application";
+import {makePropertyMapper} from "aire/core/decorators";
 
 export const $ = document;
 
@@ -79,24 +80,31 @@ export namespace dom {
   }
 }
 
-
-export function Id(instance : any, key : string) {
-  let value = instance[key] || Aire.id,
-    getter = function () : string {
-      return value;
-    },
-    setter = function (v : string) : void {
-      value = v;
-    };
-  if (delete instance[key]) {
-    Object.defineProperty(instance, key, {
-      get          : getter,
-      set          : setter,
-      enumerable   : true,
-      configurable : true
+export function Id() {
+  return function(target: any, key: string) {
+    makePropertyMapper(target, key, () => {
+      return Aire.id;
     });
-  }
+  };
 }
+
+// export function Id(instance : any, key : string) {
+//   let value = instance[key] || Aire.id,
+//     getter = function () : string {
+//       return value;
+//     },
+//     setter = function (v : string) : void {
+//       value = v;
+//     };
+//   if (delete instance[key]) {
+//     Object.defineProperty(instance, key, {
+//       get          : getter,
+//       set          : setter,
+//       enumerable   : true,
+//       configurable : true
+//     });
+//   }
+// }
 
 export function findParentByClass(el : Element, selectorClass : string) : Element {
   if (Element.prototype.closest) {
