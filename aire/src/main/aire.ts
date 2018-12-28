@@ -37,7 +37,9 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/icon/icon',
     'aire/dropdown/dropdown',
     'aire/loader/loader',
-    'aire/list/list'
+    'aire/list/list',
+    'aire/label/label',
+    'aire/tile/tile',
   ]);
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());

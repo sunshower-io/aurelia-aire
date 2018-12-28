@@ -7,8 +7,7 @@ import {dom} from "aire/core/dom";
 export class AireTile {
     div: HTMLElement;
 
-    @bindable
-    tile: string;
+
 
     constructor(private element: Element) {
 

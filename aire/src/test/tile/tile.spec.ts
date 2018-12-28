@@ -25,10 +25,14 @@ test( "a tile can show up on the screen", async(done) => {
 });
 
 test( "a tile can display designated content", async(done) => {
-   initialize( {textLabel : "I am a tile."}, `aire-tile(tile.bind="textLabel")`);
+   initialize( {}, `
+aire-tile
+    p Tile Content
+    `);
    await component.create(bootstrap);
-   let tile = document.querySelector( '.uk-tile');
-   expect(tile.textContent).toBe("I am a tile.");
+   console.log(document.body.outerHTML);
+   let slot= document.querySelector( '.uk-tile p')
+    expect(slot.textContent).toBe("Tile Content");
    done();
 });
 
@@ -91,9 +95,10 @@ test("a tile will have large padding", async(done) => {
 
 
 test( "a tile can have large padding and a secondary background", async(done) => {
-    initialize({}, `aire-tile(padding large secondary)`);
+    initialize({}, `aire-tile(secondary padding-large)`);
     await component.create(bootstrap);
     let tile = document.querySelector( '.uk-tile-secondary.uk-padding-large');
     expect(tile).toBeTruthy();
     done();
-)};
+});
+
