@@ -40,6 +40,8 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/list/list',
     'aire/label/label',
     'aire/tile/tile',
+    'aire/accordion/accordion',
+    'aire/accordion/accordion-item'
   ]);
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());

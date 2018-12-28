@@ -8,7 +8,7 @@ import {newComponent}         from "test/render";
 let component : any;
 
 
-function initialize(bindingContext : any, templateString ?: string) {
+function initialize(bindingContext : any, templateString : string = '', ...modNames: string[]) {
   let template = templateString ? templateString : `
   aire-button(label.bind="textLabel", icon.bind="icon")
   `;
@@ -70,6 +70,26 @@ aire-button(label.bind="textLabel")
     await component.create(bootstrap);
     let button = document.querySelector('.uk-button') as any;
     expect(button.disabled).toBeFalsy();
+    done();
+});
+
+test("a button can have a type", async (done) => {
+    initialize({textLabel : "Hello", type: "reset"}, `
+aire-button(label.bind="textLabel" type.bind="type")
+  `);
+    await component.create(bootstrap);
+    let button = document.querySelector('.uk-button') as HTMLButtonElement;
+    expect(button.type).toBe("reset");
+    done();
+});
+
+test("a button can not have a type", async (done) => {
+    initialize({textLabel : "Hello"}, `
+aire-button(label.bind="textLabel" type.bind="type")
+  `);
+    await component.create(bootstrap);
+    let button = document.querySelector('.uk-button') as HTMLButtonElement;
+    expect(button.type).toBe("submit");
     done();
 });
 

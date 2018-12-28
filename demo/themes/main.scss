@@ -43,3 +43,35 @@ $fa-font-path:        "fonts";
 .aire-body {
   overflow-y: auto;
 }
+
+.html-panel {
+
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+
+  section {
+    display: block;
+    min-width:500px;
+    .example {
+      min-height:300px;
+      position:relative;
+      pre {
+        display:block;
+        position:absolute;
+        border:1px solid $gray;
+        border-radius: 0;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+      }
+
+      .aire-fab {
+        position: absolute;
+      }
+
+    }
+  }
+}

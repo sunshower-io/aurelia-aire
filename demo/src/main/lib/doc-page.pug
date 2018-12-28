@@ -1,11 +1,3 @@
 template
-    aire-page(padded loading="false")
-        h1 ${title}
-        section(repeat.for="component of components")
-            h2 ${normalizeTitle(component.name)}
-            p ${component.description}
-            aside(repeat.for="directory of component.directories")
-                h3 ${normalizeTitle(directory.directory)}
-                aire-tab-panel
-                    aire-tab(repeat.for="hfile of directory.help" if.bind="hfile.indexOf('d.ts') === -1 && hfile.indexOf('.map') === -1" title.bind="hfile")
-                        html-panel(url.bind="urlFor(hfile, directory, component)")
+    aire-page(padded loading.bind="loading")
+        component-panel(component.bind="component")

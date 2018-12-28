@@ -7,7 +7,8 @@ export async function configure(aurelia: Aurelia) {
     .standardConfiguration()
          .plugin('aire')
          .plugin('aurelia-router-loader', cfg => {
-           cfg.defineRoutes(['aire-demo/route/components.json']);
+           cfg.defineRoutes(['aire-demo/route/route.comp']);
          });
+
   aurelia.start().then(() => aurelia.setRoot('aire-demo/index'));
 }
