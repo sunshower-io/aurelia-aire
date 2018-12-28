@@ -22,7 +22,7 @@ export class AireBody extends AireElement {
   @bindable wait: number;
 
 
-  @Id
+  @Id()
   private bodyId: string;
 
   @bindable({defaultBindingMode: bindingMode.toView})

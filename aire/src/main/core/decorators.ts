@@ -1,20 +1,27 @@
-export function makePropertyMapper<T>(prototype : any, key : string, mapper : (value : any) => T) {
+export function makePropertyMapper<T>(prototype: any, key: string, mapper: (value: any) => T) {
   const values = new Map<any, T>();
   Object.defineProperty(prototype, key, {
-    set(firstValue : any) {
+    get() {
+      let v = values.get(this);
+      if(!v) {
+        values.set(this, mapper(null));
+      }
+      return values.get(this);
+
+    },
+    set(firstValue: any) {
       Object.defineProperty(this, key, {
         get() {
           return values.get(this);
         },
-        set(value : any) {
+        set(value: any) {
           values.set(this, mapper(value));
         },
-        enumerable : true,
+        enumerable: true,
       });
       this[key] = firstValue;
     },
-    enumerable   : true,
-    configurable : true,
+    enumerable: true,
+    configurable: true,
   });
 }
-

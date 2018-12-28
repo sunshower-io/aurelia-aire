@@ -73,7 +73,7 @@ test('ensure decorate adds class with className', () => {
 test('ensure generated decorates object correctly', () => {
 
   class A {
-    @Id
+    @Id()
     s:string;
   }
 

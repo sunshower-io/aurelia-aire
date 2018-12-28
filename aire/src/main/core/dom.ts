@@ -81,7 +81,7 @@ export namespace dom {
 }
 
 export function Id() {
-  return function(target: any, key: string) {
+  return function (target : any, key : string) {
     makePropertyMapper(target, key, () => {
       return Aire.id;
     });
