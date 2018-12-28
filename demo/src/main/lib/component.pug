@@ -6,15 +6,18 @@ template.au-animate
 
             template(if.bind="props(component.tags, 'bindable').length > 0")
                 h2.uk-h2.uk-heading-bullet Bindable Properties
-                p(repeat.for=
-                    "tag of props(component.tags, 'bindable')"
-                    innerhtml.bind="tag.description"
-                    ) ${tag.name}
+                table.uk-table.uk-table-small
+                    tbody
+                        tr(repeat.for="tag of props(component.tags, 'bindable')")
+                            td ${tag.name}
+                            td(innerhtml.bind="tag.description")
 
             template(if.bind="props(component.tags, 'pseudo').length > 0")
                 h2.uk-h2.uk-heading-bullet Attributes
-                p(repeat.for="tag of props(component.tags, 'pseudo')") ${tag.name}
-                | ${tag.description}
+                table.uk-table.uk-table-small
+                    tbody
+                        tr(repeat.for="tag of props(component.tags, 'pseudo')")
+                            td ${tag.name}
 
             hr.uk-divider-icon
 
