@@ -6,8 +6,10 @@ template.au-animate
 
             template(if.bind="props(component.tags, 'bindable').length > 0")
                 h2.uk-h2.uk-heading-bullet Bindable Properties
-                p(repeat.for="tag of props(component.tags, 'bindable')") ${tag.name}
-                | ${tag.description}
+                p(repeat.for=
+                    "tag of props(component.tags, 'bindable')"
+                    innerhtml.bind="tag.description"
+                    ) ${tag.name}
 
             template(if.bind="props(component.tags, 'pseudo').length > 0")
                 h2.uk-h2.uk-heading-bullet Attributes
