@@ -32,7 +32,7 @@ import {AireBaseButton} from "aire/button/basebutton";
  *  aire-button(label="Labeled Button")
  *
  * @usage.examples.Icon
- *  aire-button(icon="fa fa-pencil")
+ * aire-button(icon="fa fa-pencil")
  *
  * @usage.examples.Label_And_Icon
  * aire-button(label="Edit" icon="fa fa-pencil")

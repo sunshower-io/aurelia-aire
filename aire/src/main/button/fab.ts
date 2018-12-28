@@ -37,7 +37,7 @@ import {DOM} from 'aurelia-pal';
  * aire-fab(icon="fa fa-pencil" default)
  * aire-fab(icon="fa fa-pencil" primary left="50%")
  * aire-fab(icon="fa fa-pencil" secondary left="100%")
- * aire-fab(icon="fa fa-pencil" danger top="50%")
+ * aire-fab(icon="fa fa-pencil" danger left="25%")
  *
  * @section.position
  * @position.title
