@@ -27,6 +27,7 @@ export class ComponentPanel {
   }
 
   props(tags:any[], type: string) {
+    console.log(tags);
     return tags.filter(t => t.type === 'param').filter(t => t.types.indexOf(type) != -1);
   }
 }

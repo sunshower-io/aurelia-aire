@@ -43,7 +43,7 @@ import {AireBaseButton} from "aire/button/basebutton";
  * @style.description
  * Buttons have six styling options: default, primary, secondary, danger, text and link. They also have two size options (small and large) and two width options (square and full).
  *
- * @usage.examples.Styles
+ * @style.examples.Styles
  * p
  *  aire-button(label="Default" default)
  * p
@@ -56,6 +56,8 @@ import {AireBaseButton} from "aire/button/basebutton";
  *  aire-button(label="Text" text)
  * p
  *  aire-button(label="Link" link)
+ *
+ * @style.examples.Sizes
  * p
  *  aire-button(label="Small" small)
  * p
