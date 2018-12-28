@@ -76,7 +76,7 @@ test( "a list can have two styles", async(done) => {
 });
 
 test( "a list can have items", async(done) => {
-    initialize( {array:["string"]}, `aire-list(lis.bind="array")`);
+    initialize( {array:["string"]}, `aire-list(items.bind="array")`);
     await component.create(bootstrap);
     let list = document.querySelector('ul.uk-list li');
     expect(list).toBeTruthy();
@@ -94,7 +94,7 @@ test( "a list can not have items", async(done) => {
 
 
 test( "a list can not have items with an empty array", async(done) => {
-    initialize({array:[]}, `aire-list(lis.bind="array")`);
+    initialize({array:[]}, `aire-list(items.bind="array")`);
     await component.create(bootstrap);
     let list = document.querySelector( 'ul.uk-list li');
     expect(list).toBeFalsy();

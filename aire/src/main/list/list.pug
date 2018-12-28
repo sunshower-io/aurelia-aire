@@ -1,7 +1,7 @@
 template
     template(if.bind="!ordered")
         ul.uk-list(ref="list")
-            li(repeat.for="item of lis") ${item}
+            li(repeat.for="item of items") ${item}
     template(if.bind="ordered")
         ol.uk-list(ref="list")
-            li(repeat.for="item of lis") ${item}
+            li(repeat.for="item of items") ${item}

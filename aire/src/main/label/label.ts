@@ -3,23 +3,23 @@ import {dom} from "aire/core";
 
 
 /**
- *The aire-label is a span element with three optional messages and a fourth option to create your own.
+ *The aire-label is a span element with four optional styles.
  *
  *@component label
  *
  *
- *@param {bindable} label (string)
+ * @param {bindable} label (string)
  * @param {pseudo} default
- *@param {pseudo} success
+ * @param {pseudo} success
  * @param {pseudo} warning
  * @param {pseudo} danger
  *
  *
- *@section.usage
- *@usage.title
+ * @section.usage
+ * @usage.title
  * Usage
  * @usage.description
- *A label can contain words
+ * A label draws attention to important content.
  *
  * @usage.examples.label
  *  aire-label(label="Edit")
@@ -30,15 +30,15 @@ import {dom} from "aire/core";
  * @style.description
  * Labels can come up with warning, danger, success, or a user-chosen message.
  *
- * @usage.examples.Styles
+ * @style.examples.Styles
  * p
- * aire-label(label="Default" default)
+ *  aire-label(label="Default" default)
  * p
- * aire-label(label="Success" success)
+ *  aire-label(label="Success" success)
  * p
- * aire-label(label="Danger" danger)
+ *  aire-label(label="Danger" danger)
  * p
- * aire-label(label="Warning" warning)
+ *  aire-label(label="Warning" warning)
  *
  */
 
