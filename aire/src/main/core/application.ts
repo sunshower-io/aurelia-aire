@@ -29,7 +29,7 @@ export class Aire {
 
 
   public static get id() : string {
-    return "aire-" + Aire.idGen;
+    return "aire-" + Aire.idGen++;
   }
 
 

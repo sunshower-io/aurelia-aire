@@ -3,12 +3,12 @@ import {DOM} from 'aurelia-pal';
 import {AireFormMultiElement} from "aire/form/multielement";
 
 /**
- * The aire-checkbox is a styled input[type="checkbox"]
+ * The aire-checkbox is a styled `input[type="checkbox"]`
  *
  * @component checkbox
  *
  *
- * @param {bindable} selected (boolean)
+ * @param {bindable} checked (boolean)
  * @param {bindable} name (string)
  * @param {bindable} label (string)
  * @param {bindable} value (any)
@@ -23,7 +23,7 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @usage.title
  * Usage
  * @usage.description
- * Just like any form element, a checkbox can have a label and a value. It can also be disabled or selected.
+ * Just like any form element, a checkbox can have a label and a value. It can also be disabled or checked.
  *
  * @usage.examples.Default
  * aire-checkbox
@@ -34,8 +34,8 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @usage.examples.Disabled
  * aire-checkbox(disabled label="Disabled Checkbox")
  *
- * @usage.examples.Selected
- * aire-checkbox(selected label="Selected Checkbox")
+ * @usage.examples.Checked
+ * aire-checkbox(checked label="Checked Checkbox")
  *
  *
  * @section.group
