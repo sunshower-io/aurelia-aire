@@ -23,7 +23,8 @@ import {AireBaseButton} from "aire/button/basebutton";
  * @param {pseudo} full
  *
  * @section.usage
- * @usage.title Usage
+ * @usage.title
+ * Usage
  * @usage.description
  * A button can have a label, an icon, or both
  *
@@ -31,14 +32,14 @@ import {AireBaseButton} from "aire/button/basebutton";
  *  aire-button(label="Labeled Button")
  *
  * @usage.examples.Icon
- *  aire-button(icon="fa fa-pencil")
+ * aire-button(icon="fa fa-pencil")
  *
- * @usage.examples.LabelAndIcon
+ * @usage.examples.Label_And_Icon
  * aire-button(label="Edit" icon="fa fa-pencil")
  *
  * @section.style
- * @style.title Style
- *
+ * @style.title
+ * Style
  * @style.description
  * Buttons have six styling options: default, primary, secondary, danger, text and link. They also have two size options (small and large) and two width options (square and full).
  *

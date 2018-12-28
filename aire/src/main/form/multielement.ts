@@ -4,7 +4,7 @@ import {AireFormElement} from "./element";
 export class AireFormMultiElement extends AireFormElement {
 
     @bindable
-    selected    : boolean;
+    checked    : boolean;
 
     @bindable
     name        : string;

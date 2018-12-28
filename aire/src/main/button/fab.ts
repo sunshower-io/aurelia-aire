@@ -19,7 +19,8 @@ import {DOM} from 'aurelia-pal';
  * @param {pseudo} left (string)
  *
  * @section.usage
- * @usage.title Usage
+ * @usage.title
+ * Usage
  * @usage.description
  * A fab has an icon
  *
@@ -27,8 +28,8 @@ import {DOM} from 'aurelia-pal';
  * aire-fab(icon="fa fa-pencil")
  *
  * @section.style
- * @style.title Style
- *
+ * @style.title
+ * Style
  * @style.description
  * Fabs have four styling options: default, primary, secondary, danger.
  *
@@ -36,10 +37,11 @@ import {DOM} from 'aurelia-pal';
  * aire-fab(icon="fa fa-pencil" default)
  * aire-fab(icon="fa fa-pencil" primary left="50%")
  * aire-fab(icon="fa fa-pencil" secondary left="100%")
- * aire-fab(icon="fa fa-pencil" danger top="50%")
+ * aire-fab(icon="fa fa-pencil" danger left="25%")
  *
  * @section.position
- * @position.title Position
+ * @position.title
+ * Position
  * @position.description
  * Fabs are arranged on the page by passing in arguments for each edge. If an edge is not set, its position is auto.
  *

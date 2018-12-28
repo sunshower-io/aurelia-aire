@@ -1,10 +1,12 @@
 import {bindable}      from "aurelia-framework";
 import {dom, Id} from "aire/core";
+import {Aire} from "aire/core/application";
 
 export class AireFormElement {
 
     input       : HTMLElement;
     container   : HTMLElement;
+
     @bindable
     label       : string;
 
@@ -18,8 +20,7 @@ export class AireFormElement {
     @bindable
     disabled    : boolean;
 
-    @Id
-    id          : string;
+    id          : string = Aire.id;
 
     constructor(private element: Element) {
     }

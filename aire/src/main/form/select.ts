@@ -2,6 +2,24 @@ import {bindable, customElement, inject}      from "aurelia-framework";
 import {AireFormElement} from "./element";
 import {DOM} from 'aurelia-pal';
 
+/**
+ * The aire-select is a styled select
+ *
+ * @component select
+ *
+ *
+ * @param {bindable} label (string)
+ * @param {bindable} value (any)
+ * @param {bindable} disabled (boolean)
+ * @param {bindable} data ({}[] || {})
+ *
+ * @param {pseudo} horizontal
+ * @param {pseudo} success
+ * @param {pseudo} error
+ * @param {pseudo} blank
+ *
+ *
+ */
 @inject(DOM.Element)
 @customElement('aire-select')
 export class AireSelect extends AireFormElement {
