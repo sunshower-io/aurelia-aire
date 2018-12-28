@@ -1,14 +1,13 @@
 template.component-section
-    h1 ${section.name}
+    h2.uk-h2.uk-heading-bullet ${section.title.string}
     p(innerhtml.bind="section.description.html")
     div(repeat.for="example of section.examples")
-        h2 ${example.name}
+        h3.uk-h3 ${example.name}
         aire-tab-panel
             aire-tab(repeat.for="format of formats" title.bind="format")
                 .example
                     pre.language-markup(if.bind="format !== 'demo'")
                         code(location.bind="formatFor(format, example, el)" element.ref="el")
                     div(if.bind="format === 'demo'" element.ref="el" loc.bind="createDemo(example, el)")
-
-
-        hr.uk-divider-icon
+        hr.uk-divider-icon(if.bind="!$last")
+    hr.uk-divider-icon

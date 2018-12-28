@@ -35,6 +35,15 @@ $offcanvas-bar-width-m: $offcanvas-bar-width;
 $offcanvas-bar-background: $white;
 $offcanvas-bar-color-mode: dark;
 
+$base-heading-color: $dark-gray;
+$global-xxlarge-font-size: 36px;
+$base-h1-font-size: $global-xxlarge-font-size;
+$global-xlarge-font-size: 30px;
+$base-h2-font-size: $global-xlarge-font-size;
+$global-large-font-size: 24px;
+$global-medium-font-size: 18px;
+$global-font-size: 14px;
+
 @import "aire-theme";
 @mixin hook-offcanvas-bar(){
   border-right: 5px solid $gray;
@@ -42,7 +51,7 @@ $offcanvas-bar-color-mode: dark;
 @import "aire-components";
 
 
-$fa-font-path:        "fonts";
+$fa-font-path: "fonts";
 @import "font-awesome";
 
 .aire-body {
@@ -50,70 +59,27 @@ $fa-font-path:        "fonts";
 }
 
 .html-panel {
-
-
   display:flex;
   flex-direction: column;
   align-items: center;
 
-  section {
-    display: block;
-    min-width:500px;
-    .example {
-      min-height:300px;
-      position:relative;
-      pre {
-        display:block;
-        position:absolute;
-        border:1px solid $gray;
-        border-radius: 0;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
-      }
-
-      .aire-fab {
-        position: absolute;
-      }
-
+  .example {
+    min-height:100px;
+    position:relative;
+    pre {
+      display:block;
+      position:absolute;
+      border:1px solid $gray;
+      border-radius: 0;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
     }
+
+    .aire-fab {
+      position: absolute;
+    }
+
   }
 }
-
-h1 {
-  font-size:38px;
-}
-
-h1, h2 {
-  font-weight:100;
-  color: lighten($dark-gray, 25%);
-}
-
-h2 {
-  :before {
-    content: '#';
-  }
-}
-
-//.html-panel {
-//  .component-section {
-//    margin-top:1em;
-//  }
-//  section {
-//    h1 {
-//      color: lighten($dark-gray, 25%);
-//      font-weight:200;
-//      font-size:1.5em;
-//      padding-bottom:0.5em;
-//      border-bottom: 1px solid lighten($dark-gray, 25%);
-//    }
-//
-//    h2 {
-//      font-weight:100;
-//      font-size:1em;
-//      color: lighten($dark-gray, 25%);
-//
-//    }
-//  }
-//}

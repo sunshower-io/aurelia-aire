@@ -1,17 +1,18 @@
 template.au-animate
     .html-panel(ref="element")
-        section
-            h1 ${component.component}
+        section.uk-container
+            h1.uk-h1 ${component.component}
             span(innerhtml.bind="component.description.summary")
 
-            h2 Bindable Properties
+            h2.uk-h2.uk-heading-bullet Bindable Properties
             div(repeat.for="tag of props(component.tags, 'bindable')" if.bind="tag.type === 'param'")
+                span ${tag.name}
+
+            h2.uk-h2.uk-heading-bullet Attributes
+            div(repeat.for="tag of props(component.tags, 'pseudo')" if.bind="tag.type === 'param'")
                 span ${tag.name}
 
             hr.uk-divider-icon
 
-            h2 Attributes
-            div(repeat.for="tag of props(component.tags, 'pseudo')" if.bind="tag.type === 'param'")
-                span ${tag.name}
             component-section(repeat.for="section of component.sections" section.bind="section")
 
