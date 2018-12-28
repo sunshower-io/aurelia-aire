@@ -35,17 +35,6 @@ import {dom} from "aire/core";
  *    navbar-item Right
  *
  *
- * @section.sticky
- * @sticky.title
- * Sticky Navbar
- *
- * @sticky.description
- * To keep your navbar fixed to the top of the page instead of having it scroll out, make it `sticky`
- *
- * @sticky.examples.Sticky
- * aire-navbar(sticky)
- *  navbar-section(center)
- *    navbar-item Sticky Navbar
  *
  * @section.style
  * @style.title
@@ -69,6 +58,21 @@ import {dom} from "aire/core";
  *  navbar-section(center)
  *    navbar-item Dark Navbar
  */
+
+
+    // * @section.sticky
+    // * @sticky.title
+    // * Sticky Navbar
+    // *
+    // * @sticky.description
+    // * To keep your navbar fixed to the top of the page instead of having it scroll out, make it `sticky`
+    // *
+    // * @sticky.examples.Sticky
+    // * aire-navbar(sticky)
+    // *  navbar-section(center)
+    // *    navbar-item Sticky Navbar
+
+
 @customElement("aire-navbar")
 @viewResources("./item", "./section")
 export class AireNavbar {

@@ -90,5 +90,14 @@ $fa-font-path: "fonts";
       max-width:50px;
     }
 
+    .uk-navbar.uk-light a {
+      color: $white;
+    }
+
+    .uk-navbar.uk-dark {
+      background-color: $white;
+      color: $dark-gray;
+    }
+
   }
 }
