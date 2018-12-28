@@ -5,12 +5,10 @@ import {dom}    from "aire/core";
  * A card is a layout box that can have different styles
  *
  * This is cool
- * @component card
  */
 export class AireCard {
 
   /**
-   // * @component card
    // * @name aire-card
    // *
    // * @categories test, whatever, bean
@@ -29,7 +27,6 @@ export class AireCard {
    // */
 
   /**
-   * @component card
    * @name aire-card
    *
    * @description
