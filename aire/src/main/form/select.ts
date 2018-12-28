@@ -31,7 +31,6 @@ export class AireSelect extends AireFormElement {
 
     constructor(element: Element) {
         super(element);
-        console.log(this.data);
         this.options = Array.isArray(this.data) ? this.data : [this.data]; //catches single instance non-iterable
     }
 }

@@ -58,13 +58,13 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @styles.examples.Horizontal
  * aire-radio(horizontal label="Horizontal Radio")
  *
- * @styles.example.Danger
+ * @styles.examples.Danger
  * aire-radio(danger label="Dangered Radio")
  *
- * @styles.example.Success
+ * @styles.examples.Success
  * aire-radio(success label="Successful Radio")
  *
- * @styles.example.Blank
+ * @styles.examples.Blank
  * aire-radio(blank label="Minimal Radio")
  *
  *
@@ -79,6 +79,5 @@ export class AireRadio extends AireFormMultiElement {
 
     attached() {
         super.attached();
-        console.log(this.id);
     }
 }
