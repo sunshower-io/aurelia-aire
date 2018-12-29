@@ -48,7 +48,6 @@ const config = {
     force: true,
     baseURL: '.',             // baseURL of the application
     configPath: [             // SystemJS/JSPM configuration files
-        'jspm.browser.js',
         'jspm.config.js'
     ],
     injectionConfigPath: 'jspm.config.js',  // Configuration file path where bundle and depCache meta will be injected.
@@ -78,7 +77,7 @@ const config = {
                 "aurelia-templating-router",
                 "aurelia-loader-default",
                 "aurelia-history-browser",
-                "aurelia-logging-console",
+                "aurelia-logging-console"
                 // "aurelia-i18n",
                 // "aurelia-pal-browser",
             ],

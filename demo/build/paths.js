@@ -6,6 +6,7 @@ const paths = {
     typescript: 'src/**/*.ts',
     pug: ['src/**/*.pug'],
     styles: ['themes/main.scss'],
+    exportSrv: 'export/',
     dest: 'dist',
     extraComponents:  '../aire/dist/**/*.json',
     components: '**/*.json',
