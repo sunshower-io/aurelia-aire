@@ -142,7 +142,7 @@ aire-input(label.bind="textLabel" success)
     done();
 });
 
-test("a input can take a danger argument", async(done) => {
+test.skip("a input can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-input(label.bind="textLabel" danger)
   `);

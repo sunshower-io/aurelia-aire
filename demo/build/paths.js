@@ -7,6 +7,7 @@ const paths = {
     pug: ['src/**/*.pug'],
     styles: ['themes/main.scss'],
     dest: 'dist',
+    exportSrv: 'export/',
     extraComponents:  '../aire/dist/**/*.json',
     components: '**/*.json',
     metadata: ['assets/**/*', 'src/**/*.json'],

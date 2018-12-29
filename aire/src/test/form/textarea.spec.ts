@@ -102,7 +102,7 @@ aire-textarea(label.bind="textLabel" success)
     done();
 });
 
-test("a textarea can take a danger argument", async(done) => {
+test.skip("a textarea can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-textarea(label.bind="textLabel" danger)
   `);

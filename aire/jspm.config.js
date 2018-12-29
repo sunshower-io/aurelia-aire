@@ -13,18 +13,29 @@ SystemJS.config({
       "npm:": "jspm_packages/npm/",
       "github:": "jspm_packages/github/",
       "local:": "jspm_packages/local/",
-      "aire/": "dist/"
+      "aire/": "dist/",
+      "aire-build/": "../../aire-build/"
     }
   },
   packages: {
     "aire": {
       "main": "index.js",
       "defaultExtension": "js"
+    },
+    "npm:aurelia-binding@2.1.7": {
+      "map": {
+        "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
+        "aurelia-logging": "npm:aurelia-logging@1.5.0",
+        "aurelia-pal": "npm:aurelia-pal@1.8.0",
+        "aurelia-metadata": "npm:aurelia-metadata@1.0.4"
+      }
+    },
+    "npm:aurelia-fetch-client@1.7.0": {
+      "map": {
+        "aurelia-pal": "npm:aurelia-pal@1.8.0"
+      }
     }
-  }
-});
-
-SystemJS.config({
+  },
   packageConfigPaths: [
     "npm:@*/*.json",
     "npm:*.json",
@@ -64,19 +75,115 @@ SystemJS.config({
     "uikit": "npm:uikit@3.0.0-rc.25",
     "velocity-animate": "npm:velocity-animate@1.5.2"
   },
-  packages: {
-    "npm:aurelia-binding@2.1.7": {
-      "map": {
-        "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
-        "aurelia-logging": "npm:aurelia-logging@1.5.0",
-        "aurelia-pal": "npm:aurelia-pal@1.8.0",
-        "aurelia-metadata": "npm:aurelia-metadata@1.0.4"
-      }
-    },
-    "npm:aurelia-fetch-client@1.7.0": {
-      "map": {
-        "aurelia-pal": "npm:aurelia-pal@1.8.0"
-      }
-    }
+  bundles: {
+    "aire/aurelia.js": [
+      "npm:aurelia-binding@2.1.7.json",
+      "npm:aurelia-binding@2.1.7/aurelia-binding.js",
+      "npm:aurelia-dependency-injection@1.4.1.json",
+      "npm:aurelia-dependency-injection@1.4.1/aurelia-dependency-injection.js",
+      "npm:aurelia-framework@1.3.0.json",
+      "npm:aurelia-framework@1.3.0/aurelia-framework.js",
+      "npm:aurelia-loader@1.0.0.json",
+      "npm:aurelia-loader@1.0.0/aurelia-loader.js",
+      "npm:aurelia-logging@1.5.0.json",
+      "npm:aurelia-logging@1.5.0/aurelia-logging.js",
+      "npm:aurelia-metadata@1.0.4.json",
+      "npm:aurelia-metadata@1.0.4/aurelia-metadata.js",
+      "npm:aurelia-pal@1.8.0.json",
+      "npm:aurelia-pal@1.8.0/aurelia-pal.js",
+      "npm:aurelia-path@1.1.1.json",
+      "npm:aurelia-path@1.1.1/aurelia-path.js",
+      "npm:aurelia-task-queue@1.3.1.json",
+      "npm:aurelia-task-queue@1.3.1/aurelia-task-queue.js",
+      "npm:aurelia-templating@1.10.1.json",
+      "npm:aurelia-templating@1.10.1/aurelia-templating.js"
+    ],
+    "aire/app-build.js": [
+      "aire/accordion/accordion-item.js",
+      "aire/accordion/accordion-item.spec.js",
+      "aire/accordion/accordion.js",
+      "aire/accordion/accordion.spec.js",
+      "aire/aire.js",
+      "aire/application/application.js",
+      "aire/application/body.js",
+      "aire/application/header.js",
+      "aire/application/router-view.js",
+      "aire/button/basebutton.js",
+      "aire/button/button.js",
+      "aire/button/button.spec.js",
+      "aire/button/fab.js",
+      "aire/button/fab.spec.js",
+      "aire/card/basiccard.js",
+      "aire/card/basiccard.spec.js",
+      "aire/card/card.js",
+      "aire/card/dividedcard.js",
+      "aire/card/dividedcard.spec.js",
+      "aire/card/help/en/basic-card/styles/example.js",
+      "aire/card/help/en/basic-card/usage/example.js",
+      "aire/card/help/en/divided-card/styles/example.js",
+      "aire/card/help/en/divided-card/usage/example.js",
+      "aire/core.js",
+      "aire/core/application.js",
+      "aire/core/application.spec.js",
+      "aire/core/base58.js",
+      "aire/core/decorators.js",
+      "aire/core/dom.js",
+      "aire/core/dom.spec.js",
+      "aire/core/identifiers.js",
+      "aire/core/lang.js",
+      "aire/core/range.js",
+      "aire/core/uuid.js",
+      "aire/core/widget.js",
+      "aire/dropdown/dropdown.js",
+      "aire/dropdown/dropdown.spec.js",
+      "aire/events.js",
+      "aire/form/checkbox.js",
+      "aire/form/checkbox.spec.js",
+      "aire/form/element.js",
+      "aire/form/input.js",
+      "aire/form/input.spec.js",
+      "aire/form/multielement.js",
+      "aire/form/radio.js",
+      "aire/form/radio.spec.js",
+      "aire/form/range.js",
+      "aire/form/range.spec.js",
+      "aire/form/select.js",
+      "aire/form/select.spec.js",
+      "aire/form/textarea.js",
+      "aire/form/textarea.spec.js",
+      "aire/icon/icon.js",
+      "aire/icon/icon.spec.js",
+      "aire/init.js",
+      "aire/init/configure-logging.js",
+      "aire/init/init.spec.js",
+      "aire/init/register-animations.js",
+      "aire/loader/loader.js",
+      "aire/loader/loader.spec.js",
+      "aire/nav/nav.js",
+      "aire/nav/nav.spec.js",
+      "aire/navbar/item.js",
+      "aire/navbar/item.spec.js",
+      "aire/navbar/navbar.js",
+      "aire/navbar/navbar.spec.js",
+      "aire/navbar/section.js",
+      "aire/navbar/section.spec.js",
+      "aire/offcanvas/offcanvas.js",
+      "aire/offcanvas/offcanvas.spec.js",
+      "aire/page/page.js",
+      "aire/page/page.spec.js",
+      "aire/search/search.js",
+      "aire/search/search.spec.js",
+      "aire/table/table.js",
+      "aire/table/table.spec.js",
+      "aire/tabs/tab-panel.js",
+      "aire/tabs/tab-panel.spec.js",
+      "aire/tabs/tab.js",
+      "aire/tabs/tab.spec.js",
+      "aire/test/render.js",
+      "aire/test/setup.js",
+      "aire/widget/widget-panel.js",
+      "github:systemjs/plugin-text@0.0.11.json",
+      "index.html!github:systemjs/plugin-text@0.0.11/text.js"
+    ]
   }
 });

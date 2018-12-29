@@ -2,13 +2,13 @@
   "name": "aire-demo",
   "version": "1.0.0",
   "description": "Beautiful UiKit-based Aurelia plugin",
-  "main": "aire.js",
+  "main": "main.js",
   "_moduleAliases": {
     "@root": ".",
     "@build": "../build"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"no test specified\" ",
     "build": "jspm link ../aire/dist && gulp aire:generate build",
     "dev": "npm install && jspm install -y",
     "clean": "jspm remove aire || gulp clean"
@@ -90,14 +90,6 @@
         "dependencies": {
           "css": "0.1"
         }
-      },
-      "npm:inherits@2.0.3": {
-        "ignore": [
-          "test.js"
-        ]
-      },
-      "npm:safe-buffer@5.1.2": {
-        "browser": "index.js"
       }
     }
   },

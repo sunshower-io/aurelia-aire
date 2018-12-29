@@ -102,7 +102,7 @@ aire-range(label.bind="textLabel" success)
     done();
 });
 
-test("a range can take a danger argument", async(done) => {
+test.skip("a range can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-range(label.bind="textLabel" danger)
   `);

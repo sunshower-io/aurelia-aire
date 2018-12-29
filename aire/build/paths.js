@@ -8,6 +8,7 @@ const paths = {
     includedStyles: [
         'themes/**/*.scss'
     ],
+    exportSrv: 'export/',
     styles: ['themes/aire.scss'],
     allStyles: 'themes/**/*.scss',
     output: 'dist',

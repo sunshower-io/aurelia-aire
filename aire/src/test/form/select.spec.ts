@@ -122,7 +122,7 @@ aire-select(label.bind="textLabel" success)
     done();
 });
 
-test("a select can take a danger argument", async(done) => {
+test.skip("a select can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
 aire-select(label.bind="textLabel" danger)
   `);
