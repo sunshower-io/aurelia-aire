@@ -8,6 +8,7 @@ import {dom}                                  from "aire/core";
  *
  * @param {bindable} active
  * @param {bindable} icon
+ * @param {bindable} href
  * @param {pseudo} large
  * @param {pseudo} medium
  * @param {pseudo} small
@@ -24,6 +25,9 @@ export class AireNavbarItem {
 
   @bindable
   icon: string;
+
+  @bindable
+  href: string;
 
   private readonly element: Element;
 
