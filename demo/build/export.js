@@ -17,8 +17,8 @@ module.exports = {
 
 
     'normalize': [
-        ['plugin-css', ['/**/*']],
-        ['plugin-text', ['/**/*']]
+        ['plugin-css', ['dist/**/*']],
+        ['plugin-text', ['dist/**/*']]
     ]
 
 };

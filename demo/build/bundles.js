@@ -65,15 +65,28 @@ const config = {
             }
         },
 
-        // 'dist/aurelia': {
-        //     includes: [
-        //         'aurelia-framework',
-        //     ],
-        //     options: {
-        //         inject: true,
-        //         minify: true
-        //     }
-        // }
+        'dist/aurelia': {
+            includes: [
+                'aurelia-framework',
+                "aurelia-bootstrapper",
+                // "aurelia-fetch-client",
+                "aurelia-router",
+                // "aurelia-animator-css",
+                "aurelia-templating-binding",
+                "aurelia-polyfills",
+                "aurelia-templating-resources",
+                "aurelia-templating-router",
+                "aurelia-loader-default",
+                "aurelia-history-browser",
+                "aurelia-logging-console",
+                // "aurelia-i18n",
+                // "aurelia-pal-browser",
+            ],
+            options: {
+                inject: true,
+                minify: true
+            }
+        }
     }
 };
 module.exports = config;
