@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "export function Enum<T extends string>(o: Array<T>): { [K in T]: K } {\n  return o.reduce((res, key) => {\n    res[key] = key;\n    return res;\n  }, Object.create(null));\n}\n\nexport function Mixin(baseCtors: Function[]) {\n  return function(derivedCtor: Function) {\n    baseCtors.forEach(baseCtor => {\n      Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {\n        Object.defineProperty(derivedCtor, name, {\n          value: baseCtor.prototype[name],\n          writable: true\n        });\n        // derivedCtor.prototype[name] = baseCtor.prototype[name];\n      });\n    });\n  };\n}\n\n\nexport type Class<T> = { new (...args: any[]): T };\n\nexport function getClass<T>(t: T): Class<T> {\n  let a = t.constructor;\n  return <Class<T>>a;\n}\n\nconst falsy = /^(?:f(?:alse)?|no?|0+)$/i;\nexport const parseBoolean: (o: any) => boolean = val => {\n  return !falsy.test(val) && !!val;\n};\n\nexport function isFalse(a: any) {\n  return !parseBoolean(a);\n}",
+    "ctx": false
+  }
+]

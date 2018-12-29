@@ -1,0 +1,192 @@
+[
+  {
+    "tags": [
+      {
+        "type": "component",
+        "string": "textarea",
+        "html": "<p>textarea</p>"
+      },
+      {
+        "type": "param",
+        "string": "{bindable} label (string)",
+        "name": "label",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} value (any)",
+        "name": "value",
+        "description": "<p>(any)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} disabled (boolean)",
+        "name": "disabled",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} horizontal",
+        "name": "horizontal",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} horizontal</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} success",
+        "name": "success",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} success</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} danger",
+        "name": "danger",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} danger</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} blank",
+        "name": "blank",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} blank</p>"
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "Just like any form element, a textarea can have a label and a value. It can also be disabled.",
+        "html": "<p>Just like any form element, a textarea can have a label and a value. It can also be disabled.</p>"
+      },
+      {
+        "type": "usage.examples.Default",
+        "string": "aire-textarea",
+        "html": "<p>aire-textarea</p>"
+      },
+      {
+        "type": "usage.examples.With_Label_And_Value",
+        "string": "aire-textarea(label=\"My Textarea\" value=\"1234\")",
+        "html": "<p>aire-textarea(label=&quot;My Textarea&quot; value=&quot;1234&quot;)</p>"
+      },
+      {
+        "type": "usage.examples.Disabled",
+        "string": "aire-textarea(disabled label=\"Disabled Textarea\")",
+        "html": "<p>aire-textarea(disabled label=&quot;Disabled Textarea&quot;)</p>"
+      },
+      {
+        "type": "section.styles",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "styles.title",
+        "string": "Styles",
+        "html": "<p>Styles</p>"
+      },
+      {
+        "type": "styles.description",
+        "string": "An textarea's label can be moved horizontal with `horizontal`. The textarea can also have an `danger` or `success` state. For a more minimal look, make it `blank`.",
+        "html": "<p>An textarea's label can be moved horizontal with <code>horizontal</code>. The textarea can also have an <code>danger</code> or <code>success</code> state. For a more minimal look, make it <code>blank</code>.</p>"
+      },
+      {
+        "type": "styles.examples.Horizontal",
+        "string": "aire-textarea(horizontal label=\"Horizontal Textarea\")",
+        "html": "<p>aire-textarea(horizontal label=&quot;Horizontal Textarea&quot;)</p>"
+      },
+      {
+        "type": "styles.examples.Danger",
+        "string": "aire-textarea(danger label=\"Danger Textarea\")",
+        "html": "<p>aire-textarea(danger label=&quot;Danger Textarea&quot;)</p>"
+      },
+      {
+        "type": "styles.examples.Success",
+        "string": "aire-textarea(success label=\"Success Textarea\")",
+        "html": "<p>aire-textarea(success label=&quot;Success Textarea&quot;)</p>"
+      },
+      {
+        "type": "styles.examples.Blank",
+        "string": "aire-textarea(blank label=\"Minimal Textarea\")",
+        "html": "<p>aire-textarea(blank label=&quot;Minimal Textarea&quot;)</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The aire-textarea is a styled textarea</p>",
+      "summary": "<p>The aire-textarea is a styled textarea</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 5,
+    "codeStart": 55,
+    "code": "@inject(DOM.Element)\n@customElement('aire-textarea')\nexport class AireTextarea extends AireFormElement {\n\n    constructor(element: Element) {\n        super(element);\n    }\n}",
+    "ctx": false
+  }
+]

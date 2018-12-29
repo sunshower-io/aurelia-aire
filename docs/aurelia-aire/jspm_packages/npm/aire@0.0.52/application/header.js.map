@@ -1,0 +1,1 @@
+{"version":3,"sources":["main/application/header.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;AAAA,yDAAgE;AAChE,2CAA8D;AAI9D;IAAgC,8BAAW;IAGzC;eACE,kBAAM,YAAY,EAAE,IAAI,EAAE,0BAA0B,CAAC;IACvD,CAAC;IALU,UAAU;QAFtB,kCAAa;QACb,kCAAa,CAAC,aAAa,CAAC;;OAChB,UAAU,CAOtB;IAAD,iBAAC;CAPD,AAOC,CAP+B,oBAAW,GAO1C;AAPY,gCAAU","file":"header.js","sourceRoot":"../.."}

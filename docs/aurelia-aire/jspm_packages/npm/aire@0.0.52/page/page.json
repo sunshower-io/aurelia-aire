@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  bindable,\n  customElement\n}            from 'aurelia-framework';\nimport {dom} from \"aire/core/dom\";\n\n\n@customElement('aire-page')\nexport class AirePage {\n  @bindable public loading : boolean = true;\n\n  constructor(readonly el : Element) {\n    dom.decorate(el, 'padded');\n  }\n\n}",
+    "ctx": false
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "main": "velocity.js",
+  "format": "cjs",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    }
+  }
+}

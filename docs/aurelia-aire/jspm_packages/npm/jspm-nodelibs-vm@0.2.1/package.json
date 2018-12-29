@@ -1,0 +1,11 @@
+{
+  "main": "./vm.js",
+  "name": "jspm-nodelibs-vm",
+  "version": "0.2.1",
+  "map": {
+    "./vm.js": {
+      "node": "@node/vm"
+    }
+  },
+  "jspmNodeConversion": false
+}

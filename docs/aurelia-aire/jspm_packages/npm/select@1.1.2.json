@@ -1,0 +1,12 @@
+{
+  "main": "src/select.js",
+  "format": "cjs",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    },
+    "dist/select.js": {
+      "cjsRequireDetection": false
+    }
+  }
+}
