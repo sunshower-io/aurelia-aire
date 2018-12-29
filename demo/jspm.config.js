@@ -37,7 +37,7 @@ SystemJS.config({
     "local:*.json"
   ],
   map: {
-    "aire": "npm:aire@0.0.57",
+    "aire": "npm:aire@0.0.58",
     "assert": "npm:jspm-nodelibs-assert@0.2.1",
     "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
     "aurelia-binding": "npm:aurelia-binding@2.1.7",
@@ -428,11 +428,11 @@ SystemJS.config({
         "punycode": "npm:punycode@1.3.2"
       }
     },
-    "npm:aire@0.0.57": {
+    "npm:aire@0.0.58": {
       "map": {
-        "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
         "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
         "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+        "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
         "uikit": "npm:uikit@3.0.0-rc.25"
       }
     }
