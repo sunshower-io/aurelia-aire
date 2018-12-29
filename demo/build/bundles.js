@@ -55,7 +55,7 @@ const config = {
     bundles: {
         "dist/app-build": {     // bundle name/path. Must be within `baseURL`. Output path will look like: `baseURL/dist/app-build.js`.
             includes: [
-                '[aire-demo/**/*.js]',
+                '[dist/**/*.js]',
                 '*.html!text',
                 '*.css!text'
             ],

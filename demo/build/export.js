@@ -5,6 +5,7 @@ module.exports = {
     'list': [
         'index.html',
         'jspm.config.js',
+        'jspm.browser.js',
         // 'favicon.ico',
         // 'LICENSE'
 

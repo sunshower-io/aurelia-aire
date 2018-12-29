@@ -4,7 +4,7 @@ SystemJS.config({
       "github:": "jspm_packages/github/",
       "local:": "jspm_packages/local/",
       "npm:": "jspm_packages/npm/",
-      "aire-demo": "dist/"
+      "aire-demo/": "dist/"
     }
   },
   packages: {
@@ -79,5 +79,13 @@ SystemJS.config({
     "process": "npm:jspm-nodelibs-process@0.2.1",
     "text": "github:systemjs/plugin-text@0.0.11",
     "velocity-animate": "npm:velocity-animate@1.5.2"
+  },
+  bundles: {
+    "aire-demo/app-build.js": [
+      "aire-demo/index.js",
+      "aire-demo/main.js",
+      "github:systemjs/plugin-text@0.0.11.json",
+      "index.html!github:systemjs/plugin-text@0.0.11/text.js"
+    ]
   }
 });
