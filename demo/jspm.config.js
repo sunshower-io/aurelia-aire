@@ -40,7 +40,7 @@ SystemJS.config({
         "local:*.json"
     ],
     map: {
-        "aire": "local:aire@1.0.0",
+        "aire": "npm:aire@0.0.42",
         "assert": "npm:jspm-nodelibs-assert@0.2.1",
         "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
         "aurelia-binding": "npm:aurelia-binding@2.1.7",
@@ -84,6 +84,7 @@ SystemJS.config({
         "showdown": "npm:showdown@1.9.0",
         "stream": "npm:jspm-nodelibs-stream@0.2.1",
         "text": "github:systemjs/plugin-text@0.0.11",
+        "uikit": "npm:uikit@3.0.0-rc.25",
         "url": "npm:jspm-nodelibs-url@0.2.1",
         "util": "npm:jspm-nodelibs-util@0.2.2",
         "velocity-animate": "npm:velocity-animate@1.5.2",
@@ -290,15 +291,6 @@ SystemJS.config({
                 "safe-buffer": "npm:safe-buffer@5.1.2"
             }
         },
-        "local:aire@1.0.0": {
-            "map": {
-                "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
-                "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
-                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-                "uikit": "npm:uikit@3.0.0-rc.25",
-                "text": "github:systemjs/plugin-text@0.0.11"
-            }
-        },
         "npm:clipboard@2.0.4": {
             "map": {
                 "select": "npm:select@1.1.2",
@@ -437,6 +429,14 @@ SystemJS.config({
             "map": {
                 "querystring": "npm:querystring@0.2.0",
                 "punycode": "npm:punycode@1.3.2"
+            }
+        },
+        "npm:aire@0.0.42": {
+            "map": {
+                "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
+                "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
+                "uikit": "npm:uikit@3.0.0-rc.25",
+                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1"
             }
         }
     }

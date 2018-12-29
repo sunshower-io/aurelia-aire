@@ -1,6 +1,6 @@
 {
   "name": "aire",
-  "version": "1.0.0",
+  "version": "0.0.42",
   "description": "Beautiful UiKit-based Aurelia plugin",
   "main": "aire.js",
   "_moduleAliases": {
@@ -27,16 +27,20 @@
   "bugs": {
     "url": "https://github.com/sunshower-io/aurelia-aire/issues"
   },
+  "jspmNodeConversion": false,
   "homepage": "https://github.com/sunshower-io/aurelia-aire#readme",
   "jspm": {
+    "registry": "npm",
+    "main": "aire",
     "dependencies": {
       "aurelia-animator-velocity": "npm:aurelia-animator-velocity@^1.2.0",
       "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^2.3.1",
       "aurelia-fetch-client": "npm:aurelia-fetch-client@^1.7.0",
-      "text": "github:systemjs/plugin-text@^0.0.11",
       "uikit": "npm:uikit@3.0.0-rc.25"
     },
-    "devDependencies": {},
+    "devDependencies": {
+      "text": "github:systemjs/plugin-text@^0.0.11"
+    },
     "peerDependencies": {
       "aurelia-binding": "npm:aurelia-binding@^2.0.0",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@^1.0.0",
