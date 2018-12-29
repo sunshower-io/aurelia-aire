@@ -13,9 +13,6 @@ import {DOM} from 'aurelia-pal';
  * @param {bindable} disabled (boolean)
  *
  * @param {pseudo} horizontal
- * @param {pseudo} success
- * @param {pseudo} danger
- * @param {pseudo} blank
  *
  * @section.usage
  * @usage.title
@@ -37,20 +34,25 @@ import {DOM} from 'aurelia-pal';
  * @styles.title
  * Styles
  * @styles.description
- * An range's label can be moved horizontal with `horizontal`. The range can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
+ * An range's label can be moved horizontal with `horizontal`.
  *
  * @styles.examples.Horizontal
  * aire-range(horizontal label="Horizontal Range")
  *
- * @styles.examples.Danger
- * aire-range(danger label="Dangerous Range")
- *
- * @styles.examples.Success
- * aire-range(success label="Successful Range")
- *
- * @styles.examples.Blank
- * aire-range(blank label="Minimal Range")
  */
+
+// * @param {pseudo} success
+// * @param {pseudo} danger
+// * @param {pseudo} blank
+//  The range can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
+// * @styles.examples.Danger
+// * aire-range(danger label="Dangerous Range")
+// *
+// * @styles.examples.Success
+// * aire-range(success label="Successful Range")
+// *
+// * @styles.examples.Blank
+// * aire-range(blank label="Minimal Range")
 @inject(DOM.Element)
 @customElement('aire-range')
 export class AireRange extends AireFormElement {
