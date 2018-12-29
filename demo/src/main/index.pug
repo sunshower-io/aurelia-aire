@@ -5,8 +5,8 @@ template
                 navbar-item
                     aire-button(icon="fa fa-bars" square click.delegate="toggleOffCanvas()" primary)
             navbar-section(center)
-                navbar-item(icon="dist/icons/logo.svg" large logo)
-                navbar-item(logo) Aurelia + UIkit
+                navbar-item(icon="dist/icons/logo.svg" large logo href="/")
+                navbar-item(logo href="/") Aurelia + UIkit
         aire-body(view.ref="body")
         aire-offcanvas(view-model.ref="offcanvas" parent.bind="body" push)
             aire-search(navbar icon)

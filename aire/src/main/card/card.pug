@@ -1,0 +1,7 @@
+template
+    .uk-card(ref="card")
+        .uk-card-header(show.bind="header")
+            slot(name="header")
+        slot
+        .uk-card-footer(show.bind="footer")
+            slot(name="footer")

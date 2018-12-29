@@ -34,6 +34,10 @@ declare module "uikit" {
 
   }
 
+  export interface Sticky extends Component {
+
+  }
+
 
   export function tab(el:Element, options?: any) : TabPanel;
 
@@ -44,4 +48,6 @@ declare module "uikit" {
   export function dropdown(el:Element, options?:any) : Dropdown;
 
   export function accordion(el:Element, options?:any) : Accordion;
+
+  export function sticky(el:Element, options?:any) : Sticky;
 }

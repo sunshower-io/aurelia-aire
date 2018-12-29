@@ -16,8 +16,7 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/application/header',
     'aire/application/body',
     'aire/offcanvas/offcanvas',
-    'aire/card/basiccard',
-    'aire/card/dividedcard',
+    'aire/card/card',
     'aire/form/input',
     'aire/form/select',
     'aire/nav/nav',
@@ -36,7 +35,9 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/search/search',
     'aire/icon/icon',
     'aire/dropdown/dropdown',
-    'aire/loader/loader'
+    'aire/loader/loader',
+    'aire/accordion/accordion',
+    'aire/accordion/accordion-item'
   ]);
   Application.initialize(UIkit.util);
   cfg.container.registerInstance(Application, Application.getInstance());

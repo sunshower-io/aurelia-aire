@@ -142,12 +142,12 @@ aire-input(label.bind="textLabel" success)
     done();
 });
 
-test("a input can take a error argument", async(done) => {
+test("a input can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
-aire-input(label.bind="textLabel" error)
+aire-input(label.bind="textLabel" danger)
   `);
     await component.create(bootstrap);
-    let input = document.querySelector('input.uk-form-error');
+    let input = document.querySelector('input.uk-form-danger');
     expect(input).toBeTruthy();
     done();
 });

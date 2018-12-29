@@ -102,12 +102,12 @@ aire-textarea(label.bind="textLabel" success)
     done();
 });
 
-test("a textarea can take a error argument", async(done) => {
+test("a textarea can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
-aire-textarea(label.bind="textLabel" error)
+aire-textarea(label.bind="textLabel" danger)
   `);
     await component.create(bootstrap);
-    let textarea = document.querySelector('textarea.uk-form-error');
+    let textarea = document.querySelector('textarea.uk-form-danger');
     expect(textarea).toBeTruthy();
     done();
 });

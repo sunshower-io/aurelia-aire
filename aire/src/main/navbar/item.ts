@@ -1,7 +1,20 @@
 import {bindable, containerless, inject, customElement} from "aurelia-framework";
 import {dom}                                  from "aire/core";
 
-
+/**
+ * The navbar-item is a link that goes inside a navbar-section.
+ *
+ * @component navbar-item
+ *
+ * @param {bindable} active
+ * @param {bindable} icon
+ * @param {bindable} href
+ * @param {pseudo} large
+ * @param {pseudo} medium
+ * @param {pseudo} small
+ * @param {pseudo} logo
+ *
+ */
 @inject(Element)
 @containerless
 @customElement('navbar-item')
@@ -14,7 +27,7 @@ export class AireNavbarItem {
   icon: string;
 
   @bindable
-  content: string;
+  href: string;
 
   private readonly element: Element;
 
