@@ -1,0 +1,11 @@
+{
+  "main": "./events.js",
+  "name": "jspm-nodelibs-events",
+  "version": "0.2.2",
+  "map": {
+    "./events.js": {
+      "node": "@node/events"
+    }
+  },
+  "jspmNodeConversion": false
+}

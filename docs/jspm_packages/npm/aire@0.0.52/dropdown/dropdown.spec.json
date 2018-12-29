@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import 'reflect-metadata';\nimport 'aurelia-polyfills';\n\nimport {bootstrap}     from 'aurelia-bootstrapper';\nimport {newComponent}  from \"test/render\";\nimport {AireDropdown} from \"aire/dropdown/dropdown\";\nimport {$} from \"aire/core/dom\";\n\nlet component : any;\n\n\nfunction initialize(bindingContext : any, template : string) {\n    component = newComponent(template,\n        bindingContext,\n        'dropdown/dropdown'\n    );\n}\n\nafterEach(() => {\n    component.dispose();\n});\n\ntest(\"a dropdown should initialize\", async(done) => {\n    initialize({}, `aire-dropdown`);\n    await component.create(bootstrap);\n    expect(document.querySelector('.uk-dropdown')).toBeTruthy();\n    done();\n});\n\ntest(\"a dropdown should have a default mode\", async(done) => {\n    initialize({}, `aire-dropdown`);\n    await component.create(bootstrap);\n    let dropdown: AireDropdown = component.viewModel;\n    expect(dropdown.dropdown[\"$props\"].mode.length).toBe(2);\n    done();\n});\n\ntest(\"a dropdown should have a bindable mode\", async(done) => {\n    initialize({}, `aire-dropdown(mode=\"click\")`);\n    await component.create(bootstrap);\n    let dropdown: AireDropdown = component.viewModel;\n    expect(dropdown.dropdown[\"$props\"].mode[0]).toBe(\"click\");\n    done();\n});\n\ntest(\"a dropdown should have a default position\", async(done) => {\n    initialize({}, `aire-dropdown`);\n    await component.create(bootstrap);\n    let dropdown: AireDropdown = component.viewModel;\n    expect(dropdown.dropdown[\"$props\"].pos).toBe(\"bottom-left\");\n    done();\n});\n\ntest(\"a dropdown should have a bindable position\", async(done) => {\n    initialize({}, `aire-dropdown(position=\"left-center\")`);\n    await component.create(bootstrap);\n    let dropdown: AireDropdown = component.viewModel;\n    expect(dropdown.dropdown[\"$props\"].pos).toBe(\"left-center\");\n    done();\n});\n\ntest(\"a dropdown should have a default toggle\", async(done) => {\n    initialize({}, `aire-dropdown`);\n    await component.create(bootstrap);\n    let dropdown: AireDropdown = component.viewModel;\n    expect(dropdown.dropdown[\"$props\"].toggle).toBe(\"- *\");\n    done();\n});\n\ntest(\"a dropdown should have a bindable toggle as a string\", async(done) => {\n    initialize({}, `aire-dropdown(toggle=\"#someId\")`);\n    await component.create(bootstrap);\n    let dropdown: AireDropdown = component.viewModel;\n    expect(dropdown.dropdown[\"$props\"].toggle).toBe(\"#someId\");\n    done();\n});\n\ntest(\"a dropdown should have a bindable toggle as an element\", async(done) => {\n    let toggler = $.createElement('div');\n    toggler.setAttribute(\"id\", \"someId\");\n    initialize({toggle: toggler}, `aire-dropdown(toggle.bind=\"toggle\")`);\n    await component.create(bootstrap);\n    let dropdown: AireDropdown = component.viewModel;\n    expect(dropdown.dropdown[\"$props\"].toggle).toContain(\"#someId\");\n    done();\n});",
+    "ctx": false
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "main": "aurelia-binding.js",
+  "format": "amd",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 .idea/
 node_modules
-jspm_packages
+aire/jspm_packages
+demo/jspm_packages
 dist

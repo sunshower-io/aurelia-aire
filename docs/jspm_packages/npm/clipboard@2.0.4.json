@@ -1,0 +1,20 @@
+{
+  "main": "dist/clipboard.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    },
+    "src/clipboard.js": {
+      "format": "esm"
+    },
+    "test/*": {
+      "format": "esm"
+    }
+  }
+}

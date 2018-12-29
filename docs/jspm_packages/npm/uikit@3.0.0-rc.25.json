@@ -1,0 +1,23 @@
+{
+  "main": "dist/js/uikit.js",
+  "format": "cjs",
+  "meta": {
+    "*": {
+      "globals": {
+        "process": "process"
+      }
+    },
+    "*.json": {
+      "format": "json"
+    },
+    "build/componentWrapper.js": {
+      "format": "esm"
+    },
+    "src/js/*": {
+      "format": "esm"
+    },
+    "tests/js/*": {
+      "format": "esm"
+    }
+  }
+}

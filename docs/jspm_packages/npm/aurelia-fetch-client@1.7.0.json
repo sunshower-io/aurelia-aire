@@ -1,0 +1,9 @@
+{
+  "main": "aurelia-fetch-client.js",
+  "format": "amd",
+  "meta": {
+    "*.json": {
+      "format": "json"
+    }
+  }
+}

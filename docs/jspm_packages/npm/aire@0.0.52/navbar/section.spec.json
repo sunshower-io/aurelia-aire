@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import 'reflect-metadata';\nimport 'aurelia-polyfills';\n\nimport {bootstrap}      from 'aurelia-bootstrapper';\nimport {newComponent}         from \"test/render\";\n\n\nlet component : any;\n\n\nfunction initialize(bindingContext : any, templateString ?: string) {\n    let template = templateString ? templateString : `\naire-navbar\n  navbar-section\n  `;\n    component = newComponent(template, bindingContext, 'navbar/navbar', 'navbar/section');\n}\n\nafterEach(() => {\n    component.dispose();\n});\n\ntest(\"a section should initialize with a slot\", async (done) => {\n    initialize({}, `\naire-navbar\n  navbar-section\n    p Hi\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('navbar-section p');\n    expect(nav).toBeTruthy();\n    done();\n});\n\ntest(\"a section can take a left argument\", async(done) => {\n    initialize({}, `\naire-navbar\n  navbar-section(left)\n    p Hi\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('.uk-navbar-left');\n    expect(nav).toBeTruthy();\n    done();\n});\n\ntest(\"a section can take a right argument\", async(done) => {\n    initialize({}, `\naire-navbar\n  navbar-section(right)\n    p Hi\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('.uk-navbar-right');\n    expect(nav).toBeTruthy();\n    done();\n});\n\ntest(\"a section can take a center argument\", async(done) => {\n    initialize({}, `\naire-navbar\n  navbar-section(center)\n    p Hi\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('.uk-navbar-center');\n    expect(nav).toBeTruthy();\n    done();\n});",
+    "ctx": false
+  }
+]

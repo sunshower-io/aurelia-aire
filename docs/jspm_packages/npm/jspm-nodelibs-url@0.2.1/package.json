@@ -1,0 +1,15 @@
+{
+  "main": "./url.js",
+  "name": "jspm-nodelibs-url",
+  "version": "0.2.1",
+  "map": {
+    "./url.js": {
+      "node": "@node/url",
+      "browser": "url"
+    }
+  },
+  "dependencies": {
+    "url": "^0.11.0"
+  },
+  "jspmNodeConversion": false
+}

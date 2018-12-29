@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {levelFor, readLevel} from \"aire/init/configure-logging\";\n\n\nimport {LogManager}             from 'aurelia-framework';\ntest('configure-logging:readLevel must return correct values when present in debug', () => {\n  let search = 'hello=world&log.level=debug',\n    [k, v] = readLevel(search);\n  expect(k).toBe('log.level');\n  expect(v).toBe('debug');\n\n});\n\ntest('levelFor must return the correct level', () => {\n\n  expect(levelFor('debug')).toBe(LogManager.logLevel.debug);\n});",
+    "ctx": false
+  }
+]
