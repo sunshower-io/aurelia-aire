@@ -14,16 +14,18 @@ const paths = {
     createScssInclusions: utils => {
 
         let pkg = utils.locatePackage('aire'),
-            pkgDescriptor = utils.readJson(`${pkg}/package.json`),
-            uikit = utils.locatePackageIn(pkgDescriptor, 'uikit'),
+            // pkgDescriptor = utils.readJson(`${pkg}/package.json`),
+            uikit = utils.locatePackage('uikit'),
             fontawesome = utils.locatePackage('font-awesome'),
             fontawesomedir = `${utils.fs.realpathSync(fontawesome)}/scss`,
             aireDir = utils.fs.realpathSync(pkg),
             aireRoot = utils.parentDirectory(aireDir),
             resolved = `${aireRoot}/${uikit}/src/scss`,
             aireScss = `${aireDir}/scss`;
+
+        let p =`${utils.source('uikit')}/scss`;
         resolveFonts(utils);
-        return [resolved, aireScss, fontawesomedir]
+        return [resolved, aireScss, fontawesomedir, p]
     }
 };
 
