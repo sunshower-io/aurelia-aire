@@ -7,12 +7,12 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "sh ./build.sh test",
-    "build": "sh ./build.sh build",
-    "dev": "sh ./build.sh build dev",
-    "watch": "sh ./build.sh watch",
-    "stop": "sh ./build.sh stop",
-    "clean": "sh ./build.sh clean"
+    "help": "./build.sh help",
+    "clean": "./build.sh clean",
+    "clobber": "./build.sh clobber",
+    "build": "./build.sh build",
+    "dependencies": "./build.sh install",
+    "release": "./build.sh release"
   },
   "repository": {
     "type": "git",
@@ -35,5 +35,12 @@
   "homepage": "https://github.com/sunshower-io/aurelia-aire#readme",
   "devDependencies": {
     "gulp-sourcemaps": "^2.6.4"
+  },
+  "jspm": {
+    "name": "aurelia-aire",
+    "main": "aurelia-aire.js",
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.25"
+    }
   }
 }

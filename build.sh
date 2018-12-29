@@ -1,87 +1,41 @@
 #!/bin/bash
 
-run_all() {
-    local c=$(echo $1);
-    echo "Running $c on Aire";
-    cd aire;
-    echo "$(pwd)"
-    npm run-script $c;
-    cd ../;
 
-    echo "Done";
+depdirs=("jspm_packages" "node_modules")
+declare -a projects=(
+"aire"
+"demo"
+)
 
-    echo "Running $1 on Demo";
-    cd demo;
-    npm run-script $c;
-    cd ../;
-    echo "Done";
-}
+source build/clean.sh;
+source build/clobber.sh;
+source build/help.sh;
+source build/install.sh;
+source build/build.sh;
 
-watch() {
-
-    echo "Starting aire in sub-shell";
-    cd aire;
-    gulp watch &
-    sleep 5;
-    cd ../
-
-    echo "Starting demo in sub-shell";
-    cd demo
-    gulp watch &
-}
-
-doKill() {
-    killall "gulp watch";
-}
-
-
-clean_all() {
-    run_all "clean";
-    find . -name node_modules | xargs rm -rf
-    find . -name jspm_packages | xargs rm -rf;
-}
-
-
-restart() {
-    echo "Restarting tasks";
-    doKill;
-
-    watch;
-    echo "Tasks restarted";
-}
-
-
-
-configure_dev() {
-    echo "Configuring Aire Dev Environment";
-    cd demo;
-    jspm link ../aire/dist;
-    cd ../;
-}
 
 
 while test $# -gt 0
 do
     echo "Running $1";
     case "$1" in
+        install)
+            install_all
+            ;;
         test)
-            run_all $1
+            cd "aire" && npm run test;
             ;;
         build)
-            run_all "dev"
-            run_all $1
-            ;;
-        dev)
-            configure_dev
-            ;;
-        watch)
-            watch
-            ;;
-        stop)
-           doKill
+            build_all
             ;;
         clean)
             clean_all
+            ;;
+        clobber)
+            clobber_all
+            ;;
+        *)
+            show_help
             ;;
     esac
     shift

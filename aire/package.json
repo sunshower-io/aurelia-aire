@@ -8,8 +8,8 @@
     "@build": "../build"
   },
   "scripts": {
-    "dev": "npm install && jspm install -y",
-    "build": "gulp build",
+    "installdeps": "npm install && jspm install -y",
+    "build": "gulp clean build",
     "test": "npx jest",
     "clean": "gulp clean"
   },

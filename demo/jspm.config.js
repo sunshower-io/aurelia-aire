@@ -28,7 +28,68 @@ SystemJS.config({
     },
     "aire": {
       "defaultExtension": "js"
-    },
+    }
+  }
+});
+
+SystemJS.config({
+  packageConfigPaths: [
+    "npm:@*/*.json",
+    "npm:*.json",
+    "github:*/*.json",
+    "local:*.json"
+  ],
+  map: {
+    "assert": "npm:jspm-nodelibs-assert@0.2.1",
+    "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
+    "aurelia-binding": "npm:aurelia-binding@2.1.7",
+    "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+    "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
+    "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
+    "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
+    "aurelia-framework": "npm:aurelia-framework@1.3.0",
+    "aurelia-history": "npm:aurelia-history@1.1.0",
+    "aurelia-history-browser": "npm:aurelia-history-browser@1.2.0",
+    "aurelia-loader": "npm:aurelia-loader@1.0.0",
+    "aurelia-loader-default": "npm:aurelia-loader-default@1.1.0",
+    "aurelia-logging": "npm:aurelia-logging@1.5.0",
+    "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0",
+    "aurelia-metadata": "npm:aurelia-metadata@1.0.4",
+    "aurelia-pal": "npm:aurelia-pal@1.8.0",
+    "aurelia-pal-browser": "npm:aurelia-pal-browser@1.8.0",
+    "aurelia-path": "npm:aurelia-path@1.1.1",
+    "aurelia-polyfills": "npm:aurelia-polyfills@1.3.0",
+    "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.3.1",
+    "aurelia-router": "npm:aurelia-router@1.6.3",
+    "aurelia-router-loader": "npm:aurelia-router-loader@1.0.6",
+    "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
+    "aurelia-templating": "npm:aurelia-templating@1.10.1",
+    "aurelia-templating-binding": "npm:aurelia-templating-binding@1.5.2",
+    "aurelia-templating-resources": "npm:aurelia-templating-resources@1.7.1",
+    "aurelia-templating-router": "npm:aurelia-templating-router@1.3.3",
+    "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
+    "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
+    "clipboard": "npm:clipboard@2.0.4",
+    "css": "github:systemjs/plugin-css@0.1.37",
+    "events": "npm:jspm-nodelibs-events@0.2.2",
+    "font-awesome": "npm:font-awesome@4.7.0",
+    "fs": "npm:jspm-nodelibs-fs@0.2.1",
+    "http": "npm:jspm-nodelibs-http@0.2.0",
+    "os": "npm:jspm-nodelibs-os@0.2.2",
+    "path": "npm:jspm-nodelibs-path@0.2.3",
+    "pretty": "npm:pretty@2.0.0",
+    "prismjs": "npm:prismjs@1.15.0",
+    "process": "npm:jspm-nodelibs-process@0.2.1",
+    "showdown": "npm:showdown@1.9.0",
+    "stream": "npm:jspm-nodelibs-stream@0.2.1",
+    "text": "github:systemjs/plugin-text@0.0.11",
+    "uikit": "npm:uikit@3.0.0-rc.25",
+    "url": "npm:jspm-nodelibs-url@0.2.1",
+    "util": "npm:jspm-nodelibs-util@0.2.2",
+    "velocity-animate": "npm:velocity-animate@1.5.2",
+    "vm": "npm:jspm-nodelibs-vm@0.2.1"
+  },
+  packages: {
     "npm:aurelia-binding@2.1.7": {
       "map": {
         "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
@@ -368,71 +429,6 @@ SystemJS.config({
         "querystring": "npm:querystring@0.2.0",
         "punycode": "npm:punycode@1.3.2"
       }
-    },
-    "npm:aire@0.0.42": {
-      "map": {
-        "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
-        "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
-        "uikit": "npm:uikit@3.0.0-rc.25",
-        "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1"
-      }
     }
-  },
-  packageConfigPaths: [
-    "npm:@*/*.json",
-    "npm:*.json",
-    "github:*/*.json",
-    "local:*.json"
-  ],
-  map: {
-    "aire": "npm:aire@0.0.42",
-    "assert": "npm:jspm-nodelibs-assert@0.2.1",
-    "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
-    "aurelia-binding": "npm:aurelia-binding@2.1.7",
-    "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-    "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.4.1",
-    "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
-    "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
-    "aurelia-framework": "npm:aurelia-framework@1.3.0",
-    "aurelia-history": "npm:aurelia-history@1.1.0",
-    "aurelia-history-browser": "npm:aurelia-history-browser@1.2.0",
-    "aurelia-loader": "npm:aurelia-loader@1.0.0",
-    "aurelia-loader-default": "npm:aurelia-loader-default@1.1.0",
-    "aurelia-logging": "npm:aurelia-logging@1.5.0",
-    "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0",
-    "aurelia-metadata": "npm:aurelia-metadata@1.0.4",
-    "aurelia-pal": "npm:aurelia-pal@1.8.0",
-    "aurelia-pal-browser": "npm:aurelia-pal-browser@1.8.0",
-    "aurelia-path": "npm:aurelia-path@1.1.1",
-    "aurelia-polyfills": "npm:aurelia-polyfills@1.3.0",
-    "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.3.1",
-    "aurelia-router": "npm:aurelia-router@1.6.3",
-    "aurelia-router-loader": "npm:aurelia-router-loader@1.0.6",
-    "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
-    "aurelia-templating": "npm:aurelia-templating@1.10.1",
-    "aurelia-templating-binding": "npm:aurelia-templating-binding@1.5.2",
-    "aurelia-templating-resources": "npm:aurelia-templating-resources@1.7.1",
-    "aurelia-templating-router": "npm:aurelia-templating-router@1.3.3",
-    "buffer": "npm:jspm-nodelibs-buffer@0.2.3",
-    "child_process": "npm:jspm-nodelibs-child_process@0.2.1",
-    "clipboard": "npm:clipboard@2.0.4",
-    "css": "github:systemjs/plugin-css@0.1.37",
-    "events": "npm:jspm-nodelibs-events@0.2.2",
-    "font-awesome": "npm:font-awesome@4.7.0",
-    "fs": "npm:jspm-nodelibs-fs@0.2.1",
-    "http": "npm:jspm-nodelibs-http@0.2.0",
-    "os": "npm:jspm-nodelibs-os@0.2.2",
-    "path": "npm:jspm-nodelibs-path@0.2.3",
-    "pretty": "npm:pretty@2.0.0",
-    "prismjs": "npm:prismjs@1.15.0",
-    "process": "npm:jspm-nodelibs-process@0.2.1",
-    "showdown": "npm:showdown@1.9.0",
-    "stream": "npm:jspm-nodelibs-stream@0.2.1",
-    "text": "github:systemjs/plugin-text@0.0.11",
-    "uikit": "npm:uikit@3.0.0-rc.25",
-    "url": "npm:jspm-nodelibs-url@0.2.1",
-    "util": "npm:jspm-nodelibs-util@0.2.2",
-    "velocity-animate": "npm:velocity-animate@1.5.2",
-    "vm": "npm:jspm-nodelibs-vm@0.2.1"
   }
 });
