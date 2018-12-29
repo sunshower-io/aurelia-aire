@@ -61,17 +61,13 @@ import {AireFormMultiElement} from "aire/form/multielement";
 
 // * @param {pseudo} success
 // * @param {pseudo} danger
-// * @param {pseudo} blank
 
 //  The checkbox can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
 // * @styles.examples.Danger
-// * aire-checkbox(danger label="Dangerous Checkbox")
+// * aire-checkbox(danger label="Danger Checkbox")
 // *
 // * @styles.examples.Success
-// * aire-checkbox(success label="Successful Checkbox")
-// *
-// * @styles.examples.Blank
-// * aire-checkbox(blank label="Minimal Checkbox")
+// * aire-checkbox(success label="Success Checkbox")
 @inject(DOM.Element)
 @customElement('aire-checkbox')
 export class AireCheckbox extends AireFormMultiElement {

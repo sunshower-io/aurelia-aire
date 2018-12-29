@@ -44,10 +44,10 @@ import {DOM} from 'aurelia-pal';
  * aire-textarea(horizontal label="Horizontal Textarea")
  *
  * @styles.examples.Danger
- * aire-textarea(danger label="Dangerous Textarea")
+ * aire-textarea(danger label="Danger Textarea")
  *
  * @styles.examples.Success
- * aire-textarea(success label="Successful Textarea")
+ * aire-textarea(success label="Success Textarea")
  *
  * @styles.examples.Blank
  * aire-textarea(blank label="Minimal Textarea")

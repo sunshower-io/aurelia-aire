@@ -48,10 +48,10 @@ import {DOM} from "aurelia-pal";
  * aire-input(horizontal label="Horizontal Input")
  *
  * @styles.examples.Danger
- * aire-input(danger label="Dangerous Input")
+ * aire-input(danger label="Danger Input")
  *
  * @styles.examples.Success
- * aire-input(success label="Successful Input")
+ * aire-input(success label="Success Input")
  *
  * @styles.examples.Blank
  * aire-input(blank label="Minimal Input")

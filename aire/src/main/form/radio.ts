@@ -62,16 +62,12 @@ import {AireFormMultiElement} from "aire/form/multielement";
 
 //  * @param {pseudo} success
 //  * @param {pseudo} danger
-//  * @param {pseudo} blank
-// The radio can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
+// The radio can also have an `danger` or `success` state.
 // * @styles.examples.Danger
-// * aire-radio(danger label="Dangerous Radio")
+// * aire-radio(danger label="Danger Radio")
 // *
 // * @styles.examples.Success
-// * aire-radio(success label="Successful Radio")
-// *
-// * @styles.examples.Blank
-// * aire-radio(blank label="Minimal Radio")
+// * aire-radio(success label="Success Radio")
 @inject(DOM.Element)
 @customElement('aire-radio')
 export class AireRadio extends AireFormMultiElement {

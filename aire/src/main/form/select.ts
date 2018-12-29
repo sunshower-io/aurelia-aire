@@ -44,10 +44,10 @@ import {DOM} from 'aurelia-pal';
  * aire-select(horizontal label="Horizontal Select")
  *
  * @styles.examples.Danger
- * aire-select(danger label="Dangerous Select")
+ * aire-select(danger label="Danger Select")
  *
  * @styles.examples.Success
- * aire-select(success label="Successful Select")
+ * aire-select(success label="Success Select")
  *
  * @styles.examples.Blank
  * aire-select(blank label="Minimal Select")

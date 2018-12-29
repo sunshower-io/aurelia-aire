@@ -43,16 +43,12 @@ import {DOM} from 'aurelia-pal';
 
 // * @param {pseudo} success
 // * @param {pseudo} danger
-// * @param {pseudo} blank
-//  The range can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
+//  The range can also have an `danger` or `success` state.
 // * @styles.examples.Danger
-// * aire-range(danger label="Dangerous Range")
+// * aire-range(danger label="Danger Range")
 // *
 // * @styles.examples.Success
-// * aire-range(success label="Successful Range")
-// *
-// * @styles.examples.Blank
-// * aire-range(blank label="Minimal Range")
+// * aire-range(success label="Success Range")
 @inject(DOM.Element)
 @customElement('aire-range')
 export class AireRange extends AireFormElement {

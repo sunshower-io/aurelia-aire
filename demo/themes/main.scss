@@ -22,6 +22,7 @@ $base-selection-background: $blue;
 
 $navbar-background: $purple;
 $navbar-nav-item-padding-horizontal:8px;
+$navbar-item-color: $white;
 $logo-color: $white;
 $logo-hover-color: $logo-color;
 
@@ -90,13 +91,18 @@ $fa-font-path: "fonts";
       max-width:50px;
     }
 
-    .uk-navbar.uk-light a {
-      color: $white;
-    }
-
     .uk-navbar.uk-dark {
       background-color: $white;
-      color: $dark-gray;
+    }
+
+    .uk-navbar.uk-dark, .uk-navbar.uk-navbar-transparent {
+      .uk-navbar-item {
+        color: $dark-gray;
+      }
+    }
+
+    .uk-navbar.uk-light a.uk-navbar-item {
+      color: $white;
     }
 
   }
