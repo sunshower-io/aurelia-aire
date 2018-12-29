@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {Logger} from 'aurelia-logging';\nimport {\n  LogManager\n}               from 'aurelia-framework';\nimport {dom} from \"aire/core/dom\";\nexport class AireElement {\n\n\n  protected readonly log: Logger;\n  protected _host:Element;\n\n\n  constructor(\n    protected readonly id: string,\n    protected readonly el: Element,\n    protected readonly hostOrSelector?: string | Element) {\n    let log = LogManager.getLogger(id);\n\n    this.log = log;\n  }\n\n\n  attached() : void {\n    let hostOrSelector = this.hostOrSelector;\n    if(hostOrSelector) {\n      if(typeof hostOrSelector === 'string') {\n        this._host = dom.$(hostOrSelector);\n      } else {\n        this._host = hostOrSelector as Element;\n      }\n    } else if(this.el) {\n      this._host = this.el;\n    }\n    if(!this._host) {\n      this.log.error(`[bug]: No Element provided for component {}`);\n      throw new TypeError(`AireElement requires a \n      physical element to provide much of its functionality.  Specify one`) ;\n    }\n  }\n\n  detached() : void {\n\n  }\n\n\n\n  public get host() : Element {\n    return this._host;\n  }\n\n  public get height() : number {\n    let host = this._host;\n    if((host as HTMLElement).offsetHeight) {\n      return (host as HTMLElement).offsetHeight;\n    }\n    return host.clientHeight;\n  }\n\n  public get width() : number {\n    let host = this._host;\n    if((host as HTMLElement).offsetWidth) {\n      return (host as HTMLElement).offsetWidth;\n    }\n    return host.clientWidth;\n  }\n\n\n\n}",
+    "ctx": false
+  }
+]

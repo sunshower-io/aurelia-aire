@@ -1,0 +1,228 @@
+[
+  {
+    "tags": [
+      {
+        "type": "component",
+        "string": "card",
+        "html": "<p>card</p>"
+      },
+      {
+        "type": "param",
+        "string": "{bindable} header (boolean)",
+        "name": "header",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} footer (boolean)",
+        "name": "footer",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} default",
+        "name": "default",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} default</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} primary",
+        "name": "primary",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} primary</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} secondary",
+        "name": "secondary",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} secondary</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} hover",
+        "name": "hover",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} hover</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} padding",
+        "name": "padding",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} padding</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} padding-small",
+        "name": "padding-small",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} padding-small</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} padding-large",
+        "name": "padding-large",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} padding-large</p>"
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "A card has a default slot. To organize a card, you can provide a header and footer argument, as well as content for those slots.",
+        "html": "<p>A card has a default slot. To organize a card, you can provide a header and footer argument, as well as content for those slots.</p>"
+      },
+      {
+        "type": "usage.examples.Basic",
+        "string": "aire-card(default)\n .uk-card-body Card content in a slot",
+        "html": "<p>aire-card(default)<br />\n.uk-card-body Card content in a slot</p>"
+      },
+      {
+        "type": "usage.examples.Header",
+        "string": "aire-card(header default)\n p(slot=\"header\") A header\n .uk-card-body Card content in a slot",
+        "html": "<p>aire-card(header default)<br />\np(slot=&quot;header&quot;) A header<br />\n.uk-card-body Card content in a slot</p>"
+      },
+      {
+        "type": "usage.examples.Footer",
+        "string": "aire-card(footer default)\n .uk-card-body Card content in a slot\n p(slot=\"footer\") A footer",
+        "html": "<p>aire-card(footer default)<br />\n.uk-card-body Card content in a slot<br />\np(slot=&quot;footer&quot;) A footer</p>"
+      },
+      {
+        "type": "section.style",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "style.title",
+        "string": "Style",
+        "html": "<p>Style</p>"
+      },
+      {
+        "type": "style.description",
+        "string": "Cards can be styled by passing a `default`, `primary`, `secondary` or `hover` argument.",
+        "html": "<p>Cards can be styled by passing a <code>default</code>, <code>primary</code>, <code>secondary</code> or <code>hover</code> argument.</p>"
+      },
+      {
+        "type": "style.examples.Styles",
+        "string": ".uk-child-width-1-4.uk-grid\n aire-card(default)\n     .uk-card-body Default\n aire-card(primary)\n     .uk-card-body Primary\n aire-card(secondary)\n     .uk-card-body Secondary\n aire-card(hover)\n     .uk-card-body Hover",
+        "html": "<p>.uk-child-width-1-4.uk-grid<br />\naire-card(default)<br />\n.uk-card-body Default<br />\naire-card(primary)<br />\n.uk-card-body Primary<br />\naire-card(secondary)<br />\n.uk-card-body Secondary<br />\naire-card(hover)<br />\n.uk-card-body Hover</p>"
+      },
+      {
+        "type": "section.padding",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "padding.title",
+        "string": "Padding",
+        "html": "<p>Padding</p>"
+      },
+      {
+        "type": "padding.description",
+        "string": "To adjust the amount of padding a card has, use `padding-small`, `padding` and `padding-large` -- by default, a card has no padding.",
+        "html": "<p>To adjust the amount of padding a card has, use <code>padding-small</code>, <code>padding</code> and <code>padding-large</code> -- by default, a card has no padding.</p>"
+      },
+      {
+        "type": "padding.examples.Padding",
+        "string": ".uk-child-width-1-3.uk-grid\n aire-card(padding-small default)\n     | A card with small padding\n aire-card(padding default)\n     | A card with normal padding\n aire-card(padding-large default)\n     | A card with large padding",
+        "html": "<p>.uk-child-width-1-3.uk-grid<br />\naire-card(padding-small default)<br />\n| A card with small padding<br />\naire-card(padding default)<br />\n| A card with normal padding<br />\naire-card(padding-large default)<br />\n| A card with large padding</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>A card is a layout box that can have different styles and include a header and footer.</p>",
+      "summary": "<p>A card is a layout box that can have different styles and include a header and footer.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 5,
+    "codeStart": 76,
+    "code": "@inject(DOM.Element)\n@customElement('aire-card')\nexport class AireCard {\n\n    card        : HTMLElement;\n\n    @bindable\n    header    : boolean;\n\n    @bindable\n    footer    : boolean;\n\n    constructor(private element: Element) {\n\n    }\n\n    attached() {\n        dom.decorateTo(this.element, this.card, \"default\", \"uk-card-default\");\n        dom.decorateTo(this.element, this.card, \"primary\", \"uk-card-primary\");\n        dom.decorateTo(this.element, this.card, \"secondary\", \"uk-card-secondary\");\n        dom.decorateTo(this.element, this.card, \"hover\", \"uk-card-hover\");\n        dom.decorateTo(this.element, this.card, \"padding\", \"uk-card-body\");\n        dom.decorateTo(this.element, this.card, \"padding-small\", \"uk-card-body\");\n        dom.decorateTo(this.element, this.card, \"padding-small\", \"uk-card-small\");\n        dom.decorateTo(this.element, this.card, \"padding-large\", \"uk-card-body\");\n        dom.decorateTo(this.element, this.card, \"padding-large\", \"uk-card-large\");\n\n    }\n}",
+    "ctx": false
+  }
+]
