@@ -3,9 +3,9 @@ import {dom} from "aire/core";
 
 
 /**
- *The aire-label is a span element with four optional styles.
+ *The aire-label is a span that draws attention to important content.
  *
- *@component label
+ * @component label
  *
  *
  * @param {bindable} label (string)
@@ -19,7 +19,7 @@ import {dom} from "aire/core";
  * @usage.title
  * Usage
  * @usage.description
- * A label draws attention to important content.
+ * An aire-label is passed a label to display text.
  *
  * @usage.examples.label
  *  aire-label(label="Edit")
@@ -28,7 +28,7 @@ import {dom} from "aire/core";
  * @style.title
  * Style
  * @style.description
- * Labels can come up with warning, danger, success, or a user-chosen message.
+ * Labels can come up with warning, danger, success. They also have a default style.
  *
  * @style.examples.Styles
  * p
