@@ -25,7 +25,7 @@ import {DOM} from 'aurelia-pal';
  * A fab has an icon
  *
  * @usage.examples.Icon
- * aire-fab(icon="fa fa-pencil")
+ * aire-fab(icon="fa fa-pencil" default)
  *
  * @section.style
  * @style.title
@@ -46,10 +46,10 @@ import {DOM} from 'aurelia-pal';
  * Fabs are arranged on the page by passing in arguments for each edge. If an edge is not set, its position is auto.
  *
  * @position.examples.Position
- * aire-fab(icon="fa fa-pencil" top="50px")
- * aire-fab(icon="fa fa-pencil" left="50px")
- * aire-fab(icon="fa fa-pencil" right="50px")
- * aire-fab(icon="fa fa-pencil" bottom="50px")
+ * aire-fab(icon="fa fa-pencil" top="50px" default)
+ * aire-fab(icon="fa fa-pencil" left="50px" default)
+ * aire-fab(icon="fa fa-pencil" right="50px" default)
+ * aire-fab(icon="fa fa-pencil" bottom="50px" default)
  *
  */
 @inject(DOM.Element)
