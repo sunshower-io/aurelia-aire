@@ -133,6 +133,7 @@
   },
   "dependencies": {
     "gulp-sourcemaps": "^2.6.4",
+    "npm-font-open-sans": "^1.1.0",
     "prismjs": "^1.15.0"
   }
 }

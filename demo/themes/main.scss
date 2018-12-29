@@ -6,6 +6,11 @@ $blue: #2385AF;
 $light-blue   : lighten($blue, 50%);
 $white: white;
 $gray  : #AAAAAA;
+$dark-gray: #2c2c2c;
+
+$global-emphasis-color: $purple;
+$inverse-global-color:$blue;
+
 
 $global-primary-background: $purple;
 $global-success-background: $green;
@@ -17,6 +22,7 @@ $base-selection-background: $blue;
 
 $navbar-background: $purple;
 $navbar-nav-item-padding-horizontal:8px;
+$navbar-item-color: $white;
 $logo-color: $white;
 $logo-hover-color: $logo-color;
 
@@ -30,6 +36,19 @@ $offcanvas-bar-width-m: $offcanvas-bar-width;
 $offcanvas-bar-background: $white;
 $offcanvas-bar-color-mode: dark;
 
+$base-heading-color: $dark-gray;
+$global-xxlarge-font-size: 36px;
+$base-h1-font-size: $global-xxlarge-font-size;
+$global-xlarge-font-size: 30px;
+$base-h2-font-size: $global-xlarge-font-size;
+$global-large-font-size: 24px;
+$global-medium-font-size: 18px;
+$global-font-size: 14px;
+
+$breakpoint-small: 640px;
+$breakpoint-xsmall-max: ($breakpoint-small - 1);
+$breakpoint-small-max: $breakpoint-xsmall-max;
+
 @import "aire-theme";
 @mixin hook-offcanvas-bar(){
   border-right: 5px solid $gray;
@@ -37,7 +56,7 @@ $offcanvas-bar-color-mode: dark;
 @import "aire-components";
 
 
-$fa-font-path:        "fonts";
+$fa-font-path: "fonts";
 @import "font-awesome";
 
 .aire-body {
@@ -45,33 +64,46 @@ $fa-font-path:        "fonts";
 }
 
 .html-panel {
-
-
   display:flex;
   flex-direction: column;
   align-items: center;
 
-  section {
-    display: block;
-    min-width:500px;
-    .example {
-      min-height:300px;
-      position:relative;
-      pre {
-        display:block;
-        position:absolute;
-        border:1px solid $gray;
-        border-radius: 0;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
-      }
-
-      .aire-fab {
-        position: absolute;
-      }
-
+  .example {
+    min-height:150px;
+    position:relative;
+    pre {
+      display:block;
+      position:absolute;
+      border:1px solid $gray;
+      border-radius: 0;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
     }
+
+    .aire-fab {
+      position: absolute;
+    }
+
+    .aire-icon {
+      max-height:50px;
+      max-width:50px;
+    }
+
+    .uk-navbar.uk-dark {
+      background-color: $white;
+    }
+
+    .uk-navbar.uk-dark, .uk-navbar.uk-navbar-transparent {
+      .uk-navbar-item {
+        color: $dark-gray;
+      }
+    }
+
+    .uk-navbar.uk-light a.uk-navbar-item {
+      color: $white;
+    }
+
   }
 }

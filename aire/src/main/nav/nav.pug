@@ -1,4 +1,4 @@
 template
     ul.uk-nav(ref="ul")
-        li(repeat.for="nav of navigation()" class="${nav.isActive ? 'uk-active' : ''")
+        li(repeat.for="nav of navigation()" class="${nav.isActive ? 'uk-active' : ''}")
             a(href.bind="nav.href" click.delegate="fire()") ${normalizeTitle ? normalizeTitle(nav) : nav.title}

@@ -1,15 +1,25 @@
 template.au-animate
     .html-panel(ref="element")
-        section
-            h1 ${component.component}
+        section.uk-container.uk-width-1-1
+            h1.uk-h1 ${component.component}
             span(innerhtml.bind="component.description.summary")
-            h2 Bindable Properties
-            div(repeat.for="tag of props(component.tags, 'bindable')" if.bind="tag.type === 'param'")
-                span ${tag.name}
-            h2 Attributes
-            div(repeat.for="tag of props(component.tags, 'pseudo')" if.bind="tag.type === 'param'")
-                span ${tag.name}
 
+            template(if.bind="props(component.tags, 'bindable').length > 0")
+                h2.uk-h2.uk-heading-bullet Bindable Properties
+                table.uk-table.uk-table-small
+                    tbody
+                        tr(repeat.for="tag of props(component.tags, 'bindable')")
+                            td.uk-table-shrink ${tag.name}
+                            td(innerhtml.bind="tag.description")
+
+            template(if.bind="props(component.tags, 'pseudo').length > 0")
+                h2.uk-h2.uk-heading-bullet Attributes
+                table.uk-table.uk-table-small
+                    tbody
+                        tr(repeat.for="tag of props(component.tags, 'pseudo')")
+                            td.uk-table-shrink ${tag.name}
+
+            hr.uk-divider-icon
 
             component-section(repeat.for="section of component.sections" section.bind="section")
 

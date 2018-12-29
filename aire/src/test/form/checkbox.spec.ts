@@ -142,12 +142,12 @@ aire-checkbox(label.bind="textLabel" success)
     done();
 });
 
-test("a checkbox can take a error argument", async(done) => {
+test("a checkbox can take a danger argument", async(done) => {
     initialize({textLabel: "Henlo"}, `
-aire-checkbox(label.bind="textLabel" error)
+aire-checkbox(label.bind="textLabel" danger)
   `);
     await component.create(bootstrap);
-    let checkbox = document.querySelector('input.uk-form-error');
+    let checkbox = document.querySelector('input.uk-form-danger');
     expect(checkbox).toBeTruthy();
     done();
 });
