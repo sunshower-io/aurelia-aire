@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  autoinject,\n  bindable,\n  customElement,\n  viewResources,\n  TemplatingEngine\n} from 'aurelia-framework';\n\nimport {\n  HttpClient\n} from \"aurelia-fetch-client\";\n\n@autoinject\n@viewResources('./component-section')\n@customElement('component-panel')\nexport class ComponentPanel {\n\n  @bindable\n  private component:any;\n\n\n  constructor(readonly client : HttpClient, readonly engine : TemplatingEngine) {\n\n  }\n\n  attached() : void {\n  }\n\n  props(tags:any[], type: string) {\n    return tags.filter(t => t.type === 'param').filter(t => t.types.indexOf(type) != -1);\n  }\n}",
+    "ctx": false
+  }
+]

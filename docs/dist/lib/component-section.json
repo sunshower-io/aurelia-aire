@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  bindable,\n  customElement,\n  TemplatingEngine\n}                  from 'aurelia-framework';\nimport * as pretty from 'pretty';\nimport * as prism  from 'prismjs';\nimport 'prismjs/plugins/toolbar/prism-toolbar';\nimport 'prismjs/plugins/toolbar/prism-toolbar.css!';\nimport 'prismjs/components/prism-pug';\nimport 'prismjs/themes/prism.css!';\nimport 'prismjs/themes/prism-okaidia.css!';\nimport 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';\nimport {Router}    from \"aurelia-router\";\n\n@customElement('component-section')\nexport class ComponentSection {\n\n  @bindable\n  section : any;\n\n\n  formats = ['demo', 'html', 'pug'];\n\n  constructor(readonly router: Router, readonly engine: TemplatingEngine) {\n\n  }\n\n  formatFor(fmt, ex, el) {\n    let p = prism as any,\n      code = ex[fmt];\n    if (fmt === 'html') {\n      let p = pretty as any;\n      code = p(code);\n    }\n\n    if (fmt != 'demo') {\n      let c = p.Prism.highlight(code, p.Prism.languages[fmt], fmt);\n      setTimeout(() => {\n        if (el) {\n          el.innerHTML = c;\n        }\n      }, 100);\n    }\n  }\n\n\n  createDemo(ex: any, el:HTMLElement) {\n    let htmlstr = ex['html'],\n      engine = this.engine;\n    el.innerHTML = htmlstr;\n    setTimeout(() => {\n      engine.enhance({\n        element: el,\n        bindingContext: {router: this.router},\n      });\n    }, 500);\n\n  }\n}",
+    "ctx": false
+  }
+]

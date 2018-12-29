@@ -1,0 +1,23 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "export class Main {\n\n  loading : boolean;\n\n  attached() {\n    this.loading = false;\n  }\n\n}",
+    "ctx": {
+      "type": "class",
+      "constructor": "Main",
+      "cons": "Main",
+      "name": "Main",
+      "extends": "",
+      "string": "new Main()"
+    }
+  }
+]

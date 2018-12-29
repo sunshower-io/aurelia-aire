@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  viewResources,\n  inject\n}                                     from 'aurelia-framework';\nimport {HttpClient}                   from 'aurelia-fetch-client';\nimport * as help                      from './help.json!text';\nimport {activationStrategy, NavModel} from \"aurelia-router\";\n\n@inject(HttpClient)\n@viewResources('./component')\nexport class DocPage {\n\n\n  loading : boolean;\n  component : any;\n\n\n  constructor(readonly client : HttpClient) {\n\n  }\n\n\n  async activate(params : any, r : NavModel) {\n    this.loading = true;\n    let settings = r.settings,\n      directory = settings.directory,\n      component = settings.component,\n      resp = await this.client.fetch(`dist/${directory}/${component}.comp`),\n      js = await resp.json();\n    this.component = js;\n    this.loading = false;\n  }\n\n  attached() : void {\n  }\n\n  determineActivationStrategy() {\n    return activationStrategy.replace;\n  }\n}",
+    "ctx": false
+  }
+]

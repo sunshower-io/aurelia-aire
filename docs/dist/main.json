@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import 'dist/aire.css!';\nimport {Aurelia} from 'aurelia-framework';\n\nexport async function configure(aurelia: Aurelia) {\n\n  aurelia.use\n    .standardConfiguration()\n         .plugin('aire')\n         .plugin('aurelia-router-loader', cfg => {\n           cfg.defineRoutes(['aire-demo/route/route.comp']);\n         });\n\n  aurelia.start().then(() => aurelia.setRoot('aire-demo/index'));\n}",
+    "ctx": false
+  }
+]
