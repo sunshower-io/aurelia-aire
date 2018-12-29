@@ -1,24 +1,21 @@
 SystemJS.config({
   paths: {
     "fonts": "dist/fonts/",
+    "npm:": "jspm_packages/npm/",
+    "github:": "jspm_packages/github/",
+    "local:": "jspm_packages/local/",
     "aire-demo/": "dist/"
   },
   browserConfig: {
     "paths": {
-      "npm:": "jspm_packages/npm/",
       "aire-demo": "dist/",
-      "fonts": "dist/fonts/",
-      "github:": "jspm_packages/github/",
-      "local:": "jspm_packages/local/"
+      "fonts": "dist/fonts/"
     }
   },
   nodeConfig: {
     "paths": {
       "fonts": "dist/fonts/",
-      "npm:": "jspm_packages/npm/",
-      "github:": "jspm_packages/github/",
-      "aire-demo": "dist/",
-      "local:": "jspm_packages/local/"
+      "aire-demo": "dist/"
     }
   },
   packages: {
