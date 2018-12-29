@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import 'reflect-metadata';\nimport 'aurelia-polyfills';\n\nimport {bootstrap}     from 'aurelia-bootstrapper';\nimport {newComponent}  from \"test/render\";\nimport {AireAccordion} from \"aire/accordion/accordion\";\n\nlet component : any;\n\nfunction initialize(bindingContext : any, templateString ?: string) {\n    let template = templateString ? templateString : `accordion-item`;\n    component = newComponent(template,\n        bindingContext,\n        'accordion/accordion', 'accordion/accordion-item'\n    );\n}\n\nafterEach(() => {\n    component.dispose();\n});\n\ntest(\"an accordion item should initialize with a title\", async(done) => {\n    initialize({});\n    await component.create(bootstrap);\n    expect(document.querySelector('li .uk-accordion-title')).toBeTruthy();\n    done();\n});\n\ntest(\"an accordion item should initialize with content\", async(done) => {\n    initialize({});\n    await component.create(bootstrap);\n    expect(document.querySelector('li .uk-accordion-content')).toBeTruthy();\n    done();\n});\n\ntest(\"an accordion item has a bindable title\", async(done) => {\n    initialize({title: \"Accordion Element\"}, `accordion-item(title.bind=\"title\")`);\n    await component.create(bootstrap);\n    let item = document.querySelector('.uk-accordion-title');\n    expect(item.textContent).toBe(\"Accordion Element\");\n    done();\n});\n\ntest(\"an accordion item should be able to be open\", async(done) => {\n    initialize({}, `accordion-item(open)`);\n    await component.create(bootstrap);\n    let item = document.querySelector('li.uk-open');\n    expect(item).toBeTruthy();\n    done();\n});\n\ntest(\"an accordion item should not be open by default\", async(done) => {\n    initialize({});\n    await component.create(bootstrap);\n    let item = document.querySelector('li.uk-open');\n    expect(item).toBeFalsy();\n    done();\n});",
+    "ctx": false
+  }
+]

@@ -1,0 +1,225 @@
+[
+  {
+    "tags": [
+      {
+        "type": "component",
+        "string": "checkbox",
+        "html": "<p>checkbox</p>"
+      },
+      {
+        "type": "param",
+        "string": "{bindable} checked (boolean)",
+        "name": "checked",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} name (string)",
+        "name": "name",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} label (string)",
+        "name": "label",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} value (any)",
+        "name": "value",
+        "description": "<p>(any)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} disabled (boolean)",
+        "name": "disabled",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} horizontal",
+        "name": "horizontal",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} horizontal</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} success",
+        "name": "success",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} success</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} danger",
+        "name": "danger",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} danger</p>"
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "Just like any form element, a checkbox can have a label and a value. It can also be disabled or checked.",
+        "html": "<p>Just like any form element, a checkbox can have a label and a value. It can also be disabled or checked.</p>"
+      },
+      {
+        "type": "usage.examples.Default",
+        "string": "aire-checkbox",
+        "html": "<p>aire-checkbox</p>"
+      },
+      {
+        "type": "usage.examples.With_Label_And_Value",
+        "string": "aire-checkbox(label=\"My Checkbox\" value=\"1\")",
+        "html": "<p>aire-checkbox(label=&quot;My Checkbox&quot; value=&quot;1&quot;)</p>"
+      },
+      {
+        "type": "usage.examples.Disabled",
+        "string": "aire-checkbox(disabled label=\"Disabled Checkbox\")",
+        "html": "<p>aire-checkbox(disabled label=&quot;Disabled Checkbox&quot;)</p>"
+      },
+      {
+        "type": "usage.examples.Checked",
+        "string": "aire-checkbox(checked label=\"Checked Checkbox\")",
+        "html": "<p>aire-checkbox(checked label=&quot;Checked Checkbox&quot;)</p>"
+      },
+      {
+        "type": "section.group",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "group.title",
+        "string": "Group",
+        "html": "<p>Group</p>"
+      },
+      {
+        "type": "group.description",
+        "string": "It is frequently desirable to have a checkbox be part of a group, in which case you should pass it a name.",
+        "html": "<p>It is frequently desirable to have a checkbox be part of a group, in which case you should pass it a name.</p>"
+      },
+      {
+        "type": "group.examples.Group",
+        "string": "aire-checkbox(name=\"group\" label=\"Checkbox 1\" value=\"1\")\naire-checkbox(name=\"group\" label=\"Checkbox 2\" value=\"2\")",
+        "html": "<p>aire-checkbox(name=&quot;group&quot; label=&quot;Checkbox 1&quot; value=&quot;1&quot;)<br />\naire-checkbox(name=&quot;group&quot; label=&quot;Checkbox 2&quot; value=&quot;2&quot;)</p>"
+      },
+      {
+        "type": "section.styles",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "styles.title",
+        "string": "Styles",
+        "html": "<p>Styles</p>"
+      },
+      {
+        "type": "styles.description",
+        "string": "A checkbox's label can be moved horizontal with `horizontal`. The checkbox can also have an `danger` or `success` state.",
+        "html": "<p>A checkbox's label can be moved horizontal with <code>horizontal</code>. The checkbox can also have an <code>danger</code> or <code>success</code> state.</p>"
+      },
+      {
+        "type": "styles.examples.Horizontal",
+        "string": "aire-checkbox(horizontal label=\"Horizontal Checkbox\")",
+        "html": "<p>aire-checkbox(horizontal label=&quot;Horizontal Checkbox&quot;)</p>"
+      },
+      {
+        "type": "styles.examples.Danger",
+        "string": "aire-checkbox(danger label=\"Danger Checkbox\")",
+        "html": "<p>aire-checkbox(danger label=&quot;Danger Checkbox&quot;)</p>"
+      },
+      {
+        "type": "styles.examples.Success",
+        "string": "aire-checkbox(success label=\"Success Checkbox\")",
+        "html": "<p>aire-checkbox(success label=&quot;Success Checkbox&quot;)</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The aire-checkbox is a styled <code>input[type=&quot;checkbox&quot;]</code></p>",
+      "summary": "<p>The aire-checkbox is a styled <code>input[type=&quot;checkbox&quot;]</code></p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 5,
+    "codeStart": 69,
+    "code": "@inject(DOM.Element)\n@customElement('aire-checkbox')\nexport class AireCheckbox extends AireFormMultiElement {\n\n    constructor(element: Element) {\n        super(element);\n    }\n}",
+    "ctx": false
+  }
+]

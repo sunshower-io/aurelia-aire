@@ -1,0 +1,147 @@
+[
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{bindable} mode (string)",
+        "name": "mode",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} position (string)",
+        "name": "position",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} toggle (string)",
+        "name": "toggle",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "A dropdown is toggled interacting with its previous sibling or by passing in a toggle, and has a slot.",
+        "html": "<p>A dropdown is toggled interacting with its previous sibling or by passing in a toggle, and has a slot.</p>"
+      },
+      {
+        "type": "usage.examples.Toggle_From_Neighbor",
+        "string": "aire-button(label=\"Toggle with Me\")\naire-dropdown\n p Dropdown",
+        "html": "<p>aire-button(label=&quot;Toggle with Me&quot;)<br />\naire-dropdown<br />\np Dropdown</p>"
+      },
+      {
+        "type": "usage.examples.Toggle_With_Argument",
+        "string": "aire-dropdown(toggle=\"#toggleWithArgumentParagraph\")\n p Dropdown\np#toggleWithArgumentParagraph This will now toggle the dropdown",
+        "html": "<p>aire-dropdown(toggle=&quot;#toggleWithArgumentParagraph&quot;)<br />\np Dropdown<br />\np#toggleWithArgumentParagraph This will now toggle the dropdown</p>"
+      },
+      {
+        "type": "section.mode",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "mode.title",
+        "string": "Mode",
+        "html": "<p>Mode</p>"
+      },
+      {
+        "type": "mode.description",
+        "string": "By default a dropdown is triggered by clicking or hovering its toggle element, but you can specify one or the other.",
+        "html": "<p>By default a dropdown is triggered by clicking or hovering its toggle element, but you can specify one or the other.</p>"
+      },
+      {
+        "type": "mode.examples.Default",
+        "string": "aire-button(label=\"Click or Hover Me\")\naire-dropdown\n p Dropdown",
+        "html": "<p>aire-button(label=&quot;Click or Hover Me&quot;)<br />\naire-dropdown<br />\np Dropdown</p>"
+      },
+      {
+        "type": "mode.examples.Click",
+        "string": "aire-button(label=\"Click Me\")\naire-dropdown(toggle=\"click\")\n p Dropdown",
+        "html": "<p>aire-button(label=&quot;Click Me&quot;)<br />\naire-dropdown(toggle=&quot;click&quot;)<br />\np Dropdown</p>"
+      },
+      {
+        "type": "mode.examples.Hover",
+        "string": "aire-button(label=\"Hover Me\")\naire-dropdown(toggle=\"hover\")\n p Dropdown",
+        "html": "<p>aire-button(label=&quot;Hover Me&quot;)<br />\naire-dropdown(toggle=&quot;hover&quot;)<br />\np Dropdown</p>"
+      },
+      {
+        "type": "section.position",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "position.title",
+        "string": "Positioning",
+        "html": "<p>Positioning</p>"
+      },
+      {
+        "type": "position.description",
+        "string": "By default a dropdown is positioned at the bottom-left of its toggle, but this can also be `bottom-center`, `bottom-right`, `bottom-justify`, `top-left`, `top-center`, `top-right`, `top-justify`, `left-top`, `left-center`, `left-bottom`, `right-top`, `right-center` or `right-bottom`.",
+        "html": "<p>By default a dropdown is positioned at the bottom-left of its toggle, but this can also be <code>bottom-center</code>, <code>bottom-right</code>, <code>bottom-justify</code>, <code>top-left</code>, <code>top-center</code>, <code>top-right</code>, <code>top-justify</code>, <code>left-top</code>, <code>left-center</code>, <code>left-bottom</code>, <code>right-top</code>, <code>right-center</code> or <code>right-bottom</code>.</p>"
+      },
+      {
+        "type": "position.examples.Top_Right",
+        "string": "aire-button(label=\"Click or Hover Me\")\naire-dropdown(position=\"top-right\")\n p Dropdown",
+        "html": "<p>aire-button(label=&quot;Click or Hover Me&quot;)<br />\naire-dropdown(position=&quot;top-right&quot;)<br />\np Dropdown</p>"
+      },
+      {
+        "type": "position.examples.Bottom_Justify",
+        "string": "aire-button(label=\"Click or Hover Me\")\naire-dropdown(position=\"bottom-justify\")\n p Dropdown",
+        "html": "<p>aire-button(label=&quot;Click or Hover Me&quot;)<br />\naire-dropdown(position=&quot;bottom-justify&quot;)<br />\np Dropdown</p>"
+      },
+      {
+        "type": "position.examples.Right_Center",
+        "string": "aire-button(label=\"Click or Hover Me\")\naire-dropdown(position=\"right-center\")\n p Dropdown",
+        "html": "<p>aire-button(label=&quot;Click or Hover Me&quot;)<br />\naire-dropdown(position=&quot;right-center&quot;)<br />\np Dropdown</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The aire-dropdown is a card that can be revealed when clicking or hovering another element.</p>",
+      "summary": "<p>The aire-dropdown is a card that can be revealed when clicking or hovering another element.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 6,
+    "codeStart": 73,
+    "code": "@customElement('aire-dropdown')\nexport class AireDropdown {\n\n  @bindable\n  mode : string = 'click, hover';\n\n  @bindable\n  position : string = 'bottom-left';\n\n  @bindable\n  toggle    : Element | string = \"- *\";\n\n  dropdown : Dropdown;\n\n  element : HTMLElement;\n\n  constructor() {\n\n  }\n\n  attached() {\n    let options = {\n      toggle  : dom.pathTo(this.toggle),\n      pos     : this.position,\n      mode    : this.mode\n    };\n    this.dropdown = UIkit.dropdown(this.element, options);\n  }\n}",
+    "ctx": false
+  }
+]

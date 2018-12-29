@@ -1,0 +1,19 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "<p>Don't modify this file unless you really know what you're doing.  It's a<br />\nbit of a hack, but it mostly works.  Import and definition order are IMPORTANT</p>",
+      "summary": "<p>Don't modify this file unless you really know what you're doing.  It's a<br />\nbit of a hack, but it mostly works.  Import and definition order are IMPORTANT</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1,
+    "codeStart": 6,
+    "code": "import 'reflect-metadata';\nimport 'aurelia-polyfills';\nimport { Options }   from 'aurelia-loader-nodejs';\nimport { globalize } from 'aurelia-pal-nodejs';\nimport 'isomorphic-fetch';\nimport * as path     from 'path';\n\nrequire('jsdom-global')();\nimport  'mutationobserver-shim';\n\nObject.defineProperty(global, 'MutationObserver', {\n  value: (window as any).MutationObserver,\n  writable:true\n});\n\n\nimport * as UIkit    from 'uikit';\nimport {Aire}        from \"aire/core/application\";\n\n\nOptions.relativeToDir = path.join(__dirname, '../../dist');\nglobalize();\nlet animationFrameId: number;\nObject.defineProperty(global, 'requestAnimationFrame', {\n  value: function() {\n    return (animationFrameId = setTimeout(() =>{}));\n  },\n  writable:true\n\n});\n\nObject.defineProperty(global, 'cancelAnimationFrame', {\n  value: function(id: number) {\n    return clearTimeout(id);\n  },\n  writable:true\n});\nAire.initialize(UIkit.util);",
+    "ctx": false
+  }
+]

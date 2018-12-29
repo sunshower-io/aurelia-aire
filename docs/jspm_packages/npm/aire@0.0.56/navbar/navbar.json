@@ -1,0 +1,140 @@
+[
+  {
+    "tags": [
+      {
+        "type": "component",
+        "string": "navbar",
+        "html": "<p>navbar</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} sticky",
+        "name": "sticky",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} sticky</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} transparent",
+        "name": "transparent",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} transparent</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} dark",
+        "name": "dark",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} dark</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} light",
+        "name": "light",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} light</p>"
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "A navbar has slots that contain sections and items to organize its content.",
+        "html": "<p>A navbar has slots that contain sections and items to organize its content.</p>"
+      },
+      {
+        "type": "usage.examples.Simple_Navbar",
+        "string": "aire-navbar\n navbar-section(center)\n   navbar-item Hello",
+        "html": "<p>aire-navbar<br />\nnavbar-section(center)<br />\nnavbar-item Hello</p>"
+      },
+      {
+        "type": "usage.examples.Split_Navbar",
+        "string": "aire-navbar\n navbar-section(left)\n   navbar-item Left\n navbar-section(center)\n   navbar-item Center Logo\n navbar-section(right)\n   navbar-item Right",
+        "html": "<p>aire-navbar<br />\nnavbar-section(left)<br />\nnavbar-item Left<br />\nnavbar-section(center)<br />\nnavbar-item Center Logo<br />\nnavbar-section(right)<br />\nnavbar-item Right</p>"
+      },
+      {
+        "type": "section.style",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "style.title",
+        "string": "Styles",
+        "html": "<p>Styles</p>"
+      },
+      {
+        "type": "style.description",
+        "string": "Depending upon what's behind your navbar, you might want to make it `transparent`, `light` or `dark`.",
+        "html": "<p>Depending upon what's behind your navbar, you might want to make it <code>transparent</code>, <code>light</code> or <code>dark</code>.</p>"
+      },
+      {
+        "type": "style.examples.Transparent",
+        "string": "aire-navbar(transparent)\n navbar-section(center)\n   navbar-item Transparent Navbar",
+        "html": "<p>aire-navbar(transparent)<br />\nnavbar-section(center)<br />\nnavbar-item Transparent Navbar</p>"
+      },
+      {
+        "type": "style.examples.Light",
+        "string": "aire-navbar(light)\n navbar-section(center)\n   navbar-item Light Navbar",
+        "html": "<p>aire-navbar(light)<br />\nnavbar-section(center)<br />\nnavbar-item Light Navbar</p>"
+      },
+      {
+        "type": "style.examples.Dark",
+        "string": "aire-navbar(dark)\n navbar-section(center)\n   navbar-item Dark Navbar",
+        "html": "<p>aire-navbar(dark)<br />\nnavbar-section(center)<br />\nnavbar-item Dark Navbar</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The aire-navbar is used to organize navigation and content across the top of a page</p>",
+      "summary": "<p>The aire-navbar is used to organize navigation and content across the top of a page</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 6,
+    "codeStart": 63,
+    "code": "// * @section.sticky\n// * @sticky.title\n// * Sticky Navbar\n// *\n// * @sticky.description\n// * To keep your navbar fixed to the top of the page instead of having it scroll out, make it `sticky`\n// *\n// * @sticky.examples.Sticky\n// * aire-navbar(sticky)\n// *  navbar-section(center)\n// *    navbar-item Sticky Navbar\n\n\n@customElement(\"aire-navbar\")\n@viewResources(\"./item\", \"./section\")\nexport class AireNavbar {\n\n  private readonly element : Element;\n\n  constructor(private el: Element) {\n\n  }\n\n  attached() : void {\ndom.decorateTo(this.el, this.element, \"sticky\", \"uk-navbar-sticky\");\ndom.decorateTo(this.el, this.element, \"transparent\", \"uk-navbar-transparent\");\ndom.decorateTo(this.el, this.element, \"dark\", \"uk-dark\");\ndom.decorateTo(this.el, this.element, \"light\", \"uk-light\");\nUIkit.navbar(this.element);\n  }\n\n}",
+    "ctx": false
+  }
+]
