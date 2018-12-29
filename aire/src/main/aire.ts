@@ -44,6 +44,6 @@ export function configure(cfg : FrameworkConfiguration) {
 
   cfg.plugin('aurelia-animator-velocity', registerAnimations);
 
-  configureLogging(cfg);
+  // configureLogging(cfg);
 
 }

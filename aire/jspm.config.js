@@ -2,10 +2,10 @@ SystemJS.config({
   browserConfig: {
     "paths": {
       "npm:": "/jspm_packages/npm/",
-      "aire": "dist/",
       "github:": "/jspm_packages/github/",
       "local:": "/jspm_packages/local/",
-      "aire/": "src/"
+      "aire/": "dist/"
+
     }
   },
   nodeConfig: {

@@ -5,11 +5,13 @@ module.exports = {
     'list': [
         'index.html',
         'jspm.config.js',
-        'jspm.browser.js',
         // 'favicon.ico',
         // 'LICENSE'
 
-
+        'jspm_packages/npm/uikit@3.0.0-rc.25.json',
+        'jspm_packages/npm/uikit@3.0.0-rc.25/**/*',
+        'jspm_packages/npm/aire@0.0.51.json',
+        'jspm_packages/npm/aire@0.0.51/**/*',
         'jspm_packages/system.js'
         // 'jspm_packages/system-polyfills.js',
         // 'jspm_packages/system-csp-production.js',
