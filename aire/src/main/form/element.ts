@@ -27,8 +27,11 @@ export class AireFormElement {
 
     attached() {
         dom.decorate(this.container, "horizontal", "uk-form-horizontal");
+        dom.decorateTo(this.element, this.input, "success", "uk-form-success");
+        dom.decorateTo(this.element, this.input, "danger", "uk-form-danger");
+        dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
         dom.decorate(this.container, "success", "uk-form-success");
         dom.decorate(this.container, "danger", "uk-form-danger");
-        dom.decorateTo(this.element, this.input, "blank", "uk-form-blank");
+        dom.decorate(this.container, "blank", "uk-form-blank");
     }
 }
