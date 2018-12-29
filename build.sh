@@ -19,7 +19,7 @@ while test $# -gt 0
 do
     echo "Running $1";
     case "$1" in
-        install)
+        dependencies)
             install_all
             ;;
         test)
