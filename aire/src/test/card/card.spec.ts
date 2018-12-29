@@ -61,8 +61,66 @@ test('card does not include title if none in binding context', async (done) => {
     done();
 });
 
+test('card can take a header argument', async (done) => {
+    initialize(`aire-card(header)`);
 
+    await component.create(bootstrap);
 
+    let header = document.querySelector('.uk-card-header');
+    expect(header.classList.contains("aurelia-hide")).toBeFalsy();
+
+    done();
+});
+
+test('card can take a header slot', async (done) => {
+    initialize(`
+aire-card(header)
+    p(slot="header") Henlo
+    `);
+
+    await component.create(bootstrap);
+
+    let p = document.querySelector('.uk-card-header p');
+    expect(p.textContent).toBe("Henlo");
+    done();
+});
+
+test('card can take a footer argument', async (done) => {
+    initialize(`aire-card(footer)`);
+
+    await component.create(bootstrap);
+
+    let header = document.querySelector('.uk-card-footer');
+    expect(header.classList.contains("aurelia-hide")).toBeFalsy();
+
+    done();
+});
+
+test('card can take a footer slot', async (done) => {
+    initialize(`
+aire-card(footer)
+    p(slot="footer") Toodles
+    `);
+
+    await component.create(bootstrap);
+
+    let p = document.querySelector('.uk-card-footer p');
+    expect(p.textContent).toBe("Toodles");
+    done();
+});
+
+test("card will not show header or footer without arguments", async(done) => {
+    initialize(`aire-card`);
+
+    await component.create(bootstrap);
+
+    let header = document.querySelector('.uk-card-header'),
+        footer = document.querySelector('.uk-card-footer');
+
+    expect(header.classList.contains("aurelia-hide")).toBeTruthy();
+    expect(footer.classList.contains("aurelia-hide")).toBeTruthy();
+    done();
+});
 
 test('card can take a default argument', async (done) => {
     initialize(`aire-card(default)`);
