@@ -9,13 +9,16 @@ afterEach(() => {
     component.dispose();
 });
 
+function initialize(template : string, bindingContext ?: any) {
+    component = newComponent(template,
+        bindingContext,
+        'card/card'
+    );
+}
 
-
-test('basic card must be initializable', async (done) => {
-    component = newComponent(
-        `
-    aire-basic-card
-    `, {}, 'card/basiccard');
+test('card must be initializable', async (done) => {
+    initialize(`aire-card`);
+    
     
     await component.create(bootstrap);
 
@@ -25,11 +28,11 @@ test('basic card must be initializable', async (done) => {
 
 });
 
-test('basic card must have a slot', async (done) => {
-    component = newComponent(`
-  aire-basic-card
-    p wabbo 
-  `, {}, 'card/basiccard');
+test('card must have a default slot', async (done) => {
+    initialize(`
+aire-card
+    p wabbo
+    `);
 
     await component.create(bootstrap);
 
@@ -38,10 +41,8 @@ test('basic card must have a slot', async (done) => {
     done();
 });
 
-test('basic card can include a title', async (done) => {
-    component = newComponent(`
-    aire-basic-card(title.bind="title")
-  `, {title: "Welcome!"}, 'card/basiccard');
+test('card can bind a title', async (done) => {
+    initialize(`aire-card(title.bind="title")`, {title: "Welcome!"});
 
     await component.create(bootstrap);
 
@@ -50,10 +51,8 @@ test('basic card can include a title', async (done) => {
     done();
 });
 
-test('basic card does not include title if none in binding context', async (done) => {
-    component = newComponent(`
-    aire-basic-card(title.bind="title")
-  `, {}, 'card/basiccard');
+test('card does not include title if none in binding context', async (done) => {
+    initialize(`aire-card`);
 
     await component.create(bootstrap);
 
@@ -62,10 +61,11 @@ test('basic card does not include title if none in binding context', async (done
     done();
 });
 
-test('basic card can take a default argument', async (done) => {
-    component = newComponent(`
-    aire-basic-card(default)
-  `, {}, 'card/basiccard');
+
+
+
+test('card can take a default argument', async (done) => {
+    initialize(`aire-card(default)`);
 
     await component.create(bootstrap);
 
@@ -74,10 +74,8 @@ test('basic card can take a default argument', async (done) => {
     done();
 });
 
-test('basic card can take a primary argument', async (done) => {
-    component = newComponent(`
-    aire-basic-card(primary)
-  `, {}, 'card/basiccard');
+test('card can take a primary argument', async (done) => {
+    initialize(`aire-card(primary)`);
 
     await component.create(bootstrap);
 
@@ -86,10 +84,8 @@ test('basic card can take a primary argument', async (done) => {
     done();
 });
 
-test('basic card can take a secondary argument', async (done) => {
-    component = newComponent(`
-    aire-basic-card(secondary)
-  `, {}, 'card/basiccard');
+test('card can take a secondary argument', async (done) => {
+    initialize(`aire-card(secondary)`);
 
     await component.create(bootstrap);
 
@@ -98,10 +94,8 @@ test('basic card can take a secondary argument', async (done) => {
     done();
 });
 
-test('basic card can take a hover argument', async (done) => {
-    component = newComponent(`
-    aire-basic-card(hover)
-  `, {}, 'card/basiccard');
+test('card can take a hover argument', async (done) => {
+    initialize(`aire-card(hover)`);
 
     await component.create(bootstrap);
 
@@ -110,10 +104,8 @@ test('basic card can take a hover argument', async (done) => {
     done();
 });
 
-test('basic card can take a padding argument', async (done) => {
-    component = newComponent(`
-    aire-basic-card(padding)
-  `, {}, 'card/basiccard');
+test('card can take a padding argument', async (done) => {
+    initialize(`aire-card(padding)`);
 
     await component.create(bootstrap);
 
@@ -122,10 +114,8 @@ test('basic card can take a padding argument', async (done) => {
     done();
 });
 
-test('basic card can take a padding-small argument', async (done) => {
-    component = newComponent(`
-    aire-basic-card(padding-small)
-  `, {}, 'card/basiccard');
+test('card can take a padding-small argument', async (done) => {
+    initialize(`aire-card(padding-small)`);
 
     await component.create(bootstrap);
 
@@ -134,10 +124,8 @@ test('basic card can take a padding-small argument', async (done) => {
     done();
 });
 
-test('basic card can take a padding-large argument', async (done) => {
-    component = newComponent(`
-    aire-basic-card(padding-large)
-  `, {}, 'card/basiccard');
+test('card can take a padding-large argument', async (done) => {
+    initialize(`aire-card(padding-large)`);
 
     await component.create(bootstrap);
 
