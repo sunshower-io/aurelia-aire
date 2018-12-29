@@ -12,7 +12,9 @@
     "clobber": "./build.sh clobber",
     "build": "./build.sh build",
     "dependencies": "./build.sh install",
-    "release": "./build.sh release"
+    "release": "./build.sh release",
+    "test": "./build.sh test",
+    "release-aire": "./build.sh release_aire"
   },
   "repository": {
     "type": "git",

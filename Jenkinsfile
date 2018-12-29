@@ -21,11 +21,7 @@ pipeline {
 
         stage('Build and increment') {
             steps {
-                sh "npm install"
-                sh """
-                    npx jest
-                    """
-
+                sh "npm run dependencies build test"
             }
         }
 
@@ -49,21 +45,16 @@ pipeline {
 
                         sh "git config user.name '$GITHUB_USR'"
                         sh "git config user.email '${GITHUB_USR}@sunshower.io'"
-                        sh "git remote set-url origin https://${GITHUB_USR}:${GITHUB_PSW}@github.com/sunshower-io/aire-build"
+                        sh "git remote set-url origin https://${GITHUB_USR}:${GITHUB_PSW}@github.com/sunshower-io/aurelia-aire"
 
                         sh "npm-login-noninteractive -u ${NPM_USR} -p ${NPM_PSW} -e ${NPM_DETAILS_USR} "
                         /**
                          * release
                          */
+
+                        sh "npm run release-aire"
                         sh "git checkout -b tmp"
-                        sh "npm version patch --force -m 'releasing [skip-build]'"
-
-                        sh "npm publish --access=public"
                         sh "git checkout origin/master"
-
-                        /**
-                         *
-                         */
 
                         sh "git merge tmp"
                         sh "git branch -d tmp"

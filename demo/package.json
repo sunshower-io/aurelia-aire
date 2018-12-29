@@ -8,7 +8,7 @@
     "@build": "../build"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "echo \"no tests in demo\"",
     "build": "jspm link ../aire/dist && gulp build && gulp aire:generate",
     "clean": "jspm remove aire || gulp clean",
     "installdeps": "npm install && jspm install -y"
