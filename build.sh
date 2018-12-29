@@ -13,6 +13,14 @@ source build/help.sh;
 source build/install.sh;
 source build/build.sh;
 
+
+site() {
+    cd "demo";
+    gulp site;
+    cd ../;
+    find docs -name "*.md" | xargs rm;
+}
+
 release_aire() {
 
     cd "aire"
@@ -31,6 +39,9 @@ while test $# -gt 0
 do
     echo "Running $1";
     case "$1" in
+        site)
+            site
+            ;;
         release_aire)
             release_aire
             ;;

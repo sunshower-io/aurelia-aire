@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "site": "./build.sh site",
     "help": "./build.sh help",
     "clean": "./build.sh clean",
     "clobber": "./build.sh clobber",
