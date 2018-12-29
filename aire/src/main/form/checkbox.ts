@@ -15,9 +15,6 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @param {bindable} disabled (boolean)
  *
  * @param {pseudo} horizontal
- * @param {pseudo} success
- * @param {pseudo} danger
- * @param {pseudo} blank
  *
  * @section.usage
  * @usage.title
@@ -53,22 +50,28 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @styles.title
  * Styles
  * @styles.description
- * A checkbox's label can be moved horizontal with `horizontal`. The checkbox can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
+ * A checkbox's label can be moved horizontal with `horizontal`.
  *
  * @styles.examples.Horizontal
  * aire-checkbox(horizontal label="Horizontal Checkbox")
  *
- * @styles.examples.Danger
- * aire-checkbox(danger label="Dangerous Checkbox")
- *
- * @styles.examples.Success
- * aire-checkbox(success label="Successful Checkbox")
- *
- * @styles.examples.Blank
- * aire-checkbox(blank label="Minimal Checkbox")
  *
  *
  */
+
+// * @param {pseudo} success
+// * @param {pseudo} danger
+// * @param {pseudo} blank
+
+//  The checkbox can also have an `danger` or `success` state. For a more minimal look, make it `blank`.
+// * @styles.examples.Danger
+// * aire-checkbox(danger label="Dangerous Checkbox")
+// *
+// * @styles.examples.Success
+// * aire-checkbox(success label="Successful Checkbox")
+// *
+// * @styles.examples.Blank
+// * aire-checkbox(blank label="Minimal Checkbox")
 @inject(DOM.Element)
 @customElement('aire-checkbox')
 export class AireCheckbox extends AireFormMultiElement {
