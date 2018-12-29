@@ -22,8 +22,10 @@ const paths = {
             aireRoot = utils.parentDirectory(aireDir),
             resolved = `${aireRoot}/${uikit}/src/scss`,
             aireScss = `${aireDir}/scss`;
+
+        let p =`${utils.source('uikit')}/scss`;
         resolveFonts(utils);
-        return [resolved, aireScss, fontawesomedir]
+        return [resolved, aireScss, fontawesomedir, p]
     }
 };
 

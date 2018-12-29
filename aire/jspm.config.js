@@ -60,7 +60,6 @@ SystemJS.config({
     "fs": "npm:jspm-nodelibs-fs@0.2.1",
     "path": "npm:jspm-nodelibs-path@0.2.3",
     "process": "npm:jspm-nodelibs-process@0.2.1",
-    "text": "github:systemjs/plugin-text@0.0.11",
     "uikit": "npm:uikit@3.0.0-rc.25",
     "velocity-animate": "npm:velocity-animate@1.5.2"
   },
