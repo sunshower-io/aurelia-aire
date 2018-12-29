@@ -23,7 +23,7 @@ import {bindable, containerless, customElement} from "aurelia-framework";
  * aire-icon(icon="assets/icons/sunshower.svg")
  *
  * @usage.examples.Icon_Font_With_Class
- * aire-icon(icon="fa fa-pencil" class="uk-float-right uk-icon-button")
+ * aire-icon(icon="fa fa-pencil" classes="uk-float-right uk-icon-button")
  *
  */
 @containerless

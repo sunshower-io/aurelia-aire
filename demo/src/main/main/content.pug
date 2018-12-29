@@ -1,17 +1,17 @@
 template
-    div(style="width:100%; height:100%; background-color:#660066" ref="overlay")
-        div(style="width:100%; height:100%; background-color:#660066; color:#FF00FF;" ref="page")
-            .uk-container.uk-width-1-1(ref="container")
-                h1.uk-h1.uk-heading-hero aurelia-aire
-                h2.uk-h2.uk-heading-divider a ui framework built on aurelia and uikit
+    .uk-width-1-1.uk-height-1-1.uk-background-primary.aire-landing
+        navbar(light)
+            navbar-section(left)
+                navbar-item(href="https://sunshower.io" target="_blank" logo icon="dist/icons/sunshower.svg")
+                navbar-item(href="https://sunshower.io" target="_blank") Sunshower.io
+        .uk-container.aire-text-center.uk-light
+            h1.uk-heading-hero
+                aire-icon(icon="dist/icons/logo.svg" classes="uk-width-small")
+                p Aurelia-Aire
 
-                p aurelia-aire uses aurelia v1.3 and uikit v3 to help you serve up all the finest forms, navigation and other handy ui bits you might need in building your web applications.
+            h2.uk-h3 A lovingly hand-crafted framework using Aurelia and UIkit
 
-                p things are constantly being added
-                    | , and while the project is headed by the devs at
-                    |
-                    a(href="https://sunshower.io" target="_blank") sunshower.io
-                    | , we would love for you to
-                    |
-                    a(href="https://github.com/sunshower-io/aurelia-aire" target="_blank") contribute your changes
-                    | .
+            div(class="uk-child-width-1-3@s")
+                aire-button(href="/" label="GET STARTED" classes="uk-margin-left uk-margin-right")
+                aire-button(href="https://github.com/sunshower-io/aurelia-aire" target="_blank" label="GET INVOLVED")
+                aire-button(href="https://sunshower.io" target="_blank" label="GET SUNSHOWER.IO")
