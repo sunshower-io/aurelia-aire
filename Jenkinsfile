@@ -54,7 +54,7 @@ pipeline {
 
                         sh "npm run release-aire"
                         sh "git checkout -b tmp"
-                        sh "git commit -am 'releasing [skip-release]'"
+                        sh "git commit -am 'releasing [skip-build]'"
                         sh "git checkout origin/master"
 
                         sh "git merge tmp"
