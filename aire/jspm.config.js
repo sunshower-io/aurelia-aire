@@ -1,19 +1,19 @@
 SystemJS.config({
+  paths: {
+    "aire/": "dist/"
+  },
   browserConfig: {
     "paths": {
       "npm:": "/jspm_packages/npm/",
       "github:": "/jspm_packages/github/",
-      "local:": "/jspm_packages/local/",
-      "aire/": "dist/"
-
+      "local:": "/jspm_packages/local/"
     }
   },
   nodeConfig: {
     "paths": {
       "npm:": "jspm_packages/npm/",
       "github:": "jspm_packages/github/",
-      "local:": "jspm_packages/local/",
-      "aire/": "dist/"
+      "local:": "jspm_packages/local/"
     }
   },
   packages: {

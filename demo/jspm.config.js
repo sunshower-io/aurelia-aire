@@ -40,7 +40,7 @@ SystemJS.config({
     "local:*.json"
   ],
   map: {
-    "aire": "npm:aire@0.0.51",
+    "aire": "npm:aire@0.0.52",
     "assert": "npm:jspm-nodelibs-assert@0.2.1",
     "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
     "aurelia-binding": "npm:aurelia-binding@2.1.7",
@@ -431,7 +431,7 @@ SystemJS.config({
         "punycode": "npm:punycode@1.3.2"
       }
     },
-    "npm:aire@0.0.51": {
+    "npm:aire@0.0.52": {
       "map": {
         "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
         "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
