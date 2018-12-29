@@ -45,7 +45,7 @@ function configure(aurelia) {
                 .plugin('aurelia-router-loader', function (cfg) {
                 cfg.defineRoutes(['aire-demo/route/route.comp']);
             });
-            aurelia.start().then(function () { return aurelia.setRoot('aire-demo/index'); });
+            aurelia.start().then(function () { return aurelia.setRoot('aire-demo/main/main'); });
             return [2 /*return*/];
         });
     });
