@@ -1,1 +1,0 @@
-{"version":3,"sources":["main/button/basebutton.ts"],"names":[],"mappings":"AAGA,qBAAa,cAAc;IAWhB,OAAO,EAAE,OAAO;IARzB,IAAI,EAAQ,MAAM,CAAC;IAEnB,MAAM,EAAM,WAAW,CAAC;IAGxB,QAAQ,EAAM,OAAO,CAAC;gBAGb,OAAO,EAAE,OAAO;IAIzB,QAAQ;CAMT","file":"basebutton.d.ts","sourceRoot":"../.."}

@@ -10,6 +10,7 @@ clean() {
 }
 
 clean_all() {
+    rm -rf "docs";
     clean "aire";
     clean "demo";
 }
