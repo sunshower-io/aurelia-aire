@@ -5,11 +5,11 @@ SystemJS.config({
   },
   browserConfig: {
     "paths": {
-      "npm:": "/jspm_packages/npm/",
+      "npm:": "jspm_packages/npm/",
       "aire-demo": "dist/",
       "fonts": "dist/fonts/",
-      "github:": "/jspm_packages/github/",
-      "local:": "/jspm_packages/local/"
+      "github:": "jspm_packages/github/",
+      "local:": "jspm_packages/local/"
     }
   },
   nodeConfig: {
