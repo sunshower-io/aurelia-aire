@@ -41,25 +41,6 @@ aire-card
     done();
 });
 
-test('card can bind a title', async (done) => {
-    initialize(`aire-card(title.bind="title")`, {title: "Welcome!"});
-
-    await component.create(bootstrap);
-
-    let h3 = document.querySelector('h3');
-    expect(h3.textContent).toBe("Welcome!");
-    done();
-});
-
-test('card does not include title if none in binding context', async (done) => {
-    initialize(`aire-card`);
-
-    await component.create(bootstrap);
-
-    let h3 = document.querySelector('h3');
-    expect(h3).toBeFalsy();
-    done();
-});
 
 test('card can take a header argument', async (done) => {
     initialize(`aire-card(header)`);

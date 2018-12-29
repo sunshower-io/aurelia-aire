@@ -46,8 +46,10 @@ $global-medium-font-size: 18px;
 $global-font-size: 14px;
 
 $breakpoint-small: 640px;
+$breakpoint-medium: $breakpoint-small;
 $breakpoint-xsmall-max: ($breakpoint-small - 1);
 $breakpoint-small-max: $breakpoint-xsmall-max;
+$breakpoint-large: 960px;
 
 @import "aire-theme";
 @mixin hook-offcanvas-bar(){
