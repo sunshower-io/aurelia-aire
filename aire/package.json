@@ -1,6 +1,6 @@
 {
   "name": "aire",
-  "version": "0.0.50",
+  "version": "0.0.51",
   "description": "Beautiful UiKit-based Aurelia plugin",
   "main": "aire.js",
   "_moduleAliases": {
@@ -13,7 +13,6 @@
     "test": "npx jest",
     "clean": "gulp clean"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sunshower-io/aurelia-aire.git"
