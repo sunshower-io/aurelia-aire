@@ -31,7 +31,7 @@ aire-tile
     `);
    await component.create(bootstrap);
    console.log(document.body.outerHTML);
-   let slot= document.querySelector( '.uk-tile p')
+   let slot= document.querySelector( '.uk-tile p');
     expect(slot.textContent).toBe("Tile Content");
    done();
 });
