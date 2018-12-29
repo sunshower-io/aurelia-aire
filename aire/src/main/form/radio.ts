@@ -15,6 +15,8 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @param {bindable} disabled (boolean)
  *
  * @param {pseudo} horizontal
+ * @param {pseudo} success
+ * @param {pseudo} danger
  *
  * @section.usage
  * @usage.title
@@ -50,24 +52,19 @@ import {AireFormMultiElement} from "aire/form/multielement";
  * @styles.title
  * Styles
  * @styles.description
- * A radio's label can be moved horizontal with `horizontal`.
+ * A radio's label can be moved horizontal with `horizontal`. The radio can also have an `danger` or `success` state.
  *
  * @styles.examples.Horizontal
  * aire-radio(horizontal label="Horizontal Radio")
  *
+ * @styles.examples.Danger
+ * aire-radio(danger label="Danger Radio")
  *
+ * @styles.examples.Success
+ * aire-radio(success label="Success Radio")
  *
  */
 
-
-//  * @param {pseudo} success
-//  * @param {pseudo} danger
-// The radio can also have an `danger` or `success` state.
-// * @styles.examples.Danger
-// * aire-radio(danger label="Danger Radio")
-// *
-// * @styles.examples.Success
-// * aire-radio(success label="Success Radio")
 @inject(DOM.Element)
 @customElement('aire-radio')
 export class AireRadio extends AireFormMultiElement {

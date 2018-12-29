@@ -1,4 +1,5 @@
 template(ref="container")
-    label.uk-form-label(if.bind="label" for.bind="id") ${label}
+    label.uk-form-label(if.bind="label" for.bind="id" ref="marker") ${label}
     .uk-form-controls
-        textarea.uk-textarea(ref="input" disabled.bind="disabled" id.bind="id" value.bind="value")
+        textarea.uk-textarea(ref="input" disabled.bind="disabled"
+        id.bind="id" value.bind="value")

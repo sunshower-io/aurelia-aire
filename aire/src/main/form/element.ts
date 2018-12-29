@@ -5,6 +5,7 @@ export class AireFormElement {
 
     input       : HTMLElement;
     container   : HTMLElement;
+    marker      : HTMLLabelElement;
 
     @bindable
     label       : string;
@@ -33,5 +34,10 @@ export class AireFormElement {
         dom.decorate(this.container, "success", "uk-form-success");
         dom.decorate(this.container, "danger", "uk-form-danger");
         dom.decorate(this.container, "blank", "uk-form-blank");
+
+        if (this.label && this.marker) {
+            dom.decorateTo(this.element, this.marker, "success", "uk-form-success");
+            dom.decorateTo(this.element, this.marker, "danger", "uk-form-danger");
+        }
     }
 }
