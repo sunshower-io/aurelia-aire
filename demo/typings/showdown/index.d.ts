@@ -1,3 +1,6 @@
+declare module 'velocity-animate' {
+
+}
 declare module 'prismjs' {
 
 }
