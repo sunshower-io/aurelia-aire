@@ -4,7 +4,6 @@ import {dom} from "aire/core";
 /**
  * The aire-list is a list element that can create ordered and unordered lists in a variety of syles.
  *
- * @component list
  *
  *
  * @param {bindable} ordered
