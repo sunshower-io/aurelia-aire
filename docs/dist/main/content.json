@@ -1,0 +1,23 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "export class HomeContent {\n\n}",
+    "ctx": {
+      "type": "class",
+      "constructor": "HomeContent",
+      "cons": "HomeContent",
+      "name": "HomeContent",
+      "extends": "",
+      "string": "new HomeContent()"
+    }
+  }
+]

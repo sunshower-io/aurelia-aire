@@ -4,9 +4,9 @@ SystemJS.config({
   },
   browserConfig: {
     "paths": {
-      "npm:": "/jspm_packages/npm/",
-      "github:": "/jspm_packages/github/",
-      "local:": "/jspm_packages/local/"
+      "npm:": "jspm_packages/npm/",
+      "github:": "jspm_packages/github/",
+      "local:": "jspm_packages/local/"
     }
   },
   nodeConfig: {
