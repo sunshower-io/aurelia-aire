@@ -15,11 +15,14 @@ source build/build.sh;
 
 release_aire() {
 
+    cd "aire"
+    npm version patch --force -m "releasing [skip-build]";
+    cd ../
+
     dependencies "aire";
     build "aire";
 
     cd "aire/dist";
-    npm version patch --force -m "releasing [skip-build]";
     npm publish --access=public;
 }
 

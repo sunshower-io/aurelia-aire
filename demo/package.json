@@ -104,7 +104,7 @@
     }
   },
   "devDependencies": {
-    "@sunshower/aire-build": "^1.0.9-SNAPSHOT",
+    "@sunshower/aire-build": "0.0.35",
     "@types/es6-shim": "^0.31.39",
     "aire": "0.0.42",
     "aurelia-fetch-client": "^1.7.0",
