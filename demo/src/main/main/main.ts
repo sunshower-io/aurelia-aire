@@ -1,5 +1,6 @@
+import * as Velocity                 from 'velocity-animate';
+import {Router, RouterConfiguration} from "aurelia-router";
 
-import * as Velocity from 'velocity-animate';
 export class Main {
 
   loading : boolean;
@@ -9,8 +10,8 @@ export class Main {
 
   center = {x : 0, y : 250};
 
-  page: HTMLDivElement;
-  overlay: HTMLDivElement;
+  page : HTMLDivElement;
+  overlay : HTMLDivElement;
 
   private minSegmentHeight = 5;
   private groundHeight = this.size - 20;
@@ -26,6 +27,24 @@ export class Main {
   width : number;
   height : number;
 
+
+  configureRouter(cfg : RouterConfiguration, router : Router) {
+    cfg.map([
+      {
+        nav      : true,
+        title    : "Home",
+        route    : ['', 'home'],
+        moduleId : 'aire-demo/main/content'
+
+      }, {
+        nav      : true,
+        title    : 'docs',
+        route    : 'docs',
+        moduleId : 'aire-demo/index'
+      }
+    ]);
+  }
+
   private resolveBody() : HTMLElement {
     let c : HTMLElement = this.container;
     for (; !
@@ -40,7 +59,7 @@ export class Main {
 
   attached() {
     this.loading = false;
-    let v = Velocity.animate(this.page, 'transition.fadeIn', {duration: 2000});
+    let v = Velocity.animate(this.page, 'transition.fadeIn', {duration : 2000});
 
 
     // let canvas = this.canvas,
