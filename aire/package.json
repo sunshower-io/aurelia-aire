@@ -13,6 +13,7 @@
     "test": "npx jest",
     "clean": "gulp clean"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sunshower-io/aurelia-aire.git"
