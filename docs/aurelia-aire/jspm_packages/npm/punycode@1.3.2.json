@@ -1,9 +1,0 @@
-{
-  "main": "punycode.js",
-  "format": "cjs",
-  "meta": {
-    "*.json": {
-      "format": "json"
-    }
-  }
-}

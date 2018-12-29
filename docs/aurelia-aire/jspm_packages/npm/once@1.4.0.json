@@ -1,9 +1,0 @@
-{
-  "main": "once.js",
-  "format": "cjs",
-  "meta": {
-    "*.json": {
-      "format": "json"
-    }
-  }
-}

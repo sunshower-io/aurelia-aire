@@ -1,1 +1,0 @@
-<template><ul class="uk-nav" ref="ul"><li class="${nav.isActive ? 'uk-active' : ''}" repeat.for="nav of navigation()"><a href.bind="nav.href" click.delegate="fire()">${normalizeTitle ? normalizeTitle(nav) : nav.title}</a></li></ul></template>

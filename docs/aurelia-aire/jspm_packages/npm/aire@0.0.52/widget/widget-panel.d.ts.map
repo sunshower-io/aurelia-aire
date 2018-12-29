@@ -1,1 +1,0 @@
-{"version":3,"sources":["main/widget/widget-panel.ts"],"names":[],"mappings":"AAAA,OAAO,EAGL,gBAAgB,EACjB,MAAM,mBAAmB,CAAC;AAE3B,qBAEa,eAAe;IAGd,QAAQ,CAAC,MAAM,EAAE,gBAAgB;IAD7C,OAAO,EAAE,cAAc,CAAC;gBACH,MAAM,EAAE,gBAAgB;IAI7C,QAAQ;CAUT","file":"widget-panel.d.ts","sourceRoot":"../.."}
