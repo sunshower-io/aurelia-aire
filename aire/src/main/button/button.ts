@@ -3,6 +3,7 @@ import {dom}    from "aire/core";
 import {DOM} from 'aurelia-pal';
 import {AireBaseButton} from "aire/button/basebutton";
 
+//TODO document & test <a> behavior
 /**
  * The aire-button is a button element with some special styling and an optional icon and text
  *
@@ -77,6 +78,12 @@ export class AireButton extends AireBaseButton {
 
   @bindable
   type      : string;
+
+  @bindable
+  href      : string;
+
+  @bindable
+  target    : string;
 
   constructor(element: Element) {
       super(element);

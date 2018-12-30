@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"no tests in demo\"",
-    "build": "jspm link ../aire/dist && gulp build && gulp aire:generate",
+    "build": "gulp build && gulp aire:generate",
     "clean": "jspm remove aire || gulp clean",
     "installdeps": "npm install && jspm install -y"
   },
@@ -31,7 +31,7 @@
   "jspm": {
     "registry": "npm",
     "dependencies": {
-      "aire": "0.0.58",
+      "aire": "0.0.59",
       "aurelia-animator-velocity": "^1.2.0",
       "aurelia-bootstrapper": "^2.3.1",
       "aurelia-fetch-client": "^1.7.0",

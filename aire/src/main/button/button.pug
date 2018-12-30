@@ -1,4 +1,9 @@
 template
-    button.uk-button(ref="button" disabled.bind="disabled" type.bind="type")
-        aire-icon(if.bind="icon" icon.bind="icon")
-        | ${label}
+    template(if.bind="href")
+        a.uk-button(ref="button" href.bind="href" target.bind="target")
+            aire-icon(if.bind="icon" icon.bind="icon")
+            | ${label}
+    template(if.bind="!href")
+        button.uk-button(ref="button" disabled.bind="disabled" type.bind="type")
+            aire-icon(if.bind="icon" icon.bind="icon")
+            | ${label}
