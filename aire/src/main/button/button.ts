@@ -3,7 +3,7 @@ import {dom}    from "aire/core";
 import {DOM} from 'aurelia-pal';
 import {AireBaseButton} from "aire/button/basebutton";
 
-//TODO document <a> behavior
+//TODO document & test <a> behavior
 /**
  * The aire-button is a button element with some special styling and an optional icon and text
  *
