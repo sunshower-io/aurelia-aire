@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {containerless, customElement} from \"aurelia-templating\";\nimport {AireElement}                  from \"aire/core/widget\";\n\n@containerless\n@customElement('aire-header')\nexport class AireHeader extends AireElement {\n\n\n  constructor() {\n    super('AireHeader', null, '.aire-header:first-child');\n  }\n\n}",
+    "ctx": false
+  }
+]

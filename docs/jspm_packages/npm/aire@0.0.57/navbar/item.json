@@ -1,0 +1,130 @@
+[
+  {
+    "tags": [
+      {
+        "type": "component",
+        "string": "navbar-item",
+        "html": "<p>navbar-item</p>"
+      },
+      {
+        "type": "param",
+        "string": "{bindable} active",
+        "name": "active",
+        "description": "",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{bindable} active</p>"
+      },
+      {
+        "type": "param",
+        "string": "{bindable} icon",
+        "name": "icon",
+        "description": "",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{bindable} icon</p>"
+      },
+      {
+        "type": "param",
+        "string": "{bindable} href",
+        "name": "href",
+        "description": "",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{bindable} href</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} large",
+        "name": "large",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} large</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} medium",
+        "name": "medium",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} medium</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} small",
+        "name": "small",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} small</p>"
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} logo",
+        "name": "logo",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} logo</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The navbar-item is a link that goes inside a navbar-section.</p>",
+      "summary": "<p>The navbar-item is a link that goes inside a navbar-section.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 4,
+    "codeStart": 18,
+    "code": "@inject(Element)\n@containerless\n@customElement('navbar-item')\nexport class AireNavbarItem {\n\n  @bindable\n  active: boolean = true;\n\n  @bindable\n  icon: string;\n\n  @bindable\n  href: string;\n\n  private readonly element: Element;\n\n  constructor(private readonly el: Element) {\n  }\n\n  attached() : void {\n    dom.decorateTo(this.el, this.element, 'large');\n    dom.decorateTo(this.el, this.element, 'small');\n    dom.decorateTo(this.el, this.element, 'medium');\n    dom.decorateTo(this.el, this.element, 'logo', 'uk-logo');\n  }\n\n}",
+    "ctx": false
+  }
+]

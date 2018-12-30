@@ -1,3 +1,6 @@
+import * as Velocity                 from 'velocity-animate';
+import {Router, RouterConfiguration} from "aurelia-router";
+
 export class Main {
 
   loading : boolean;
@@ -7,19 +10,40 @@ export class Main {
 
   center = {x : 0, y : 250};
 
+  page : HTMLDivElement;
+  overlay : HTMLDivElement;
+
   private minSegmentHeight = 5;
   private groundHeight = this.size - 20;
   // private color = "hsl(180, 80%, 80%)";
-  color = "#FFFFFF";
-  private roughness = 1;
+  color = "#660066";
+  private roughness = 0.9;
 
   private maxDifference = this.size / 5;
   private container : HTMLDivElement;
 
   private context : CanvasRenderingContext2D;
 
-  width: number;
+  width : number;
   height : number;
+
+
+  configureRouter(cfg : RouterConfiguration, router : Router) {
+    cfg.map([
+      {
+        nav      : true,
+        title    : "Home",
+        route    : ['', 'home'],
+        moduleId : 'aire-demo/main/content'
+
+      }, {
+        nav      : true,
+        title    : 'docs',
+        route    : 'docs',
+        moduleId : 'aire-demo/index'
+      }
+    ]);
+  }
 
   private resolveBody() : HTMLElement {
     let c : HTMLElement = this.container;
@@ -35,41 +59,44 @@ export class Main {
 
   attached() {
     this.loading = false;
-
-    let canvas = this.canvas,
-      parent = this.resolveBody();
-    let height = 913,
-      width = 1045;
-    canvas.width = width;
-    canvas.height = height;
-    this.width = width;
-    this.height = height;
+    let v = Velocity.animate(this.page, 'transition.fadeIn', {duration : 2000});
 
 
-    // canvas.width = this.size;
-    // canvas.height = this.size;
-    this.setup();
+    // let canvas = this.canvas,
+    //   parent = this.resolveBody();
+    // let height = parent.clientHeight,
+    //   width = parent.clientWidth;
+    // canvas.width = width;
+    // canvas.height = height;
+    // this.width = width;
+    // this.height = height;
 
-    this.render();
+
+    // // canvas.width = this.size;
+    // // canvas.height = this.size;
+    // this.setup();
+    //
+    // this.render();
   }
+
   count = 0;
   maxCount = 10;
 
   render() {
     let ctx = this.context,
       size = this.width;
-    ctx.shadowBlur = 0;
+    // ctx.shadowBlur = 0;
     ctx.globalCompositeOperation = "source-over";
     ctx.fillRect(0, 0, size, size);
     // ctx.globalCompositeOperation = "lighter";
-    ctx.shadowBlur = 15;
+    ctx.shadowBlur = 100;
     let lightning = this.createLightning();
     ctx.beginPath();
     for (let i = 0; i < lightning.length; i++) {
       ctx.lineTo(lightning[i].x, lightning[i].y);
     }
     ctx.stroke();
-    if(this.count++ < this.maxCount) {
+    if (this.count++ < this.maxCount) {
       setTimeout(() => {
         requestAnimationFrame(this.render.bind(this));
       }, 50);
@@ -118,10 +145,7 @@ export class Main {
     context.fillRect(0, 0, this.width, this.height);
     // context.fillStyle = 'rgba(255,255,255,100)';
     // context.fillStyle = "hsla(328, 100%, 20%, 1)";
-    context.fillStyle = '#660066';
-
-    // context.fillStyle = "hsla(0, 0%, 10%, 0.2)";
-
+    context.fillStyle = '#ffffff';
     this.context = context;
   }
 }

@@ -1,0 +1,1 @@
+{"version":3,"sources":["main/navbar/item.ts"],"names":[],"mappings":"AAGA;;;;;;;;;;;;;GAaG;AACH,qBAGa,cAAc;IAab,OAAO,CAAC,QAAQ,CAAC,EAAE;IAV/B,MAAM,EAAE,OAAO,CAAQ;IAGvB,IAAI,EAAE,MAAM,CAAC;IAGb,IAAI,EAAE,MAAM,CAAC;IAEb,OAAO,CAAC,QAAQ,CAAC,OAAO,CAAU;gBAEL,EAAE,EAAE,OAAO;IAGxC,QAAQ,IAAK,IAAI;CAOlB","file":"item.d.ts","sourceRoot":"../.."}

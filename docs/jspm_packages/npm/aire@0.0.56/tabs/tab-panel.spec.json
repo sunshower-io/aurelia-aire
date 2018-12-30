@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {bootstrap}      from 'aurelia-bootstrapper';\nimport {newComponent}         from \"test/render\";\n\nlet component : any;\n\n\n\nafterEach(() => {\n  component.dispose();\n});\n\n\n\ntest('tabs must be initializable', async (done) => {\n  component = newComponent(\n    `\n    aire-tab-panel\n    `,\n    {},\n    'tabs/tab-panel'\n  );\n  await component.create(bootstrap);\n\n  let tabEl = document.querySelector('.aire-tab-panel');\n  expect(tabEl).toBeTruthy();\n  done();\n\n});\n\ntest('a tab-panel must have tabs definable as children', async (done) => {\n  component = newComponent(`\n  aire-tab-panel\n    aire-tab(title.bind=\"frapper\")\n      h1 \\${frapper} \n  `, {frapper: \"wabbo\"}, 'tabs/tab-panel', 'tabs/tab');\n\n  await component.create(bootstrap);\n\n  let h1 = document.querySelector('h1');\n  expect(h1.textContent).toBe(\"wabbo\");\n  done();\n});",
+    "ctx": false
+  }
+]

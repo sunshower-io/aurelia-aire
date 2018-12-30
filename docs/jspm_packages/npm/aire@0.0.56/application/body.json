@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  containerless,\n  customElement,\n  bindable,\n  autoinject,\n  bindingMode\n}                        from \"aurelia-framework\";\nimport {AireElement}     from \"aire/core/widget\";\nimport {Id}              from \"aire/core/dom\";\n\nimport {EventAggregator} from 'aurelia-event-aggregator';\n\n@autoinject\n@containerless\n@customElement('aire-body')\nexport class AireBody extends AireElement {\n\n\n  @bindable loading: boolean;\n  @bindable debounce: boolean;\n\n  @bindable wait: number;\n\n\n  @Id()\n  private bodyId: string;\n\n  @bindable({defaultBindingMode: bindingMode.toView})\n  public element: HTMLDivElement;\n\n  constructor(readonly bus: EventAggregator) {\n    super(\"Aire:application:body\", null, '.aire-body');\n  }\n\n\n  bind() : void {\n\n  }\n\n\n  unbind() : void {\n\n  }\n\n\n}",
+    "ctx": false
+  }
+]

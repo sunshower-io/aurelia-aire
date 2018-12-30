@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+var Velocity = require("velocity-animate");
 var Main = /** @class */ (function () {
     function Main() {
         this.size = 500;
@@ -7,12 +8,27 @@ var Main = /** @class */ (function () {
         this.minSegmentHeight = 5;
         this.groundHeight = this.size - 20;
         // private color = "hsl(180, 80%, 80%)";
-        this.color = "#FFFFFF";
-        this.roughness = 1;
+        this.color = "#660066";
+        this.roughness = 0.9;
         this.maxDifference = this.size / 5;
         this.count = 0;
         this.maxCount = 10;
     }
+    Main.prototype.configureRouter = function (cfg, router) {
+        cfg.map([
+            {
+                nav: true,
+                title: "Home",
+                route: ['', 'home'],
+                moduleId: 'aire-demo/main/content'
+            }, {
+                nav: true,
+                title: 'docs',
+                route: 'docs',
+                moduleId: 'aire-demo/index'
+            }
+        ]);
+    };
     Main.prototype.resolveBody = function () {
         var c = this.container;
         for (; !(c || c.classList.contains('aire-body')); c = c.parentElement) {
@@ -21,25 +37,29 @@ var Main = /** @class */ (function () {
     };
     Main.prototype.attached = function () {
         this.loading = false;
-        var canvas = this.canvas, parent = this.resolveBody();
-        var height = 913, width = 1045;
-        canvas.width = width;
-        canvas.height = height;
-        this.width = width;
-        this.height = height;
-        // canvas.width = this.size;
-        // canvas.height = this.size;
-        this.setup();
-        this.render();
+        var v = Velocity.animate(this.page, 'transition.fadeIn', { duration: 2000 });
+        // let canvas = this.canvas,
+        //   parent = this.resolveBody();
+        // let height = parent.clientHeight,
+        //   width = parent.clientWidth;
+        // canvas.width = width;
+        // canvas.height = height;
+        // this.width = width;
+        // this.height = height;
+        // // canvas.width = this.size;
+        // // canvas.height = this.size;
+        // this.setup();
+        //
+        // this.render();
     };
     Main.prototype.render = function () {
         var _this = this;
         var ctx = this.context, size = this.width;
-        ctx.shadowBlur = 0;
+        // ctx.shadowBlur = 0;
         ctx.globalCompositeOperation = "source-over";
         ctx.fillRect(0, 0, size, size);
         // ctx.globalCompositeOperation = "lighter";
-        ctx.shadowBlur = 15;
+        ctx.shadowBlur = 100;
         var lightning = this.createLightning();
         ctx.beginPath();
         for (var i = 0; i < lightning.length; i++) {
@@ -79,8 +99,7 @@ var Main = /** @class */ (function () {
         context.fillRect(0, 0, this.width, this.height);
         // context.fillStyle = 'rgba(255,255,255,100)';
         // context.fillStyle = "hsla(328, 100%, 20%, 1)";
-        context.fillStyle = '#660066';
-        // context.fillStyle = "hsla(0, 0%, 10%, 0.2)";
+        context.fillStyle = '#ffffff';
         this.context = context;
     };
     return Main;

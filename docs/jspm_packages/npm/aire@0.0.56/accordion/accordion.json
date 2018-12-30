@@ -1,0 +1,165 @@
+[
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{bindable} animated (boolean)",
+        "name": "animated",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} collapsible (boolean)",
+        "name": "collapsible",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} duration (number)",
+        "name": "duration",
+        "description": "<p>(number)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} multiple (boolean)",
+        "name": "multiple",
+        "description": "<p>(boolean)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} transition (string)",
+        "name": "transition",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "An accordion has a slot for its list items.",
+        "html": "<p>An accordion has a slot for its list items.</p>"
+      },
+      {
+        "type": "usage.examples.Slot",
+        "string": "aire-accordion\n accordion-item(title=\"Item 1\")\n     p Hello\n accordion-item(title=\"Item 2\")\n     p Goodbye",
+        "html": "<p>aire-accordion<br />\naccordion-item(title=&quot;Item 1&quot;)<br />\np Hello<br />\naccordion-item(title=&quot;Item 2&quot;)<br />\np Goodbye</p>"
+      },
+      {
+        "type": "section.animation",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "animation.title",
+        "string": "Animation Behavior",
+        "html": "<p>Animation Behavior</p>"
+      },
+      {
+        "type": "animation.description",
+        "string": "An accordion can reveal its items directly or with a transition. The behavior is set with `animated` and the transition with `transition`. The defaults are true and 'ease' respectively.",
+        "html": "<p>An accordion can reveal its items directly or with a transition. The behavior is set with <code>animated</code> and the transition with <code>transition</code>. The defaults are true and 'ease' respectively.</p>"
+      },
+      {
+        "type": "animation.examples.Default_Animation",
+        "string": "aire-accordion\n accordion-item(title=\"Item 1\")\n     p Hello\n accordion-item(title=\"Item 2\")\n     p Goodbye",
+        "html": "<p>aire-accordion<br />\naccordion-item(title=&quot;Item 1&quot;)<br />\np Hello<br />\naccordion-item(title=&quot;Item 2&quot;)<br />\np Goodbye</p>"
+      },
+      {
+        "type": "animation.examples.No_Animation",
+        "string": "aire-accordion(animated=\"false\")\n accordion-item(title=\"Item 1\")\n     p Hello\n accordion-item(title=\"Item 2\")\n     p Goodbye",
+        "html": "<p>aire-accordion(animated=&quot;false&quot;)<br />\naccordion-item(title=&quot;Item 1&quot;)<br />\np Hello<br />\naccordion-item(title=&quot;Item 2&quot;)<br />\np Goodbye</p>"
+      },
+      {
+        "type": "animation.examples.Different_Transition",
+        "string": "aire-accordion(transition=\"step-start\")\n accordion-item(title=\"Item 1\")\n     p Hello\n accordion-item(title=\"Item 2\")\n     p Goodbye",
+        "html": "<p>aire-accordion(transition=&quot;step-start&quot;)<br />\naccordion-item(title=&quot;Item 1&quot;)<br />\np Hello<br />\naccordion-item(title=&quot;Item 2&quot;)<br />\np Goodbye</p>"
+      },
+      {
+        "type": "section.opening",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "opening.title",
+        "string": "Opening Behavior",
+        "html": "<p>Opening Behavior</p>"
+      },
+      {
+        "type": "opening.description",
+        "string": "By default, an accordion allows all items to be closed and does not allow multiple items, but this can be changed with `collapsible` and `multiple`",
+        "html": "<p>By default, an accordion allows all items to be closed and does not allow multiple items, but this can be changed with <code>collapsible</code> and <code>multiple</code></p>"
+      },
+      {
+        "type": "opening.examples.Multiple",
+        "string": "aire-accordion(multiple)\n accordion-item(title=\"Item 1\" open)\n     p Hello\n accordion-item(title=\"Item 2\" open)\n     p Goodbye",
+        "html": "<p>aire-accordion(multiple)<br />\naccordion-item(title=&quot;Item 1&quot; open)<br />\np Hello<br />\naccordion-item(title=&quot;Item 2&quot; open)<br />\np Goodbye</p>"
+      },
+      {
+        "type": "opening.examples.Not_Collapsible",
+        "string": "aire-accordion(collapsible=\"false\")\n accordion-item(title=\"Item 1\")\n     p Hello\n accordion-item(title=\"Item 2\")\n     p Goodbye",
+        "html": "<p>aire-accordion(collapsible=&quot;false&quot;)<br />\naccordion-item(title=&quot;Item 1&quot;)<br />\np Hello<br />\naccordion-item(title=&quot;Item 2&quot;)<br />\np Goodbye</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The aire-accordion is an unordered list that allows child elements to be open or closed.</p>",
+      "summary": "<p>The aire-accordion is an unordered list that allows child elements to be open or closed.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 6,
+    "codeStart": 77,
+    "code": "@customElement('aire-accordion')\n@viewResources(\"./accordion-item\")\nexport class AireAccordion {\n\n    @bindable\n    animated   : boolean = true;\n\n    @bindable\n    collapsible : boolean = true;\n\n    @bindable\n    duration    : number = 200;\n\n    @bindable\n    multiple    : boolean;\n\n    @bindable\n    transition  : string = 'ease';\n\n    accordion   : Accordion;\n\n    element     : HTMLElement;\n\n    constructor() {\n\n    }\n\n    attached() {\n        let options = {\n            animation: this.animated,\n            collapsible: this.collapsible,\n            duration: this.duration,\n            multiple: this.multiple,\n            transition: this.transition\n        };\n        this.accordion = UIkit.accordion(this.element, options);\n    }\n\n}",
+    "ctx": false
+  }
+]

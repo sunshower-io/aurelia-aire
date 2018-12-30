@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {bindable} from \"aurelia-framework\";\nimport {AireFormElement} from \"./element\";\n\nexport class AireFormMultiElement extends AireFormElement {\n\n    @bindable\n    checked    : boolean;\n\n    @bindable\n    name        : string;\n\n    constructor(element: Element) {\n        super(element);\n    }\n}",
+    "ctx": false
+  }
+]

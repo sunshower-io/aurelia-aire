@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {Logger} from 'aurelia-logging';\n\nexport interface UIFramework {\n\n  on(component: any, event: string, el: string |number | HTMLElement, handler: any);\n}\n\n\nexport class Aire {\n\n  public static logger: Logger;\n\n\n  constructor() {\n\n  }\n\n  public static initialize(framework: UIFramework) {\n    this._framework = framework;\n  }\n\n  public static get framework() : UIFramework {\n    return this._framework;\n  }\n\n  private static idGen = 0;\n  private static instance: Aire;\n  private static _framework: UIFramework;\n\n\n  public static get id() : string {\n    return \"aire-\" + Aire.idGen++;\n  }\n\n\n  public static getInstance() : Aire {\n    if(!this.instance) {\n      this.instance = new Aire()\n    }\n    return this.instance;\n  }\n\n\n\n\n}\n\nexport type Listener<T> = (a:T) => void;\nexport module Aire {\n\n  export function listen<T>(element: Element, event: string, listener:Listener<T>) {\n    let id = element.id;\n    if(!id) {\n      throw new Error(`Element ${element} must have an id! (you can use Aire.id to generate one)`);\n    }\n    Aire.framework.on(document, event, `#${id}`, listener);\n  }\n\n\n\n  export function invokeLifecycleOnChildren(el: Element, lifecycleFunction: string) {\n    if(!el) {\n      throw new Error(`Element must not be null`);\n    }\n    let children = el.childNodes,\n      len = children.length;\n    for(let i = 0; i < len; i++) {\n      let child = children[i] as any;\n      if(child && child.au) {\n        let au = child.au,\n          controller = au.controller,\n          vm = controller && controller.viewModel;\n        if(vm) {\n          invokeLifecycle(lifecycleFunction, vm);\n        }\n      }\n    }\n  }\n\n  export function invokeLifecycle(str: string, vm: any) {\n    if(!vm) {\n      throw new Error('ViewModel must not be null!');\n    }\n    let f = vm[str];\n    if(!f) {\n      return;\n    }\n    if(f && (typeof f !== 'function')) {\n      throw new Error(`Lifecycle handler ${str} on ViewModel ${vm} is not a function!`);\n    }\n    f.apply(vm);\n  }\n}",
+    "ctx": false
+  }
+]

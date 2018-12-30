@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {Id} from \"aire/core/dom\";\nclass A {\n\n    @Id()\n    id1: string;\n\n}\n\ntest(\"id increments as expected on instance\", () => {\n\n    let a = new A();\n    console.log(a.id1);\n    expect(a.id1).toContain('aire-');\n});\n\ntest('id increments across instantiations of same type', () => {\n\n    let a1 = new A(),\n        a2 = new A();\n\n    expect(a1.id1).toContain('aire-');\n    expect(a1.id1).not.toEqual(a2.id1);\n\n    for(let i = 0; i < 10; i++) {\n        console.log(a1.id1);\n    }\n});",
+    "ctx": false
+  }
+]
