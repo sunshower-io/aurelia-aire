@@ -1,0 +1,13 @@
+$base-height: $navbar-nav-item-height - $search-default-height;
+
+.aire-search-offcanvas-header {
+  margin-bottom: $base-height - $offcanvas-bar-padding-vertical;
+}
+
+//@media (min-width: $breakpoint-medium) {
+//
+//  .aire-search-offcanvas-header {
+//    margin-bottom: $base-height - $offcanvas-bar-padding-vertical-m;
+//  }
+//
+//}

@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import 'reflect-metadata';\nimport 'aurelia-polyfills';\n\nimport {bootstrap}      from 'aurelia-bootstrapper';\nimport {newComponent}         from \"test/render\";\n\n\nlet component : any;\n\n\nfunction initialize(bindingContext : any, templateString ?: string) {\n    let template = templateString ? templateString : `\n  aire-navbar(router.bind=\"router\")\n  `;\n    component = newComponent(template, bindingContext, 'navbar/navbar');\n}\n\nafterEach(() => {\n    component.dispose();\n});\n\ntest(\"a navbar should initialize\", async (done) => {\n    initialize({});\n    await component.create(bootstrap);\n    let nav = document.querySelector('nav.uk-navbar-container');\n    expect(nav).toBeTruthy();\n    done();\n});\n\ntest(\"a navbar can take a sticky argument\", async(done) => {\n    initialize({}, `\naire-navbar(sticky)\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('.uk-navbar.uk-navbar-sticky');\n    expect(nav).toBeTruthy();\n    done();\n});\n\ntest(\"a navbar can take a transparent argument\", async(done) => {\n    initialize({}, `\naire-navbar(transparent)\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('.uk-navbar.uk-navbar-transparent');\n    expect(nav).toBeTruthy();\n    done();\n});\n\ntest(\"a navbar can take a dark argument\", async(done) => {\n    initialize({}, `\naire-navbar(dark)\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('.uk-navbar.uk-dark');\n    expect(nav).toBeTruthy();\n    done();\n});\n\ntest(\"a navbar can take a light argument\", async(done) => {\n    initialize({}, `\naire-navbar(light)\n  `);\n    await component.create(bootstrap);\n    let nav = document.querySelector('.uk-navbar.uk-light');\n    expect(nav).toBeTruthy();\n    done();\n});",
+    "ctx": false
+  }
+]

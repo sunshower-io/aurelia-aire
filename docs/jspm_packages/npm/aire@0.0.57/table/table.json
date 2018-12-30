@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {bindable, customElement, inject}      from \"aurelia-framework\";\nimport {dom} from \"aire/core\";\nimport {DOM} from \"aurelia-pal\";\n\n@inject(DOM.Element)\n@customElement('aire-table')\nexport class AireTable {\n\n    table       : HTMLElement;\n\n    @bindable\n    header      : boolean;\n\n    @bindable\n    footer      : boolean;\n\n    @bindable\n    caption     : string;\n\n    columns     : {name: string, key: string}[];\n\n    rows        : any[];\n\n    constructor(private element: Element) {\n        let data = JSON.parse(element.getAttribute(\"data\"));\n        if (data) {\n            this.columns = data.columns;\n            this.rows = data.rows;\n        }\n    }\n\n    attached() {\n        dom.decorateTo(this.element, this.table, \"divider\", \"uk-table-divider\");\n        dom.decorateTo(this.element, this.table, \"striped\", \"uk-table-striped\");\n        dom.decorateTo(this.element, this.table, \"hover\", \"uk-table-hover\");\n        dom.decorateTo(this.element, this.table, \"justify\", \"uk-table-justify\");\n        dom.decorateTo(this.element, this.table, \"middle\", \"uk-table-middle\");\n    }\n}",
+    "ctx": false
+  }
+]

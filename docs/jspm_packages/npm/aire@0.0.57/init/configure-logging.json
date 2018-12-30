@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {FrameworkConfiguration} from 'aurelia-framework';\nimport {LogManager}             from 'aurelia-framework';\nimport {ConsoleAppender}        from 'aurelia-logging-console';\nimport {Aire}                   from \"aire/core/application\";\n\nexport function configureLogging(cfg : FrameworkConfiguration) {\n  console.log(\"[aire]: Configuring Aire Logging \");\n  let hash = window.location.hash,\n    qidx = hash.indexOf('?');\n  if(qidx >= 0) {\n    const [_, level] =  readLevel(hash.substr(qidx));\n    if(level) {\n      let l = levelFor(level);\n      LogManager.addAppender(new ConsoleAppender());\n      LogManager.setLevel(l);\n      console.log(`[aire]: Using level '${l}'(${level})`);\n      Aire.logger = LogManager.getLogger('Aire:application');\n    }\n  }\n  console.log('[aire]: Configured Aire Logging');\n}\n\n\nexport function readLevel(search) : [string, string] {\n  return parameter(search, \"log.level\") as [string, string];\n}\n\nexport function parameter(str : string, p : string) {\n  let results = str.split(/[?&]/).map(t => {\n    let current = t.split(\"=\"),\n      key = current[0],\n      value = current[1];\n    if (key === p) {\n      return [key, decodeURIComponent(value)];\n    }\n  }).filter(t => t);\n  if(results && results.length) {\n    return results[0];\n  }\n  return undefined;\n}\n\n\nexport function levelFor(l: string) : number {\n  let p = Object.getOwnPropertyDescriptor(LogManager.logLevel, l);\n  return p.get instanceof Function ? p.get() : p.value;\n}",
+    "ctx": false
+  }
+]
