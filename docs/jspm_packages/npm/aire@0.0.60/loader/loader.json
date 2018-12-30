@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  containerless,\n  customElement\n} from 'aurelia-framework';\n\n@customElement('aire-loader')\nexport class AireLoader {\n\n\n\n  attached() : void {\n\n  }\n}",
+    "ctx": false
+  }
+]

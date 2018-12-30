@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import 'reflect-metadata';\nimport 'aurelia-polyfills';\n\nimport {bootstrap}      from 'aurelia-bootstrapper';\nimport {newComponent}         from \"test/render\";\n\n\nlet component : any;\n\n\nfunction initialize(bindingContext : any, templateString ?: string) {\n    let template = templateString ? templateString : `\n  aire-icon(icon.bind=\"icon\" classes.bind=\"classes\")\n  `;\n    component = newComponent(template, bindingContext, 'icon/icon');\n}\n\nafterEach(() => {\n    component.dispose();\n});\n\ntest(\"an icon should initialize with an image\", async (done) => {\n    initialize({icon: 'heck.png'});\n    await component.create(bootstrap);\n    let icon = document.querySelector('img.aire-icon') as HTMLImageElement;\n    expect(icon).toBeTruthy();\n    expect(icon.src).toContain(\"heck.png\");\n    done();\n});\n\ntest(\"a icon should initialize with a span\", async (done) => {\n    initialize({icon : \"fa\"});\n    await component.create(bootstrap);\n    let icon = document.querySelector('span.aire-icon') as HTMLSpanElement;\n    expect(icon).toBeTruthy();\n    expect(icon.classList.contains(\"fa\")).toBeTruthy();\n    done();\n});\n\ntest(\"an icon can take classes in addition to an icon font\", async (done) => {\n    initialize({icon: \"fa\", classes: \"my-class\"});\n    await component.create(bootstrap);\n    let icon = document.querySelector('span.aire-icon') as HTMLSpanElement;\n    expect(icon).toBeTruthy();\n    expect(icon.classList.contains(\"fa\")).toBeTruthy();\n    expect(icon.classList.contains(\"my-class\")).toBeTruthy();\n    done();\n});\n\ntest(\"an icon can take classes in addition to an image\", async (done) => {\n    initialize({icon: \"heck.png\", classes: \"my-class\"});\n    await component.create(bootstrap);\n    let icon = document.querySelector('img.aire-icon') as HTMLImageElement;\n    expect(icon).toBeTruthy();\n    expect(icon.src).toContain(\"heck.png\");\n    expect(icon.classList.contains(\"my-class\")).toBeTruthy();\n    done();\n});",
+    "ctx": false
+  }
+]

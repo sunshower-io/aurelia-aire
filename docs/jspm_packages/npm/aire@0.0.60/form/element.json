@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {bindable}      from \"aurelia-framework\";\nimport {dom, Id} from \"aire/core\";\n\nexport class AireFormElement {\n\n    input       : HTMLElement;\n    container   : HTMLElement;\n    marker      : HTMLLabelElement;\n\n    @bindable\n    label       : string;\n\n    @bindable\n    value       : any;\n\n    danger       : string;\n\n    success     : string;\n\n    @bindable\n    disabled    : boolean;\n\n    @Id()\n    id          : string;\n\n    constructor(private element: Element) {\n    }\n\n    attached() {\n        dom.decorate(this.container, \"horizontal\", \"uk-form-horizontal\");\n        dom.decorateTo(this.element, this.input, \"success\", \"uk-form-success\");\n        dom.decorateTo(this.element, this.input, \"danger\", \"uk-form-danger\");\n        dom.decorateTo(this.element, this.input, \"blank\", \"uk-form-blank\");\n        dom.decorate(this.container, \"success\", \"uk-form-success\");\n        dom.decorate(this.container, \"danger\", \"uk-form-danger\");\n        dom.decorate(this.container, \"blank\", \"uk-form-blank\");\n\n        if (this.label && this.marker) {\n            dom.decorateTo(this.element, this.marker, \"success\", \"uk-form-success\");\n            dom.decorateTo(this.element, this.marker, \"danger\", \"uk-form-danger\");\n        }\n    }\n}",
+    "ctx": false
+  }
+]

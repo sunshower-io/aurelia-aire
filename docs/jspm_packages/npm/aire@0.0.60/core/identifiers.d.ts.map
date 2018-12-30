@@ -1,0 +1,1 @@
+{"version":3,"sources":["main/core/identifiers.ts"],"names":[],"mappings":"AAGA,qBAAa,UAAU;aACO,EAAE,EAAE,MAAM;gBAAV,EAAE,EAAE,MAAM;CACvC;AACD,yBAAiB,UAAU,CAAC;IAC1B,SAAgB,YAAY,CAAC,GAAG,EAAE,MAAM,GAAG,OAAO,CAEjD;IAED,SAAgB,KAAK,IAAI,MAAM,CAE9B;CACF","file":"identifiers.d.ts","sourceRoot":"../.."}

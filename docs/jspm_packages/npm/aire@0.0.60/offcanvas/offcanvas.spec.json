@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {bootstrap}     from 'aurelia-bootstrapper';\nimport {newComponent}  from \"test/render\";\nimport {AireOffCanvas} from \"aire/offcanvas/offcanvas\";\n\nlet component : any;\n\n\n\nafterEach(() => {\n    component.dispose();\n});\n\n\n\ntest('offcanvas must be initializable', async (done) => {\n    component = newComponent(\n        `\n    aire-offcanvas\n    `,\n        {},\n        'offcanvas/offcanvas'\n    );\n    await component.create(bootstrap);\n\n    let element = document.querySelector('.uk-offcanvas');\n    expect(element).toBeTruthy();\n    done();\n\n});\n\ntest('offcanvas must have a slot', async (done) => {\n    component = newComponent(`\n  aire-offcanvas\n    h1 wabbo \n  `, {}, 'offcanvas/offcanvas');\n\n    await component.create(bootstrap);\n\n    let h1 = document.querySelector('h1');\n    expect(h1.textContent).toBe(\"wabbo\");\n    done();\n});\n\ntest('offcanvas can take a parent element', async (done) => {\n    component = newComponent(`\nmain.aire-body(ref=\"body\")\naire-offcanvas(parent.bind=\"body\")\n  `, {}, 'offcanvas/offcanvas');\n\n    await component.create(bootstrap);\n    let oc: AireOffCanvas = component.viewModel;\n    oc.show();\n    let body = document.querySelector('main.aire-body').outerHTML,\n        offcanvas = body.includes('uk-offcanvas-bar');\n    console.log(document.body.outerHTML);\n    expect(offcanvas).toBeTruthy();\n  done();\n});\n\ntest('offcanvas can take a parent string selector', async (done) => {\n    component = newComponent(`\nmain.aire-body\naire-offcanvas(parent=\"main.aire-body\")\n  `, {}, 'offcanvas/offcanvas');\n\n    await component.create(bootstrap);\n    let oc: AireOffCanvas = component.viewModel;\n    oc.show();\n    let body = document.querySelector('main.aire-body').outerHTML,\n        offcanvas = body.includes('uk-offcanvas-bar');\n    console.log(body);\n    expect(offcanvas).toBeTruthy();\n    done();\n});\n\ntest('offcanvas parent gets container class', async (done) => {\n    component = newComponent(`\nmain.aire-body\naire-offcanvas(parent=\"main.aire-body\")\n  `, {}, 'offcanvas/offcanvas');\n\n    await component.create(bootstrap);\n    let oc: AireOffCanvas = component.viewModel;\n    oc.show();\n    let body = document.querySelector('main.aire-body.uk-offcanvas-container');\n    expect(body).toBeTruthy();\n    done();\n});\n\ntest.skip('offcanvas can be pushed down by parent', async (done) => {\n    component = newComponent(`\nmain.aire-body\naire-offcanvas(parent=\"main.aire-body\" push)\n  `, {}, 'offcanvas/offcanvas');\n    await component.create(bootstrap);\n    let oc: AireOffCanvas = component.viewModel;\n    oc.show();\n    let offcanvas = document.querySelector('.uk-offcanvas'),\n        style = offcanvas.getAttribute(\"style\");\n    console.log(style);\n    expect(style.indexOf(\"top\")).toBeGreaterThan(-1);\n    done();\n\n});",
+    "ctx": false
+  }
+]

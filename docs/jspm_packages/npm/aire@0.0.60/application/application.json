@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  child,\n  autoinject,\n  customElement,\n}                 from \"aurelia-framework\";\nimport {\n  AireHeader\n}                 from \"aire/application/header\";\nimport {\n  AireElement\n}                 from \"aire/core/widget\";\nimport {AireBody} from \"aire/application/body\";\n\n@autoinject\n@customElement('aire-application')\nexport class AireApplication extends AireElement {\n\n  @child('.aire-header')\n  private header : AireHeader;\n\n  @child('.aire-body')\n  private body : AireBody;\n\n  constructor(el : Element) {\n    super('AireApplication', el, el);\n  }\n\n}",
+    "ctx": false
+  }
+]
