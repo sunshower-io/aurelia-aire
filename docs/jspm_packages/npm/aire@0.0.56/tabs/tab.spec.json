@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import 'reflect-metadata';\nimport 'aurelia-polyfills';\n\nimport {bootstrap}     from 'aurelia-bootstrapper';\nimport {newComponent}  from \"test/render\";\n\nlet component : any;\n\n\nfunction initialize(bindingContext : any, template : string) {\n    component = newComponent(template,\n        bindingContext,\n        'tabs/tab'\n    );\n}\n\ntest(\"a tab can initialize\", async(done) => {\n    initialize({}, `aire-tab`);\n    await component.create(bootstrap);\n\n    let tab = document.querySelector('.aire-tab');\n    expect(tab).toBeTruthy();\n    done();\n});",
+    "ctx": false
+  }
+]

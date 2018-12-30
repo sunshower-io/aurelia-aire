@@ -10,5 +10,5 @@ export async function configure(aurelia: Aurelia) {
            cfg.defineRoutes(['aire-demo/route/route.comp']);
          });
 
-  aurelia.start().then(() => aurelia.setRoot('aire-demo/index'));
+  aurelia.start().then(() => aurelia.setRoot('aire-demo/main/main'));
 }

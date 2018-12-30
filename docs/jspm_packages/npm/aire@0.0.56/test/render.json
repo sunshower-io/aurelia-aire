@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import * as pug from 'pug';\n\nimport {PLATFORM}       from 'aurelia-pal';\nimport {\n  StageComponent,\n  ComponentTester\n} from 'aurelia-testing';\n\nexport function render(template: string, options?:any) : string {\n  return pug.compile(template.trim())(options);\n}\n\n\nexport function newComponent(\n  template: string,\n  bindingContext: any,\n  ...moduleNames:string[]\n) : ComponentTester {\n  if(!(moduleNames || moduleNames.length)) {\n    throw new Error(\"You must supply at least one module name\");\n  }\n  return StageComponent.withResources(\n    moduleNames.map(t => PLATFORM.moduleName(t)))\n    .inView(render(template)).boundTo(bindingContext);\n\n}",
+    "ctx": false
+  }
+]

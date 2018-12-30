@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import { range } from './range';\n\nexport class UUID {\n  public readonly value: string;\n\n  constructor(value: string) {\n    this.value = value;\n  }\n\n  static fromString(str: string): UUID {\n    return new UUID(str);\n  }\n\n  static random(): string {\n    return UUID.randomUUID().value;\n  }\n\n  static randomBytes(): number[] {\n    let d = new Date().getTime();\n    if (window.performance && typeof window.performance.now === 'function') {\n      d += performance.now();\n    }\n\n    return range(0, 32).map(t => {\n      if (t == 12) {\n        return 4;\n      }\n      let r = (d + Math.random() * 16) % 16 | 0;\n      d = Math.floor(d / 16);\n      return (r & 0x3) | 0x8;\n    });\n  }\n\n  static randomUUID(): UUID {\n    let d = new Date().getTime();\n    if (window.performance && typeof window.performance.now === 'function') {\n      d += performance.now();\n    }\n    let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(\n      c\n    ) {\n      var r = (d + Math.random() * 16) % 16 | 0;\n      d = Math.floor(d / 16);\n      return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);\n    });\n    return new UUID(uuid);\n  }\n\n  static randomId(len: number): string {\n    let id = 'x'.repeat(len).replace(/x/g, c => {\n      return ((Math.random() * 16) % 16 | 0).toString(16);\n    });\n    return id;\n  }\n\n  toString(): string {\n    return this.value;\n  }\n}",
+    "ctx": false
+  }
+]
