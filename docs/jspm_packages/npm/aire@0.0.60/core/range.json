@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "export const range = (start, end) =>\n  Array.from({ length: end - start }, (v, k) => k + start);",
+    "ctx": false
+  }
+]

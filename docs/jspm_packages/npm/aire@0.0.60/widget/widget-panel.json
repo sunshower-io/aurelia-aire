@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  autoinject,\n  customElement,\n  TemplatingEngine\n} from 'aurelia-framework';\n\n@autoinject\n@customElement('aire-widget-panel')\nexport class AireWidgetPanel {\n\n  element: HTMLDivElement;\n  constructor(readonly engine: TemplatingEngine) {\n\n  }\n\n  attached() {\n    let div = document.createElement('div');\n    div.innerHTML = '<aire-card default padding hover title=\"hello world\"></aire-card>';\n    this.engine.enhance({\n      element: div,\n      bindingContext:{}\n    });\n    this.element.appendChild(div);\n\n  }\n}",
+    "ctx": false
+  }
+]

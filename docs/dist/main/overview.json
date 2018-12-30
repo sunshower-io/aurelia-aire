@@ -1,0 +1,23 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "export class Overview {\n\n}",
+    "ctx": {
+      "type": "class",
+      "constructor": "Overview",
+      "cons": "Overview",
+      "name": "Overview",
+      "extends": "",
+      "string": "new Overview()"
+    }
+  }
+]

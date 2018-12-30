@@ -1,0 +1,94 @@
+[
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{bindable} title (string)",
+        "name": "title",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{pseudo} open",
+        "name": "open",
+        "description": "",
+        "types": [
+          "pseudo"
+        ],
+        "typesDescription": "<a href=\"pseudo.html\">pseudo</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "html": "<p>{pseudo} open</p>"
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "An accordion-item has a slot for its content, but its title is bindable",
+        "html": "<p>An accordion-item has a slot for its content, but its title is bindable</p>"
+      },
+      {
+        "type": "usage.examples.Title_And_Slot",
+        "string": "aire-accordion\n accordion-item(title=\"Accordion Item\")\n     p Accordion Content",
+        "html": "<p>aire-accordion<br />\naccordion-item(title=&quot;Accordion Item&quot;)<br />\np Accordion Content</p>"
+      },
+      {
+        "type": "section.option",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "open.title",
+        "string": "Open",
+        "html": "<p>Open</p>"
+      },
+      {
+        "type": "open.description",
+        "string": "An accordion item can default to open if the decorator `open` is passed in.",
+        "html": "<p>An accordion item can default to open if the decorator <code>open</code> is passed in.</p>"
+      },
+      {
+        "type": "open.examples.Open",
+        "string": "aire-accordion(multiple)\n accordion-item(title=\"Accordion Item 1\" open)\n     p Accordion Content\n accordion-item(title=\"Accordion Item 2\" open)\n     p Accordion Content",
+        "html": "<p>aire-accordion(multiple)<br />\naccordion-item(title=&quot;Accordion Item 1&quot; open)<br />\np Accordion Content<br />\naccordion-item(title=&quot;Accordion Item 2&quot; open)<br />\np Accordion Content</p>"
+      },
+      {
+        "type": "open.examples.Closed",
+        "string": "aire-accordion(multiple)\n accordion-item(title=\"Accordion Item 1\")\n     p Accordion Content\n accordion-item(title=\"Accordion Item 2\")\n     p Accordion Content",
+        "html": "<p>aire-accordion(multiple)<br />\naccordion-item(title=&quot;Accordion Item 1&quot;)<br />\np Accordion Content<br />\naccordion-item(title=&quot;Accordion Item 2&quot;)<br />\np Accordion Content</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The accordion-item a list item designed to be the child of an aire-accordion.</p>",
+      "summary": "<p>The accordion-item a list item designed to be the child of an aire-accordion.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 4,
+    "codeStart": 42,
+    "code": "@inject(Element)\n@customElement('accordion-item')\nexport class AccordionItem {\n\n    li      : HTMLLIElement;\n\n    @bindable\n    title   : string;\n\n    constructor(private el : Element) {\n\n    }\n\n    attached() {\n        dom.decorateTo(this.el, this.li, \"open\", \"uk-open\");\n    }\n}",
+    "ctx": false
+  }
+]
