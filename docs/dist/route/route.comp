@@ -1,0 +1,142 @@
+[
+  {
+    "nav": true,
+    "title": "button",
+    "route": "docs/button",
+    "settings": {
+      "component": "button",
+      "directory": "button"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "fab",
+    "route": "docs/fab",
+    "settings": {
+      "component": "fab",
+      "directory": "button"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "card",
+    "route": "docs/card",
+    "settings": {
+      "component": "card",
+      "directory": "card"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "checkbox",
+    "route": "docs/checkbox",
+    "settings": {
+      "component": "checkbox",
+      "directory": "form"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "input",
+    "route": "docs/input",
+    "settings": {
+      "component": "input",
+      "directory": "form"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "radio",
+    "route": "docs/radio",
+    "settings": {
+      "component": "radio",
+      "directory": "form"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "range",
+    "route": "docs/range",
+    "settings": {
+      "component": "range",
+      "directory": "form"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "select",
+    "route": "docs/select",
+    "settings": {
+      "component": "select",
+      "directory": "form"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "textarea",
+    "route": "docs/textarea",
+    "settings": {
+      "component": "textarea",
+      "directory": "form"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "icon",
+    "route": "docs/icon",
+    "settings": {
+      "component": "icon",
+      "directory": "icon"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "nav",
+    "route": "docs/nav",
+    "settings": {
+      "component": "nav",
+      "directory": "nav"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "navbar-item",
+    "route": "docs/navbar-item",
+    "settings": {
+      "component": "navbar-item",
+      "directory": "navbar"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "navbar",
+    "route": "docs/navbar",
+    "settings": {
+      "component": "navbar",
+      "directory": "navbar"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  },
+  {
+    "nav": true,
+    "title": "navbar-section",
+    "route": "docs/navbar-section",
+    "settings": {
+      "component": "navbar-section",
+      "directory": "navbar"
+    },
+    "moduleId": "aire-demo/lib/doc-page"
+  }
+]
