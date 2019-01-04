@@ -47,30 +47,16 @@ import {DOM} from 'aurelia-pal';
  *
  * @style.examples.Styles
  * .uk-grid(class="uk-child-width-1-4@s")
- *  aire-card(default classes="uk-margin-bottom")
- *      .uk-card-body Default
- *  aire-card(primary classes="uk-margin-bottom")
- *      .uk-card-body Primary
- *  aire-card(secondary classes="uk-margin-bottom")
- *      .uk-card-body Secondary
- *  aire-card(hover classes="uk-margin-bottom")
- *      .uk-card-body Hover
+ *      aire-card(default classes="uk-margin-bottom")
+ *          .uk-card-body Default
+ *      aire-card(primary classes="uk-margin-bottom")
+ *          .uk-card-body Primary
+ *      aire-card(secondary classes="uk-margin-bottom")
+ *          .uk-card-body Secondary
+ *      aire-card(hover classes="uk-margin-bottom")
+ *          .uk-card-body Hover
  *
  *
- * @section.padding
- * @padding.title
- * Padding
- * @padding.description
- * To adjust the amount of padding a card has, use `padding-small`, `padding` and `padding-large` -- by default, a card has no padding.
- *
- * @padding.examples.Padding
- * .uk-grid(class="uk-child-width-1-3@s")
- *  aire-card(padding-small default classes="uk-margin-bottom")
- *      | A card with small padding
- *  aire-card(padding default classes="uk-margin-bottom")
- *      | A card with normal padding
- *  aire-card(padding-large default classes="uk-margin-bottom")
- *      | A card with large padding
  *
  *
  */
@@ -98,11 +84,6 @@ export class AireCard {
         dom.decorateTo(this.element, this.card, "primary", "uk-card-primary");
         dom.decorateTo(this.element, this.card, "secondary", "uk-card-secondary");
         dom.decorateTo(this.element, this.card, "hover", "uk-card-hover");
-        dom.decorateTo(this.element, this.card, "padding", "uk-card-body");
-        dom.decorateTo(this.element, this.card, "padding-small", "uk-card-body");
-        dom.decorateTo(this.element, this.card, "padding-small", "uk-card-small");
-        dom.decorateTo(this.element, this.card, "padding-large", "uk-card-body");
-        dom.decorateTo(this.element, this.card, "padding-large", "uk-card-large");
 
     }
 }
