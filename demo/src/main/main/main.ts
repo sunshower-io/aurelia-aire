@@ -38,7 +38,7 @@ export class Main {
 
       }, {
         nav      : true,
-        title    : 'docs',
+        title    : 'Aurelia-Aire Docs',
         route    : 'docs',
         moduleId : 'aire-demo/index'
       }
