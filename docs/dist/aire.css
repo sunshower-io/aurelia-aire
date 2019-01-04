@@ -11975,9 +11975,21 @@ body {
     .html-panel .example .uk-navbar.uk-light a.uk-navbar-item, .html-panel .example .uk-navbar.uk-section-primary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-section-secondary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-tile-primary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-tile-secondary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-card-primary.uk-card-body a.uk-navbar-item, .html-panel .example .uk-card-primary > .uk-navbar:not([class*='uk-card-media']) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-card-secondary.uk-card-body a.uk-navbar-item, .html-panel .example .uk-card-secondary > .uk-navbar:not([class*='uk-card-media']) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-overlay-primary a.uk-navbar-item {
       color: white; }
 
-.aire-landing .uk-button {
-  margin: 0 1em;
-  border: 1px solid white;
-  background: transparent;
-  border-radius: 2em;
-  color: white; }
+.aire-landing {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#660066+0,2385af+100 */
+  background: #660066;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #660066 0%, #2385AF 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #660066 0%, #2385AF 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #660066 0%, #2385AF 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660066', endColorstr='#2385AF',GradientType=0 );
+  /* IE6-9 */ }
+  .aire-landing .uk-button {
+    margin: 1em;
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 2em;
+    color: white; }

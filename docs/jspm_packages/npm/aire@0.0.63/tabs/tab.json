@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {\n  autoinject,\n  bindable,\n  customElement\n}             from 'aurelia-framework';\nimport {Aire} from \"aire/core/application\";\n\n\n\n@autoinject\n@customElement('aire-tab')\nexport class AireTab {\n\n  @bindable\n  private title: string;\n\n  public active: boolean;\n\n  constructor(readonly el: Element) {\n\n  }\n\n\n  attached() : void {\n\n  }\n\n\n  activate(e: CustomEvent)  : void {\n\n    Aire.invokeLifecycleOnChildren(this.el, 'activate');\n  }\n\n  deactivate(e: CustomEvent) {\n    Aire.invokeLifecycleOnChildren(this.el, 'deactivate');\n  }\n}",
+    "ctx": false
+  }
+]

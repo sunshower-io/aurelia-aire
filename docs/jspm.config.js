@@ -37,7 +37,7 @@ SystemJS.config({
         "local:*.json"
     ],
     map: {
-        "aire": "npm:aire@0.0.60",
+        "aire": "npm:aire@0.0.63",
         "assert": "npm:jspm-nodelibs-assert@0.2.1",
         "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
         "aurelia-binding": "npm:aurelia-binding@2.1.7",
@@ -88,15 +88,6 @@ SystemJS.config({
         "vm": "npm:jspm-nodelibs-vm@0.2.1"
     },
     packages: {
-        "npm:aire@0.0.60": {
-            "map": {
-                "aire": "npm:aire@0.0.60",
-                "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
-                "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
-                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
-                "uikit": "npm:uikit@3.0.0-rc.25"
-            }
-        },
         "npm:aurelia-binding@2.1.7": {
             "map": {
                 "aurelia-task-queue": "npm:aurelia-task-queue@1.3.1",
@@ -435,6 +426,23 @@ SystemJS.config({
             "map": {
                 "querystring": "npm:querystring@0.2.0",
                 "punycode": "npm:punycode@1.3.2"
+            }
+        },
+        "npm:aire@0.0.63": {
+            "map": {
+                "aire": "npm:aire@0.0.57",
+                "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
+                "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
+                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+                "uikit": "npm:uikit@3.0.0-rc.25"
+            }
+        },
+        "npm:aire@0.0.57": {
+            "map": {
+                "aurelia-animator-velocity": "npm:aurelia-animator-velocity@1.2.0",
+                "aurelia-fetch-client": "npm:aurelia-fetch-client@1.7.0",
+                "aurelia-bootstrapper": "npm:aurelia-bootstrapper@2.3.1",
+                "uikit": "npm:uikit@3.0.0-rc.25"
             }
         }
     }

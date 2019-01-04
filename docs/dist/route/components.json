@@ -1,0 +1,267 @@
+[
+  {
+    "title": "application",
+    "nav": true,
+    "settings": {
+      "category": "application"
+    },
+    "route": "application",
+    "name": "aire-application",
+    "moduleId": "aire-demo/application/doc-page"
+  },
+  {
+    "title": "body",
+    "nav": true,
+    "settings": {
+      "category": "application"
+    },
+    "route": "application",
+    "name": "aire-body",
+    "moduleId": "aire-demo/application/doc-page"
+  },
+  {
+    "title": "header",
+    "nav": true,
+    "settings": {
+      "category": "application"
+    },
+    "route": "application",
+    "name": "aire-header",
+    "moduleId": "aire-demo/application/doc-page"
+  },
+  {
+    "title": "router-view",
+    "nav": true,
+    "settings": {
+      "category": "application"
+    },
+    "route": "application",
+    "name": "aire-router-view",
+    "moduleId": "aire-demo/application/doc-page"
+  },
+  {
+    "title": "button",
+    "nav": true,
+    "settings": {
+      "category": [
+        "link",
+        "button"
+      ]
+    },
+    "route": "button",
+    "name": "aire-button",
+    "moduleId": "aire-demo/button/doc-page"
+  },
+  {
+    "title": "fab",
+    "nav": true,
+    "settings": {
+      "category": [
+        "link",
+        "button"
+      ]
+    },
+    "route": "button",
+    "name": "aire-fab",
+    "moduleId": "aire-demo/button/doc-page"
+  },
+  {
+    "title": "basic-card",
+    "nav": true,
+    "settings": {
+      "category": "card"
+    },
+    "route": "card",
+    "name": "aire-basic-card",
+    "moduleId": "aire-demo/card/doc-page"
+  },
+  {
+    "title": "divided-card",
+    "nav": true,
+    "settings": {
+      "category": "card"
+    },
+    "route": "card",
+    "name": "aire-divided-card",
+    "moduleId": "aire-demo/card/doc-page"
+  },
+  {
+    "title": "checkbox",
+    "nav": true,
+    "settings": {
+      "category": "form"
+    },
+    "route": "form",
+    "name": "aire-checkbox",
+    "moduleId": "aire-demo/form/doc-page"
+  },
+  {
+    "title": "input",
+    "nav": true,
+    "settings": {
+      "category": "form"
+    },
+    "route": "form",
+    "name": "aire-input",
+    "moduleId": "aire-demo/form/doc-page"
+  },
+  {
+    "title": "radio",
+    "nav": true,
+    "settings": {
+      "category": "form"
+    },
+    "route": "form",
+    "name": "aire-radio",
+    "moduleId": "aire-demo/form/doc-page"
+  },
+  {
+    "title": "range",
+    "nav": true,
+    "settings": {
+      "category": "form"
+    },
+    "route": "form",
+    "name": "aire-range",
+    "moduleId": "aire-demo/form/doc-page"
+  },
+  {
+    "title": "select",
+    "nav": true,
+    "settings": {
+      "category": "form"
+    },
+    "route": "form",
+    "name": "aire-select",
+    "moduleId": "aire-demo/form/doc-page"
+  },
+  {
+    "title": "textarea",
+    "nav": true,
+    "settings": {
+      "category": "form"
+    },
+    "route": "form",
+    "name": "aire-textarea",
+    "moduleId": "aire-demo/form/doc-page"
+  },
+  {
+    "title": "icon",
+    "nav": true,
+    "settings": {
+      "category": "icon"
+    },
+    "route": "icon",
+    "name": "aire-icon",
+    "moduleId": "aire-demo/icon/doc-page"
+  },
+  {
+    "title": "nav",
+    "nav": true,
+    "settings": {
+      "category": "nav"
+    },
+    "route": "nav",
+    "name": "aire-nav",
+    "moduleId": "aire-demo/nav/doc-page"
+  },
+  {
+    "title": "navbar",
+    "nav": true,
+    "settings": {
+      "category": [
+        "nav",
+        "navbar"
+      ]
+    },
+    "route": "navbar",
+    "name": "aire-navbar",
+    "moduleId": "aire-demo/navbar/doc-page"
+  },
+  {
+    "title": "navbar section",
+    "nav": true,
+    "settings": {
+      "category": [
+        "nav",
+        "navbar"
+      ]
+    },
+    "route": "navbar",
+    "name": "navbar-section",
+    "moduleId": "aire-demo/navbar/doc-page"
+  },
+  {
+    "title": "navbar item",
+    "nav": true,
+    "settings": {
+      "category": [
+        "nav",
+        "navbar"
+      ]
+    },
+    "route": "navbar",
+    "name": "navbar-item",
+    "moduleId": "aire-demo/navbar/doc-page"
+  },
+  {
+    "title": "offcanvas",
+    "nav": true,
+    "settings": {
+      "category": "offcanvas"
+    },
+    "route": "offcanvas",
+    "name": "aire-offcanvas",
+    "moduleId": "aire-demo/offcanvas/doc-page"
+  },
+  {
+    "title": "page",
+    "nav": true,
+    "settings": {
+      "category": "page"
+    },
+    "route": "page",
+    "name": "aire-page",
+    "moduleId": "aire-demo/page/doc-page"
+  },
+  {
+    "title": "search",
+    "nav": true,
+    "settings": {
+      "category": "search"
+    },
+    "route": "search",
+    "name": "aire-search",
+    "moduleId": "aire-demo/search/doc-page"
+  },
+  {
+    "title": "table",
+    "nav": true,
+    "settings": {
+      "category": "table"
+    },
+    "route": "table",
+    "name": "aire-table",
+    "moduleId": "aire-demo/table/doc-page"
+  },
+  {
+    "title": "tab",
+    "nav": true,
+    "settings": {
+      "category": "tab"
+    },
+    "route": "tabs",
+    "name": "aire-tab",
+    "moduleId": "aire-demo/tabs/doc-page"
+  },
+  {
+    "title": "tab panel",
+    "nav": true,
+    "settings": {
+      "category": "tab"
+    },
+    "route": "tabs",
+    "name": "aire-tab-panel",
+    "moduleId": "aire-demo/tabs/doc-page"
+  }
+]
