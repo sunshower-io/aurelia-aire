@@ -1,0 +1,16 @@
+[
+  {
+    "tags": [],
+    "description": {
+      "full": "",
+      "summary": "",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "line": 1,
+    "codeStart": null,
+    "code": "import {child, customElement} from 'aurelia-framework';\n\nimport * as showdown from 'showdown';\n\n@customElement(\"markdown-container\")\nexport class MarkdownContainer {\n\n  @child('p')\n  private contents: HTMLParagraphElement;\n\n  attached() : void {\n    let converter = new showdown.Converter(),\n      c = this.contents;\n    c.innerHTML = converter.makeHtml(c.innerText);\n  }\n}",
+    "ctx": false
+  }
+]

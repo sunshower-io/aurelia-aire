@@ -50,7 +50,7 @@ export class App {
     cfg.map([{
       name: 'main',
       route: ['', 'main'],
-      moduleId: 'aire-demo/main/main',
+      moduleId: 'aire-demo/main/overview',
     }]);
     this.router = router;
   }
