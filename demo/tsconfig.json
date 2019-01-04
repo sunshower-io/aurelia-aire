@@ -10,7 +10,7 @@
 //      "jspm_packages/local/aire@1.0.0"
     ],
     "paths": {
-      "aire/*":["jspm_packages/local/aire@1.0.0/*"]
+      "aire/*":["jspm_packages/npm/aire@0.0.60/*"]
 
     }
   },

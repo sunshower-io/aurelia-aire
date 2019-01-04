@@ -1,0 +1,83 @@
+[
+  {
+    "tags": [
+      {
+        "type": "component",
+        "string": "icon",
+        "html": "<p>icon</p>"
+      },
+      {
+        "type": "param",
+        "string": "{bindable} icon (string)",
+        "name": "icon",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{bindable} classes (string)",
+        "name": "classes",
+        "description": "<p>(string)</p>",
+        "types": [
+          "bindable"
+        ],
+        "typesDescription": "<a href=\"bindable.html\">bindable</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "section.usage",
+        "string": "",
+        "html": ""
+      },
+      {
+        "type": "usage.title",
+        "string": "Usage",
+        "html": "<p>Usage</p>"
+      },
+      {
+        "type": "usage.description",
+        "string": "An icon takes an icon as a string, and determines whether it should be a span with that class or an img with that src accordingly. You can also pass in a class to affect an icon's style.",
+        "html": "<p>An icon takes an icon as a string, and determines whether it should be a span with that class or an img with that src accordingly. You can also pass in a class to affect an icon's style.</p>"
+      },
+      {
+        "type": "usage.examples.Icon_Font",
+        "string": "aire-icon(icon=\"fa fa-pencil\")",
+        "html": "<p>aire-icon(icon=&quot;fa fa-pencil&quot;)</p>"
+      },
+      {
+        "type": "usage.examples.Image",
+        "string": "aire-icon(icon=\"assets/icons/sunshower.svg\")",
+        "html": "<p>aire-icon(icon=&quot;assets/icons/sunshower.svg&quot;)</p>"
+      },
+      {
+        "type": "usage.examples.Icon_Font_With_Class",
+        "string": "aire-icon(icon=\"fa fa-pencil\" classes=\"uk-float-right uk-icon-button\")",
+        "html": "<p>aire-icon(icon=&quot;fa fa-pencil&quot; classes=&quot;uk-float-right uk-icon-button&quot;)</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>The aire-icon is a an easy way to treat icon classes and images the same way.</p>",
+      "summary": "<p>The aire-icon is a an easy way to treat icon classes and images the same way.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 4,
+    "codeStart": 29,
+    "code": "@containerless\n@customElement('aire-icon')\nexport class AireIcon {\n\n    class   : string;\n\n    src     : string;\n\n    @bindable\n    icon    : string;\n\n    @bindable\n    classes : string = \"\";\n\n    constructor() {\n\n    }\n\n    bind() {\n        if (this.icon && (this.icon.indexOf('svg+xml') > -1 || this.icon.indexOf('.') > -1)) {\n            this.src = this.icon;\n        } else {\n            this.class = this.icon;\n        }\n    }\n\n}",
+    "ctx": false
+  }
+]

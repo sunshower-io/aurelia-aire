@@ -9590,6 +9590,9 @@ html, body {
 body {
   min-height: 100%; }
 
+.aire-text-center {
+  text-align: center; }
+
 .aire-application {
   display: block;
   height: 100%; }
@@ -11971,3 +11974,10 @@ body {
       color: #2c2c2c; }
     .html-panel .example .uk-navbar.uk-light a.uk-navbar-item, .html-panel .example .uk-navbar.uk-section-primary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-section-secondary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-tile-primary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-tile-secondary:not(.uk-preserve-color) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-card-primary.uk-card-body a.uk-navbar-item, .html-panel .example .uk-card-primary > .uk-navbar:not([class*='uk-card-media']) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-card-secondary.uk-card-body a.uk-navbar-item, .html-panel .example .uk-card-secondary > .uk-navbar:not([class*='uk-card-media']) a.uk-navbar-item, .html-panel .example .uk-navbar.uk-overlay-primary a.uk-navbar-item {
       color: white; }
+
+.aire-landing .uk-button {
+  margin: 0 1em;
+  border: 1px solid white;
+  background: transparent;
+  border-radius: 2em;
+  color: white; }
