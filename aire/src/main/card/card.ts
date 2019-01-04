@@ -9,6 +9,7 @@ import {DOM} from 'aurelia-pal';
  *
  * @param {bindable} header (boolean)
  * @param {bindable} footer (boolean)
+ * @param {bindable} classes (string)
  * @param {pseudo} default
  * @param {pseudo} primary
  * @param {pseudo} secondary
@@ -42,17 +43,17 @@ import {DOM} from 'aurelia-pal';
  * @style.title
  * Style
  * @style.description
- * Cards can be styled by passing a `default`, `primary`, `secondary` or `hover` argument.
+ * Cards can be styled by passing a `default`, `primary`, `secondary` or `hover` argument. You can also pass it classes.
  *
  * @style.examples.Styles
- * .uk-child-width-1-4.uk-grid
- *  aire-card(default)
+ * .uk-grid(class="uk-child-width-1-4@s")
+ *  aire-card(default classes="uk-margin-bottom")
  *      .uk-card-body Default
- *  aire-card(primary)
+ *  aire-card(primary classes="uk-margin-bottom")
  *      .uk-card-body Primary
- *  aire-card(secondary)
+ *  aire-card(secondary classes="uk-margin-bottom")
  *      .uk-card-body Secondary
- *  aire-card(hover)
+ *  aire-card(hover classes="uk-margin-bottom")
  *      .uk-card-body Hover
  *
  *
@@ -63,12 +64,12 @@ import {DOM} from 'aurelia-pal';
  * To adjust the amount of padding a card has, use `padding-small`, `padding` and `padding-large` -- by default, a card has no padding.
  *
  * @padding.examples.Padding
- * .uk-child-width-1-3.uk-grid
- *  aire-card(padding-small default)
+ * .uk-grid(class="uk-child-width-1-3@s")
+ *  aire-card(padding-small default classes="uk-margin-bottom")
  *      | A card with small padding
- *  aire-card(padding default)
+ *  aire-card(padding default classes="uk-margin-bottom")
  *      | A card with normal padding
- *  aire-card(padding-large default)
+ *  aire-card(padding-large default classes="uk-margin-bottom")
  *      | A card with large padding
  *
  *
@@ -84,6 +85,9 @@ export class AireCard {
 
     @bindable
     footer    : boolean;
+
+    @bindable
+    classes     : string = "";
 
     constructor(private element: Element) {
 
