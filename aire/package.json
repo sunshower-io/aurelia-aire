@@ -1,6 +1,6 @@
 {
   "name": "aire",
-  "version": "0.0.64",
+  "version": "0.0.65",
   "description": "Beautiful UiKit-based Aurelia plugin",
   "main": "aire.js",
   "_moduleAliases": {
