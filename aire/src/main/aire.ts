@@ -36,6 +36,9 @@ export function configure(cfg : FrameworkConfiguration) {
     'aire/icon/icon',
     'aire/dropdown/dropdown',
     'aire/loader/loader',
+    'aire/list/list',
+    'aire/label/label',
+    'aire/tile/tile',
     'aire/accordion/accordion',
     'aire/accordion/accordion-item'
   ]);
